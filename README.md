@@ -11,7 +11,8 @@ The user will be able to take a picture of their clothes (taken separately with 
 - Organizing into categories:
 The user can organize their items into categories based on clothing types (pants, belts, shirts, etc.), style (formal, casual, etc.), and weather.
 - Matching recommendations
-- Aesthetic Quiz
+- Aesthetic Quiz: The system will make recommendations based on the user’s pre-specified preferences. The quiz will include questions asking about color palettes, seasonal fabrics, occasion, etc.
+
 
 
 # Toolsets/ Libraries
