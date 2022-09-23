@@ -22,4 +22,4 @@ The user can organize their items into categories based on clothing types (pants
 - Python
 - HTML
 - CSS
-- NodeJS
+- Javascript
