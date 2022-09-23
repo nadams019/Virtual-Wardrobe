@@ -3,7 +3,8 @@ Team Name: BBAND
 ## Team Members: Aadiba Haque, Bethany Saunders, Bismah Shahid, Dorothy Akpovwa, Nakeya Adams
 
 # Mission Statement
-
+	The Virtual Wardrobe is a “Clueless” inspired website that allows users to organize, customize, and plan outfits. Users are able to visualize their wardrobe and bring it to life by using the different features available. Whether you are a fashion enthusiast or fashion newbie, The Virtual Wardrobe is able to help you find your style by taking the Aesthetic quiz. The user-friendly interface allows users to feel comfortable exploring their style and adventure into the different realms of fashion.
+  
 # Features
 - Uploading items:
 The user will be able to take a picture of their clothes (taken separately with a white background), and upload it to the website as an item.
