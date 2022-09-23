@@ -1,5 +1,5 @@
 # Virtual Wardrobe | CS-UY 4513: Software Engineering Project
-## By: Aadiba Haque, Bethany Saunders, Bismah Shahid, Dorothy Akpovwa
+## By: Aadiba Haque, Bethany Saunders, Bismah Shahid, Dorothy Akpovwa, Nakeya Adams
 
 # Mission Statement
 
