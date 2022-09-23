@@ -4,7 +4,8 @@
 # Mission Statement
 
 # Features
-- Uploading items
+- Uploading items:
+The user will be able to take a picture of their clothes (taken separately with a white background), and upload it to the website as an item.
 - Organizing into categories:
 The user can organize their items into categories based on clothing types (pants, belts, shirts, etc.), style (formal, casual, etc.), and weather.
 - Matching recommendations
