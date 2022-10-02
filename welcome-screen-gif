@@ -1,0 +1,13 @@
+/* Rectangle 7 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 1908px;
+height: 703.42px;
+
+background: url(SqL8.png);
+opacity: 0.5;
+border: 1px solid #000000;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
