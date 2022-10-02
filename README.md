@@ -26,3 +26,6 @@ The user can organize their items into categories based on clothing types (pants
 - HTML
 - CSS
 - Javascript
+
+# Figma Link
+# https://www.figma.com/file/Vys3dUUgUDF6Wc9MeaMTHH/Virtual-Wardrobe?node-id=0%3A1
