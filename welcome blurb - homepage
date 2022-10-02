@@ -1,0 +1,16 @@
+/* The Virtual Wardrobe brings your fashion dreams to life. With this “Clueless” inspired website, you will be able to organize, customize, and plan outfits! */
+
+position: absolute;
+width: 1908px;
+height: 105px;
+
+font-family: 'Inconsolata';
+font-style: normal;
+font-weight: 800;
+font-size: 36px;
+line-height: 38px;
+text-align: center;
+
+color: #FECC66;
+
+border: 2px solid #000000;
