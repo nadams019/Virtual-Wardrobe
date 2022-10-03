@@ -1,3 +1,4 @@
+
 # Virtual Wardrobe | CS-UY 4513: Software Engineering Project
 Team Name: BBAND
 ## Team Members: Aadiba Haque, Bethany Saunders, Bismah Shahid, Dorothy Akpovwa, Nakeya Adams
@@ -29,3 +30,4 @@ The user can organize their items into categories based on clothing types (pants
 
 # Figma Link
 https://www.figma.com/file/Vys3dUUgUDF6Wc9MeaMTHH/Virtual-Wardrobe?node-id=0%3A1
+
