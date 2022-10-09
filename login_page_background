@@ -1,0 +1,12 @@
+position: relative;
+width: 1908px;
+height: 1056px;
+
+position: absolute;
+width: 1601px;
+height: 692px;
+left: 168px;
+top: 272px;
+
+background: url(images.jpg);
+
