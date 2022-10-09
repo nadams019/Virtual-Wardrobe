@@ -1,0 +1,491 @@
+/* Rectangle 1 */
+
+
+position: absolute;
+width: 1908px;
+height: 1056px;
+
+background: #FED0FF;
+
+
+/* Rectangle 2 */
+
+
+position: absolute;
+width: 1908px;
+height: 113px;
+
+background: #000000;
+
+
+/* Virtual Wardrobe */
+
+
+position: absolute;
+width: 807.47px;
+height: 80.04px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 121px;
+text-align: center;
+
+color: #F5F5F5;
+
+
+
+/* virtualw 1 */
+
+
+position: absolute;
+width: 281px;
+height: 158px;
+
+background: url(virtualw);
+
+
+/* image 1 */
+
+
+position: absolute;
+width: 217px;
+height: 143px;
+
+background: url(image);
+
+
+/* Upload closet */
+
+
+position: absolute;
+width: 817px;
+height: 108px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 85px;
+line-height: 103px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* background-14820_1280 1 */
+
+
+position: absolute;
+width: 1826px;
+height: 844px;
+
+background: url(background-14820_1280.jpg);
+
+
+/* Clothing Item Type: */
+
+
+position: absolute;
+width: 601px;
+height: 103px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 54px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Season: */
+
+
+position: absolute;
+width: 601px;
+height: 111px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 54px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Occasion: */
+
+
+position: absolute;
+width: 601px;
+height: 111px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 54px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Aesthetic: */
+
+
+position: absolute;
+width: 601px;
+height: 111px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 54px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Please select... */
+
+
+position: absolute;
+width: 285px;
+height: 56px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+text-align: center;
+
+color: #5A5A5A;
+
+mix-blend-mode: multiply;
+
+
+/* Please select... */
+
+
+position: absolute;
+width: 285px;
+height: 56px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+text-align: center;
+
+color: #5A5A5A;
+
+mix-blend-mode: multiply;
+
+
+/* Please select... */
+
+
+position: absolute;
+width: 285px;
+height: 56px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+text-align: center;
+
+color: #5A5A5A;
+
+mix-blend-mode: multiply;
+
+
+/* Please select... */
+
+
+position: absolute;
+width: 285px;
+height: 56px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+text-align: center;
+
+color: #5A5A5A;
+
+mix-blend-mode: multiply;
+
+
+/* Rectangle 3 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 76px;
+
+background: #BEB9BE;
+mix-blend-mode: darken;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 8 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 76px;
+
+background: #BEB9BE;
+mix-blend-mode: darken;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 7 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 76px;
+
+background: #BEB9BE;
+mix-blend-mode: darken;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 6 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 76px;
+
+background: #BEB9BE;
+mix-blend-mode: darken;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 5 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 415px;
+
+background: #BEB9BE;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 9 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 417px;
+
+background: #BEB9BE;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 11 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 417px;
+
+background: #BEB9BE;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 10 */
+
+
+box-sizing: border-box;
+
+position: absolute;
+width: 386px;
+height: 414px;
+
+background: #BEB9BE;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Casual Formal Semi-formal Business Party */
+
+
+position: absolute;
+width: 255px;
+height: 320px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+
+color: #000000;
+
+
+
+/* Grunge Academia Streetwear Cottagecore Indie Soft girl */
+
+
+position: absolute;
+width: 248px;
+height: 452px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+
+color: #000000;
+
+
+
+/* Polygon 1 */
+
+
+position: absolute;
+width: 32.94px;
+height: 26.24px;
+
+background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+transform: rotate(-179.71deg);
+
+
+/* Polygon 2 */
+
+
+position: absolute;
+width: 32.94px;
+height: 26.24px;
+
+background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+transform: rotate(-179.71deg);
+
+
+/* Polygon 3 */
+
+
+position: absolute;
+width: 32.94px;
+height: 26.24px;
+
+background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+transform: rotate(-179.71deg);
+
+
+/* Polygon 4 */
+
+
+position: absolute;
+width: 32.94px;
+height: 26.24px;
+
+background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+transform: rotate(-179.71deg);
+
+
+/* Tops Bottoms Dresses Accessories Jackets */
+
+
+position: absolute;
+width: 409px;
+height: 526px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+
+color: #000000;
+
+
+
+/* Summer Fall Winter Spring */
+
+
+position: absolute;
+width: 176px;
+height: 254px;
+
+font-family: 'Encode Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 56px;
+
+color: #000000;
+
+
+
+/* Rectangle 12 */
+
+
+position: absolute;
+width: 428px;
+height: 154px;
+
+background: #F58AF8;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 40px;
+
+
+/* Upload! */
+
+
+position: absolute;
+width: 293px;
+height: 103px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 85px;
+line-height: 103px;
+/* identical to box height */
+
+
+color: #000000;
