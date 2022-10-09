@@ -1,0 +1,82 @@
+/* Rectangle 1 */
+
+
+position: absolute;
+width: 1908px;
+height: 1135px;
+
+background: #F4CC90;
+
+
+/* Info */
+
+
+position: absolute;
+width: 615px;
+height: 127px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 85px;
+line-height: 103px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Rectangle 2 */
+
+
+position: absolute;
+width: 1908px;
+height: 113px;
+
+background: #000000;
+
+
+/* Virtual Wardrobe */
+
+
+position: absolute;
+width: 807.47px;
+height: 80.04px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 121px;
+text-align: center;
+
+color: #F5F5F5;
+
+
+
+/* virtualw 1 */
+
+
+position: absolute;
+width: 281px;
+height: 158px;
+
+background: url(virtualw.png);
+
+
+/* image 1 */
+
+
+position: absolute;
+width: 217px;
+height: 143px;
+
+background: url(image.png);
+
+
+/* Frame 1 */
+
+
+position: relative;
+width: 1908px;
+height: 898px;
