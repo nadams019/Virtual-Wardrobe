@@ -1,118 +1,131 @@
 /* New to virtual wardrobe? Sign up here section */
 
-position: absolute;
-width: 800px;
-height: 84px;
-left: 513px;
-top: 211px;
 
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
+sign_up-section_text {
+  position: absolute;
+  width: 800px;
+  height: 84px;
+  left: 554px;
+  top: 235px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  
+  color: #000000;
+ }
+
 
 /* Username: */
 
 
-position: absolute;
-width: 216px;
-height: 48px;
-left: 635px;
-top: 418px;
+username_text {
+  position: absolute;
+  width: 216px;
+  height: 48px;
+  left: 726px;
+  top: 456px;
 
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
 
-color: #000000;
+  color: #000000;
+}
 
 * Password: */
 
 
-position: absolute;
-width: 216px;
-height: 48px;
-left: 643px;
-top: 618px;
+password { 
+  position: absolute;
+  width: 216px;
+  height: 48px;
+  left: 643px;
+  top: 618px;
 
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
 
-color: #000000;
+  color: #000000;
+ }
 
 /* Rectangle 3 */
 
 
+rectangle_3{
 box-sizing: border-box;
 
-position: absolute;
-width: 474px;
-height: 119px;
-left: 640px;
-top: 383px;
+  position: absolute;
+  width: 474px;
+  height: 119px;
+  left: 717px;
+  top: 421px;
 
-background: #F5F5F5;
-border: 1px solid #000000;
-
+  background: #F5F5F5;
+  border: 1px solid #000000;
+}
 /* Rectangle 4 */
 
-
+rectangle_4 {
 box-sizing: border-box;
 
-position: absolute;
-width: 474px;
-height: 119px;
-left: 640px;
-top: 577px;
+  position: absolute;
+  width: 474px;
+  height: 119px;
+  left: 717px;
+  top: 630px;
 
-background: #F5F5F5;
-border: 1px solid #000000;
+  background: #F5F5F5;
+  border: 1px solid #000000;
+}
 
 /* Login */
+login_text {
+  position: absolute;
+  width: 102px;
+  height: 48px;
+  left: 913px;
+  top: 877px;
 
-position: absolute;
-width: 102px;
-height: 48px;
-left: 840px;
-top: 828px;
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
 
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 48px;
-text-align: center;
-
-color: #000000;
-
+  color: #000000;
+ }
+ 
 /* Rectangle 5 */
+rectangle_5 { 
+  box-sizing: border-box;
 
+  position: absolute;
+  width: 307px;
+  height: 100px;
+  left: 813px;
+  top: 851px;
 
-box-sizing: border-box;
-
-position: absolute;
-width: 307px;
-height: 100px;
-left: 724px;
-top: 802px;
-
-background: #C0091E;
-border: 1px solid #000000;
+  background: #C0091E;
+  border: 1px solid #000000;
+}
 
 /* virtualw 1 */
+vw_logo { 
+  position: absolute;
+  width: 281px;
+  height: 158px;
 
-
-position: absolute;
-width: 281px;
-height: 158px;
-
-background: url(virtualw.png);
+  background: url(virtualw.png);
+}
