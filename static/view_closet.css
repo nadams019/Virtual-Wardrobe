@@ -1,0 +1,161 @@
+/* Rectangle 1 */
+
+page {
+    position: absolute;
+    width: 1908px;
+    height: 1056px;
+
+    background: #CE94CF;
+}
+
+/* Rectangle 2 */
+
+navigation {
+    position: absolute;
+    width: 1908px;
+    height: 113px;
+
+    background: #000000;
+}
+
+/* Virtual Wardrobe */
+
+vw_font {
+    position: absolute;
+    width: 807px;
+    height: 80px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+
+    color: #F5F5F5;
+}
+
+/* virtualw 1 */
+logo {
+    position: absolute;
+    width: 281px;
+    height: 158px;
+
+    background: url(images/virtualw.png);
+}
+
+/* profile-icon */
+
+profile_icon {
+    position: absolute;
+    width: 208px;
+    height: 143px;
+
+    /* background: url(images/profile_icon); */
+}
+
+/* View Closet */
+page_title_font {
+    position: absolute;
+    width: 615px;
+    height: 127px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
+
+    color: #000000;
+}
+
+/* purple wavy background */
+
+page_background {
+    position: absolute;
+    width: 1834px;
+    height: 772px;
+
+    background: url(images/purple_wavy.jpeg);
+}
+
+/* Closet Search */
+
+closet_div {
+    position: absolute;
+    width: 1721px;
+    height: 778px;
+}
+
+/* image 1 */
+
+pause_icon {
+        position: absolute;
+        width: 68px;
+        height: 57px;
+
+        /* background: url(images/pause_icon); */
+}
+
+
+
+/* image 2 */
+
+pause_icon2 {
+    position: absolute;
+    width: 68px;
+    height: 57px;
+
+    /* background: url(images/pause_icon); */
+}
+
+/* Rectangle 3 */
+
+dress_me_square {
+    position: absolute;
+    width: 553px;
+    height: 545px;
+
+    background: #ACC7AF;
+}
+
+/* Rectangle 4 */
+
+browse_square {
+    position: absolute;
+    width: 553px;
+    height: 545px;
+
+    background: #ACC7AF;
+}
+
+/* basic woman */
+
+user_pic {
+    position: absolute;
+    width: 353px;
+    height: 545px;
+
+    background: url(images/basic-girl.png);
+}
+
+
+
+/* Categories Season Occasion Aesthetic Random */
+
+categories {
+    position: absolute;
+    width: 553px;
+    height: 388px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 85px;
+    text-align: center;
+
+    color: #000000;
+}
+
