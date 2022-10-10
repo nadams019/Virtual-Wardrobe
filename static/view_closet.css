@@ -51,7 +51,7 @@ profile_icon {
     width: 208px;
     height: 143px;
 
-    /* background: url(images/profile_icon); */
+    background: url(images/profile_icon.png);
 }
 
 /* View Closet */
@@ -95,7 +95,7 @@ pause_icon {
         width: 68px;
         height: 57px;
 
-        /* background: url(images/pause_icon); */
+        background: url(images/pause_icon.png);
 }
 
 
@@ -107,7 +107,7 @@ pause_icon2 {
     width: 68px;
     height: 57px;
 
-    /* background: url(images/pause_icon); */
+    background: url(images/pause_icon.png);
 }
 
 /* Rectangle 3 */
