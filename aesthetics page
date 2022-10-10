@@ -74,3 +74,66 @@ height: 943px;
 background: #E2C894;
 border: 5px solid #B56000;
 
+/* clipart26279 1 */
+
+position: absolute;
+width: 332px;
+height: 369px;
+
+background: url(clipart26279.png);
+
+/* clipart1053953 1 */
+
+position: absolute;
+width: 121px;
+height: 360px;
+
+background: url(clipart1053953.png);
+
+/* image 1 */
+
+position: absolute;
+width: 217px;
+height: 143px;
+
+background: url(image.png);
+
+/* virtualw 1 */
+
+position: absolute;
+width: 281px;
+height: 158px;
+
+background: url(virtualw.png);
+
+/* Virtual Wardrobe */
+
+position: absolute;
+width: 807.47px;
+height: 80.04px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 121px;
+text-align: center;
+
+color: #F5F5F5;
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1908px;
+height: 113px;
+
+background: #000000;
+
+/* 6435357 1 */
+
+position: absolute;
+width: 1908px;
+height: 943px;
+
+background: url(6435357.png);
