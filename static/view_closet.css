@@ -27,6 +27,16 @@ body {
     background: #000000;
 }
 
+h1{
+    color: #F5F5F5;
+    font-family: "Irish Grover";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+}
+
 /* Virtual Wardrobe */
 #vw_font {
     position: absolute;
