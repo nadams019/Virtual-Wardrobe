@@ -47,8 +47,8 @@ title {
 /* Virtual Wardrobe */
 title_font {
     position: absolute;
-    width: 807.47px;
-    height: 80.04px;
+    width: 807px;
+    height: 80px;
 
     font-family: 'Irish Grover', serif;
     font-style: normal;
@@ -71,7 +71,7 @@ logo {
 login {
     /* Login Rectangle */
     position: absolute;
-    width: 311.57px;
+    width: 312px;
     height: 113px;
     background: #DB3EDE;
 }
@@ -79,7 +79,7 @@ login {
 info {
     /* Rectangle 4 */
     position: absolute;
-    width: 311.57px;
+    width: 312px;
     height: 113px;
     background: #F58AF8;
 }
@@ -87,7 +87,7 @@ info {
 upload_closet {
     /* Rectangle 5 */
     position: absolute;
-    width: 311.57px;
+    width: 312px;
     height: 113px;
     background: #CE94CF;
 }
@@ -95,7 +95,7 @@ upload_closet {
 view_closet {
     /* Rectangle 6 */
     position: absolute;
-    width: 311.57px;
+    width: 312px;
     height: 113px;
     background: #FCAD38;
 }
@@ -103,15 +103,15 @@ view_closet {
 aesthetics {
     /* Rectangle 6 */
     position: absolute;
-    width: 311.57px;
+    width: 312px;
     height: 113px;
     background: #F4CC90;
 }
 
 tab_font {
     position: absolute;
-    width: 264.13px;
-    height: 55.56px;
+    width: 264px;
+    height: 56px;
 
     font-family: 'Irish Grover', serif;
     font-style: normal;

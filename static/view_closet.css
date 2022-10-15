@@ -1,31 +1,39 @@
 /* Rectangle 1 */
-
-page {
-    position: absolute;
-    width: 1908px;
+body {
+    background: #F4AE20;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+#page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     height: 1056px;
-
+    left: 50px;
+    top: 50px;
     background: #CE94CF;
 }
 
 /* Rectangle 2 */
-
-navigation {
+#navigation {
     position: absolute;
-    width: 1908px;
-    height: 113px;
-
+    z-index: 2;
+    padding: 60px;
+    width: 1916px;
     background: #000000;
 }
 
 /* Virtual Wardrobe */
-
-vw_font {
+#vw_font {
     position: absolute;
     width: 807px;
     height: 80px;
 
-    font-family: 'Irish Grover';
+    font-family: 'Irish Grover', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 100px;
@@ -36,7 +44,7 @@ vw_font {
 }
 
 /* virtualw 1 */
-logo {
+.logo {
     position: absolute;
     width: 281px;
     height: 158px;
@@ -46,7 +54,7 @@ logo {
 
 /* profile-icon */
 
-profile_icon {
+.profile_icon {
     position: absolute;
     width: 208px;
     height: 143px;
@@ -55,12 +63,12 @@ profile_icon {
 }
 
 /* View Closet */
-page_title_font {
+.page_title_font {
     position: absolute;
     width: 615px;
     height: 127px;
 
-    font-family: 'Irish Grover';
+    font-family: 'Irish Grover', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 85px;
@@ -72,7 +80,7 @@ page_title_font {
 
 /* purple wavy background */
 
-page_background {
+.page_background {
     position: absolute;
     width: 1834px;
     height: 772px;
@@ -82,7 +90,7 @@ page_background {
 
 /* Closet Search */
 
-closet_div {
+.closet_div {
     position: absolute;
     width: 1721px;
     height: 778px;
@@ -90,7 +98,7 @@ closet_div {
 
 /* image 1 */
 
-pause_icon {
+.pause_icon {
         position: absolute;
         width: 68px;
         height: 57px;
@@ -102,7 +110,7 @@ pause_icon {
 
 /* image 2 */
 
-pause_icon2 {
+.pause_icon2 {
     position: absolute;
     width: 68px;
     height: 57px;
@@ -112,7 +120,7 @@ pause_icon2 {
 
 /* Rectangle 3 */
 
-dress_me_square {
+.dress_me_square {
     position: absolute;
     width: 553px;
     height: 545px;
@@ -122,7 +130,7 @@ dress_me_square {
 
 /* Rectangle 4 */
 
-browse_square {
+.browse_square {
     position: absolute;
     width: 553px;
     height: 545px;
@@ -132,7 +140,7 @@ browse_square {
 
 /* basic woman */
 
-user_pic {
+.user_pic {
     position: absolute;
     width: 353px;
     height: 545px;
@@ -140,16 +148,14 @@ user_pic {
     background: url(images/basic-girl.png);
 }
 
-
-
 /* Categories Season Occasion Aesthetic Random */
 
-categories {
+.categories {
     position: absolute;
     width: 553px;
     height: 388px;
 
-    font-family: 'Irish Grover';
+    font-family: 'Irish Grover', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
