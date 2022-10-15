@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link rel="stylesheet" href="../static/view_closet.css">
+    <!-- Query for View Closet stylesheet -->
+    <link rel="stylesheet" href="static/home_page.css">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
+    <!-- Media query for small browser width -->
+    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="static/small.css" />
+
+    <!-- Media query for medium browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="static/medium.css" />
+
+    <!-- Media query for large browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="static/large.css" />
 </head>
 <body>
     <div class="container">
@@ -12,7 +21,7 @@
             <div id="navigation">
                 <h1>Virtual Wardrobe</h1>
                 <div id="logo">
-                    <img src="images/virtualw.png" alt="logo">
+                    <img src="static/images/virtualw.png" alt="logo">
                 </div>
             </div>
         </div>

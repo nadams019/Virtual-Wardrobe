@@ -29,6 +29,10 @@ body {
 
 /* Virtual Wardrobe Header */
 h1{
+    position: relative;
+    top: -58px;
+    left: 0%;
+    z-index: 3;
     color: #F5F5F5;
     font-family: "Irish Grover", serif;
     font-style: normal;
@@ -36,6 +40,7 @@ h1{
     font-size: 100px;
     line-height: 121px;
     text-align: center;
+
 }
 
 /* Virtual Wardrobe */
@@ -55,16 +60,17 @@ h1{
 }
 
 /* virtualw 1 */
-.logo {
+#logo {
     position: absolute;
-    width: 281px;
-    height: 158px;
-
-    background: url(images/virtualw.png);
+    top:-23px;
+    left: -4.5%;
+    z-index: 3;
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
 }
 
 /* profile-icon */
-
 .profile_icon {
     position: absolute;
     width: 208px;
@@ -74,10 +80,12 @@ h1{
 }
 
 /* View Closet */
-.page_title_font {
+#page_title_font {
     position: absolute;
     width: 615px;
     height: 127px;
+    top: 140px;
+    left: 34%;
 
     font-family: 'Irish Grover', serif;
     font-style: normal;
@@ -91,10 +99,13 @@ h1{
 
 /* purple wavy background */
 
-.page_background {
+#page_background {
     position: absolute;
+    z-index: 1;
     width: 1834px;
     height: 772px;
+    top: 23%;
+    left: 100px;
 
     background: url(images/purple_wavy.jpeg);
 }
