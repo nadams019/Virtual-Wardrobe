@@ -22,15 +22,15 @@ body {
 #navigation {
     position: absolute;
     z-index: 2;
-    padding: 60px;
-    width: 1916px;
+    height: 113px;
+    width: 100%;
     background: #000000;
 }
 
-/* Virtual Wardrobe */
+/* Virtual Wardrobe Header */
 h1{
     color: #F5F5F5;
-    font-family: "Irish Grover";
+    font-family: "Irish Grover", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 100px;
