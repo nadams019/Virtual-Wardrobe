@@ -9,18 +9,27 @@ body {
 }
 
 /* Webpage */
-webpage {
+#webpage {
     position: absolute;
-    width: 1908px;
-    height: 1056px;
+    width: 100%;
+    height: 703px;
+    top: 230px;
+    left: 0;
+    z-index: 2;
+
+    object-fit: cover;
+    background: url(https://i.gifer.com/SqL8.gif);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
 }
 
 /* Welcome! */
-welcome_font {
+#welcome_font {
     position: absolute;
     width: 649px;
     height: 111px;
+    left: 32%;
+    z-index: 2;
 
     font-family: 'Inconsolata', serif;
     font-style: normal;
@@ -28,9 +37,27 @@ welcome_font {
     font-size: 150px;
     line-height: 157px;
     text-align: center;
-
     color: #F4AE20;
-    border: 3px solid #000000;
+    text-shadow: 0 0 3px #000000;
+}
+
+
+#welcome_blurb {
+    position: absolute;
+    width: 649px;
+    height: 111px;
+    left: 32%;
+    top: 345px;
+    z-index: 2;
+
+    font-family: 'Inconsolata', serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #F4AE20;
+    text-shadow: 0 0 2px #000000;
 }
 
 /* Foreground */
@@ -53,6 +80,17 @@ welcome_font {
     height: 113px;
     width: 100%;
     background: #000000;
+}
+
+/* Rectangle Behind Text */
+#box {
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    width: 50%;
+    left: 23%;
+    background: #000000;
+    opacity: 60%;
 }
 
 /* Virtual Wardrobe */
@@ -208,18 +246,26 @@ h1 {
     opacity: 0.8;
 }
 
-p {
+.sign_now_button {
     position: absolute;
-    width: 264px;
-    height: 56px;
+    width: 399px;
+    height: 105px;
+    top: 480px;
+    left: 38%;
+    z-index: 2;
 
-    font-family: 'Irish Grover', serif;
+    font-family: 'Inconsolata', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 38px;
-    line-height: 46px;
+    line-height: 40px;
     text-align: center;
-
-    color: #000000;
+    margin: 4px 2px;
+    color: #ffffff;
+    text-shadow: 0 0 2px #000000;
+    background: #C0091E;
+}
+.sign_now_button:hover {
+    opacity: 0.8;
 }
 
