@@ -129,3 +129,42 @@ vw_logo {
 
   background: url(virtualw.png);
 }
+
+info_background{
+  position: absolute;
+  width: 1908px;
+  height: 1056px;
+  background: #92BBE1;
+
+}
+
+/* Group 4 */
+login_button {
+  position: absolute;
+  width: 399.06px;
+  height: 104.52px;
+}
+
+whole_background_relative {
+  position: relative;
+  width: 1908px;
+  height: 1056px;
+}
+
+
+
+whole_background_absolute{
+  position: absolute;
+  width: 1601px;
+  height: 692px;
+  left: 168px;
+  top: 272px;
+}
+
+
+
+background: url(images.jpg);
+
+
+
+
