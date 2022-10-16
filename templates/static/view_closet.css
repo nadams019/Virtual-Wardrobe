@@ -29,9 +29,9 @@ body {
 
 /* Virtual Wardrobe Header */
 h1{
-    position: relative;
-    top: -58px;
-    left: 0%;
+    position: absolute;
+    top: -60px;
+    left: 31%;
     z-index: 3;
     color: #F5F5F5;
     font-family: "Irish Grover", serif;
@@ -142,31 +142,86 @@ h1{
 
 /* Rectangle 3 */
 
-.dress_me_square {
+#dress_me_square {
     position: absolute;
     width: 553px;
     height: 545px;
-
+    z-index: 2;
+    top: 275px;
+    left: 66%;
     background: #ACC7AF;
 }
 
 /* Rectangle 4 */
 
-.browse_square {
+#browse_square {
     position: absolute;
     width: 553px;
     height: 545px;
+    top: 275px;
+    left: 7%;
+    z-index: 2;
 
     background: #ACC7AF;
+}
+.browse_button {
+    position: absolute;
+    width: 553px;
+    height: 156px;
+    top: 820px;
+    left: 7%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 73px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    background: #540756;
+}
+.browse_button:hover {
+    opacity: 0.8;
+}
+
+.dress_button {
+    position: absolute;
+    width: 553px;
+    height: 156px;
+    top: 820px;
+    left: 66%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 73px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    background: #540756;
+}
+.dress_button:hover {
+    opacity: 0.8;
 }
 
 /* basic woman */
 
-.user_pic {
+#user_pic {
     position: absolute;
     width: 353px;
     height: 545px;
-
+    left: 50%;
+    z-index: 2;
     background: url(images/basic-girl.png);
 }
 
