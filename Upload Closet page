@@ -1,88 +1,114 @@
 /* Rectangle 1 */
-
-
-position: absolute;
-width: 1908px;
-height: 1056px;
-
-background: #FED0FF;
-
+body {
+    background: #F4AE20;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+#page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1056px;
+    left: 50px;
+    top: 50px;
+    background: #FED0FF;
+}
 
 /* Rectangle 2 */
+#navigation {
+    position: absolute;
+    z-index: 2;
+    height: 113px;
+    width: 100%;
+    background: #000000;
+}
 
+/* Virtual Wardrobe Header */
+h1{
+    position: absolute;
+    top: -60px;
+    left: 31%;
+    z-index: 3;
+    color: #F5F5F5;
+    font-family: "Irish Grover", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
 
-position: absolute;
-width: 1908px;
-height: 113px;
-
-background: #000000;
-
+}
 
 /* Virtual Wardrobe */
+#vw_font {
+    position: absolute;
+    width: 807px;
+    height: 80px;
 
+    font-family: 'Irish Grover', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
 
-position: absolute;
-width: 807.47px;
-height: 80.04px;
-
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 100px;
-line-height: 121px;
-text-align: center;
-
-color: #F5F5F5;
-
+    color: #F5F5F5;
+}
 
 
 /* virtualw 1 */
+#logo {
+    position: absolute;
+    top:-23px;
+    left: -4.5%;
+    z-index: 3;
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
+}
 
+/* profile-icon */
+.profile_icon {
+    position: absolute;
+    width: 208px;
+    height: 143px;
 
-position: absolute;
-width: 281px;
-height: 158px;
-
-background: url(virtualw);
-
-
-/* image 1 */
-
-
-position: absolute;
-width: 217px;
-height: 143px;
-
-background: url(image);
-
+    background: url(images/profile_icon.png);
+}
 
 /* Upload closet */
+#page_title_font {
+    position: absolute;
+    width: 615px;
+    height: 127px;
+    top: 140px;
+    left: 34%;
 
+    font-family: 'Irish Grover', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
 
-position: absolute;
-width: 817px;
-height: 108px;
-
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 85px;
-line-height: 103px;
-text-align: center;
-
-color: #000000;
-
-
+    color: #000000;
+}
 
 /* background-14820_1280 1 */
+#page_background {
+    position: absolute;
+    z-index: 1;
+    width: 1834px;
+    height: 772px;
+    top: 23%;
+    left: 100px;
 
-
-position: absolute;
-width: 1826px;
-height: 844px;
-
-background: url(background-14820_1280.jpg);
-
+    background: url(background-14820_1280.jpg);
+}
 
 /* Clothing Item Type: */
 
