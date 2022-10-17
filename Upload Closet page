@@ -309,117 +309,45 @@ h1{
 }
 
 
-/* Casual Formal Semi-formal Business Party */
-
-
-position: absolute;
-width: 255px;
-height: 320px;
-
-font-family: 'Encode Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 56px;
-
-color: #000000;
-
-
-
-/* Grunge Academia Streetwear Cottagecore Indie Soft girl */
-
-
-position: absolute;
-width: 248px;
-height: 452px;
-
-font-family: 'Encode Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 56px;
-
-color: #000000;
-
-
-
 /* Polygon 1 */
+#dropdown_logo1 {
+    position: absolute;
+    width: 32.94px;
+    height: 26.24px;
 
-
-position: absolute;
-width: 32.94px;
-height: 26.24px;
-
-background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-transform: rotate(-179.71deg);
-
+    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+    transform: rotate(-179.71deg);
+}
 
 /* Polygon 2 */
+#dropdown_logo2 {
+    position: absolute;
+    width: 32.94px;
+    height: 26.24px;
 
-
-position: absolute;
-width: 32.94px;
-height: 26.24px;
-
-background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-transform: rotate(-179.71deg);
-
+    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+    transform: rotate(-179.71deg);
+}
 
 /* Polygon 3 */
+#dropdown_logo3 {
+    position: absolute;
+    width: 32.94px;
+    height: 26.24px;
 
-
-position: absolute;
-width: 32.94px;
-height: 26.24px;
-
-background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-transform: rotate(-179.71deg);
-
+    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+    transform: rotate(-179.71deg);
+}
 
 /* Polygon 4 */
+#dropdown_logo4 {
+    position: absolute;
+    width: 32.94px;
+    height: 26.24px;
 
-
-position: absolute;
-width: 32.94px;
-height: 26.24px;
-
-background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-transform: rotate(-179.71deg);
-
-
-/* Tops Bottoms Dresses Accessories Jackets */
-
-
-position: absolute;
-width: 409px;
-height: 526px;
-
-font-family: 'Encode Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 56px;
-
-color: #000000;
-
-
-
-/* Summer Fall Winter Spring */
-
-
-position: absolute;
-width: 176px;
-height: 254px;
-
-font-family: 'Encode Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 56px;
-
-color: #000000;
-
-
+    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
+    transform: rotate(-179.71deg);
+}
 
 /* Rectangle 12 */
 
@@ -435,18 +363,28 @@ border-radius: 40px;
 
 
 /* Upload! */
+#upload_square {
+    position: absolute;
+    width: 428px;
+    height: 154px;
+    background: #F58AF8;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+}
 
+.upload_button {
+    position: absolute;
+    width: 428px;
+    height: 154px;
+    
+    display: inline-block;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
 
-position: absolute;
-width: 293px;
-height: 103px;
+    color: #000000;
+}
 
-font-family: 'Irish Grover';
-font-style: normal;
-font-weight: 400;
-font-size: 85px;
-line-height: 103px;
-/* identical to box height */
-
-
-color: #000000;
