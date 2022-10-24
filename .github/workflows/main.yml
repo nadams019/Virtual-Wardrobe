@@ -28,13 +28,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: Install Python packages.
         run: pip install -r demo-stuff/requirements-dev.txt
 
       - name: Run Python tests.
-        run: make -f all_tests
+        run: make all_tests
         
       # Deploy to Heroku
       #  - uses: akhileshns/heroku-deploy@v3.12.12
