@@ -1,7 +1,7 @@
 LINTER = flake8
 API_DIR = server
 DB_DIR = db
-REQ_DIR = .
+REQ_DIR = demo-stuff
 PYTESTFLAGS = -vv --verbose --tb=short
 
 FORCE:
