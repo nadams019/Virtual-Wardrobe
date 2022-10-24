@@ -111,7 +111,7 @@ h1{
 }
 
 /* Clothing Item Type: */
-.item_type {
+#item_type {
     position: absolute;
     width: 601px;
     height: 103px;
@@ -128,7 +128,7 @@ h1{
 
 
 /* Season: */
-.season {
+#season {
     position: absolute;
     width: 601px;
     height: 111px;
@@ -145,7 +145,7 @@ h1{
 
 
 /* Occasion: */
-.occasion {
+#occasion {
     position: absolute;
     width: 601px;
     height: 111px;
@@ -162,7 +162,7 @@ h1{
 
 
 /* Aesthetic: */
-.aesthetic 
+#aesthetic 
     position: absolute;
     width: 601px;
     height: 111px;
@@ -252,7 +252,7 @@ h1{
 }
 
 /* Rectangle 3 */
-.selectbox1 {
+#selectbox1 {
     box-sizing: border-box;
 
     position: absolute;
@@ -267,7 +267,7 @@ h1{
 
 
 /* Rectangle 8 */
-.selectbox4 {
+#selectbox4 {
     box-sizing: border-box;
 
     position: absolute;
@@ -281,7 +281,7 @@ h1{
 }
 
 /* Rectangle 7 */
-.selectbox3 {
+#selectbox3 {
     box-sizing: border-box;
 
     position: absolute;
@@ -295,7 +295,7 @@ h1{
 }
 
 /* Rectangle 6 */
-.selectbox2 {
+#selectbox2 {
     box-sizing: border-box;
 
     position: absolute;
