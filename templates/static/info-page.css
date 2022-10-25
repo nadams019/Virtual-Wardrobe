@@ -1,0 +1,629 @@
+/* Rectangle 1 */
+body {
+   background: #F4AE20;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+#page {
+    position: absolute;
+    width: 1908px;
+    height: 1135px;
+    background: #F3CC90;
+}
+
+/* Information */
+
+h2 {
+    position: absolute;
+    width: 615px;
+    height: 127px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Rectangle 2 */
+
+#top_box {
+    position: absolute;
+    width: 1908px;
+    height: 113px;
+
+    background: #000000;
+}
+
+/* Virtual Wardrobe */
+
+h1 {
+    position: absolute;
+    width: 807.47px;
+    height: 80.04px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+
+    color: #F5F5F5;
+}
+
+
+/* virtualw 1 */
+
+#logo {
+    position: absolute;
+    width: 281px;
+    height: 158px;
+
+    background: url(images/virtualw.png);
+}
+
+/* image 1 */
+
+.profile_icon {
+    position: absolute;
+    width: 217px;
+    height: 143px;
+
+    background: url(images/profile_icon.png);
+}
+
+/* Rectangle 10 */
+
+#page_background {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 1806px;
+    height: 819px;
+    left: 49px;
+    top: 0px;
+
+    background: url(images/info_background.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Frame 10 */
+/*intructions box*/
+
+#instruction_title {
+    position: absolute;
+    width: 286px;
+    height: 62px;
+    left: 875px;
+    top: 4px;
+
+    background: #FFD92A;
+    border-radius: 100px;
+}
+
+/* Rectangle 14 */
+
+#help_question_box {
+    position: absolute;
+    width: 452px;
+    height: 175px;
+    left: 1300px;
+    top: 356px;
+
+    background: #D9D9D9;
+}
+
+/* Email */
+
+#email_title {
+    position: absolute;
+    width: 218px;
+    height: 64px;
+    left: 1225px;
+    top: 193px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Rectangle 13 */
+
+#email_box {
+    position: absolute;
+    width: 452px;
+    height: 70px;
+    left: 1300px;
+    top: 235px;
+
+    background: #D9D9D9;
+}
+
+/* Ellipse 1 */
+
+#bethany_pic {
+    position: absolute;
+    width: 178px;
+    height: 168px;
+    left: 120px;
+    top: 556px;
+
+    background: #D9D9D9;
+}
+
+/* Ellipse 4 */
+
+#bismah_pic {
+    position: absolute;
+    width: 178px;
+    height: 168px;
+    left: 493px;
+    top: 556px;
+
+    background: #D9D9D9;
+}
+
+/* Ellipse 2 */
+
+#aadiba_pic {
+    position: absolute;
+    width: 178px;
+    height: 168px;
+    left: 866px;
+    top: 556px;
+
+    background: #D9D9D9;
+}
+
+/* Ellipse 3 */
+
+#nakeya_pic {
+    position: absolute;
+    width: 178px;
+    height: 168px;
+    left: 1238px;
+    top: 568px;
+
+    background: #D9D9D9;
+}
+
+/* Ellipse 5 */
+
+#dorothy_pic {
+    position: absolute;
+    width: 178px;
+    height: 168px;
+    left: 1609px;
+    top: 556px;
+
+    background: #D9D9D9;
+}
+
+/* Rectangle 5 */
+
+#bethany_social {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 220px;
+    top: 678px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Rectangle 6 */
+
+#bismah_social {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 592px;
+    top: 678px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Rectangle 8 */
+
+#aadiba_social {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 971px;
+    top: 678px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Rectangle 9 */
+
+#nakeya_social {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 1350px;
+    top: 678px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* vw social media */
+
+#vw_social {
+    position: absolute;
+    width: 224px;
+    height: 39px;
+    left: 1133px;
+    top: 841px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* faq */
+
+#faq {
+    position: absolute;
+    width: 47px;
+    height: 39px;
+    left: 1538px;
+    top: 841px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Rectangle 7 */
+
+#dorothy_social {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 1709px;
+    top: 678px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Frame 4 */
+
+#nakeya_title {
+    position: absolute;
+    width: 278px;
+    height: 72px;
+    left: 1184px;
+    top: 745px;
+
+    background: #FFD92A;
+    border-radius: 25px;
+}
+
+/* Frame 5 */
+
+#aadiba_title {
+    position: absolute;
+    width: 287px;
+    height: 72px;
+    left: 811px;
+    top: 745px;
+
+    background: #FFD92A;
+    border-radius: 25px;
+}
+
+/* Frame 3 */
+
+#bismah_title {
+    position: absolute;
+    width: 284px;
+    height: 72px;
+    left: 439px;
+    top: 745px;
+
+    background: #FFD92A;
+    border-radius: 25px;
+}
+
+/* Frame 6 */
+
+#bethany_title {
+    position: absolute;
+    width: 282px;
+    height: 72px;
+    left: 66px;
+    top: 745px;
+
+    background: #FFD92A;
+    border-radius: 25px;
+}
+
+/* Frame 2 */
+
+#dorothy_title {
+    position: absolute;
+    width: 288px;
+    height: 69px;
+    left: 1555px;
+    top: 742px;
+
+    background: #FFD92A;
+    border-radius: 25px;
+}
+
+/* Frame 7 */
+
+#team_bband_title {
+    position: absolute;
+    width: 244px;
+    height: 61px;
+    left: 842px;
+    top: 465px;
+
+    background: #FFD92A;
+    border-radius: 100px;
+}
+
+/* Frame 8 */
+
+#contact_us_title {
+    position: absolute;
+    width: 286px;
+    height: 62px;
+    left: 1383px;
+    top: 4px;
+
+    background: #FFD92A;
+    border-radius: 100px;
+}
+
+/* Rectangle 11 */
+
+#first_name_box {
+    position: absolute;
+    width: 219px;
+    height: 70px;
+    left: 1300px;
+    top: 108px;
+
+    background: #D9D9D9;
+}
+
+/* Rectangle 12 */
+
+#last_name_box {
+    position: absolute;
+    width: 220px;
+    height: 70px;
+    left: 1532px;
+    top: 108px;
+
+    background: #D9D9D9;
+}
+
+/* First Name */
+
+#first_name_title {
+    position: absolute;
+    width: 218px;
+    height: 64px;
+    left: 1271px;
+    top: 69px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Last Name */
+
+#last_name_title {
+    position: absolute;
+    width: 218px;
+    height: 64px;
+    left: 1495px;
+    top: 65px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* What can we help you with? */
+
+#help_question_title {
+    position: absolute;
+    width: 528px;
+    height: 64px;
+    left: 1238px;
+    top: 318px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Rectangle 16 */
+
+#video_demo_box {
+    position: absolute;
+    width: 604px;
+    height: 394px;
+    left: 131px;
+    top: 73px;
+
+    background: #D9D9D9;
+}
+
+/* Frame 9 */
+
+#video_demo_title {
+    position: absolute;
+    width: 286px;
+    height: 62px;
+    left: 290px;
+    top: 4px;
+
+    background: #FFD92A;
+    border-radius: 100px;
+}
+
+/* Rectangle 17 */
+
+#instruction_box {
+    position: absolute;
+    width: 309px;
+    height: 347px;
+    left: 863px;
+    top: 84px;
+
+    background: #D9D9D9;
+}
+
+/* vw@bband.org */
+
+#vw_email_footer {
+    position: absolute;
+    width: 207px;
+    height: 39px;
+    left: 357px;
+    top: 841px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* 123-456-7890 */
+
+#vw_number_footer {
+    position: absolute;
+    width: 196px;
+    height: 39px;
+    left: 756px;
+    top: 841px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+
+/* Rectangle 15 */
+
+#email_icon {
+    position: absolute;
+    width: 78px;
+    height: 70px;
+    left: 279px;
+    top: 831px;
+
+    background: url(email_icon.png);
+}
+
+/* Rectangle 18 */
+
+#phone_icon {
+    position: absolute;
+    width: 79px;
+    height: 76px;
+    left: 665px;
+    top: 828px;
+
+    background: url(images/phone_icon.png);
+}
+
+/* Rectangle 19 */
+
+#social_icon_footer {
+    position: absolute;
+    width: 80px;
+    height: 86px;
+    left: 1053px;
+    top: 829px;
+
+    background: url(images/socials_icon.png);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Rectangle 20 */
+
+#faq_icon_footer {
+    position: absolute;
+    width: 84px;
+    height: 74px;
+    left: 1442px;
+    top: 829px;
+
+    background: url(images/faq_icon.png);
+}
