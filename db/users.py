@@ -14,13 +14,11 @@ REQUIRED_FLDS = [EMAIL]
 users = {TEST_USER_NAME: {EMAIL: 'x@y.com', FULL_NAME: 'Porgy Tirebiter'},
          'handle': {EMAIL: 'z@y.com', FULL_NAME: 'Nick Danger'}}
 
-
 def user_exists(name):
     """
     Returns whether or not a user exists.
     """
     return name in users
-
 
 def get_users():
     return list(users.keys())
