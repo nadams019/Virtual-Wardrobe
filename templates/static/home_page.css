@@ -1,0 +1,271 @@
+body {
+    background: #F4AE20;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+
+/* Webpage */
+#webpage {
+    position: absolute;
+    width: 100%;
+    height: 703px;
+    top: 230px;
+    left: 0;
+    z-index: 2;
+
+    object-fit: cover;
+    background: url(https://i.gifer.com/SqL8.gif);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+/* Welcome! */
+#welcome_font {
+    position: absolute;
+    width: 649px;
+    height: 111px;
+    left: 32%;
+    z-index: 2;
+
+    font-family: 'Inconsolata', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 150px;
+    line-height: 157px;
+    text-align: center;
+    color: #F4AE20;
+    text-shadow: 0 0 3px #000000;
+}
+
+
+#welcome_blurb {
+    position: absolute;
+    width: 649px;
+    height: 111px;
+    left: 32%;
+    top: 345px;
+    z-index: 2;
+
+    font-family: 'Inconsolata', serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    color: #F4AE20;
+    text-shadow: 0 0 2px #000000;
+}
+
+/* Foreground */
+#foreground {
+    /* Rectangle 1 */
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1056px;
+    left: 50px;
+    top: 50px;
+    background: #92BBE1;
+}
+
+/* Black Rectangle */
+#title {
+    /* Rectangle 2 */
+    position: absolute;
+    z-index: 2;
+    height: 113px;
+    width: 100%;
+    background: #000000;
+}
+
+/* Rectangle Behind Text */
+#box {
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    width: 50%;
+    left: 23%;
+    background: #000000;
+    opacity: 60%;
+}
+
+/* Virtual Wardrobe */
+h1 {
+    position: absolute;
+    top: -60px;
+    left: 31%;
+    z-index: 3;
+    color: #F5F5F5;
+    font-family: "Irish Grover", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+}
+
+/* virtualw 1 */
+#logo {
+    position: absolute;
+    top:-23px;
+    left: -4.5%;
+    z-index: 3;
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
+}
+
+.login_button {
+    /* Login Rectangle */
+    position: absolute;
+    width: 312px;
+    height: 113px;
+    top: 115px;
+    left: 10%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+
+    background: #DB3EDE;
+}
+.login_button:hover {
+    opacity: 0.8;
+}
+
+.info_button {
+    /* Rectangle 4 */
+    position: absolute;
+    width: 312px;
+    height: 113px;
+    top: 115px;
+    left: 25%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+
+    background: #F58AF8;
+}
+.info_button:hover {
+    opacity: 0.8;
+}
+
+.upload_button {
+    /* Rectangle 5 */
+    position: absolute;
+    width: 312px;
+    height: 113px;
+    top: 115px;
+    left: 40%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+    background: #CE94CF;
+}
+.upload_button:hover {
+    opacity: 0.8;
+}
+
+.view_button {
+    /* Rectangle 6 */
+    position: absolute;
+    width: 312px;
+    height: 113px;
+    top: 115px;
+    left: 55%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+    background: #FCAD38;
+}
+.view_button:hover {
+    opacity: 0.8;
+}
+
+.aq_button {
+    /* Rectangle 6 */
+    position: absolute;
+    width: 312px;
+    height: 113px;
+    top: 115px;
+    left: 70%;
+    z-index: 2;
+
+    display: inline-block;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+
+    cursor: pointer;
+    background: #F4CC90;
+}
+.aq_button:hover {
+    opacity: 0.8;
+}
+
+.sign_now_button {
+    position: absolute;
+    width: 399px;
+    height: 105px;
+    top: 480px;
+    left: 38%;
+    z-index: 2;
+
+    font-family: 'Inconsolata', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 40px;
+    text-align: center;
+    margin: 4px 2px;
+    color: #ffffff;
+    text-shadow: 0 0 2px #000000;
+    background: #C0091E;
+}
+.sign_now_button:hover {
+    opacity: 0.8;
+}
+

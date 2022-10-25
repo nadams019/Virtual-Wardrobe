@@ -1,0 +1,170 @@
+/* New to virtual wardrobe? Sign up here section */
+
+
+sign_up-section_text {
+  position: absolute;
+  width: 800px;
+  height: 84px;
+  left: 554px;
+  top: 235px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  
+  color: #000000;
+ }
+
+
+/* Username: */
+
+
+username_text {
+  position: absolute;
+  width: 216px;
+  height: 48px;
+  left: 726px;
+  top: 456px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+}
+
+* Password: */
+
+
+password { 
+  position: absolute;
+  width: 216px;
+  height: 48px;
+  left: 643px;
+  top: 618px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+ }
+
+/* Rectangle 3 */
+
+
+rectangle_3{
+box-sizing: border-box;
+
+  position: absolute;
+  width: 474px;
+  height: 119px;
+  left: 717px;
+  top: 421px;
+
+  background: #F5F5F5;
+  border: 1px solid #000000;
+}
+/* Rectangle 4 */
+
+rectangle_4 {
+box-sizing: border-box;
+
+  position: absolute;
+  width: 474px;
+  height: 119px;
+  left: 717px;
+  top: 630px;
+
+  background: #F5F5F5;
+  border: 1px solid #000000;
+}
+
+/* Login */
+login_text {
+  position: absolute;
+  width: 102px;
+  height: 48px;
+  left: 913px;
+  top: 877px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+ }
+ 
+/* Rectangle 5 */
+rectangle_5 { 
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 307px;
+  height: 100px;
+  left: 813px;
+  top: 851px;
+
+  background: #C0091E;
+  border: 1px solid #000000;
+}
+
+/* virtualw 1 */
+vw_logo { 
+  position: absolute;
+  width: 281px;
+  height: 158px;
+
+  background: url(virtualw.png);
+}
+
+info_background{
+  position: absolute;
+  width: 1908px;
+  height: 1056px;
+  background: #92BBE1;
+
+}
+
+/* Group 4 */
+login_button {
+  position: absolute;
+  width: 399.06px;
+  height: 104.52px;
+}
+
+whole_background_relative {
+  position: relative;
+  width: 1908px;
+  height: 1056px;
+}
+
+
+
+whole_background_absolute{
+  position: absolute;
+  width: 1601px;
+  height: 692px;
+  left: 168px;
+  top: 272px;
+}
+
+
+
+background: url(images.jpg);
+
+
+
+
