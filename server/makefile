@@ -1,7 +1,20 @@
-DOCFILES = $(shell ls *.py | sed 's/.py/.html/')
+LINTER = flake8
+PYTESTFLAGS = -vv --verbose --tb=short
 
-docs: $(DOCFILES)
 
-%.html: %.py
-	pydoc3 -w ./$<
-	git add $@
+FORCE:
+
+tests: lint unit
+
+unit: FORCE
+	pytest $(PYTESTFLAGS)
+
+lint: FORCE
+	$(LINTER) *.py
+
+# test a python file:
+%.py: FORCE
+	pytest -s tests/test_$*.py
+
+docs: FORCE
+	pydoc3 -w ./*py
