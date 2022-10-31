@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  DEMO_HOME: /home/runner/work/virtual-wardrobe/demo-stuff/
-  PYTHONPATH: /home/runner/work/virtual-wardrobe/demo-stuff/
+  DEMO_HOME: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
+  PYTHONPATH: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
     # MONGO_PASSWD: ${{secrets.MONGO_PASSWD}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
