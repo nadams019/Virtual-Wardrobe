@@ -32,6 +32,9 @@ jobs:
 
       - name: Install Python packages.
         run: pip install -r demo-stuff/requirements-dev.txt
+      
+      - name: Navigating into db directory.
+        run: cd db
 
       - name: Run Python tests.
         run: make prod/all_tests
