@@ -1,6 +1,8 @@
 
 
+
 DOCFILES = $(shell ls *.py | sed 's/.py/.html/')
+
 
 docs: $(DOCFILES)
 
