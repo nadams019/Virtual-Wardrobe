@@ -13,8 +13,8 @@ github: FORCE
 	git push origin master
 
 all_tests: lint unit
-	cd $(DB_DIR); 
-	cd $(API_DIR);
+	cd $(DB_DIR); make tests
+	cd $(API_DIR); make tests
 
 unit: FORCE
 	cd $(API_DIR); pytest $(PYTESTFLAGS)
@@ -28,4 +28,4 @@ dev_env: FORCE
 
 docs: FORCE
 	cd $(API_DIR); make docs
-	cd $(DB_DIR);
+	cd $(DB_DIR); make docs
