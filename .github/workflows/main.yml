@@ -32,9 +32,14 @@ jobs:
 
       - name: Install Python packages.
         run: pip install -r demo-stuff/requirements-dev.txt
+      
+      - name: Lint with flake8
+        run: pip install flake8
+            flake8 .
+        continue-on-error: true
 
       - name: Run Python tests.
-        run: make demo-stuff/all_tests
+        run: make all_tests
 
       # Deploy to Heroku
       #  - uses: akhileshns/heroku-deploy@v3.12.12
