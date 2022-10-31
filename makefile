@@ -14,7 +14,6 @@ github: FORCE
 
 all_tests: lint unit
 
-
 unit: FORCE
 	cd $(API_DIR); pytest $(PYTESTFLAGS)
 
