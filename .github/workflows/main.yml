@@ -1,6 +1,6 @@
 # This is a workflow to test and deploy our demo app.
 
-name: Demo CI/CD
+name: Virtual Wardrobe
 
 # Controls when the workflow will run
 on:
@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  DEMO_HOME: /home/runner/work/virtual-wardrobe/demo-stuff/
-  PYTHONPATH: /home/runner/work/virtual-wardrobe/demo-stuff/
+  DEMO_HOME: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
+  PYTHONPATH: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
     # MONGO_PASSWD: ${{secrets.MONGO_PASSWD}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -31,14 +31,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Python packages.
-        run: pip install -r demo-stuff/requirements-dev.txt
+        run: pip install -r requirements-dev.txt
 
       - name: Run Python tests.
         run: make all_tests
-
+        
       # Deploy to Heroku
       #  - uses: akhileshns/heroku-deploy@v3.12.12
       #    with:
       #        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #        heroku_app_name: "demo-repo3"
+      #        heroku_app_name: "Food Your Way"
       #        heroku_email: "ejc369@nyu.edu"
