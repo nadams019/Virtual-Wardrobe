@@ -25,6 +25,8 @@ body {
     height: 113px;
     width: 100%;
     background: #000000;
+    background-color: black;
+    text-align: center;
 }
 
 /* Virtual Wardrobe Header */
@@ -102,289 +104,141 @@ h1{
 #page_background {
     position: absolute;
     z-index: 1;
-    width: 1834px;
+    width: 3000px;
     height: 772px;
-    top: 23%;
+    top: 255px;
     left: 100px;
 
     background: url(background-14820_1280.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
-
-/* Clothing Item Type: */
-#item_type {
-    position: absolute;
-    width: 601px;
-    height: 103px;
-
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 54px;
+/* clothing item type */
+.dropdown .itemTypeButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
-
-    color: #000000;
-}
-
-
-/* Season: */
-#season {
+    text-decoration: none;
     position: absolute;
-    width: 601px;
-    height: 111px;
-
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 54px;
-    text-align: center;
-
-    color: #000000;
-}
-
-
-/* Occasion: */
-#occasion {
-    position: absolute;
-    width: 601px;
-    height: 111px;
-
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 54px;
-    text-align: center;
-
-    color: #000000;
-}
-
-
-/* Aesthetic: */
-#aesthetic 
-    position: absolute;
-    width: 601px;
-    height: 111px;
-
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 54px;
-    text-align: center;
-
-    color: #000000;
-}
-
-
-/* Please select... */
-#please_select1 {
-
-    position: absolute;
-    width: 285px;
-    height: 56px;
-
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 56px;
-    text-align: center;
-
-    color: #5A5A5A;
-
-    mix-blend-mode: multiply;
-}
-
-/* Please select... */
-#please_select2 {
-    position: absolute;
-    width: 285px;
-    height: 56px;
-
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 56px;
-    text-align: center;
-
-    color: #5A5A5A;
-
-    mix-blend-mode: multiply;
-}
-
-/* Please select... */
-#please_select3 {
-    position: absolute;
-    width: 285px;
-    height: 56px;
-
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 56px;
-    text-align: center;
-
-    color: #5A5A5A;
-
-    mix-blend-mode: multiply;
-}
-
-/* Please select... */
-#please_select4 {
-    position: absolute;
-    width: 285px;
-    height: 56px;
-
-    font-family: 'Encode Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 45px;
-    line-height: 56px;
-    text-align: center;
-
-    color: #5A5A5A;
-
-    mix-blend-mode: multiply;
-}
-
-/* Rectangle 3 */
-#selectbox1 {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 386px;
-    height: 76px;
-
-    background: #BEB9BE;
-    mix-blend-mode: darken;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Rectangle 8 */
-#selectbox4 {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 386px;
-    height: 76px;
-
-    background: #BEB9BE;
-    mix-blend-mode: darken;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Rectangle 7 */
-#selectbox3 {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 386px;
-    height: 76px;
-
-    background: #BEB9BE;
-    mix-blend-mode: darken;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Rectangle 6 */
-#selectbox2 {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 386px;
-    height: 76px;
-
-    background: #BEB9BE;
-    mix-blend-mode: darken;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-/* Polygon 1 */
-#dropdown_logo1 {
-    position: absolute;
-    width: 32.94px;
-    height: 26.24px;
-
-    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-    transform: rotate(-179.71deg);
-}
-
-/* Polygon 2 */
-#dropdown_logo2 {
-    position: absolute;
-    width: 32.94px;
-    height: 26.24px;
-
-    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-    transform: rotate(-179.71deg);
-}
-
-/* Polygon 3 */
-#dropdown_logo3 {
-    position: absolute;
-    width: 32.94px;
-    height: 26.24px;
-
-    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-    transform: rotate(-179.71deg);
-}
-
-/* Polygon 4 */
-#dropdown_logo4 {
-    position: absolute;
-    width: 32.94px;
-    height: 26.24px;
-
-    background: linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), linear-gradient(0deg, #5A5A5A, #5A5A5A), #5A5A5A;
-    transform: rotate(-179.71deg);
-}
-
-/* Rectangle 12 */
-
-
-position: absolute;
-width: 428px;
-height: 154px;
-
-background: #F58AF8;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 40px;
-
-
-/* Upload! */
-#upload_square {
-    position: absolute;
-    width: 428px;
-    height: 154px;
-    background: #F58AF8;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 40px;
-}
-
-.upload_button {
-    position: absolute;
-    width: 428px;
-    height: 154px;
-    
+    width: 400px;
+    height: 113px;
+    top: 250px;
+    left: 10%;
+    z-index: 2;
     display: inline-block;
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 85px;
-    line-height: 103px;
-
-    color: #000000;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
+.dropdown .dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .itemTypeButton {
+    display:block
+}
+/* Season */
+.SeasonButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 250px;
+    left: 30%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* Occasion */
+.occasionButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 250px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/* Aesthetic */
+.aestheticButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 250px;
+    left: 70%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+/*upload button*/
+.uploadButton {
+    background-color:#F58AF8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    top: 825px;
+    right: 40%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 65px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.upload_button {border-radius:25px;}
