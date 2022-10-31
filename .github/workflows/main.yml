@@ -34,7 +34,7 @@ jobs:
         run: pip install -r demo-stuff/requirements-dev.txt
       
       - name: Navigating into db directory.
-        run: cd db
+        run: cd demo-stuff
 
       - name: Run Python tests.
         run: make all_tests
