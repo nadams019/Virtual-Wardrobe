@@ -37,7 +37,7 @@ jobs:
         run: cd db
 
       - name: Run Python tests.
-        run: make prod/all_tests
+        run: make all_tests
 
       # Deploy to Heroku
       #  - uses: akhileshns/heroku-deploy@v3.12.12
