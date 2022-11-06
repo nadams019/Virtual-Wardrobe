@@ -36,3 +36,4 @@ def test_add_user():
     usr.add_user(usr.TEST_USER_NAME, password)
     assert usr.user_exists(usr.TEST_USER_NAME)
     usr.del_user(usr.TEST_USER_NAME)
+
