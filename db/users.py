@@ -24,7 +24,6 @@ def user_exists(username):
 def get_users():
     return list(users.keys())
 
-
 def get_user_details(user):
     return users.get(user, None)
 
@@ -49,6 +48,3 @@ def main():
     print(f'{users}')
     print(f'{get_user_details(TEST_USER_NAME)}')
 
-
-if __name__ == '__main__':
-    main()
