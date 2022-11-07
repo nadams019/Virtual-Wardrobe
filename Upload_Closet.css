@@ -162,7 +162,7 @@ h1{
     display:block
 }
 /* Season */
-.SeasonButton {
+.dropdownb .SeasonButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -181,8 +181,35 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
+.dropdownb .dropdown-contentb {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentb b {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentb b:hover {background-color: #f1f1f1}
+.dropdownb:hover .dropdown-contentb {
+    display: block;
+}
+.dropdownb:hover .SeasonButton {
+    display:block
+}
 /* Occasion */
-.occasionButton {
+.dropdownc .occasionButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -201,8 +228,35 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
+.dropdownc .dropdown-contentc {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentc c {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentc c:hover {background-color: #f1f1f1}
+.dropdownb:hover .dropdown-contentc {
+    display: block;
+}
+.dropdownb:hover .occasionButton {
+    display:block
+}
 /* Aesthetic */
-.aestheticButton {
+.dropdownd .aestheticButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -221,6 +275,34 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
+.dropdownd .dropdown-contentd {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentd d {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentd d:hover {background-color: #f1f1f1}
+.dropdownd:hover .dropdown-contentd {
+    display: block;
+}
+.dropdownd:hover .occasionButton {
+    display:block
+}
+
 /*upload button*/
 .uploadButton {
     background-color:#F58AF8;
