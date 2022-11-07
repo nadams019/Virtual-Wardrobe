@@ -1,20 +1,20 @@
 # This is a workflow to test and deploy our demo app.
 
-name: Demo CI/CD
+name: Virtual Wardrobe
 
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 env:
-  DEMO_HOME: /home/runner/work/demo-repo3/demo-repo3/
-  PYTHONPATH: /home/runner/work/demo-repo3/demo-repo3/
+  DEMO_HOME: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
+  PYTHONPATH: /home/runner/work/Virtual-Wardrobe/Virtual-Wardrobe/
     # MONGO_PASSWD: ${{secrets.MONGO_PASSWD}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -40,5 +40,5 @@ jobs:
       #  - uses: akhileshns/heroku-deploy@v3.12.12
       #    with:
       #        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #        heroku_app_name: "demo-repo3"
+      #        heroku_app_name: "Food Your Way"
       #        heroku_email: "ejc369@nyu.edu"
