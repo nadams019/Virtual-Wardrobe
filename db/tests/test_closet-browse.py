@@ -1,13 +1,14 @@
-import unittest
 import pytest
 
-import db.closet_browse as brwsr
+import db.closet_browse as browse
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+def test_get_clothes():
+    result = browse.get_clothes()
+    assert isinstance(result, list)
+    assert len(result) > 1
 
 
-if __name__ == '__main__':
-    unittest.main()
+def test_get_clothing_details():
+    cloth_deets = browse.get_clothing_details(browse.TEST_CATEGORY_NAME)
+    assert isinstance(cloth_deets, dict)
