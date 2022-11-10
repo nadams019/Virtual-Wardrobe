@@ -16,8 +16,10 @@ BROWSE = 'browse'
 # our mandatory fields.
 
 REQUIRED_FLDS = [CATEGORY]
-closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'Prom', AESTHETIC: 'Classic', RANDOM: 'No'},
-            'handle': {SEASON: 'summer', OCCASION: 'School', AESTHETIC: 'Emo', RANDOM: 'Yes'}}
+closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'Prom',
+                               AESTHETIC: 'Classic', RANDOM: 'No'},
+          'handle': {SEASON: 'summer', OCCASION: 'School',
+                     AESTHETIC: 'Emo', RANDOM: 'Yes'}}
 
 
 def category_select(category):
