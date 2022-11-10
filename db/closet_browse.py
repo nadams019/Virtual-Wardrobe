@@ -17,7 +17,7 @@ BROWSE = 'browse'
 
 REQUIRED_FLDS = [CATEGORY]
 closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'Prom', AESTHETIC: 'Classic', RANDOM: 'No'},
-            'handle': {SEASON: 'summer', OCCASION: 'School', AESTHETIC: 'Emo', RANDOM: 'Yes'}}
+          'handle': {SEASON: 'summer', OCCASION: 'School', AESTHETIC: 'Emo', RANDOM: 'Yes'}}
 
 
 def category_select(category):
