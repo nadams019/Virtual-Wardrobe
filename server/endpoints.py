@@ -11,6 +11,7 @@ import werkzeug.exceptions as wz
 import db.char_types as ctyp
 import db.games as gm
 import db.users as usr
+import db.closet_browse as brwse
 
 app = Flask(__name__)
 api = Api(app)
@@ -18,6 +19,7 @@ api = Api(app)
 CHAR_TYPES_NS = 'character_types'
 GAMES_NS = 'games'
 USERS_NS = 'users'
+CLOSETBROWSE_NS = 'closet_broswe'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -25,6 +27,8 @@ games = Namespace(GAMES_NS, 'Games')
 api.add_namespace(games)
 users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
+closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
+api.add_namespace(closet_browse)
 
 LIST = 'list'
 DICT = 'dict'
@@ -55,6 +59,14 @@ USER_LIST_W_NS = f'{USERS_NS}/{LIST}'
 USER_LIST_NM = f'{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
+CLOSETBROWSE_DICT = f'/{DICT}'
+CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
+CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
+CLOSETBROWSE_LIST = f'/{LIST}'
+CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
+CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
+CLOSETBROWSE_DETAILS = f'/{CLOSETBROWSE_NS}/{DETAILS}'
+CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
 
 
 @api.route(HELLO)
@@ -88,6 +100,8 @@ class MainMenu(Resource):
                     '2': {'url': f'/{GAME_DICT_W_NS}',
                           'method': 'get', 'text': 'List Active Games'},
                     '3': {'url': f'/{USER_DICT_W_NS}',
+                          'method': 'get', 'text': 'List Users'},
+                    '4': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
                     'X': {'text': 'Exit'},
                 }}
