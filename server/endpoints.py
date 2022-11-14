@@ -182,7 +182,6 @@ class CharacterTypeDetails(Resource):
             raise wz.NotFound(f'{char_type} not found.')
 
 
-
 @games.route(f'{GAME_DETAILS}/<game>')
 class GameDetails(Resource):
     """
@@ -335,6 +334,7 @@ class AddClothing(Resource):
         item = request.json[brwse.CLOTHING]
         del request.json[brwse.CLOTHING]
         brwse.add_clothing(item, request.json)
+
 
 @api.route('/endpoints')
 class Endpoints(Resource):

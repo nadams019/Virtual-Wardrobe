@@ -3,7 +3,7 @@ This module encapsulates details about users.
 """
 
 TEST_USER_NAME = 'Test user'
-NAME = 'name'
+USERNAME = 'name'
 EMAIL = 'email'
 FULL_NAME = 'full_name'
 
