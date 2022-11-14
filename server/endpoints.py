@@ -121,18 +121,18 @@ class MainMenu(Resource):
                    'X': {'text': 'Exit'},
                 }}
 
-@quiz.route(USER_AESTHETIC)
-class UserAesthetic(Resource):
-    """
-    Gets a list of possible aesthetics.
-    """
-    def get(self):
-        """
-        Returns list of possible aesthetics.
-        """
-        return {'Title': 'UserAesthetic',
-                'Type': 'Data',
-                'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
+#@quiz.route(USER_AESTHETIC)
+#class UserAesthetic(Resource):
+   # """
+   # Gets a list of possible aesthetics.
+    #"""
+    #def get(self):
+      #  """
+       # Returns list of possible aesthetics.
+       # """
+        #return {'Title': 'UserAesthetic',
+           #     'Type': 'Data',
+           #     'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
 
 
 @char_types.route(CHAR_TYPE_LIST)
