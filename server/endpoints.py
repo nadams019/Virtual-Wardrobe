@@ -157,20 +157,6 @@ class CharacterTypeDetails(Resource):
             raise wz.NotFound(f'{char_type} not found.')
 
 
-@games.route(GAME_DICT)
-class GameList(Resource):
-    """
-    This will get a list of currrent games.
-    """
-
-    def get(self):
-        """
-        Returns a list of current games.
-        """
-        return {'Data': gm.get_games_dict(),
-                'Type': 'Data',
-                'Title': 'Active Games'}
-
 
 @games.route(f'{GAME_DETAILS}/<game>')
 class GameDetails(Resource):
@@ -244,7 +230,7 @@ class UserList(Resource):
         return {USER_LIST_NM: usr.get_users()}
 
 
-user_fields = api.model('NewUser', {
+user_fields = api.model('Username', {
     usr.USERNAME: fields.String,
     usr.PASSWORD: fields.String
 })
