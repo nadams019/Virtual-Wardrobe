@@ -36,9 +36,11 @@ def test_add_missing_field():
 
 
 def test_add_user():
-    details = {}
-    for field in usr.REQUIRED_FLDS:
-        details[field] = 2
-    usr.add_user(usr.TEST_USER_NAME, details)
+    password = {}
+    for username in usr.REQUIRED_FLDS:
+        password[username] = 2
+    usr.add_user(usr.TEST_USER_NAME, password)
     assert usr.user_exists(usr.TEST_USER_NAME)
+
     usr.del_user(usr.TEST_USER_NAME)
+

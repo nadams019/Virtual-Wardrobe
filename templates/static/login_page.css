@@ -1,0 +1,195 @@
+/* New to virtual wardrobe? Sign up here section */
+
+body{
+  background: #F4AE20;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+
+#webpage{
+  position: absolute;
+  width: 1405px;
+  height: 676px;
+  left: 261px;
+  top: 328px;
+
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://img.freepik.com/premium-vector/retro-wavy-burst-blue-winter-vintage-background_92086-102.jpg?w=2000);
+}
+
+/* Virtual Wardrobe */
+h1{
+  position: absolute;
+  top: -60px;
+  left: 31%;
+  z-index: 3;
+  color: #F5F5F5;
+
+  font-family: "Irish Grover", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 121px;
+  text-align: center;
+}
+
+#vw_font {
+    position: absolute;
+    width: 807px;
+    height: 80px;
+
+    font-family: 'Irish Grover', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+
+    color: #F5F5F5;
+}
+
+
+/* virtualw 1 */
+#logo {
+  position: absolute;
+  top:-23px;
+  left: -4.5%;
+  z-index: 3;
+  width: 1280px;
+  height: 720px;
+  object-fit: cover;
+}
+
+.login_button{
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 307px;
+  height: 100px;
+  left: 813px;
+  top: 851px;
+
+  display: inline-block;
+  font-family: Irish Grover, serif;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0;
+  text-align: center;
+  color: #000000;
+
+  background: #C0091E;
+  border: 1px solid #000000;
+}
+
+.login_button:hover {
+  opacity: 0.8;
+}
+
+/* Login title heading */
+#login_title_font {
+  position: absolute;
+  width: 615px;
+  height: 127px;
+  top: 140px;
+  left: 34%;
+
+  font-family: 'Irish Grover', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 85px;
+  line-height: 103px;
+  text-align: center;
+
+  color: #000000;
+}
+
+#login_sub_heading{
+  position: absolute;
+  width: 800px;
+  height: 84px;
+  left: 554px;
+  top: 235px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+}
+
+/* Username */
+#username_box{
+  box-sizing: border-box;
+  position: absolute;
+  width: 474px;
+  height: 119px;
+  left: 717px;
+  top: 421px;
+
+  background: #F5F5F5;
+  border: 1px solid #000000;
+
+}
+
+#username_font{
+  position: absolute;
+  width: 216px;
+  height: 48px;
+  left: 726px;
+  top: 456px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+}
+
+/*Password*/
+#password_font{
+  position: absolute;
+  width: 1080px;
+  height: 400px;
+  left: 726px;
+  top: 666px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+}
+
+#password_box{
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 1080px;
+  height: 400px;
+  left: 717px;
+  top: 630px;
+
+  background: #F5F5F5;
+  border: 1px solid #000000;
+}
+
+
+
+
+
+
+
