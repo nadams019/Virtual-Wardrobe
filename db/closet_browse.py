@@ -58,8 +58,10 @@ def add_clothing(item, details):
         raise TypeError(f'Wrong type for clothing details: {type(details)=}')
     for field in REQUIRED_FLDS:
         if field not in details:
-            raise ValueError(f'Required {field=} missing from clothing details.')
+            raise ValueError(f'Required {field=} missing from clothing '
+                             f'details.')
     closet[item] = details
+
 
 def main():
     print('Retrieving closet as a list:')
