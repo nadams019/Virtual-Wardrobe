@@ -104,7 +104,8 @@ class MainMenu(Resource):
                     '3': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
                     '4': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Clothes Available to Browse'},
+                          'method': 'get', 'text': 'List Clothes '
+                                                   'Available to Browse'},
                     'X': {'text': 'Exit'},
                 }}
 
