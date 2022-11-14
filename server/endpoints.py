@@ -4,7 +4,7 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 
-from flask import Flask, request, redirect
+from flask import Flask, request
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
@@ -319,9 +319,6 @@ closet_browse_fields = api.model('NewClothing', {
     brwse.AESTHETIC: fields.String,
     brwse.RANDOM: fields.String,
 })
-
-
-
 # @app.route(LOGIN_NS, methods=['GET, POST'])
 # def login():
 #     if request.method == 'POST':
@@ -329,14 +326,11 @@ closet_browse_fields = api.model('NewClothing', {
 #         password = request.form['password']
 #     elif request.method == "GET":
 #         return redirect('login.html')
-
-
 @api.route(CLOSETBROWSE_ADD)
 class AddClothing(Resource):
     """
     Add a clothing item.
     """
-
     @api.expect(closet_browse_fields)
     def post(self):
         """
