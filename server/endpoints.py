@@ -71,7 +71,6 @@ CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
 CLOSETBROWSE_DETAILS = f'/{CLOSETBROWSE_NS}/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
 
-
 AESTHETIC_QUIZ_NS = 'quiz'
 
 quiz = Namespace(AESTHETIC_QUIZ_NS, 'Quiz')
@@ -84,6 +83,7 @@ street_wear = 'street wear'
 preppy = 'preppy'
 soft_girl = 'soft girl'
 instagram_baddie = 'insta baddie'
+
 
 @api.route(HELLO)
 class HelloWorld(Resource):
@@ -105,34 +105,36 @@ class MainMenu(Resource):
     """
     This will deliver our main menu.
     """
+
     def get(self):
         """
         Gets the main game menu.
         """
         return {'Title': MAIN_MENU_NM,
-               'Default': 2,
-               'Choices': {
-                   '1': {'url': f'/{LOGIN_NS}',
-                         'method': 'post', 'text': 'Login'},
-                   '2': {'url': f'/{USER_DICT_W_NS}',
-                         'method': 'get', 'text': 'List Users'},
-                   '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
+                'Default': 2,
+                'Choices': {
+                    '1': {'url': f'/{LOGIN_NS}',
+                          'method': 'post', 'text': 'Login'},
+                    '2': {'url': f'/{USER_DICT_W_NS}',
+                          'method': 'get', 'text': 'List Users'},
+                    '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes Available to Browse'},
-                   'X': {'text': 'Exit'},
+                    'X': {'text': 'Exit'},
                 }}
 
-#@quiz.route(USER_AESTHETIC)
-#class UserAesthetic(Resource):
-   # """
-   # Gets a list of possible aesthetics.
-    #"""
-    #def get(self):
-      #  """
-       # Returns list of possible aesthetics.
-       # """
-        #return {'Title': 'UserAesthetic',
-           #     'Type': 'Data',
-           #     'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
+
+# @quiz.route(USER_AESTHETIC)
+# class UserAesthetic(Resource):
+# """
+# Gets a list of possible aesthetics.
+# """
+# def get(self):
+#  """
+# Returns list of possible aesthetics.
+# """
+# return {'Title': 'UserAesthetic',
+#     'Type': 'Data',
+#     'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
 
 
 @char_types.route(CHAR_TYPE_LIST)
@@ -282,6 +284,7 @@ class ClosetList(Resource):
     """
     This will get a list of currrent clothing items in the closet inventory.
     """
+
     def get(self):
         """
         Returns a list of current clothing items.
