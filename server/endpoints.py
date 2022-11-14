@@ -261,6 +261,7 @@ user_fields = api.model('Username', 'Password', {
     usr.USERNAME: fields.String,
     usr.PASSWORD: fields.String
 })
+
 @api.route(USER_ADD)
 class AddUser(Resource):
     """
@@ -298,6 +299,7 @@ class ClosetDetails(Resource):
     """
     This will get details on a clothing item.
     """
+
 
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
