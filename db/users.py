@@ -29,6 +29,10 @@ def get_users_dict():
     return users
 
 
+def get_user_details(user):
+    return users.get(user, None)
+
+
 def del_user(username):
     del users[username]
 
