@@ -9,6 +9,12 @@ def test_get_users():
     assert len(usrs) > 1
 
 
+def test_get_users_dict():
+    usrs = usr.get_users_dict()
+    assert isinstance(usrs, dict)
+    assert len(usrs) > 1
+
+
 def test_get_user_details():
     usr_dets = usr.get_user_details(usr.TEST_USER_NAME)
     assert isinstance(usr_dets, dict)
@@ -30,10 +36,9 @@ def test_add_missing_field():
 
 
 def test_add_user():
-    password = {}
-    for username in usr.REQUIRED_FLDS:
-        password[username] = 2
-    usr.add_user(usr.TEST_USER_NAME, password)
+    details = {}
+    for field in usr.REQUIRED_FLDS:
+        details[field] = 2
+    usr.add_user(usr.TEST_USER_NAME, details)
     assert usr.user_exists(usr.TEST_USER_NAME)
     usr.del_user(usr.TEST_USER_NAME)
-
