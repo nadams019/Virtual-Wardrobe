@@ -18,6 +18,7 @@ app = Flask(__name__)
 api = Api(app)
 
 CHAR_TYPES_NS = 'character_types'
+LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_broswe'
@@ -26,6 +27,8 @@ char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
 games = Namespace(GAMES_NS, 'Games')
 api.add_namespace(games)
+login = Namespace(LOGIN_NS, 'Login')
+api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
@@ -90,23 +93,20 @@ class MainMenu(Resource):
     """
     This will deliver our main menu.
     """
-
     def get(self):
-        """
-        Gets the main game menu.
-        """
-        return {'Title': MAIN_MENU_NM,
-                'Default': 2,
-                'Choices': {
-                    '1': {'url': f'/{CHAR_TYPE_DICT_W_NS}', 'method': 'get',
-                          'text': 'List Character Types'},
-                    '2': {'url': f'/{GAME_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Active Games'},
-                    '3': {'url': f'/{USER_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Users'},
-                    '4': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Users'},
-                    'X': {'text': 'Exit'},
+       """
+       Gets the main game menu.
+       """
+       return {'Title': MAIN_MENU_NM,
+               'Default': 2,
+               'Choices': {
+                   '1': {'url': f'/{LOGIN_NS}',
+                         'method': 'post', 'text': 'Login'},
+                   '2': {'url': f'/{USER_DICT_W_NS}',
+                         'method': 'get', 'text': 'List Users'},
+                   '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
+                         'method': 'get', 'text': 'List Users'},
+                   'X': {'text': 'Exit'},
                 }}
 
 
