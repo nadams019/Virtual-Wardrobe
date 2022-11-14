@@ -10,6 +10,7 @@ import werkzeug.exceptions as wz
 
 import db.char_types as ctyp
 import db.quiz as qz
+import db.games as gm
 import db.users as usr
 
 # import db.closet_browse as brwse
