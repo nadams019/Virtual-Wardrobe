@@ -5,9 +5,11 @@ def test_valid_response():
     with pytest.raises(TypeError):
         q.add_answer("-", {})
 
+
 def test_add_missing_field():
     with pytest.raises(ValueError):
         q.add_field('a new response', {'foo': 'bar'})
+
 
 def test_add_question():
     details = {}
