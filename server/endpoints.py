@@ -11,8 +11,7 @@ import werkzeug.exceptions as wz
 import db.char_types as ctyp
 import db.games as gm
 import db.users as usr
-
-# import db.closet_browse as brwse
+import db.closet_browse as brwse
 
 app = Flask(__name__)
 api = Api(app)
@@ -267,6 +266,64 @@ class AddUser(Resource):
         del request.json[usr.NAME]
         usr.add_user(name, request.json)
 
+
+@closet_browse.route(CLOSETBROWSE_DICT)
+class ClosetList(Resource):
+    """
+    This will get a list of currrent clothing items in the closet inventory.
+    """
+    def get(self):
+        """
+        Returns a list of current clothing items.
+        """
+        return {'Data': brwse.get_clothing_dict(),
+                'Type': 'Data',
+                'Title': 'Available Clothes'}
+
+
+@closet_browse.route(f'{CLOSETBROWSE_DETAILS/<item>')
+class ClosetDetails(Resource):
+    """
+    This will get details on a clothing item.
+    """
+
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    def get(self, clothing):
+        """
+        Returns a list of clothing category types.
+        """
+        cb = brwse.get_clothing_details(clothing)
+        if cb is not None:
+            return {clothing: brwse.get_clothing_details(clothing)}
+        else:
+            raise wz.NotFound(f'{clothing} not found.')
+
+
+closet_browse_fields = api.model('NewClothing', {
+    brwse.CATEGORY: fields.String,
+    brwse.SEASON: fields.String,
+    brwse.OCCASION: fields.String,
+    brwse.AESTHETIC: fields.String,
+    brwse.RANDOM: fields.String,
+})
+
+
+@api.route(CLOSETBROWSE_ADD)
+class AddClothing(Resource):
+    """
+    Add a clothing item.
+    """
+
+    @api.expect(closet_browse_fields)
+    def post(self):
+        """
+        Add a clothing item to closet.
+        """
+        print(f'{request.json=}')
+        item = request.json[brwse.CLOTHING]
+        del request.json[brwse.CLOTHING]
+        brwse.add_clothing(item, request.json)
 
 @api.route('/endpoints')
 class Endpoints(Resource):
