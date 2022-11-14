@@ -104,7 +104,7 @@ class MainMenu(Resource):
                    '2': {'url': f'/{USER_DICT_W_NS}',
                          'method': 'get', 'text': 'List Users'},
                    '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
-                         'method': 'get', 'text': 'List Users'},
+                          'method': 'get', 'text': 'List Clothes Available to Browse'},
                    'X': {'text': 'Exit'},
                 }}
 
@@ -266,7 +266,7 @@ class ClosetList(Resource):
                 'Title': 'Available Clothes'}
 
 
-@closet_browse.route(f'{CLOSETBROWSE_DETAILS/<item>')
+@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<item>')
 class ClosetDetails(Resource):
     """
     This will get details on a clothing item.
