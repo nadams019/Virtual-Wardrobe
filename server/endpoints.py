@@ -104,7 +104,7 @@ class MainMenu(Resource):
                     '3': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
                     '4': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Users'},
+                          'method': 'get', 'text': 'List Clothes Available to Browse'},
                     'X': {'text': 'Exit'},
                 }}
 
@@ -268,7 +268,7 @@ class AddUser(Resource):
 
 
 @closet_browse.route(CLOSETBROWSE_DICT)
-class ClosetList(Resource):
+class ClosetBrowseList(Resource):
     """
     This will get a list of currrent clothing items in the closet inventory.
     """
@@ -281,23 +281,23 @@ class ClosetList(Resource):
                 'Title': 'Available Clothes'}
 
 
-@closet_browse.route(f'{CLOSETBROWSE_DETAILS/<item>')
-class ClosetDetails(Resource):
+@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<item>')
+class ClosetBrowseDetails(Resource):
     """
     This will get details on a clothing item.
     """
 
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, clothing):
+    def get(self, item):
         """
         Returns a list of clothing category types.
         """
-        cb = brwse.get_clothing_details(clothing)
+        cb = brwse.get_clothing_details(item)
         if cb is not None:
-            return {clothing: brwse.get_clothing_details(clothing)}
+            return {item: brwse.get_clothing_details(item)}
         else:
-            raise wz.NotFound(f'{clothing} not found.')
+            raise wz.NotFound(f'{item} not found.')
 
 
 closet_browse_fields = api.model('NewClothing', {
@@ -324,6 +324,7 @@ class AddClothing(Resource):
         item = request.json[brwse.CLOTHING]
         del request.json[brwse.CLOTHING]
         brwse.add_clothing(item, request.json)
+
 
 @api.route('/endpoints')
 class Endpoints(Resource):
