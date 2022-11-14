@@ -4,15 +4,16 @@ This module encapsulates details about users.
 
 TEST_USER_NAME = 'Test user'
 USERNAME = 'name'
+PASSWORD = 'password'
 EMAIL = 'email'
 FULL_NAME = 'full_name'
 
 # We expect the user database to change frequently:
 # For now, we will consider EMAIL to be
 # our mandatory fields.
-REQUIRED_FLDS = [EMAIL]
-users = {TEST_USER_NAME: {EMAIL: 'x@y.com', FULL_NAME: 'Porgy Tirebiter'},
-         'handle': {EMAIL: 'z@y.com', FULL_NAME: 'Nick Danger'}}
+REQUIRED_FLDS = [EMAIL, FULL_NAME, USERNAME, PASSWORD]
+users = {TEST_USER_NAME: {EMAIL: 'x@y.com', FULL_NAME: 'Porgy Tirebiter', USERNAME: 'portir99', PASSWORD: 'abcd123'},
+         'handle': {EMAIL: 'z@y.com', FULL_NAME: 'Nick Danger', USERNAME: 'dangernick47', PASSWORD: 'nEed4Sp33D?.'}}
 
 
 def user_exists(name):
