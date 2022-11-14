@@ -52,4 +52,3 @@ def main():
     users = get_users()
     print(f'{users}')
     print(f'{get_user_details(TEST_USER_NAME)}')
-
