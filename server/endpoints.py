@@ -94,10 +94,10 @@ class MainMenu(Resource):
     This will deliver our main menu.
     """
     def get(self):
-       """
-       Gets the main game menu.
-       """
-       return {'Title': MAIN_MENU_NM,
+        """
+        Gets the main game menu.
+        """
+        return {'Title': MAIN_MENU_NM,
                'Default': 2,
                'Choices': {
                    '1': {'url': f'/{LOGIN_NS}',
