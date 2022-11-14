@@ -9,7 +9,7 @@ from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
 import db.char_types as ctyp
-import db.games as gm
+import db.quiz as qz
 import db.users as usr
 
 # import db.closet_browse as brwse
@@ -156,21 +156,7 @@ class CharacterTypeDetails(Resource):
         else:
             raise wz.NotFound(f'{char_type} not found.')
 
-
-@games.route(GAME_DICT)
-class GameList(Resource):
-    """
-    This will get a list of currrent games.
-    """
-
-    def get(self):
-        """
-        Returns a list of current games.
-        """
-        return {'Data': gm.get_games_dict(),
-                'Type': 'Data',
-                'Title': 'Active Games'}
-
+####****
 
 @games.route(f'{GAME_DETAILS}/<game>')
 class GameDetails(Resource):
@@ -191,13 +177,10 @@ class GameDetails(Resource):
             raise wz.NotFound(f'{game} not found.')
 
 
-game_fields = api.model('NewGame', {
-    gm.NAME: fields.String,
-    gm.NUM_PLAYERS: fields.Integer,
-    gm.LEVEL: fields.Integer,
-    gm.VIOLENCE: fields.Integer,
+Aesthetic_quiz_fields = api.model('Start Quiz', {
+    qz.NAME: fields.String,
+    
 })
-
 
 @api.route(GAME_ADD)
 class AddGame(Resource):
