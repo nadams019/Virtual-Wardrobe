@@ -16,7 +16,7 @@ The user can organize their items into categories based on clothing types (pants
 
 
 
-# Toolsets/ Libraries
+# Toolsets/ Libraries:
 
 # Frameworks
 - Flask
@@ -28,11 +28,11 @@ The user can organize their items into categories based on clothing types (pants
 - CSS
 - Javascript
 
-# Figma Link
+# Figma Link:
 https://www.figma.com/file/Vys3dUUgUDF6Wc9MeaMTHH/Virtual-Wardrobe?node-id=0%3A1
 
 =======
-# demo-repo3
+# demo-repo3:
 An example flask rest API server, for SE Fall 2022.
 
 To build production, type `make prod`.
