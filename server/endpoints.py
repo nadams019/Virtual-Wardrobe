@@ -18,6 +18,7 @@ app = Flask(__name__)
 api = Api(app)
 
 CHAR_TYPES_NS = 'character_types'
+LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_broswe'
@@ -26,6 +27,8 @@ char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
 games = Namespace(GAMES_NS, 'Games')
 api.add_namespace(games)
+login = Namespace(LOGIN_NS, 'Login')
+api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
@@ -98,122 +101,18 @@ class MainMenu(Resource):
         return {'Title': MAIN_MENU_NM,
                 'Default': 2,
                 'Choices': {
-                    '1': {'url': f'/{CHAR_TYPE_DICT_W_NS}', 'method': 'get',
-                          'text': 'List Character Types'},
-                    '2': {'url': f'/{GAME_DICT_W_NS}',
-                          'method': 'get', 'text': 'List Active Games'},
-                    '3': {'url': f'/{USER_DICT_W_NS}',
+                    '1': {'url': f'/{LOGIN_NS}',
+                          'method': 'post', 'text': 'Login'},
+                    '2': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
-                    '4': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
+                    '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
                     'X': {'text': 'Exit'},
                 }}
 
 
-@char_types.route(CHAR_TYPE_LIST)
-class CharacterTypeList(Resource):
-    """
-    This will get a list of character types.
-    """
-
-    def get(self):
-        """
-        Returns a list of character types.
-        """
-        return {CHAR_TYPE_LIST_NM: ctyp.get_char_types()}
 
 
-@char_types.route(CHAR_TYPE_DICT)
-class CharacterTypeDict(Resource):
-    """
-    This will get a list of character types.
-    """
-
-    def get(self):
-        """
-        Returns a list of character types.
-        """
-        return {'Data': ctyp.get_char_type_dict(),
-                'Type': 'Data',
-                'Title': 'Character Types'}
-
-
-@char_types.route(f'{CHAR_TYPE_DETAILS}/<char_type>')
-class CharacterTypeDetails(Resource):
-    """
-    This will return details on a character type.
-    """
-
-    @api.response(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, char_type):
-        """
-        This will return details on a character type.
-        """
-        ct = ctyp.get_char_type_details(char_type)
-        if ct is not None:
-            return {char_type: ctyp.get_char_type_details(char_type)}
-        else:
-            raise wz.NotFound(f'{char_type} not found.')
-
-
-@games.route(GAME_DICT)
-class GameList(Resource):
-    """
-    This will get a list of currrent games.
-    """
-
-    def get(self):
-        """
-        Returns a list of current games.
-        """
-        return {'Data': gm.get_games_dict(),
-                'Type': 'Data',
-                'Title': 'Active Games'}
-
-
-@games.route(f'{GAME_DETAILS}/<game>')
-class GameDetails(Resource):
-    """
-    This will get details on a game.
-    """
-
-    @api.response(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, game):
-        """
-        Returns a list of character types.
-        """
-        ct = gm.get_game_details(game)
-        if ct is not None:
-            return {game: gm.get_game_details(game)}
-        else:
-            raise wz.NotFound(f'{game} not found.')
-
-
-game_fields = api.model('NewGame', {
-    gm.NAME: fields.String,
-    gm.NUM_PLAYERS: fields.Integer,
-    gm.LEVEL: fields.Integer,
-    gm.VIOLENCE: fields.Integer,
-})
-
-
-@api.route(GAME_ADD)
-class AddGame(Resource):
-    """
-    Add a game.
-    """
-
-    @api.expect(game_fields)
-    def post(self):
-        """
-        Add a game.
-        """
-        print(f'{request.json=}')
-        name = request.json[gm.NAME]
-        del request.json[gm.NAME]
-        gm.add_game(name, request.json)
 
 
 @users.route(USER_DICT)
@@ -221,7 +120,6 @@ class UserDict(Resource):
     """
     This will get a list of currrent users.
     """
-
     def get(self):
         """
         Returns a list of current users.
@@ -245,9 +143,8 @@ class UserList(Resource):
 
 
 user_fields = api.model('NewUser', {
-    usr.NAME: fields.String,
-    usr.EMAIL: fields.String,
-    usr.FULL_NAME: fields.String,
+    usr.USERNAME: fields.String,
+    usr.PASSWORD: fields.String,
 })
 
 
@@ -262,10 +159,10 @@ class AddUser(Resource):
         """
         Add a user.
         """
-        print(f'{request.json=}')
-        name = request.json[usr.NAME]
-        del request.json[usr.NAME]
-        usr.add_user(name, request.json)
+        print(f'{request.json}')
+        username = request.json[usr.USERNAME]
+        del request.json[usr.USERNAME]
+        usr.add_user(username, request.json)
 
 
 @api.route('/endpoints')
@@ -282,3 +179,13 @@ class Endpoints(Resource):
         endpoints = ''
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
+
+# @login.route('/login', methods=['GET', 'POST'])
+# def user_login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#
+#         try:
+#             user
+
