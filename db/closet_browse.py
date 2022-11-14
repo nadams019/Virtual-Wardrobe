@@ -1,5 +1,5 @@
 """
-This module encapsulates details about our closet browsing page.
+This module encapsulates details about our closet browsing page for the user.
 """
 import db.db_connect as dbc
 
