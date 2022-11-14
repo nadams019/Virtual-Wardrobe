@@ -3,23 +3,22 @@ This module encapsulates details about users.
 """
 
 TEST_USER_NAME = 'Test user'
-NAME = 'name'
-EMAIL = 'email'
-FULL_NAME = 'full_name'
+USERNAME = 'username'
+PASSWORD = 'password'
 
 # We expect the user database to change frequently:
 # For now, we will consider EMAIL to be
 # our mandatory fields.
-REQUIRED_FLDS = [EMAIL]
-users = {TEST_USER_NAME: {EMAIL: 'x@y.com', FULL_NAME: 'Porgy Tirebiter'},
-         'handle': {EMAIL: 'z@y.com', FULL_NAME: 'Nick Danger'}}
+REQUIRED_FLDS = [USERNAME, PASSWORD]
+users = {TEST_USER_NAME: {USERNAME: 'user1@gmail.com', PASSWORD: 'test123'},
+         'handle': {USERNAME: 'user2@gmail.com', PASSWORD: 'test234'}}
 
 
-def user_exists(name):
+def user_exists(username):
     """
     Returns whether or not a user exists.
     """
-    return name in users
+    return username in users
 
 
 def get_users():
@@ -30,30 +29,23 @@ def get_users_dict():
     return users
 
 
-def get_user_details(user):
-    return users.get(user, None)
+def del_user(username):
+    del users[username]
 
 
-def del_user(name):
-    del users[name]
-
-
-def add_user(name, details):
-    if not isinstance(name, str):
-        raise TypeError(f'Wrong type for name: {type(name)=}')
-    if not isinstance(details, dict):
-        raise TypeError(f'Wrong type for details: {type(details)=}')
+def add_user(username, password):
+    if not isinstance(username, str):
+        raise TypeError(f'Wrong type for username: {type(username)}')
+    if not isinstance(password, dict):
+        raise TypeError(f'Wrong type for password: {type(password)}')
     for field in REQUIRED_FLDS:
-        if field not in details:
-            raise ValueError(f'Required {field=} missing from details.')
-    users[name] = details
+        if field not in password:
+            raise ValueError(f'Required {field} missing from details.')
+    users[username] = password
 
 
 def main():
     users = get_users()
-    print(f'{users=}')
-    print(f'{get_user_details(TEST_USER_NAME)=}')
+    print(f'{users}')
+    print(f'{get_user_details(TEST_USER_NAME)}')
 
-
-if __name__ == '__main__':
-    main()
