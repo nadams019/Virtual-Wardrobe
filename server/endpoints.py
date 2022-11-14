@@ -20,7 +20,7 @@ CHAR_TYPES_NS = 'character_types'
 LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
-CLOSETBROWSE_NS = 'closet_broswe'
+CLOSETBROWSE_NS = 'closet_browse'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -244,6 +244,15 @@ class UserDict(Resource):
                 'Title': 'Active Users'}
 
 
+# @app.route(LOGIN_NS, methods=['GET, POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#     elif request.method == "GET":
+#         return redirect('login.html')
+
+
 @users.route(USER_LIST)
 class UserList(Resource):
     """
@@ -262,6 +271,7 @@ user_fields = api.model('Username', 'Password', {
     usr.PASSWORD: fields.String
 })
 
+
 @api.route(USER_ADD)
 class AddUser(Resource):
     """
@@ -274,8 +284,8 @@ class AddUser(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[usr.NAME]
-        del request.json[usr.NAME]
+        name = request.json[usr.USERNAME]
+        del request.json[usr.USERNAME]
         usr.add_user(name, request.json)
 
 
@@ -300,7 +310,6 @@ class ClosetDetails(Resource):
     This will get details on a clothing item.
     """
 
-
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, clothing):
@@ -321,13 +330,8 @@ closet_browse_fields = api.model('NewClothing', {
     brwse.AESTHETIC: fields.String,
     brwse.RANDOM: fields.String,
 })
-# @app.route(LOGIN_NS, methods=['GET, POST'])
-# def login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-#     elif request.method == "GET":
-#         return redirect('login.html')
+
+
 @api.route(CLOSETBROWSE_ADD)
 class AddClothing(Resource):
     """
