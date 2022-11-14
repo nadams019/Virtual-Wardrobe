@@ -69,6 +69,7 @@ body {
     height: 1056px;
     left: 50px;
     top: 50px;
+
     background: #92BBE1;
 }
 
@@ -101,6 +102,7 @@ h1 {
     z-index: 3;
     color: #F5F5F5;
     font-family: "Irish Grover", serif;
+
     font-style: normal;
     font-weight: 400;
     font-size: 100px;
