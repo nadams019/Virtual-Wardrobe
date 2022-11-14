@@ -210,7 +210,7 @@ class AddGame(Resource):
         """
         Add a game.
         """
-        print(f'{request.json=}')
+        print(f'{request.json}')
         name = request.json[gm.NAME]
         del request.json[gm.NAME]
         gm.add_game(name, request.json)
@@ -245,9 +245,8 @@ class UserList(Resource):
 
 
 user_fields = api.model('NewUser', {
-    usr.NAME: fields.String,
-    usr.EMAIL: fields.String,
-    usr.FULL_NAME: fields.String,
+    usr.USERNAME: fields.String,
+    usr.PASSWORD: fields.String
 })
 
 
@@ -262,7 +261,7 @@ class AddUser(Resource):
         """
         Add a user.
         """
-        print(f'{request.json=}')
+        print(f'{request.json}')
         name = request.json[usr.NAME]
         del request.json[usr.NAME]
         usr.add_user(name, request.json)

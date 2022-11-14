@@ -72,3 +72,7 @@ def test_get_character_type_details():
     resp_json = TEST_CLIENT.get(f'{ep.CHAR_TYPE_DETAILS_W_NS}/{TEST_CHAR_TYPE}').get_json()
     assert TEST_CHAR_TYPE in resp_json
     assert isinstance(resp_json[TEST_CHAR_TYPE], dict)
+
+def test_login():
+    response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
+    assert response.status == "Successful login"
