@@ -1,0 +1,326 @@
+/* Rectangle 1 */
+body {
+    background: #F4AE20;
+}
+.container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+    height: 600px;
+}
+#page {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1056px;
+    left: 50px;
+    top: 50px;
+    background: #FED0FF;
+}
+
+/* Rectangle 2 */
+#navigation {
+    position: absolute;
+    z-index: 2;
+    height: 113px;
+    width: 100%;
+    background: #000000;
+    background-color: black;
+    text-align: center;
+}
+
+/* Virtual Wardrobe Header */
+h1{
+    position: absolute;
+    top: -60px;
+    left: 31%;
+    z-index: 3;
+    color: #F5F5F5;
+    font-family: "Irish Grover", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+
+}
+
+/* Virtual Wardrobe */
+#vw_font {
+    position: absolute;
+    width: 807px;
+    height: 80px;
+
+    font-family: 'Irish Grover', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
+
+    color: #F5F5F5;
+}
+
+
+/* virtualw 1 */
+#logo {
+    position: absolute;
+    top:-23px;
+    left: -4.5%;
+    z-index: 3;
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
+}
+
+/* profile-icon */
+.profile_icon {
+    position: absolute;
+    width: 208px;
+    height: 143px;
+
+    background: url(images/profile_icon.png);
+}
+
+/* Upload closet */
+#page_title_font {
+    position: absolute;
+    width: 615px;
+    height: 127px;
+    top: 140px;
+    left: 34%;
+
+    font-family: 'Irish Grover', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
+
+    color: #000000;
+}
+
+/* background-14820_1280 1 */
+#page_background {
+    position: absolute;
+    z-index: 1;
+    width: 3000px;
+    height: 772px;
+    top: 255px;
+    left: 100px;
+
+    background: url(background-14820_1280.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* clothing item type */
+.dropdown .itemTypeButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 400px;
+    height: 113px;
+    top: 250px;
+    left: 10%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.dropdown .dropdown-content {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .itemTypeButton {
+    display:block
+}
+/* Season */
+.dropdownb .SeasonButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 300px;
+    left: 30%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.dropdownb .dropdown-contentb {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentb b {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentb b:hover {background-color: #f1f1f1}
+.dropdownb:hover .dropdown-contentb {
+    display: block;
+}
+.dropdownb:hover .SeasonButton {
+    display:block
+}
+/* Occasion */
+.dropdownc .occasionButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 250px;
+    left: 50%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.dropdownc .dropdown-contentc {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentc c {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentc c:hover {background-color: #f1f1f1}
+.dropdownb:hover .dropdown-contentc {
+    display: block;
+}
+.dropdownb:hover .occasionButton {
+    display:block
+}
+/* Aesthetic */
+.dropdownd .aestheticButton {
+    background-color:#4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 350px;
+    height: 113px;
+    top: 250px;
+    left: 70%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 32px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.dropdownd .dropdown-contentd {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 165px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:1;
+    width: 397px;
+    height: 225px;
+    top: 365px;
+    left: 10.12%;
+    z-index: 2;
+}
+.dropdown-contentd d {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+.dropdown-contentd d:hover {background-color: #f1f1f1}
+.dropdownd:hover .dropdown-contentd {
+    display: block;
+}
+.dropdownd:hover .occasionButton {
+    display:block
+}
+
+/*upload button*/
+.uploadButton {
+    background-color:#F58AF8;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    width: 450px;
+    height: 150px;
+    top: 825px;
+    right: 40%;
+    z-index: 2;
+    display: inline-block;
+    font-size: 65px;
+    font-family: Irish Grover, serif;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.upload_button {border-radius:25px;}
