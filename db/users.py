@@ -26,6 +26,10 @@ def get_users():
     return list(users.keys())
 
 
+def get_users_dict():
+    return users
+
+
 def get_user_details(user):
     return users.get(user, None)
 
