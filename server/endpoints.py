@@ -72,6 +72,19 @@ CLOSETBROWSE_DETAILS = f'/{CLOSETBROWSE_NS}/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
 
 
+AESTHETIC_QUIZ_NS = 'quiz'
+
+quiz = Namespace(AESTHETIC_QUIZ_NS, 'Quiz')
+api.add_namespace(quiz)
+
+USER_AESTHETIC = f'/User_aesthetic/{LIST}'
+USER_AESTHETIC_NS = f'/{AESTHETIC_QUIZ_NS}/User_aesthetic/{LIST}'
+USER_AESTHETIC_NM = 'user_aesthetics_list'
+street_wear = 'street wear'
+preppy = 'preppy'
+soft_girl = 'soft girl'
+instagram_baddie = 'insta baddie'
+
 @api.route(HELLO)
 class HelloWorld(Resource):
     """
@@ -107,6 +120,19 @@ class MainMenu(Resource):
                           'method': 'get', 'text': 'List Clothes Available to Browse'},
                    'X': {'text': 'Exit'},
                 }}
+
+@quiz.route(USER_AESTHETIC)
+class UserAesthetic(Resource):
+    """
+    Gets a list of possible aesthetics.
+    """
+    def get(self):
+        """
+        Returns list of possible aesthetics.
+        """
+        return {'Title': 'UserAesthetic',
+                'Type': 'Data',
+                'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
 
 
 @char_types.route(CHAR_TYPE_LIST)
