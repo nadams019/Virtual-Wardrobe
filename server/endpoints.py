@@ -4,7 +4,7 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 
-from flask import Flask, request
+from flask import Flask, request, redirect
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
@@ -20,7 +20,7 @@ CHAR_TYPES_NS = 'character_types'
 LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
-CLOSETBROWSE_NS = 'closet_browse'
+CLOSETBROWSE_NS = 'closet_broswe'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -244,15 +244,6 @@ class UserDict(Resource):
                 'Title': 'Active Users'}
 
 
-# @app.route(LOGIN_NS, methods=['GET, POST'])
-# def login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-#     elif request.method == "GET":
-#         return redirect('login.html')
-
-
 @users.route(USER_LIST)
 class UserList(Resource):
     """
@@ -271,7 +262,6 @@ user_fields = api.model('Username', 'Password', {
     usr.PASSWORD: fields.String
 })
 
-
 @api.route(USER_ADD)
 class AddUser(Resource):
     """
@@ -284,8 +274,8 @@ class AddUser(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[usr.USERNAME]
-        del request.json[usr.USERNAME]
+        name = request.json[usr.NAME]
+        del request.json[usr.NAME]
         usr.add_user(name, request.json)
 
 
@@ -330,6 +320,15 @@ closet_browse_fields = api.model('NewClothing', {
     brwse.AESTHETIC: fields.String,
     brwse.RANDOM: fields.String,
 })
+
+
+@app.route(LOGIN_NS, methods=['GET, POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+    elif request.method == "GET":
+        return redirect('login.html')
 
 
 @api.route(CLOSETBROWSE_ADD)
