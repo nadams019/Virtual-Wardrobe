@@ -262,6 +262,7 @@ user_fields = api.model('Username', 'Password', {
     usr.PASSWORD: fields.String
 })
 
+
 @api.route(USER_ADD)
 class AddUser(Resource):
     """
@@ -322,13 +323,13 @@ closet_browse_fields = api.model('NewClothing', {
 })
 
 
-@app.route(LOGIN_NS, methods=['GET, POST'])
-def login():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-    elif request.method == "GET":
-        return redirect('login.html')
+# @app.route(LOGIN_NS, methods=['GET, POST'])
+# def login():
+#     if request.method == 'POST':
+#         username = request.form['username']
+#         password = request.form['password']
+#     elif request.method == "GET":
+#         return redirect('login.html')
 
 
 @api.route(CLOSETBROWSE_ADD)
