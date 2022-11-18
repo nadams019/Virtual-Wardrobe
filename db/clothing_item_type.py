@@ -5,13 +5,14 @@ SEASON = 'SeasonButton'
 OCCASION = 'occasionButton'
 AESTHETIC = 'aestheticButton'
 
-char_types = {ITEM_TYPE: {'Tops', 'Bottoms', 'Dresses', 'Accessories', 'Jackets'},
+char_types = {ITEM_TYPE: {'Tops', 'Bottoms', 'Dresses', 'Accessories',
+                          'Jackets'},
               SEASON: {'Fall', 'Winter', 'Summer', 'Spring'},
-              OCCASION: {'Casual', 'Formal', 'Semi-formal', 'Business', 'Party'},
-              AESTHETIC: {'Grunge', 'Academia', 'Streetwear', 'Cottagecore', 'Indie', 'Soft girl'},
+              OCCASION: {'Casual', 'Formal', 'Semi-formal',
+                         'Business', 'Party'},
+              AESTHETIC: {'Grunge', 'Academia', 'Streetwear', 'Cottagecore',
+                          'Indie', 'Soft girl'},
               }
-
-
 def add_char_type(type_name, selections):
     if char_type_exists(type_name):
         raise ValueError(f'Char type exists: {type_name=}')
