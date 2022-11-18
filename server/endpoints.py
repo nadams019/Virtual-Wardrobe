@@ -20,7 +20,7 @@ CHAR_TYPES_NS = 'character_types'
 LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
-CLOSETBROWSE_NS = 'closet_broswe'
+CLOSETBROWSE_NS = 'closet_browse'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -257,7 +257,7 @@ class UserList(Resource):
         return {USER_LIST_NM: usr.get_users()}
 
 
-user_fields = api.model('Username', 'Password', {
+user_fields = api.model('NewUser', {
     usr.USERNAME: fields.String,
     usr.PASSWORD: fields.String
 })
@@ -275,8 +275,8 @@ class AddUser(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[usr.NAME]
-        del request.json[usr.NAME]
+        name = request.json[usr.USERNAME]
+        del request.json[usr.USERNAME]
         usr.add_user(name, request.json)
 
 
