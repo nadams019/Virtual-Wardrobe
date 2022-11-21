@@ -5,6 +5,7 @@ This module encapsulates details about the aesthetics quiz.
 TEST_RESPONSE = 'Test result'
 QUESTION = 'question'
 ANSWER = 'answer'
+STYLE = 'style'
 
 REQUIRED_FLDS = [QUESTION, ANSWER]
 questions = {TEST_RESPONSE: {QUESTION: 'FOO', ANSWER: 'BAR'},
