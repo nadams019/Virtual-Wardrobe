@@ -13,6 +13,11 @@ char_types = {ITEM_TYPE: {'Tops', 'Bottoms', 'Dresses', 'Accessories',
               AESTHETIC: {'Grunge', 'Academia', 'Streetwear', 'Cottagecore',
                           'Indie', 'Soft girl'},
               }
+
+def select_type(type_name, selections):
+    select = Select(type_name)
+    select.select_by_visible_text(selections)
+    
 def add_char_type(type_name, selections):
     if char_type_exists(type_name):
         raise ValueError(f'Char type exists: {type_name=}')
