@@ -20,7 +20,7 @@ def test_hello():
 
 SAMPLE_USER_NM = 'SampleUser'
 SAMPLE_USER = {
-    usr.NAME: SAMPLE_USER_NM,
+    usr.USERNAME: SAMPLE_USER_NM,
     usr.EMAIL: 'x@y.com',
     usr.FULL_NAME: 'Sample User',
 }
@@ -48,7 +48,7 @@ def test_get_user_list():
 
 def test_get_character_type_list():
     """
-    See if we can get a charcter type list properly.
+    See if we can get a character type list properly.
     Return should look like:
         {CHAR_TYPE_LIST_NM: [list of chars types...]}
     """
@@ -58,7 +58,7 @@ def test_get_character_type_list():
 
 def test_get_character_type_list_not_empty():
     """
-    See if we can get a charcter type list properly.
+    See if we can get a character type list properly.
     Return should look like:
         {CHAR_TYPE_LIST_NM: [list of chars types...]}
     """
@@ -72,6 +72,7 @@ def test_get_character_type_details():
     resp_json = TEST_CLIENT.get(f'{ep.CHAR_TYPE_DETAILS_W_NS}/{TEST_CHAR_TYPE}').get_json()
     assert TEST_CHAR_TYPE in resp_json
     assert isinstance(resp_json[TEST_CHAR_TYPE], dict)
+
 
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
