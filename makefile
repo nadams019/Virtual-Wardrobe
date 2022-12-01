@@ -19,7 +19,6 @@ unit: FORCE
 
 lint: FORCE
 	$(LINTER) $(API_DIR)/*.py
-	$(LINTER) $(DB_DIR)/*.py
 
 dev_env: FORCE
 	pip install -r $(REQ_DIR)/requirements-dev.txt
