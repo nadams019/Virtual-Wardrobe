@@ -2,6 +2,16 @@ import pytest
 
 import db.users as usr
 
+def create_user_details():
+    user = {}
+    for data in usr.REQUIRED_FLDS:
+        user[data] = 2
+    return user
+@pytest.fixture(scope='function')
+def temp_user():
+    usr.add_user(usr.TEST_USER_NAME, create_user_details())
+    yield
+    usr.del_user(usr.TEST_USER_NAME)
 
 def test_get_users():
     usrs = usr.get_users()

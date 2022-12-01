@@ -2,6 +2,7 @@ import pytest
 import db.aesthetics as q
 
 
+
 def test_valid_response():
     with pytest.raises(TypeError):
         q.add_answer("-", {})
