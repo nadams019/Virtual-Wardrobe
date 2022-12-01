@@ -63,6 +63,10 @@ def add_clothing(item, details):
     closet[item] = details
 
 
+def del_clothing(item):
+    del closet[item]
+
+
 def main():
     print('Retrieving closet as a list:')
     closet = get_clothes()

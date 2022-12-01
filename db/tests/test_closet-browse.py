@@ -3,6 +3,13 @@ import pytest
 import db.closet_browse as browse
 
 
+@pytest.fixture(scope='function')
+def temp_closet():
+    browse.add_clothing(browse.TEST_CATEGORY_NAME, test_add_clothing())
+    yield
+    browse.del_clothing(browse.TEST_CATEGORY_NAME)
+
+
 def test_get_clothes():
     browsing = browse.get_clothes()
     assert isinstance(browsing, list)
@@ -10,7 +17,7 @@ def test_get_clothes():
 
 
 def test_get_clothing_details():
-    browse_dets = browse.get_clothing_details(browse.TEST_GAME_NAME)
+    browse_dets = browse.get_clothing_details(browse.TEST_CATEGORY_NAME)
     assert isinstance(browse_dets, dict)
 
 
@@ -33,5 +40,5 @@ def test_add_clothing():
     details = {}
     for field in browse.REQUIRED_FLDS:
         details[field] = 2
-    browse.add_clothing(browse.TEST_GAME_NAME, details)
-    assert browse.clothing_exists(browse.TEST_GAME_NAME)
+    browse.add_clothing(browse.TEST_CATEGORY_NAME, details)
+    assert browse.clothing_exists(browse.TEST_CATEGORY_NAME)
