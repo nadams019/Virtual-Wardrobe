@@ -278,12 +278,14 @@ class AddUser(Resource):
         del request.json[usr.USERNAME]
         usr.add_user(name, request.json)
 
+
 @app.route('/')
 def aesthetics():
     """
     The aesthetics page.
     """
     return render_template('aesthetics.html')
+
 
 @closet_browse.route(CLOSETBROWSE_DICT)
 class ClosetList(Resource):
