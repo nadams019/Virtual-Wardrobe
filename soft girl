@@ -1,0 +1,79 @@
+/* 6435357 1 */
+
+position: absolute;
+width: 1908px;
+height: 943px;
+
+background: url(6435357.png);
+
+
+/* Rectangle 2 */
+
+position: absolute;
+width: 1908px;
+height: 113px;
+
+background: #000000;
+
+
+/* Virtual Wardrobe */
+
+position: absolute;
+width: 807.47px;
+height: 80.04px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 100px;
+line-height: 121px;
+text-align: center;
+
+color: #F5F5F5;
+
+
+
+/* virtualw 1 */
+
+position: absolute;
+width: 281px;
+height: 158px;
+
+background: url(virtualw.png);
+
+
+/* image 1 */
+
+position: absolute;
+width: 217px;
+height: 143px;
+
+background: url(image);
+
+
+/* Rectangle 4 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 1592px;
+height: 943px;
+
+background: #E2C894;
+border: 5px solid #B56000;
+
+
+/* Your Aesthetic is SOFT GIRL The look is deliberately feminine, almost overly so, with lots of pinks, pastel shades, and glitter. There is a large emphasis placed on makeup and accessories. */
+
+position: absolute;
+width: 969px;
+height: 573px;
+
+font-family: 'Irish Grover';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 58px;
+text-align: center;
+
+color: #492706;
