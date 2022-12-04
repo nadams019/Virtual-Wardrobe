@@ -46,6 +46,16 @@ h2 {
     background: #000000;
 }
 
+.user_txt {
+    text-align: left;
+    font-size: 20px;
+    vertical-align: text-top;
+    overflow-wrap: normal;
+    font-size-adjust: inherit;
+    inline-size: 450px;
+    overflow: hidden;
+    text-align: left;
+}
 /* Virtual Wardrobe */
 
 #top_box h1 {
@@ -123,6 +133,7 @@ h2 {
     height: 175px;
     left: 1300px;
     top: 356px;
+
 
     background: #D9D9D9;
 }
@@ -491,7 +502,6 @@ h2 {
     height: 64px;
     left: 1238px;
     top: 318px;
-
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
