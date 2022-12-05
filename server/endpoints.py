@@ -383,3 +383,10 @@ def cottagecoreResults():
     """
     return render_template('cottagecore.html')
 
+@app.route('/streetwear')
+def streetwearResults():
+    """
+    streetwearresults
+    """
+    return render_template('streetwear.html')
+
