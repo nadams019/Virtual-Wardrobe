@@ -4,7 +4,6 @@ This module encapsulates details about our closet browsing page for the user.
 import db.db_connect as dbc
 
 TEST_CATEGORY_NAME = 'Test Category'
-CATEGORY = 'category'
 CLOTHING = 'clothing'
 SEASON = 'season'
 OCCASION = 'occasion'
@@ -13,13 +12,13 @@ RANDOM = 'random'
 
 REQUIRED_FLDS = [SEASON, OCCASION, AESTHETIC, RANDOM]
 closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
-                               AESTHETIC: 'vintage', RANDOM: 'No'},
+                               AESTHETIC: 'vintage', RANDOM: 'False'},
           'handle': {SEASON: 'summer', OCCASION: 'casual',
-                     AESTHETIC: 'preppy', RANDOM: 'Yes'},
+                     AESTHETIC: 'preppy', RANDOM: 'True'},
           'dress': {SEASON: 'fall', OCCASION: 'school',
-                    AESTHETIC: 'sporty', RANDOM: 'No'},
+                    AESTHETIC: 'sporty', RANDOM: 'False'},
           'hat': {SEASON: 'spring', OCCASION: 'formal',
-                    AESTHETIC: 'southern', RANDOM: 'Yes'}, },
+                  AESTHETIC: 'southern', RANDOM: 'True'}, },
 
 CLOTHING_KEY = 'item'
 CLOTHING_COLLECT = 'closet'

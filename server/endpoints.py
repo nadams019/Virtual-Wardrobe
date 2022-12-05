@@ -7,8 +7,6 @@ from flask import Flask, render_template, request
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
-import db.char_types as ctyp
-import db.games as gm
 import db.users as usr
 import db.closet_browse as brwse
 

@@ -11,8 +11,11 @@ LAST_NAME = 'last_name'
 EMAIL = 'email'
 REQUEST = 'request'
 REQUIRED_FLDS = [FIRST_NAME, LAST_NAME, EMAIL, REQUEST]
-contacts = {TEST_USER_NAME: {EMAIL:'x@y.com', FULL_NAME: TEST_FIRST_NAME+TEST_LAST_NAME, REQUEST: []}, 'Test User 2':
-    {EMAIL: 'z@y.com', FULL_NAME:'John Doe', REQUEST: []}}
+contacts = {TEST_USER_NAME: {EMAIL: 'x@y.com',
+                             FULL_NAME: TEST_FIRST_NAME + TEST_LAST_NAME,
+                             REQUEST: []},
+            'Test User 2': {EMAIL: 'z@y.com',
+                            FULL_NAME: 'John Doe', REQUEST: []}}
 
 
 def add_contact(name, details):
@@ -40,7 +43,6 @@ def get_contact_details(user):
 
 def del_contact(name):
     del contacts[name]
-
 
 
 def add_request(user, request):
