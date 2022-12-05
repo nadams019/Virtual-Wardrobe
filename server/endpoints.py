@@ -229,7 +229,6 @@ class ClosetDetails(Resource):
 
 
 closet_browse_fields = api.model('NewClothing', {
-    brwse.CATEGORY: fields.String,
     brwse.SEASON: fields.String,
     brwse.OCCASION: fields.String,
     brwse.AESTHETIC: fields.String,
