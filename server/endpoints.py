@@ -369,3 +369,10 @@ class Endpoints(Resource):
         endpoints = ''
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
+@app.route('/Grunge')
+def grungeResults():
+    """
+    Grunge results
+    """
+    return render_template('grunge.html')
+
