@@ -376,3 +376,10 @@ def grungeResults():
     """
     return render_template('grunge.html')
 
+@app.route('/cottagecore')
+def cottagecoreResults():
+    """
+    cottagecore results
+    """
+    return render_template('cottagecore.html')
+
