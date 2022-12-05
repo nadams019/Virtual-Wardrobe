@@ -21,6 +21,10 @@ def question_exists(question):
 
 
 def add_answer(question, answer):
+    if not isinstance(question, str):
+        raise TypeError('Question must be a string.')
+    if not isinstance(answer, str):
+        raise TypeError('Answer must be a string.')
     return
 
 

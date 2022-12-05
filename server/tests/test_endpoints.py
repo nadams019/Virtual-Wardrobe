@@ -34,10 +34,11 @@ SAMPLE_ITEM = {
     brwse.SEASON: 'Winter',
     brwse.OCCASION: 'Formal',
     brwse.AESTHETIC: 'Preppy',
+    brwse.RANDOM: 'Yes',
 }
 
 
-def test_add_item():
+def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
     assert brwse.clothing_exists(SAMPLE_ITEM_NM)
     brwse.del_clothing(SAMPLE_ITEM_NM)
@@ -61,34 +62,6 @@ def test_get_user_list():
     resp = TEST_CLIENT.get(ep.USER_LIST_W_NS)
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.USER_LIST_NM], list)
-
-
-def test_get_character_type_list():
-    """
-    See if we can get a character type list properly.
-    Return should look like:
-        {CHAR_TYPE_LIST_NM: [list of chars types...]}
-    """
-    resp_json = TEST_CLIENT.get(ep.CHAR_TYPE_LIST_W_NS).get_json()
-    assert isinstance(resp_json[ep.CHAR_TYPE_LIST_NM], list)
-
-
-def test_get_character_type_list_not_empty():
-    """
-    See if we can get a character type list properly.
-    Return should look like:
-        {CHAR_TYPE_LIST_NM: [list of chars types...]}
-    """
-    resp_json = TEST_CLIENT.get(ep.CHAR_TYPE_LIST_W_NS).get_json()
-    assert len(resp_json[ep.CHAR_TYPE_LIST_NM]) > 0
-
-
-def test_get_character_type_details():
-    """
-    """
-    resp_json = TEST_CLIENT.get(f'{ep.CHAR_TYPE_DETAILS_W_NS}/{TEST_CHAR_TYPE}').get_json()
-    assert TEST_CHAR_TYPE in resp_json
-    assert isinstance(resp_json[TEST_CHAR_TYPE], dict)
 
 
 def test_login():

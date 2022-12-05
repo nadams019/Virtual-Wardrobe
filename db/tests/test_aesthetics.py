@@ -3,7 +3,7 @@ import db.aesthetics as q
 
 
 
-def test_valid_response():
+def test_valid_answer_inputs():
     with pytest.raises(TypeError):
         q.add_answer("-", {})
 

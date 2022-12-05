@@ -49,6 +49,7 @@ def del_one(collection, filt, db=WARDROBE_DB):
 
 
 def fetch_all(collection, db=WARDROBE_DB):
+    print(f'in fetch_all {collection=}')
     ret = []
     for doc in client[db][collection].find():
         ret.append(doc)
