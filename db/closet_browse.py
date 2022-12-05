@@ -15,12 +15,14 @@ REQUIRED_FLDS = [CATEGORY, SEASON, OCCASION, AESTHETIC, RANDOM]
 closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
                                AESTHETIC: 'vintage', RANDOM: 'No'},
           'handle': {SEASON: 'summer', OCCASION: 'casual',
-                     AESTHETIC: 'preppy', RANDOM: 'Yes'}}
-
+                     AESTHETIC: 'preppy', RANDOM: 'Yes'},
+          'dress': {SEASON: 'fall', OCCASION: 'school',
+                    AESTHETIC: 'sporty', RANDOM: 'No'},
+          'hat': {SEASON: 'spring', OCCASION: 'formal',
+                    AESTHETIC: 'southern', RANDOM: 'Yes'}, },
 
 CLOTHING_KEY = 'item'
 CLOTHING_COLLECT = 'closet'
-
 
 """
 Possible Category Types
