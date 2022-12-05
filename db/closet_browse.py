@@ -21,6 +21,7 @@ closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
 CLOTHING_KEY = 'item'
 CLOTHING_COLLECT = 'closet'
 
+
 """
 Possible Category Types
 Season: Winter, Spring, Summer, Fall
