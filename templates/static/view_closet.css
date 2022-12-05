@@ -29,11 +29,12 @@ body {
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: black;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+    background-color: black;
+    color: white;
+    padding: 16px;
+    font-size: 60px;
+    font-family: "Irish Grover", serif;
+    border: none;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -67,7 +68,7 @@ body {
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {background-color: #540756;}
 
 
 /* Virtual Wardrobe Header */
