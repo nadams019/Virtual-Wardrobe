@@ -1,6 +1,3 @@
-
-import pytest
-
 import db.users as usr
 import db.closet_browse as brwse
 

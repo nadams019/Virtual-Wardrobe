@@ -78,7 +78,7 @@ USER_AESTHETIC_NS = f'/{AESTHETIC_QUIZ_NS}/User_aesthetic/{LIST}'
 USER_AESTHETIC_NM = 'user_aesthetics_list'
 street_wear = 'street wear'
 preppy = 'preppy'
-soft_girl = 'soft girl'
+soft_girl = 'soft_girl'
 instagram_baddie = 'insta baddie'
 
 
@@ -278,7 +278,7 @@ class Endpoints(Resource):
 @app.route('/Grunge')
 def grungeResults():
     """
-    Grunge results
+    grunge results
     """
     return render_template('grunge.html')
 

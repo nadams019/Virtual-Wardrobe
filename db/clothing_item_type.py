@@ -10,7 +10,7 @@ char_types = {ITEM_TYPE: {'Tops', 'Bottoms', 'Dresses', 'Accessories',
               SEASON: {'Fall', 'Winter', 'Summer', 'Spring'},
               OCCASION: {'Casual', 'Formal', 'Semi-formal',
                          'Business', 'Party'},
-              AESTHETIC: {'Grunge', 'Academia', 'Streetwear', 'Cottagecore',
+              AESTHETIC: {'grunge', 'academia', 'Streetwear', 'Cottagecore',
                           'Indie', 'Soft girl'},
               }
 
