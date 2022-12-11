@@ -12,6 +12,8 @@ questions = {TEST_RESPONSE: {QUESTION: 'FOO', ANSWER: 'BAR'},
              'question2': {QUESTION: 'q2', ANSWER: 'a2'},
              'question3': {QUESTION: 'q3', ANSWER: 'a3'}, }
 
+
+
 QUESTION_KEY = 'question'
 QUESTIONS_COLLECT = 'questions'
 
@@ -38,6 +40,8 @@ def get_results(question, answer):
       count+=1
   return count
 
+def get_aethetics_dict():
+    return aethetics_dict
 
 def add_question(question, answer):
     if not isinstance(question, str):
