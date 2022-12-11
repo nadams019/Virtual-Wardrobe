@@ -31,8 +31,12 @@ def add_answer(question, answer):
 def add_field(question, answer):
     return
   
-def get_results(answer):
-  return sum(answer)
+def get_results(question, answer):
+  count = 0
+  for i in range(5): #temp value, would change when certain of the number of questions
+    if answer != null:
+      count+=1
+  return count
 
 
 def add_question(question, answer):
