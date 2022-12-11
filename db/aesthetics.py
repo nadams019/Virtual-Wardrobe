@@ -13,6 +13,7 @@ questions = {TEST_RESPONSE: {QUESTION: 'FOO', ANSWER: 'BAR'},
              'question3': {QUESTION: 'q3', ANSWER: 'a3'}, }
 
 
+aesthetics_dict = {1: "Grunge", 2: "Academia", 3:"Streetwear", 4: "Cottagecore", 5:"Softgirl"}
 
 QUESTION_KEY = 'question'
 QUESTIONS_COLLECT = 'questions'
