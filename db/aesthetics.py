@@ -30,6 +30,9 @@ def add_answer(question, answer):
 
 def add_field(question, answer):
     return
+  
+def get_results(answer):
+  return sum(answer)
 
 
 def add_question(question, answer):
