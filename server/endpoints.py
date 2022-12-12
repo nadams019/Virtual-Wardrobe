@@ -203,7 +203,7 @@ def aesthetics():
     """
     The aesthetics page.
     """
-    return render_template('aesthetics.html')
+    return render_template('pages/aesthetics.html')
 
 
 @closet_browse.route(CLOSETBROWSE_DICT)
@@ -293,7 +293,7 @@ def grungeResults():
     """
     grunge results
     """
-    return render_template('grunge.html')
+    return render_template('aestheics/grunge.html')
 
 
 @app.route('/cottagecore')
@@ -301,7 +301,7 @@ def cottagecoreResults():
     """
     cottagecore results
     """
-    return render_template('cottagecore.html')
+    return render_template('aestheics/cottagecore.html')
 
 
 @app.route('/streetwear')
@@ -309,7 +309,7 @@ def streetwearResults():
     """
     streetwearresults
     """
-    return render_template('streetwear.html')
+    return render_template('aestheics/streetwear.html')
 
 
 @contacts.route(CONTACTS_DICT)
@@ -341,7 +341,7 @@ class ContactList(Resource):
 
 
 contacts_fields = api.model('NewContacts', {
-    cnts.NAME: fields.String,
+    cnts.FULL_NAME: fields.String,
     cnts.EMAIL: fields.String,
     cnts.REQUEST: fields.String
 })
@@ -359,6 +359,6 @@ class AddContacts(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[cnts.NAME]
-        del request.json[usr.name]
+        name = request.json[cnts.FULL_NAME]
+        del request.json[cnts.FULL_NAME]
         cnts.add_contact(name, request.json)
