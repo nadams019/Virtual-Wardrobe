@@ -29,13 +29,13 @@ SAMPLE_ITEM = {
     brwse.SEASON: 'Winter',
     brwse.OCCASION: 'Formal',
     brwse.AESTHETIC: 'Preppy',
-    brwse.RANDOM: 'Yes',
+    brwse.RANDOM: 'True',
 }
 
 
 def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
-    assert brwse.clothing_exists(SAMPLE_ITEM_NM)
+    assert isinstance(resp.get_json(brwse.clothing_exists(SAMPLE_ITEM_NM)))
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
 
