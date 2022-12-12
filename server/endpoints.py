@@ -308,3 +308,52 @@ def streetwearResults():
     streetwearresults
     """
     return render_template('streetwear.html')
+@contacts.route(CONTACTS_DICT)
+class ContactDict(Resource):
+    """
+    This will get a list of currrent contact.
+    """
+
+    def get(self):
+        """
+        Returns a list of current contacts.
+        """
+        return {'Data': contacts.get_contacts_dict(),
+                'Type': 'Data',
+                'Title': 'Contact Requests'}
+
+
+@contacts.route(CONTACTS_LIST)
+class ContactList(Resource):
+    """
+    This will get a list of currrent users.
+    """
+
+    def get(self):
+        """
+        Returns a list of current users.
+        """
+        return {CONTACTS_LIST_NM: contacts.get_contacts()}
+
+
+user_fields = api.model('NewUser', {
+    usr.USERNAME: fields.String,
+    usr.PASSWORD: fields.String
+})
+
+
+@api.route(USER_ADD)
+class AddUser(Resource):
+    """
+    Add a user.
+    """
+
+    @api.expect(user_fields)
+    def post(self):
+        """
+        Add a user.
+        """
+        print(f'{request.json}')
+        name = request.json[usr.USERNAME]
+        del request.json[usr.USERNAME]
+        usr.add_user(name, request.json)
