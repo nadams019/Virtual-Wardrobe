@@ -34,7 +34,7 @@ Random: Yes or No
 
 def clothing_exists(item_nm):
     """
-    Returns whether or not a clothing item exists.
+    Returns a clothing item exists.
     """
     return get_clothing_details(item_nm) is not None
 

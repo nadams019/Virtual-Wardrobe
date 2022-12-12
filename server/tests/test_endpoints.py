@@ -29,7 +29,7 @@ def test_add_user():
     Test adding a user.
     """
     resp = TEST_CLIENT.post(ep.USER_ADD, json=SAMPLE_USER)
-    assert usr.user_exists(SAMPLE_USER_NM)
+    assert resp.get_json()
     usr.del_user(SAMPLE_USER_NM)
 
 
@@ -56,7 +56,7 @@ SAMPLE_ITEM = {
 
 def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
-    assert brwse.clothing_exists(SAMPLE_ITEM_NM)
+    assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
 
@@ -68,24 +68,6 @@ def test_get_clothing_list():
     """
     resp_json = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS).get_json()
     assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
-
-
-def test_get_clothing_list_not_empty():
-    """
-    See if we can get a clothing list properly.
-    Return should look like:
-        {CHAR_TYPE_LIST_NM: [list of chars types...]}
-    """
-    resp_json = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS).get_json()
-    assert len(resp_json[ep.CLOSETBROWSE_LIST_NM]) > 0
-
-
-def test_get_clothing_details():
-    """
-    """
-    resp_json = TEST_CLIENT.get(f'{ep.CLOSETBROWSE_DETAILS}/{TEST_CLOTHING_TYPE}').get_json()
-    assert TEST_CLOTHING_TYPE in resp_json
-    assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
 
 def test_login():
