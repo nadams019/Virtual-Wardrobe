@@ -20,6 +20,7 @@ LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
+CONTACTS_NS = 'contacts'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -31,6 +32,7 @@ users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
+contacts = Namespace(CONTACTS_NS, 'Contacts')
 
 LIST = 'list'
 DICT = 'dict'
@@ -69,8 +71,15 @@ CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
 CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
 CLOSETBROWSE_DETAILS = f'/{CLOSETBROWSE_NS}/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
-
 AESTHETIC_QUIZ_NS = 'quiz'
+CONTACTS_DICT = f'/{DICT}'
+CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
+CONTACTS_DICT_NM = f'{CONTACTS_NS}_dict'
+CONTACTS_LIST = f'/{LIST}'
+CONTACTS_LIST_W_NS = f'{CONTACTS_NS}/{LIST}'
+CONTACTS_LIST_NM = f'{CONTACTS_NS}_list'
+CONTACTS_DETAILS = f'/{CONTACTS_NS}/{DETAILS}'
+CONTACTS_ADD = f'/{CONTACTS_NS}/{ADD}'
 
 quiz = Namespace(AESTHETIC_QUIZ_NS, 'Quiz')
 api.add_namespace(quiz)
@@ -119,6 +128,7 @@ class MainMenu(Resource):
                     '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes '
                                                    'Available to Browse'},
+                    '4': {'url': f' / {CONTACTS_NS}', 'method':'get','text':'List Contacts '}
                     'X': {'text': 'Exit'},
                 }}
 
@@ -369,3 +379,4 @@ class Endpoints(Resource):
         endpoints = ''
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
+
