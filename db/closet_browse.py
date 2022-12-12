@@ -54,15 +54,15 @@ def get_clothing_details(item_nm):
     return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING: item_nm})
 
 
-def add_clothing(item):
+def add_clothing(item_nm):
     dbc.connect_db()
-    if not isinstance(item, dict):
-        raise TypeError(f'Wrong type for clothing item: {type(item)=}')
+    if not isinstance(item_nm, dict):
+        raise TypeError(f'Wrong type for clothing item: {type(item_nm)=}')
     for field in REQUIRED_FLDS:
-        if field not in item:
+        if field not in item_nm:
             raise ValueError(f'Required {field=} missing from clothing '
                              f'details.')
-    return dbc.insert_one(CLOTHING_COLLECT, item)
+    return dbc.insert_one(CLOTHING_COLLECT, item_nm)
 
 
 def del_clothing(item_nm):

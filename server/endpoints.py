@@ -256,7 +256,7 @@ closet_browse_fields = api.model('NewClothing', {
 #         return redirect('login.html')
 
 
-@api.route(CLOSETBROWSE_ADD)
+@api.route(f'{CLOSETBROWSE_ADD}/<item>')
 class AddClothing(Resource):
     """
     Add a clothing item.
