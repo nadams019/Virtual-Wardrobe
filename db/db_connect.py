@@ -21,15 +21,26 @@ def connect_db():
     global client
     if client is None:  # not connected yet!
         print("Setting client because it is None.")
-        if os.environ.get("LOCAL_MONGO", LOCAL) == LOCAL:
+        if os.environ.get("CLOUD_MONGO", LOCAL) == CLOUD:
+            password = os.environ.get("GAME_MONGO_PW")
+            if not password:
+                raise ValueError('You must set your password '
+                                 + 'to use Mongo in the cloud.')
+            print("Connecting to Mongo in the cloud.")
+            client = pm.MongoClient(f'mongodb+srv://gcallah:{password}'
+                                    + '@cluster0.eqxbbqd.mongodb.net/'
+                                    + '?retryWrites=true&w=majority')
+        else:
             print("Connecting to Mongo locally.")
             client = pm.MongoClient()
+
 
 
 def insert_one(collection, doc, db=WARDROBE_DB):
     """
     Insert a single doc into collection.
     """
+    print(f'{db=}')
     client[db][collection].insert_one(doc)
 
 
