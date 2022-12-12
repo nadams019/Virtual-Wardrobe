@@ -55,7 +55,7 @@ def test_add_user():
     Test adding a user.
     """
     resp = TEST_CLIENT.post(ep.USER_ADD, json=SAMPLE_USER)
-    assert usr.user_exists(SAMPLE_USER_NM)
+    assert isinstance(resp.get_json(usr.user_exists(SAMPLE_USER_NM)))
     usr.del_user(SAMPLE_USER_NM)
 
 
