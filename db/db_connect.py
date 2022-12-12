@@ -4,7 +4,7 @@ import pymongo as pm
 
 REMOTE = "0"
 LOCAL = "1"
-
+CLOUD = "2"
 WARDROBE_DB = 'wardrobedb'
 
 client = None
