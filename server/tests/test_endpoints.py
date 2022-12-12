@@ -1,12 +1,10 @@
+
+import server.endpoints as ep
 import db.users as usr
 import db.closet_browse as brwse
 
-import server.endpoints as ep
 
 TEST_CLIENT = ep.app.test_client()
-
-TEST_CHAR_TYPE = 'Warrior'
-
 TEST_CLOTHING_TYPE = 'Clothing'
 
 
@@ -39,6 +37,17 @@ def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
     assert brwse.clothing_exists(SAMPLE_ITEM_NM)
     brwse.del_clothing(SAMPLE_ITEM_NM)
+
+
+def test_get_clothing_list():
+    """
+    See if we can get a user list properly.
+    Return should look like:
+        {USER_LIST_NM: [list of users types...]}
+    """
+    resp = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS)
+    resp_json = resp.get_json()
+    assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
 
 
 def test_add_user():
