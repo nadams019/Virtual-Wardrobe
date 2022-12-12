@@ -49,6 +49,7 @@ def get_aethetics_dict():
     print(aesthetics_dict.values())
     # return aethetics_dict
 
+
 def add_question(question, answer):
     if not isinstance(question, str):
         raise TypeError(f'Wrong type for question: {type(question)=}')
