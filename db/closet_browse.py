@@ -4,19 +4,21 @@ This module encapsulates details about our closet browsing page for the user.
 import db.db_connect as dbc
 
 TEST_CATEGORY_NAME = 'Test Category'
-CATEGORY = 'category'
 CLOTHING = 'clothing'
 SEASON = 'season'
 OCCASION = 'occasion'
 AESTHETIC = 'aesthetic'
 RANDOM = 'random'
 
-REQUIRED_FLDS = [CATEGORY, SEASON, OCCASION, AESTHETIC, RANDOM]
+REQUIRED_FLDS = [SEASON, OCCASION, AESTHETIC, RANDOM]
 closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
-                               AESTHETIC: 'vintage', RANDOM: 'No'},
+                               AESTHETIC: 'vintage', RANDOM: 'False'},
           'handle': {SEASON: 'summer', OCCASION: 'casual',
-                     AESTHETIC: 'preppy', RANDOM: 'Yes'}}
-
+                     AESTHETIC: 'preppy', RANDOM: 'True'},
+          'dress': {SEASON: 'fall', OCCASION: 'school',
+                    AESTHETIC: 'sporty', RANDOM: 'False'},
+          'hat': {SEASON: 'spring', OCCASION: 'formal',
+                  AESTHETIC: 'southern', RANDOM: 'True'}, },
 
 CLOTHING_KEY = 'item'
 CLOTHING_COLLECT = 'closet'
@@ -30,11 +32,11 @@ Random: Yes or No
 """
 
 
-def clothing_exists(item):
+def clothing_exists(item_nm):
     """
     Returns whether or not a clothing item exists.
     """
-    return item in closet
+    return get_clothing_details(item_nm) is not None
 
 
 def get_clothing_dict():
@@ -47,24 +49,25 @@ def get_clothes():
     return dbc.fetch_all(CLOTHING_COLLECT)
 
 
-def get_clothing_details(item):
-    return closet.get(item, None)
+def get_clothing_details(item_nm):
+    dbc.connect_db()
+    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING: item_nm})
 
 
-def add_clothing(item, details):
-    if not isinstance(item, str):
+def add_clothing(item):
+    dbc.connect_db()
+    if not isinstance(item, dict):
         raise TypeError(f'Wrong type for clothing item: {type(item)=}')
-    if not isinstance(details, dict):
-        raise TypeError(f'Wrong type for clothing details: {type(details)=}')
     for field in REQUIRED_FLDS:
-        if field not in details:
+        if field not in item:
             raise ValueError(f'Required {field=} missing from clothing '
                              f'details.')
-    closet[item] = details
+    return dbc.insert_one(CLOTHING_COLLECT, item)
 
 
-def del_clothing(item):
-    del closet[item]
+def del_clothing(item_nm):
+    dbc.connect_db()
+    dbc.del_one(CLOTHING_COLLECT, {CLOTHING: item_nm})
 
 
 def main():

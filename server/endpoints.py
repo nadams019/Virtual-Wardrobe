@@ -7,8 +7,6 @@ from flask import Flask, render_template, request
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
-import db.char_types as ctyp
-import db.games as gm
 import db.users as usr
 import db.closet_browse as brwse
 
@@ -20,7 +18,6 @@ LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
-CONTACTS_NS = 'contacts'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -32,7 +29,6 @@ users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
-contacts = Namespace(CONTACTS_NS, 'Contacts')
 
 LIST = 'list'
 DICT = 'dict'
@@ -69,17 +65,10 @@ CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
 CLOSETBROWSE_LIST = f'/{LIST}'
 CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
 CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
-CLOSETBROWSE_DETAILS = f'/{CLOSETBROWSE_NS}/{DETAILS}'
+CLOSETBROWSE_DETAILS = f'/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+
 AESTHETIC_QUIZ_NS = 'quiz'
-CONTACTS_DICT = f'/{DICT}'
-CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
-CONTACTS_DICT_NM = f'{CONTACTS_NS}_dict'
-CONTACTS_LIST = f'/{LIST}'
-CONTACTS_LIST_W_NS = f'{CONTACTS_NS}/{LIST}'
-CONTACTS_LIST_NM = f'{CONTACTS_NS}_list'
-CONTACTS_DETAILS = f'/{CONTACTS_NS}/{DETAILS}'
-CONTACTS_ADD = f'/{CONTACTS_NS}/{ADD}'
 
 quiz = Namespace(AESTHETIC_QUIZ_NS, 'Quiz')
 api.add_namespace(quiz)
@@ -89,7 +78,7 @@ USER_AESTHETIC_NS = f'/{AESTHETIC_QUIZ_NS}/User_aesthetic/{LIST}'
 USER_AESTHETIC_NM = 'user_aesthetics_list'
 street_wear = 'street wear'
 preppy = 'preppy'
-soft_girl = 'soft girl'
+soft_girl = 'soft_girl'
 instagram_baddie = 'insta baddie'
 
 
@@ -128,7 +117,6 @@ class MainMenu(Resource):
                     '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes '
                                                    'Available to Browse'},
-                    '4': {'url': f' / {CONTACTS_NS}', 'method':'get','text':'List Contacts '}
                     'X': {'text': 'Exit'},
                 }}
 
@@ -145,97 +133,6 @@ class MainMenu(Resource):
 # return {'Title': 'UserAesthetic',
 #     'Type': 'Data',
 #     'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
-
-
-@char_types.route(CHAR_TYPE_LIST)
-class CharacterTypeList(Resource):
-    """
-    This will get a list of character types.
-    """
-
-    def get(self):
-        """
-        Returns a list of character types.
-        """
-        return {CHAR_TYPE_LIST_NM: ctyp.get_char_types()}
-
-
-@char_types.route(CHAR_TYPE_DICT)
-class CharacterTypeDict(Resource):
-    """
-    This will get a list of character types.
-    """
-
-    def get(self):
-        """
-        Returns a list of character types.
-        """
-        return {'Data': ctyp.get_char_type_dict(),
-                'Type': 'Data',
-                'Title': 'Character Types'}
-
-
-@char_types.route(f'{CHAR_TYPE_DETAILS}/<char_type>')
-class CharacterTypeDetails(Resource):
-    """
-    This will return details on a character type.
-    """
-
-    @api.response(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, char_type):
-        """
-        This will return details on a character type.
-        """
-        ct = ctyp.get_char_type_details(char_type)
-        if ct is not None:
-            return {char_type: ctyp.get_char_type_details(char_type)}
-        else:
-            raise wz.NotFound(f'{char_type} not found.')
-
-
-@games.route(f'{GAME_DETAILS}/<game>')
-class GameDetails(Resource):
-    """
-    This will get details on a game.
-    """
-
-    @api.response(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, game):
-        """
-        Returns a list of character types.
-        """
-        ct = gm.get_game_details(game)
-        if ct is not None:
-            return {game: gm.get_game_details(game)}
-        else:
-            raise wz.NotFound(f'{game} not found.')
-
-
-game_fields = api.model('NewGame', {
-    gm.NAME: fields.String,
-    gm.NUM_PLAYERS: fields.Integer,
-    gm.LEVEL: fields.Integer,
-    gm.VIOLENCE: fields.Integer,
-})
-
-
-@api.route(GAME_ADD)
-class AddGame(Resource):
-    """
-    Add a game.
-    """
-
-    @api.expect(game_fields)
-    def post(self):
-        """
-        Add a game.
-        """
-        print(f'{request.json}')
-        name = request.json[gm.NAME]
-        del request.json[gm.NAME]
-        gm.add_game(name, request.json)
 
 
 @users.route(USER_DICT)
@@ -332,7 +229,6 @@ class ClosetDetails(Resource):
 
 
 closet_browse_fields = api.model('NewClothing', {
-    brwse.CATEGORY: fields.String,
     brwse.SEASON: fields.String,
     brwse.OCCASION: fields.String,
     brwse.AESTHETIC: fields.String,
@@ -360,9 +256,7 @@ class AddClothing(Resource):
         Add a clothing item to closet.
         """
         print(f'{request.json=}')
-        item = request.json[brwse.CLOTHING]
-        del request.json[brwse.CLOTHING]
-        brwse.add_clothing(item, request.json)
+        brwse.add_clothing(request.json)
 
 
 @api.route('/endpoints')
@@ -380,3 +274,26 @@ class Endpoints(Resource):
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
 
+
+@app.route('/Grunge')
+def grungeResults():
+    """
+    grunge results
+    """
+    return render_template('grunge.html')
+
+
+@app.route('/cottagecore')
+def cottagecoreResults():
+    """
+    cottagecore results
+    """
+    return render_template('cottagecore.html')
+
+
+@app.route('/streetwear')
+def streetwearResults():
+    """
+    streetwearresults
+    """
+    return render_template('streetwear.html')

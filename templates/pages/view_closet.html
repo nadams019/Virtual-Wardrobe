@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>View Closet</title>
     <!-- Query for View Closet stylesheet -->
-    <link rel="stylesheet" href="static/view_closet.css">
+    <link rel="stylesheet" href="../static/view_closet.css">
     <!-- Query for Irish Grover Font -->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
     <!-- Media query for small browser width -->
-    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="static/small.css" />
+    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="../static/small.css" />
     <!-- Media query for medium browser width -->
-    <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="static/medium.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="../static/medium.css" />
     <!-- Media query for large browser width -->
-    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="static/large.css" />
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
 </head>
 <body>
     <div class="container">
@@ -20,12 +20,22 @@
             <div id="navigation">
                 <h1>Virtual Wardrobe</h1>
                 <div id="logo">
-                    <img src="static/images/virtualw.png" alt="logo" width=281 height="158">
+                    <img src="../static/images/virtualw.png" alt="logo" width=281 height="158">
                 </div>
             </div>
             <div id="page_title_font">View Closet</div>
             <div id="page_background"></div>
-            <div id="browse_square"></div>
+            <div id="browse_square">
+                <div class="dropdown">
+                  <button class="dropbtn">Categories</button>
+                  <div class="dropdown-content">
+                        <a href="#">Season</a>
+                        <a href="#">Occasion</a>
+                        <a href="#">Aesthetic</a>
+                        <a href="#">Random</a>
+                  </div>
+                </div>
+            </div>
             <div class="browse_button">Browse</div>
             <div id="dress_me_square"></div>
             <div class="dress_button">Dress Me</div>
