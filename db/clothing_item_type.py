@@ -1,5 +1,5 @@
 # This module encapsulates the details about the different dropdowns
-import db.db_connect as dbc
+# import db.db_connect as dbc
 
 TEST_OPTIONS = 'test options'
 ITEM_TYPE = 'itemTypeButton'
@@ -7,11 +7,11 @@ SEASON = 'SeasonButton'
 OCCASION = 'occasionButton'
 AESTHETIC = 'aestheticButton'
 
-REQUIRED_FIELDS = [ITEM_TYPE, SEASON, OCCASION, AESTHETIC]
-char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans',SEASON: 'winter', OCCASION: 'formal', AESTHETIC:'vintage'}, 
-              {ITEM_TYPE: 'dresses',SEASON: 'summer', OCCASION: 'casual', AESTHETIC:'preppy'},
-             {ITEM_TYPE: 'accessories',SEASON: 'fall', OCCASION: 'school', AESTHETIC:'sporty'},
-             {ITEM_TYPE: 'Tops',SEASON: 'spring', OCCASION: 'formal', AESTHETIC:'southern'}
+REQUIRED_FIELDS = [SEASON, OCCASION, AESTHETIC]
+char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans', SEASON: 'winter', OCCASION: 'formal', AESTHETIC: 'vintage'},
+              'dresses': {SEASON: 'summer', OCCASION: 'casual', AESTHETIC: 'preppy'},
+              'accessories': {SEASON: 'fall', OCCASION: 'school', AESTHETIC: 'sporty'},
+              'Tops': {SEASON: 'spring', OCCASION: 'formal', AESTHETIC: 'southern'}, }
 
 """
 def select_type(type_name, selections):
