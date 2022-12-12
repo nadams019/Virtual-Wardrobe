@@ -318,7 +318,7 @@ class ContactDict(Resource):
         """
         Returns a list of current contacts.
         """
-        return {'Data': contacts.get_contacts_dict(),
+        return {'Data': cnts.get_contacts_dict(),
                 'Type': 'Data',
                 'Title': 'Contact Requests'}
 
@@ -333,17 +333,18 @@ class ContactList(Resource):
         """
         Returns a list of current users.
         """
-        return {CONTACTS_LIST_NM: contacts.get_contacts()}
+        return {CONTACTS_LIST_NM: cnts.get_contacts()}
 
 
-user_fields = api.model('NewUser', {
-    usr.USERNAME: fields.String,
-    usr.PASSWORD: fields.String
+contacts_fields = api.model('NewContacts', {
+    cnts.NAME: fields.String,
+    cnts.EMAIL: fields.String,
+    cnts.REQUEST: fields.String
 })
 
 
-@api.route(USER_ADD)
-class AddUser(Resource):
+@api.route(CONTACTS_ADD)
+class AddContacts(Resource):
     """
     Add a user.
     """
@@ -354,6 +355,6 @@ class AddUser(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[usr.USERNAME]
-        del request.json[usr.USERNAME]
-        usr.add_user(name, request.json)
+        name = request.json[cnt.NAME]
+        del request.json[usr.name]
+        cnts.add_contact(name, request.json)
