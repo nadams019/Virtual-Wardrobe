@@ -18,6 +18,7 @@ LOGIN_NS = 'login'
 GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
+CONTACTS_NS = 'contacts'
 
 char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
 api.add_namespace(char_types)
@@ -29,6 +30,8 @@ users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
+contacts = Namespace(CONTACTS_NS, 'Contacts')
+api.add_namespace(contacts)
 
 LIST = 'list'
 DICT = 'dict'
@@ -67,6 +70,14 @@ CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
 CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
 CLOSETBROWSE_DETAILS = f'/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+CONTACTS_DICT = f'/{DICT}'
+CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
+CONTACTS_DICT_NM = f'{CONTACTS_NS}_dict'
+CONTACTS_LIST = f'/{LIST}'
+CONTACTS_LIST_W_NS = f'{CONTACTS_NS}/{LIST}'
+CONTACTS_LIST_NM = f'{CONTACTS_NS}_list'
+CONTACTS_DETAILS = f'/{CONTACTS_NS}/{DETAILS}'
+CONTACTS_ADD = f'/{CONTACTS_NS}/{ADD}'
 
 AESTHETIC_QUIZ_NS = 'quiz'
 
