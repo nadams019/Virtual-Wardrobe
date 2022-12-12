@@ -9,6 +9,7 @@ import werkzeug.exceptions as wz
 
 import db.users as usr
 import db.closet_browse as brwse
+import db.contacts as cnts
 
 app = Flask(__name__)
 api = Api(app)
@@ -261,6 +262,7 @@ class AddClothing(Resource):
     """
     Add a clothing item.
     """
+
     @api.expect(closet_browse_fields)
     def post(self):
         """
@@ -308,6 +310,8 @@ def streetwearResults():
     streetwearresults
     """
     return render_template('streetwear.html')
+
+
 @contacts.route(CONTACTS_DICT)
 class ContactDict(Resource):
     """
@@ -355,6 +359,6 @@ class AddContacts(Resource):
         Add a user.
         """
         print(f'{request.json}')
-        name = request.json[cnt.NAME]
+        name = request.json[cnts.NAME]
         del request.json[usr.name]
         cnts.add_contact(name, request.json)
