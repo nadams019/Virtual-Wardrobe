@@ -34,6 +34,7 @@ def connect_db():
             print("Connecting to Mongo locally.")
             client = pm.MongoClient()
 
+
 def insert_one(collection, doc, db=WARDROBE_DB):
     """
     Insert a single doc into collection.
