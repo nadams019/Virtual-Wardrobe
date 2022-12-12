@@ -8,10 +8,14 @@ OCCASION = 'occasionButton'
 AESTHETIC = 'aestheticButton'
 
 REQUIRED_FIELDS = [SEASON, OCCASION, AESTHETIC]
-char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans', SEASON: 'winter', OCCASION: 'formal', AESTHETIC: 'vintage'},
-              'dresses': {SEASON: 'summer', OCCASION: 'casual', AESTHETIC: 'preppy'},
-              'accessories': {SEASON: 'fall', OCCASION: 'school', AESTHETIC: 'sporty'},
-              'Tops': {SEASON: 'spring', OCCASION: 'formal', AESTHETIC: 'southern'}, }
+char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans', SEASON: 'winter',
+                             OCCASION: 'formal', AESTHETIC: 'vintage'},
+              'dresses': {SEASON: 'summer',
+                          OCCASION: 'casual', AESTHETIC: 'preppy'},
+              'accessories': {SEASON: 'fall',
+                              OCCASION: 'school', AESTHETIC: 'sporty'},
+              'Tops': {SEASON: 'spring',
+                       OCCASION: 'formal', AESTHETIC: 'southern'}, }
 
 """
 def select_type(type_name, selections):
