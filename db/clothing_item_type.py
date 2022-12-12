@@ -1,4 +1,5 @@
 # This module encapsulates the details about the different dropdowns
+import db.db_connect as dbc
 
 TEST_OPTIONS = 'test options'
 ITEM_TYPE = 'itemTypeButton'
