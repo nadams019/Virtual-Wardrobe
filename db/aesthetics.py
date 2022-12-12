@@ -13,7 +13,8 @@ questions = {TEST_RESPONSE: {QUESTION: 'FOO', ANSWER: 'BAR'},
              'question3': {QUESTION: 'q3', ANSWER: 'a3'}, }
 
 
-aesthetics_dict = {1: "Grunge", 2: "Academia", 3:"Streetwear", 4: "Cottagecore", 5:"Softgirl"}
+aesthetics_dict = {1: "Grunge", 2: "Academia", 3:"Streetwear", 4: "Cottagecore",
+                   5:"Softgirl"}
 
 QUESTION_KEY = 'question'
 QUESTIONS_COLLECT = 'questions'
@@ -32,23 +33,29 @@ def add_answer(question, answer):
 
 
 def add_field(question, answer):
-    return
+    return None
+
   
 def get_results(question, answer):
-  count = 0
-  for i in range(5): #temp value, would change when certain of the number of questions
-    if answer != null:
-      count+=1
-  return count
+    count = 0
+    for i in range(5): #temp value, would change when certain of the number of questions
+        if answer != None:
+            count+=1
+    return count
+
 
 def get_aethetics_dict():
-    return aethetics_dict
+    print(aesthetics_dict.values())
+
+    # return aethetics_dict
 
 def add_question(question, answer):
     if not isinstance(question, str):
         raise TypeError(f'Wrong type for question: {type(question)=}')
+
     if not isinstance(answer, dict):
         raise TypeError(f'Wrong type for answers: {type(answer)=}')
+
     for field in REQUIRED_FLDS:
         if field not in answer:
             raise ValueError(f'Required {field=} missing from answers.')
