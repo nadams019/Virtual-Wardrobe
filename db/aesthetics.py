@@ -13,8 +13,8 @@ questions = {TEST_RESPONSE: {QUESTION: 'FOO', ANSWER: 'BAR'},
              'question3': {QUESTION: 'q3', ANSWER: 'a3'}, }
 
 
-aesthetics_dict = {1: "Grunge", 2: "Academia", 3:"Streetwear", 4: "Cottagecore",
-                   5:"Softgirl"}
+aesthetics_dict = {1: "Grunge", 2: "Academia", 3: "Streetwear",
+                   4: "Cottagecore", 5: "Softgirl"}
 
 QUESTION_KEY = 'question'
 QUESTIONS_COLLECT = 'questions'
@@ -35,18 +35,18 @@ def add_answer(question, answer):
 def add_field(question, answer):
     return None
 
-  
+
 def get_results(question, answer):
     count = 0
-    for i in range(5): #temp value, would change when certain of the number of questions
-        if answer != None:
-            count+=1
+    # temp value, would change when certain of the number of questions
+    for i in range(5):
+        if answer is not None:
+            count += 1
     return count
 
 
 def get_aethetics_dict():
     print(aesthetics_dict.values())
-
     # return aethetics_dict
 
 def add_question(question, answer):
