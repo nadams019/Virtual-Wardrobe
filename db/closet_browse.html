@@ -17,9 +17,11 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
 
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-get_category_type_details"><strong>get_category_type_details</strong></a>(category_type)</dt></dl>
- <dl><dt><a name="-get_category_types"><strong>get_category_types</strong></a>()</dt><dd><tt>Returns&nbsp;a&nbsp;list&nbsp;of&nbsp;category&nbsp;types.</tt></dd></dl>
- <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+<td width="100%"><dl><dt><a name="-add_clothing"><strong>add_clothing</strong></a>(name, details)</dt></dl>
+    <dl><dt><a name="-clothing_exists"><strong>game_exists</strong></a>(name)</dt><dd><tt>Returns&nbsp;whether&nbsp;or&nbsp;not&nbsp;a&nbsp;game&nbsp;exists.</tt></dd></dl>
+    <dl><dt><a name="-get_clothing_details"><strong>get_game_details</strong></a>(game)</dt></dl>
+    <dl><dt><a name="-get_clothing"><strong>get_games</strong></a>()</dt></dl>
+    <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
@@ -31,8 +33,17 @@
                   OCCASION: {'formal', 'casual', 'going-out', 'holiday'},
                   AESTHETIC: {'vintage', 'casual', 'gothic', 'streetwear', 'preppy'},
                   RANDOM: {'random'}}<br>
+<strong>REQUIRED_FLDS</strong> = ['season', 'occasion', 'aesthetic', 'random']<br>
+<strong>TEST_CLOTHING_NAME</strong> = 'Test closet'<br>
 <strong>SEASON</strong> = 'Season'<br>
 <strong>OCCASION</strong> = 'Occasion'<br>
 <strong>AESTHETIC</strong> = 'Aesthetic'<br>
-<strong>RANDOM</strong> = 'Random'</td></tr></table>
+<strong>RANDOM</strong> = 'Random'<br>
+<strong>closet</strong> = {'Test clothing': {'season': 'season', 'occasion': 'formal', 'aesthetic': 'vintage',
+'random': 'False'}, 'handle': {'season': 'summer', 'occasion': 'casual',
+                     'aesthetic': 'preppy', 'random': 'True'},
+          'dress': {'season': 'fall', 'occasion': 'school',
+                    'aesthetic': 'sporty', 'random': 'False'},
+          'hat': {'season': 'spring', 'occasion': 'formal',
+                  'aesthetic': 'southern', 'random': 'True'}}</td></tr></table>
 </body></html>
