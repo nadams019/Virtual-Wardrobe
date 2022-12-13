@@ -3,7 +3,7 @@ This module encapsulates details about our closet browsing page for the user.
 """
 import db.db_connect as dbc
 
-TEST_CATEGORY_NAME = 'Test Category'
+TEST_CLOTHING_NAME = 'Test Category'
 CLOTHING = 'clothing'
 SEASON = 'season'
 OCCASION = 'occasion'
@@ -11,7 +11,7 @@ AESTHETIC = 'aesthetic'
 RANDOM = 'random'
 
 REQUIRED_FLDS = [SEASON, OCCASION, AESTHETIC, RANDOM]
-closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
+closet = {TEST_CLOTHING_NAME: {SEASON: 'winter', OCCASION: 'formal',
                                AESTHETIC: 'vintage', RANDOM: 'False'},
           'handle': {SEASON: 'summer', OCCASION: 'casual',
                      AESTHETIC: 'preppy', RANDOM: 'True'},
@@ -20,7 +20,7 @@ closet = {TEST_CATEGORY_NAME: {SEASON: 'winter', OCCASION: 'formal',
           'hat': {SEASON: 'spring', OCCASION: 'formal',
                   AESTHETIC: 'southern', RANDOM: 'True'}, },
 
-CLOTHING_KEY = 'item'
+CLOTHING_KEY = 'name'
 CLOTHING_COLLECT = 'closet'
 
 """
@@ -28,15 +28,20 @@ Possible Category Types
 Season: Winter, Spring, Summer, Fall
 Occasion: Formal, Casual, Going-Out, Holiday
 Aesthetic: Vintage, Casual, Gothic, Streetwear, Preppy
-Random: Yes or No
+Random: True or False
 """
 
 
-def clothing_exists(item_nm):
+def get_clothing_details(closet):
+    dbc.connect_db()
+    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING_KEY: closet})
+
+
+def clothing_exists(name):
     """
     Returns a clothing item exists.
     """
-    return get_clothing_details(item_nm) is not None
+    return get_clothing_details(name) is not None
 
 
 def get_clothing_dict():
@@ -49,25 +54,22 @@ def get_clothes():
     return dbc.fetch_all(CLOTHING_COLLECT)
 
 
-def get_clothing_details(item_nm):
-    dbc.connect_db()
-    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING: item_nm})
-
-
-def add_clothing(item_nm):
-    dbc.connect_db()
-    if not isinstance(item_nm, dict):
-        raise TypeError(f'Wrong type for clothing item: {type(item_nm)=}')
+def add_clothing(name, details):
+    doc = details
+    if not isinstance(name, str):
+        raise TypeError(f'Wrong type for name: {type(name)=}')
+    if not isinstance(details, dict):
+        raise TypeError(f'Wrong type for details: {type(details)=}')
     for field in REQUIRED_FLDS:
-        if field not in item_nm:
-            raise ValueError(f'Required {field=} missing from clothing '
-                             f'details.')
-    return dbc.insert_one(CLOTHING_COLLECT, item_nm)
-
-
-def del_clothing(item_nm):
+        if field not in details:
+            raise ValueError(f'Required {field=} missing from details.')
     dbc.connect_db()
-    dbc.del_one(CLOTHING_COLLECT, {CLOTHING: item_nm})
+    doc[CLOTHING_KEY] = name
+    return dbc.insert_one(CLOTHING_COLLECT, doc)
+
+
+def del_clothing(name):
+    return dbc.del_one(CLOTHING_COLLECT, {CLOTHING_KEY: name})
 
 
 def main():
@@ -77,7 +79,7 @@ def main():
     print('Getting closet as a dict:')
     closet = get_clothing_dict()
     print(f'{closet=}')
-    print(f'{get_clothing_details(TEST_CATEGORY_NAME)=}')
+    print(f'{get_clothing_details(TEST_CLOTHING_NAME)=}')
 
 
 if __name__ == '__main__':

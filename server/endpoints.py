@@ -52,6 +52,14 @@ USER_LIST_NM = f'{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
 
+
+CLOSETBROWSE_DICT = f'/{DICT}'
+CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
+CLOSETBROWSE_DETAILS = f'/{DETAILS}'
+CLOSETBROWSE_DETAILS_W_NS = f'{CLOSETBROWSE_NS}/{DETAILS}'
+CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+
+"""
 CLOSETBROWSE_DICT = f'/{DICT}'
 CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
 CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
@@ -60,6 +68,8 @@ CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
 CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
 CLOSETBROWSE_DETAILS = f'/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+"""
+
 
 CONTACTS_DICT = f'/{DICT}'
 CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
@@ -140,7 +150,6 @@ class UserDict(Resource):
     """
     This will get a list of currrent users.
     """
-
     def get(self):
         """
         Returns a list of current users.
@@ -155,7 +164,6 @@ class UserList(Resource):
     """
     This will get a list of currrent users.
     """
-
     def get(self):
         """
         Returns a list of current users.
@@ -165,7 +173,8 @@ class UserList(Resource):
 
 user_fields = api.model('NewUser', {
     usr.USERNAME: fields.String,
-    usr.PASSWORD: fields.String
+    usr.PASSWORD: fields.String,
+    usr.FULL_NAME: fields.String,
 })
 
 
@@ -174,16 +183,54 @@ class AddUser(Resource):
     """
     Add a user.
     """
-
     @api.expect(user_fields)
     def post(self):
         """
         Add a user.
         """
-        print(f'{request.json}')
+        print(f'{request.json=}')
         name = request.json[usr.USERNAME]
         del request.json[usr.USERNAME]
         usr.add_user(name, request.json)
+
+
+@closet_browse.route(CLOSETBROWSE_DICT)
+class ClosetList(Resource):
+    def get(self):
+        return {'Data': brwse.get_clothing_dict(),
+                'Type': 'Data',
+                'Title': 'Available Clothes'}
+
+
+@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<closet>')
+class ClosetDetails(Resource):
+    @api.reponse(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    def get(self, closet):
+        ct = brwse.get_clothing_details(closet)
+        if ct is not None:
+            return {closet: brwse.get_clothing_details(closet)}
+        else:
+            raise wz.NotFound(f'{closet} not found.')
+
+
+closet_fields = api.model('NewItem', {
+    brwse.CLOTHING: fields.String,
+    brwse.SEASON: fields.String,
+    brwse.OCCASION: fields.String,
+    brwse.AESTHETIC: fields.String,
+    brwse.RANDOM: fields.Boolean,
+})
+
+
+@api.route(CLOSETBROWSE_ADD)
+class AddItem(Resource):
+    @api.expect(closet_fields)
+    def post(self):
+        print(f'{request.json=}')
+        name = request.json[brwse.CLOTHING]
+        del request.json[brwse.CLOTHING]
+        brwse.add_clothing(name, request.json)
 
 
 @app.route('/')
@@ -192,49 +239,6 @@ def aesthetics():
     The aesthetics page.
     """
     return render_template('pages/aesthetics.html')
-
-
-@closet_browse.route(CLOSETBROWSE_DICT)
-class ClosetList(Resource):
-    """
-    This will get a list of currrent clothing items in the closet inventory.
-    """
-
-    def get(self):
-        """
-        Returns a list of current clothing items.
-        """
-        return {'Data': brwse.get_clothing_dict(),
-                'Type': 'Data',
-                'Title': 'Available Clothes'}
-
-
-@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<item>')
-class ClosetDetails(Resource):
-    """
-    This will get details on a clothing item.
-    """
-
-    @api.response(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, clothing):
-        """
-        Returns a list of clothing category types.
-        """
-        cb = brwse.get_clothing_details(clothing)
-        if cb is not None:
-            return {clothing: brwse.get_clothing_details(clothing)}
-        else:
-            raise wz.NotFound(f'{clothing} not found.')
-
-
-closet_browse_fields = api.model('NewClothing', {
-    brwse.SEASON: fields.String,
-    brwse.OCCASION: fields.String,
-    brwse.AESTHETIC: fields.String,
-    brwse.RANDOM: fields.String,
-})
-
 
 # @app.route(LOGIN_NS, methods=['GET, POST'])
 # def login():
@@ -245,28 +249,12 @@ closet_browse_fields = api.model('NewClothing', {
 #         return redirect('login.html')
 
 
-@api.route(f'{CLOSETBROWSE_ADD}/<item>')
-class AddClothing(Resource):
-    """
-    Add a clothing item.
-    """
-
-    @api.expect(closet_browse_fields)
-    def post(self):
-        """
-        Add a clothing item to closet.
-        """
-        print(f'{request.json=}')
-        brwse.add_clothing(request.json)
-
-
 @api.route('/endpoints')
 class Endpoints(Resource):
     """
     This class will serve as live, fetchable documentation of what endpoints
     are available in the system.
     """
-
     def get(self):
         """
         The `get()` method will return a list of available endpoints.
