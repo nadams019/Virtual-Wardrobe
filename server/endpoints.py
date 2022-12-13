@@ -10,21 +10,18 @@ import werkzeug.exceptions as wz
 import db.users as usr
 import db.closet_browse as brwse
 import db.contacts as cnts
+# import db.aesthetics as aes
 
 app = Flask(__name__)
 api = Api(app)
 
-CHAR_TYPES_NS = 'character_types'
 LOGIN_NS = 'login'
-GAMES_NS = 'games'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
 CONTACTS_NS = 'contacts'
+AESTHETIC_QUIZ_NS = 'aesthetics quiz'
 
-char_types = Namespace(CHAR_TYPES_NS, 'Character Types')
-api.add_namespace(char_types)
-games = Namespace(GAMES_NS, 'Games')
-api.add_namespace(games)
+
 login = Namespace(LOGIN_NS, 'Login')
 api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
@@ -33,6 +30,8 @@ closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
 contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
+aes_quiz = Namespace(AESTHETIC_QUIZ_NS, 'Aesthetics Quiz')
+api.add_namespace(aes_quiz)
 
 LIST = 'list'
 DICT = 'dict'
@@ -42,19 +41,8 @@ MAIN_MENU = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
-CHAR_TYPE_DICT = f'/{DICT}'
-CHAR_TYPE_DICT_W_NS = f'{CHAR_TYPES_NS}/{DICT}'
-CHAR_TYPE_DICT_NM = f'{CHAR_TYPES_NS}_dict'
-CHAR_TYPE_LIST = f'/{LIST}'
-CHAR_TYPE_LIST_W_NS = f'{CHAR_TYPES_NS}/{LIST}'
-CHAR_TYPE_LIST_NM = f'{CHAR_TYPES_NS}_list'
-CHAR_TYPE_DETAILS = f'/{DETAILS}'
-CHAR_TYPE_DETAILS_W_NS = f'{CHAR_TYPES_NS}/{DETAILS}'
-GAME_DICT = f'/{DICT}'
-GAME_DICT_W_NS = f'{GAMES_NS}/{DICT}'
-GAME_DETAILS = f'/{DETAILS}'
-GAME_DETAILS_W_NS = f'{GAMES_NS}/{DETAILS}'
-GAME_ADD = f'/{GAMES_NS}/{ADD}'
+
+
 USER_DICT = f'/{DICT}'
 USER_DICT_W_NS = f'{USERS_NS}/{DICT}'
 USER_DICT_NM = f'{USERS_NS}_dict'
@@ -63,6 +51,7 @@ USER_LIST_W_NS = f'{USERS_NS}/{LIST}'
 USER_LIST_NM = f'{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
+
 CLOSETBROWSE_DICT = f'/{DICT}'
 CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
 CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
@@ -71,6 +60,7 @@ CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
 CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
 CLOSETBROWSE_DETAILS = f'/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+
 CONTACTS_DICT = f'/{DICT}'
 CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
 CONTACTS_DICT_NM = f'{CONTACTS_NS}_dict'
@@ -80,18 +70,14 @@ CONTACTS_LIST_NM = f'{CONTACTS_NS}_list'
 CONTACTS_DETAILS = f'/{CONTACTS_NS}/{DETAILS}'
 CONTACTS_ADD = f'/{CONTACTS_NS}/{ADD}'
 
-AESTHETIC_QUIZ_NS = 'quiz'
-
-quiz = Namespace(AESTHETIC_QUIZ_NS, 'Quiz')
-api.add_namespace(quiz)
-
-USER_AESTHETIC = f'/User_aesthetic/{LIST}'
-USER_AESTHETIC_NS = f'/{AESTHETIC_QUIZ_NS}/User_aesthetic/{LIST}'
-USER_AESTHETIC_NM = 'user_aesthetics_list'
-street_wear = 'street wear'
-preppy = 'preppy'
-soft_girl = 'soft_girl'
-instagram_baddie = 'insta baddie'
+AESTHETIC = f'/{DICT}'
+AESTHETIC_W_NS = f'{AESTHETIC_QUIZ_NS}/{DICT}'
+AESTHETIC_NM = f'{AESTHETIC_QUIZ_NS}_dict'
+AESTHETIC_LIST = f'/{LIST}'
+AESTHETIC_LIST_W_NS = f'{AESTHETIC_QUIZ_NS}/{LIST}'
+AESTHETIC_LIST_NM = f'{AESTHETIC_QUIZ_NS}_list'
+AESTHETIC_DETAILS = f'/{AESTHETIC_QUIZ_NS}/{DETAILS}'
+AESTHETIC_ADD = f'/{AESTHETIC_QUIZ_NS}/{ADD}'
 
 
 @api.route(HELLO)
@@ -100,7 +86,6 @@ class HelloWorld(Resource):
     The purpose of the HelloWorld class is to have a simple test to see if the
     app is working at all.
     """
-
     def get(self):
         """
         A trivial endpoint to see if the server is running.
@@ -114,7 +99,6 @@ class MainMenu(Resource):
     """
     This will deliver our main menu.
     """
-
     def get(self):
         """
         Gets the main game menu.
@@ -129,6 +113,10 @@ class MainMenu(Resource):
                     '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes '
                                                    'Available to Browse'},
+                    '4': {'url': f' / {CONTACTS_DICT_W_NS}',
+                          'method': 'get', 'text': 'List Contacts'},
+                    '5': {'url': f' / {AESTHETIC_W_NS}',
+                          'method': 'get', 'text': 'List Quiz Results'},
                     'X': {'text': 'Exit'},
                 }}
 
