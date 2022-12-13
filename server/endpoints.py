@@ -204,8 +204,8 @@ class ClosetList(Resource):
 
 @closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<closet>')
 class ClosetDetails(Resource):
-    @api.reponse(HTTPStatus.OK, 'Success')
-    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    # @api.reponse(HTTPStatus.OK, 'Success')
+    # @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, closet):
         ct = brwse.get_clothing_details(closet)
         if ct is not None:

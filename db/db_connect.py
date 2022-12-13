@@ -2,9 +2,9 @@ import os
 
 import pymongo as pm
 
-REMOTE = "0"
-LOCAL = "1"
-CLOUD = "2"
+LOCAL = "0"
+CLOUD = "1"
+
 WARDROBE_DB = 'wardrobedb'
 
 client = None
@@ -30,6 +30,12 @@ def connect_db():
             client = pm.MongoClient(f'mongodb+srv://gcallah:{password}'
                                     + '@cluster0.eqxbbqd.mongodb.net/'
                                     + '?retryWrites=true&w=majority')
+            # PA recommends these settings:
+            # + 'connectTimeoutMS=30000&'
+            # + 'socketTimeoutMS=None
+            # + '&connect=false'
+            # + 'maxPoolsize=1')
+            # but they don't seem necessary
         else:
             print("Connecting to Mongo locally.")
             client = pm.MongoClient()
@@ -40,7 +46,7 @@ def insert_one(collection, doc, db=WARDROBE_DB):
     Insert a single doc into collection.
     """
     print(f'{db=}')
-    client[db][collection].insert_one(doc)
+    return client[db][collection].insert_one(doc)
 
 
 def fetch_one(collection, filt, db=WARDROBE_DB):
@@ -59,7 +65,6 @@ def del_one(collection, filt, db=WARDROBE_DB):
 
 
 def fetch_all(collection, db=WARDROBE_DB):
-    print(f'in fetch_all {collection=}')
     ret = []
     for doc in client[db][collection].find():
         ret.append(doc)
