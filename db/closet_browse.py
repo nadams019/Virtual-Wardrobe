@@ -3,7 +3,7 @@ This module encapsulates details about our closet browsing page for the user.
 """
 import db.db_connect as dbc
 
-TEST_CLOTHING_NAME = 'Test Category'
+TEST_CLOTHING_NAME = 'Test clothing'
 CLOTHING = 'clothing'
 SEASON = 'season'
 OCCASION = 'occasion'
@@ -27,14 +27,14 @@ CLOTHING_COLLECT = 'closet'
 Possible Category Types
 Season: Winter, Spring, Summer, Fall
 Occasion: Formal, Casual, Going-Out, Holiday
-Aesthetic: Vintage, Casual, Gothic, Streetwear, Preppy
+Aesthetic: Vintage, Casual, Gothic, Street-wear, Preppy
 Random: True or False
 """
 
 
-def get_clothing_details(closet):
+def get_clothing_details(clothing):
     dbc.connect_db()
-    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING_KEY: closet})
+    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING_KEY: clothing})
 
 
 def clothing_exists(name):
@@ -74,11 +74,11 @@ def del_clothing(name):
 
 def main():
     print('Retrieving closet as a list:')
-    closet = get_clothes()
-    print(f'{closet=}')
+    clothing = get_clothes()
+    print(f'{clothing=}')
     print('Getting closet as a dict:')
-    closet = get_clothing_dict()
-    print(f'{closet=}')
+    clothing = get_clothing_dict()
+    print(f'{clothing=}')
     print(f'{get_clothing_details(TEST_CLOTHING_NAME)=}')
 
 
