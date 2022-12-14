@@ -3,7 +3,8 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-from flask import Flask, request, flash, redirect, render_template, url_for
+from flask import Flask, request, flash, redirect, render_template, session,\
+    url_for
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
@@ -152,6 +153,7 @@ user_fields = api.model('NewUser', {
     usr.PASSWORD: fields.String,
     usr.FULL_NAME: fields.String,
 })
+
 
 @api.route(USER_ADD)
 class AddUser(Resource):
@@ -315,23 +317,27 @@ def login():
     """
     The login page for the closet.
     """
+    if request.method == "POST":
+        email = request.form['email']
+        full_name = request.form['full name']
+        username = request.form['username']
+        password = request.form['password']
 
-    email = request.form['email']
-    full_name = request.form['full name']
-    username = request.form['username']
-    password = request.form['password']
+        try:
+            user_found = usr.user_exists(email, full_name)
+        except Exception as error:
+            print(f"Error logging in: {error}")
 
-    user_found = usr.user_exists(email, full_name)
+        if user_found is True:
+            session['email'] = email
+            session['full_name'] = full_name
+            return redirect(url_for(MAIN_MENU))
 
-    if user_found is True:
-        success = "Logged in successfully!"
-        flash(success)
-        return redirect('/info-page.html')
+        else:
+            error = "Login failed"
+            return render_template('login.html')
 
-    else:
-        fail = "Login failed"
-        flash(fail)
-        return redirect('/login.html')
+
 
 
 @api.route('/endpoints')
