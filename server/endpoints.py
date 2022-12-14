@@ -7,7 +7,6 @@ from flask import Flask, request, redirect, render_template, session,\
     url_for
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
-
 import db.users as usr
 import db.closet_browse as brwse
 import db.contacts as cnts
