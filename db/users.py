@@ -18,7 +18,7 @@ users = {TEST_USER_NAME: {EMAIL: 'x@y.com', FULL_NAME: 'Porgy Tirebiter',
                     USERNAME: 'dangernick47', PASSWORD: 'nEed4Sp33D?.'}}
 
 
-def user_exists(email, name):
+def user_exists(email, name, username, password):
     """
     Returns whether or not a user exists.
     """
