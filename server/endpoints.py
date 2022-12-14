@@ -10,7 +10,7 @@ import werkzeug.exceptions as wz
 import db.users as usr
 import db.closet_browse as brwse
 import db.contacts as cnts
-# import db.aesthetics as aes
+import db.aesthetics_types as atyp
 
 app = Flask(__name__)
 api = Api(app)
@@ -19,7 +19,7 @@ LOGIN_NS = 'login'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
 CONTACTS_NS = 'contacts'
-AESTHETIC_QUIZ_NS = 'aesthetics quiz'
+AES_TYPES_NS = 'aesthetics_types'
 
 
 login = Namespace(LOGIN_NS, 'Login')
@@ -30,8 +30,8 @@ closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
 contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
-aes_quiz = Namespace(AESTHETIC_QUIZ_NS, 'Aesthetics Quiz')
-api.add_namespace(aes_quiz)
+aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
+api.add_namespace(aes_types)
 
 LIST = 'list'
 DICT = 'dict'
@@ -59,17 +59,6 @@ CLOSETBROWSE_DETAILS = f'/{DETAILS}'
 CLOSETBROWSE_DETAILS_W_NS = f'{CLOSETBROWSE_NS}/{DETAILS}'
 CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
 
-"""
-CLOSETBROWSE_DICT = f'/{DICT}'
-CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
-CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
-CLOSETBROWSE_LIST = f'/{LIST}'
-CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
-CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
-CLOSETBROWSE_DETAILS = f'/{DETAILS}'
-CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
-"""
-
 
 CONTACTS_DICT = f'/{DICT}'
 CONTACTS_DICT_W_NS = f'{CONTACTS_NS}/{DICT}'
@@ -80,14 +69,15 @@ CONTACTS_LIST_NM = f'{CONTACTS_NS}_list'
 CONTACTS_DETAILS = f'/{CONTACTS_NS}/{DETAILS}'
 CONTACTS_ADD = f'/{CONTACTS_NS}/{ADD}'
 
-AESTHETIC = f'/{DICT}'
-AESTHETIC_W_NS = f'{AESTHETIC_QUIZ_NS}/{DICT}'
-AESTHETIC_NM = f'{AESTHETIC_QUIZ_NS}_dict'
-AESTHETIC_LIST = f'/{LIST}'
-AESTHETIC_LIST_W_NS = f'{AESTHETIC_QUIZ_NS}/{LIST}'
-AESTHETIC_LIST_NM = f'{AESTHETIC_QUIZ_NS}_list'
-AESTHETIC_DETAILS = f'/{AESTHETIC_QUIZ_NS}/{DETAILS}'
-AESTHETIC_ADD = f'/{AESTHETIC_QUIZ_NS}/{ADD}'
+
+AES_TYPE_DICT = f'/{DICT}'
+AES_TYPE_DICT_W_NS = f'{AES_TYPES_NS}/{DICT}'
+AES_TYPE_DICT_NM = f'{AES_TYPES_NS}_dict'
+AES_TYPE_LIST = f'/{LIST}'
+AES_TYPE_LIST_W_NS = f'{AES_TYPES_NS}/{LIST}'
+AES_TYPE_LIST_NM = f'{AES_TYPES_NS}_list'
+AES_TYPE_DETAILS = f'/{DETAILS}'
+AES_TYPE_DETAILS_W_NS = f'{AES_TYPES_NS}/{DETAILS}'
 
 
 @api.route(HELLO)
@@ -125,24 +115,10 @@ class MainMenu(Resource):
                                                    'Available to Browse'},
                     '4': {'url': f' / {CONTACTS_DICT_W_NS}',
                           'method': 'get', 'text': 'List Contacts'},
-                    '5': {'url': f' / {AESTHETIC_W_NS}',
-                          'method': 'get', 'text': 'List Quiz Results'},
+                    '5': {'url': f' / {AES_TYPE_DICT_W_NS}',
+                          'method': 'get', 'text': 'List Aesthetic Types'},
                     'X': {'text': 'Exit'},
                 }}
-
-
-# @quiz.route(USER_AESTHETIC)
-# class UserAesthetic(Resource):
-# """
-# Gets a list of possible aesthetics.
-# """
-# def get(self):
-#  """
-# Returns list of possible aesthetics.
-# """
-# return {'Title': 'UserAesthetic',
-#     'Type': 'Data',
-#     'Data': {1: street_wear, 2: preppy, 3: soft_girl, 4: instagram_baddie}}
 
 
 @users.route(USER_DICT)
@@ -282,13 +258,48 @@ class AddContacts(Resource):
         cnts.add_contact(name, request.json)
 
 
-# @app.route(LOGIN_NS, methods=['GET, POST'])
-# def login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-#     elif request.method == "GET":
-#         return redirect('login.html')
+@aes_types.route(AES_TYPE_LIST)
+class AestheticTypeList(Resource):
+    """
+    This will get a list of aesthetic types.
+    """
+    def get(self):
+        """
+        Returns a list of aesthetic types.
+        """
+        return {AES_TYPE_LIST_NM: atyp.get_aes_types()}
+
+
+@aes_types.route(AES_TYPE_DICT)
+class AestheticTypeDict(Resource):
+    """
+    This will get a list of aesthetic types.
+    """
+    def get(self):
+        """
+        Returns a list of aesthetic types.
+        """
+        return {'Data': atyp.get_aes_type_dict(),
+                'Type': 'Data',
+                'Title': 'Aesthetics Types'}
+
+
+@aes_types.route(f'{AES_TYPE_DETAILS}/<aes_type>')
+class AestheticTypeDetails(Resource):
+    """
+    This will return details on a character type.
+    """
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    def get(self, aes_type):
+        """
+        This will return details on a character type.
+        """
+        ct = atyp.get_aes_type_details(aes_type)
+        if ct is not None:
+            return {aes_type: atyp.get_aes_type_details(aes_type)}
+        else:
+            raise wz.NotFound(f'{aes_type} not found.')
 
 
 @api.route('/endpoints')
