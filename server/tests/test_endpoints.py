@@ -100,9 +100,9 @@ def test_get_clothing_list():
     resp = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS).get_json()
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
-
+'''
 
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
-    assert response.status == "Successful login"
-'''
+    assert response.status == "Successfully logged in"
+
