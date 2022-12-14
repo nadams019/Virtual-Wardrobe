@@ -33,6 +33,7 @@ api.add_namespace(contacts)
 aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
 api.add_namespace(aes_types)
 
+LOGIN = '/login'
 LIST = 'list'
 DICT = 'dict'
 DETAILS = 'details'
@@ -106,7 +107,7 @@ class MainMenu(Resource):
         return {'Title': MAIN_MENU_NM,
                 'Default': 2,
                 'Choices': {
-                    '1': {'url': f'/{LOGIN_NS}',
+                    '1': {'url': f'/{LOGIN}',
                           'method': 'post', 'text': 'Login'},
                     '2': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
@@ -311,7 +312,7 @@ class AestheticTypeDetails(Resource):
             raise wz.NotFound(f'{aes_type} not found.')
 
 
-@login.route('/login', methods=['GET', 'POST'])
+@login.route(LOGIN, methods=['GET', 'POST'])
 def login():
     """
     The login page for the closet.
