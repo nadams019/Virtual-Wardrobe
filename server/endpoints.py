@@ -233,6 +233,55 @@ class AddItem(Resource):
         brwse.add_clothing(name, request.json)
 
 
+@contacts.route(CONTACTS_DICT)
+class ContactDict(Resource):
+    """
+    This will get a list of currrent contact.
+    """
+    def get(self):
+        """
+        Returns a list of current contacts.
+        """
+        return {'Data': cnts.get_contacts_dict(),
+                'Type': 'Data',
+                'Title': 'Contact Requests'}
+
+
+@contacts.route(CONTACTS_LIST)
+class ContactList(Resource):
+    """
+    This will get a list of currrent users.
+    """
+    def get(self):
+        """
+        Returns a list of current users.
+        """
+        return {CONTACTS_LIST_NM: cnts.get_contacts()}
+
+
+contacts_fields = api.model('NewContact', {
+    cnts.EMAIL: fields.String,
+    cnts.FULL_NAME: fields.String,
+    cnts.REQUEST: fields.String
+})
+
+
+@api.route(CONTACTS_ADD)
+class AddContacts(Resource):
+    """
+    Add a user.
+    """
+    @api.expect(user_fields)
+    def post(self):
+        """
+        Add a user.
+        """
+        print(f'{request.json}')
+        name = request.json[cnts.FULL_NAME]
+        del request.json[cnts.FULL_NAME]
+        cnts.add_contact(name, request.json)
+
+
 @app.route('/')
 def aesthetics():
     """
@@ -288,53 +337,4 @@ def streetwearResults():
     return render_template('aestheics/streetwear.html')
 
 
-@contacts.route(CONTACTS_DICT)
-class ContactDict(Resource):
-    """
-    This will get a list of currrent contact.
-    """
 
-    def get(self):
-        """
-        Returns a list of current contacts.
-        """
-        return {'Data': cnts.get_contacts_dict(),
-                'Type': 'Data',
-                'Title': 'Contact Requests'}
-
-
-@contacts.route(CONTACTS_LIST)
-class ContactList(Resource):
-    """
-    This will get a list of currrent users.
-    """
-
-    def get(self):
-        """
-        Returns a list of current users.
-        """
-        return {CONTACTS_LIST_NM: cnts.get_contacts()}
-
-
-contacts_fields = api.model('NewContacts', {
-    cnts.FULL_NAME: fields.String,
-    cnts.EMAIL: fields.String,
-    cnts.REQUEST: fields.String
-})
-
-
-@api.route(CONTACTS_ADD)
-class AddContacts(Resource):
-    """
-    Add a user.
-    """
-
-    @api.expect(user_fields)
-    def post(self):
-        """
-        Add a user.
-        """
-        print(f'{request.json}')
-        name = request.json[cnts.FULL_NAME]
-        del request.json[cnts.FULL_NAME]
-        cnts.add_contact(name, request.json)
