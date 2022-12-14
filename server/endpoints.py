@@ -3,7 +3,7 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-from flask import Flask, render_template, request
+from flask import Flask, request
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 
@@ -282,13 +282,6 @@ class AddContacts(Resource):
         cnts.add_contact(name, request.json)
 
 
-@app.route('/')
-def aesthetics():
-    """
-    The aesthetics page.
-    """
-    return render_template('pages/aesthetics.html')
-
 # @app.route(LOGIN_NS, methods=['GET, POST'])
 # def login():
 #     if request.method == 'POST':
@@ -312,26 +305,3 @@ class Endpoints(Resource):
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
 
-
-@app.route('/Grunge')
-def grungeResults():
-    """
-    grunge results
-    """
-    return render_template('aestheics/grunge.html')
-
-
-@app.route('/cottagecore')
-def cottagecoreResults():
-    """
-    cottagecore results
-    """
-    return render_template('aestheics/cottagecore.html')
-
-
-@app.route('/streetwear')
-def streetwearResults():
-    """
-    streetwearresults
-    """
-    return render_template('aestheics/streetwear.html')
