@@ -173,6 +173,9 @@ class AddUser(Resource):
 @closet_browse.route(CLOSETBROWSE_DICT)
 class ClosetList(Resource):
     def get(self):
+        """
+        Returns a list of available clothing items in the virtual wardrobe
+        """
         return {'Data': brwse.get_clothing_dict(),
                 'Type': 'Data',
                 'Title': 'Available Clothes'}
@@ -183,6 +186,9 @@ class ClosetDetails(Resource):
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, closet):
+        """
+        This will give details on a clothing item.
+        """
         ct = brwse.get_clothing_details(closet)
         if ct is not None:
             return {closet: brwse.get_clothing_details(closet)}
@@ -203,6 +209,9 @@ closet_fields = api.model('NewItem', {
 class AddItem(Resource):
     @api.expect(closet_fields)
     def post(self):
+        """
+        Adds a clothing item to virtual wardrobe.
+        """
         print(f'{request.json=}')
         name = request.json[brwse.CLOTHING]
         del request.json[brwse.CLOTHING]
