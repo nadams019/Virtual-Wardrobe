@@ -335,6 +335,3 @@ def streetwearResults():
     streetwearresults
     """
     return render_template('aestheics/streetwear.html')
-
-
-
