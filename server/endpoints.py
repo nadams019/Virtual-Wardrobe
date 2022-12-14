@@ -2,7 +2,7 @@
 This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
-# from http import HTTPStatus
+from http import HTTPStatus
 from flask import Flask, render_template, request
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
@@ -204,8 +204,8 @@ class ClosetList(Resource):
 
 @closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<closet>')
 class ClosetDetails(Resource):
-    # @api.reponse(HTTPStatus.OK, 'Success')
-    # @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, closet):
         ct = brwse.get_clothing_details(closet)
         if ct is not None:
