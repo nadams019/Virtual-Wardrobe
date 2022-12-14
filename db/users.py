@@ -22,7 +22,7 @@ def user_exists(email, name, username, password):
     """
     Returns whether or not a user exists.
     """
-    return email, name in users
+    return email, name, username, password in users
 
 
 def get_users():

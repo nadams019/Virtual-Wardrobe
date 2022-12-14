@@ -312,31 +312,31 @@ class AestheticTypeDetails(Resource):
             raise wz.NotFound(f'{aes_type} not found.')
 
 
-@login.route(LOGIN, methods=['GET', 'POST'])
-def login():
-    """
-    The login page for the closet.
-    """
-    error = None
-    if request.method == "POST":
-        email = request.form['email']
-        full_name = request.form['full name']
-        username = request.form['username']
-        password = request.form['password']
-
-        try:
-            user_found = usr.user_exists(email, full_name, username, password)
-        except Exception as error:
-            print(f"Error logging in: {error}")
-
-        if user_found is True:
-            session['email'] = email
-            session['full_name'] = full_name
-            return redirect(url_for(MAIN_MENU))
-
-        else:
-            error = "Login failed"
-            return render_template('login.html', error=error)
+# @login.route(LOGIN, methods=['GET', 'POST'])
+# def login():
+#     """
+#     The login page for the closet.
+#     """
+#     error = None
+#     if request.method == "POST":
+#         email = request.form['email']
+#         full_name = request.form['full name']
+#         username = request.form['username']
+#         password = request.form['password']
+#
+#         try:
+#             user_found = usr.user_exists(email, full_name, username, password)
+#         except Exception as error:
+#             print(f"Error logging in: {error}")
+#
+#         if user_found is True:
+#             session['email'] = email
+#             session['full_name'] = full_name
+#             return redirect(url_for(MAIN_MENU))
+#
+#         else:
+#             error = "Login failed"
+#             return render_template('login.html', error=error)
 
 
 @api.route('/endpoints')

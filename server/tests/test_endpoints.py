@@ -4,11 +4,9 @@ import db.users as usr
 import db.closet_browse as brwse
 # import db.aesthetics_types as aes
 
-
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
 TEST_AES_TYPE = 'Grunge'
-
 
 def test_hello():
     """
@@ -16,14 +14,6 @@ def test_hello():
     """
     resp_json = TEST_CLIENT.get(ep.HELLO).get_json()
     assert isinstance(resp_json[ep.MESSAGE], str)
-
-
-SAMPLE_USER_NM = 'SampleUser'
-SAMPLE_USER = {
-    usr.USERNAME: SAMPLE_USER_NM,
-    usr.EMAIL: 'x@y.com',
-    usr.FULL_NAME: 'Sample User',
-}
 
 '''
 def test_add_user():
@@ -34,7 +24,6 @@ def test_add_user():
     assert usr.user_exists(SAMPLE_USER_NM)
     usr.del_user(SAMPLE_USER_NM)
 '''
-
 
 def test_get_user_list():
     """
@@ -102,7 +91,7 @@ def test_get_clothing_list():
     assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
 '''
 
-def test_login():
-    response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
-    assert response.status == "Successfully logged in"
-
+# def test_login():
+#     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
+#     assert response.status == "Successfully logged in"
+#
