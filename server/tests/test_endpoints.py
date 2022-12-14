@@ -35,6 +35,7 @@ def test_add_user():
     usr.del_user(SAMPLE_USER_NM)
 '''
 
+
 def test_get_user_list():
     """
     See if we can get a user list properly.
