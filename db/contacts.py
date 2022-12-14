@@ -12,7 +12,7 @@ EMAIL = 'email'
 REQUEST = 'request'
 REQUIRED_FLDS = [FIRST_NAME, LAST_NAME, EMAIL, REQUEST]
 contacts = {TEST_USER_NAME: {EMAIL: 'x@y.com',
-                             FULL_NAME: TEST_FIRST_NAME + TEST_LAST_NAME,
+                             FULL_NAME: TEST_FIRST_NAME + ' ' + TEST_LAST_NAME,
                              REQUEST: []},
             'Test User 2': {EMAIL: 'z@y.com',
                             FULL_NAME: 'John Doe', REQUEST: []}}
