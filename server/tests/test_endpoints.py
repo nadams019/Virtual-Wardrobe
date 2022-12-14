@@ -2,7 +2,7 @@
 import server.endpoints as ep
 import db.users as usr
 import db.closet_browse as brwse
-import db.aesthetics_types as aes
+# import db.aesthetics_types as aes
 
 
 TEST_CLIENT = ep.app.test_client()
@@ -31,8 +31,8 @@ def test_add_user():
     Test adding a user.
     """
     resp = TEST_CLIENT.post(ep.USER_ADD, json=SAMPLE_USER)
-    assert usr.user_exists(SAMPLE_USER_NM)
-    usr.del_user(SAMPLE_USER_NM)
+    assert usr.user_exists(resp)
+    usr.del_user(resp)
 
 
 def test_get_user_list():
