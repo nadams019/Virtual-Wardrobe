@@ -3,7 +3,7 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-from flask import Flask, request, flash, redirect, render_template, session,\
+from flask import Flask, request, redirect, render_template, session,\
     url_for
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
@@ -317,6 +317,7 @@ def login():
     """
     The login page for the closet.
     """
+    error = None
     if request.method == "POST":
         email = request.form['email']
         full_name = request.form['full name']
@@ -324,7 +325,7 @@ def login():
         password = request.form['password']
 
         try:
-            user_found = usr.user_exists(email, full_name)
+            user_found = usr.user_exists(email, full_name, username, password)
         except Exception as error:
             print(f"Error logging in: {error}")
 
@@ -335,9 +336,7 @@ def login():
 
         else:
             error = "Login failed"
-            return render_template('login.html')
-
-
+            return render_template('login.html', error=error)
 
 
 @api.route('/endpoints')
