@@ -11,7 +11,8 @@ TEST_AES_TYPE = 'Grunge'
 SAMPLE_USER_NM = 'SampleUser'
 SAMPLE_USER = {
     usr.EMAIL: 'x@y.com',
-    usr.FULL_NAME: SAMPLE_USER_NM,
+    usr.NAME: SAMPLE_USER_NM,
+    usr.FULL_NAME: 'Sample User',
     usr.USERNAME: 'sample_user',
     usr.PASSWORD: 'abcde123'
 }
@@ -82,12 +83,10 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
-'''
 def test_add_clothing_post():
-    resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
+    resp = TEST_CLIENT.get(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
-'''
 
 '''
 def test_get_clothing_list():
