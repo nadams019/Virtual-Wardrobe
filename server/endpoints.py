@@ -17,7 +17,7 @@ api = Api(app)
 
 LOGIN_NS = 'login'
 USERS_NS = 'users'
-CLOSETBROWSE_NS = 'closet_browse'
+CLOSET_NS = 'closet'
 BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
@@ -27,8 +27,8 @@ login = Namespace(LOGIN_NS, 'Login')
 api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
-closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
-api.add_namespace(closet_browse)
+closet = Namespace(CLOSET_NS, 'Closet')
+api.add_namespace(closet)
 browse = Namespace(BROWSE_NS, 'Browse')
 api.add_namespace(browse)
 contacts = Namespace(CONTACTS_NS, 'Contacts')
@@ -64,15 +64,15 @@ BROWSE_DETAILS_W_NS = f'{BROWSE_NS}/{DETAILS}'
 BROWSE_ADD = f'/{BROWSE_NS}/{ADD}'
 
 
-CLOSETBROWSE_LIST = f'{LIST}'
-CLOSETBROWSE_LIST_NM = f'{CLOSETBROWSE_NS}_list'
-CLOSETBROWSE_LIST_W_NS = f'{CLOSETBROWSE_NS}/{LIST}'
-CLOSETBROWSE_DICT_NM = f'{CLOSETBROWSE_NS}_dict'
-CLOSETBROWSE_DICT = f'/{DICT}'
-CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
-CLOSETBROWSE_DETAILS = f'/{DETAILS}'
-CLOSETBROWSE_DETAILS_W_NS = f'{CLOSETBROWSE_NS}/{DETAILS}'
-CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+CLOSET_LIST = f'{LIST}'
+CLOSET_LIST_NM = f'{CLOSET_NS}_list'
+CLOSET_LIST_W_NS = f'{CLOSET_NS}/{LIST}'
+CLOSET_DICT_NM = f'{CLOSET_NS}_dict'
+CLOSET_DICT = f'/{DICT}'
+CLOSET_DICT_W_NS = f'{CLOSET_NS}/{DICT}'
+CLOSET_DETAILS = f'/{DETAILS}'
+CLOSET_DETAILS_W_NS = f'{CLOSET_NS}/{DETAILS}'
+CLOSET_ADD = f'/{CLOSET_NS}/{ADD}'
 
 
 CONTACTS_DICT = f'/{DICT}'
@@ -125,9 +125,9 @@ class MainMenu(Resource):
                           'method': 'post', 'text': 'Login'},
                     '2': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
-                    '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
+                    '3': {'url': f' / {CLOSET_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes '
-                                                   'Available to Browse'},
+                                                   'in Closet'},
                     '4': {'url': f' / {CONTACTS_DICT_W_NS}',
                           'method': 'get', 'text': 'List Contacts'},
                     '5': {'url': f' / {AES_TYPE_DICT_W_NS}',
@@ -242,7 +242,7 @@ class AddClothing(Resource):
         br.add_clothing(name, request.json)
 
 
-@closet_browse.route(CLOSETBROWSE_DICT)
+@closet.route(CLOSET_DICT)
 class ClosetList(Resource):
     def get(self):
         """
@@ -253,7 +253,7 @@ class ClosetList(Resource):
                 'Title': 'Available Clothes'}
 
 
-@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<closet>')
+@closet.route(f'{CLOSET_DETAILS}/<closet>')
 class ClosetDetails(Resource):
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
@@ -277,7 +277,7 @@ closet_fields = api.model('NewItem', {
 })
 
 
-@api.route(CLOSETBROWSE_ADD)
+@api.route(CLOSET_ADD)
 class AddItem(Resource):
     @api.expect(closet_fields)
     def post(self):

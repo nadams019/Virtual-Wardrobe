@@ -2,7 +2,7 @@
 import server.endpoints as ep
 import db.users as usr
 import db.closet_browse as brwse
-import db.browse as br
+# import db.browse as br
 # import db.aesthetics_types as aes
 
 TEST_CLIENT = ep.app.test_client()
