@@ -1,7 +1,7 @@
 """
 This module encapsulates details about our closet browsing page for the user.
 """
-import db.db_connect as dbc
+# import db.db_connect as dbc
 
 TEST_CLOTHING_NAME = 'Test clothing'
 CLOTHING = 'clothing'
