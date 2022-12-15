@@ -296,13 +296,13 @@ class AestheticTypeDict(Resource):
 @aes_types.route(f'{AES_TYPE_DETAILS}/<aes_type>')
 class AestheticTypeDetails(Resource):
     """
-    This will return details on a character type.
+    This will return details on a aesthetic type.
     """
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, aes_type):
         """
-        This will return details on a aesthetic type.
+        This will return details on an aesthetic type.
         """
         atype = atyp.get_aes_type_details(aes_type)
         if atype is not None:
