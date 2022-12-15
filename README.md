@@ -15,6 +15,9 @@ The user can organize their items into categories based on clothing types (pants
 - Aesthetic Quiz: The system will make recommendations based on the user’s pre-specified preferences. The quiz will include questions asking about color palettes, seasonal fabrics, occasion, etc.
 
 
+# MongoDB Link:
+https://cloud.mongodb.com/v2/63990c9ae35d0c1f073474ff#/clusters
+
 
 # Toolsets/ Libraries:
 
