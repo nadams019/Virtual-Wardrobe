@@ -69,7 +69,8 @@ def add_clothing(name, details):
 
 
 def del_clothing(name):
-    return dbc.del_one(CLOTHING_COLLECT, {CLOTHING_KEY: name})
+    del closet[name]
+    # return dbc.del_one(CLOTHING_COLLECT, {CLOTHING_KEY: name})
 
 
 def main():
