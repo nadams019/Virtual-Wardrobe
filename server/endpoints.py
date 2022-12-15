@@ -227,7 +227,7 @@ browse_fields = api.model('NewClothing', {
 
 
 @api.route(BROWSE_ADD)
-class AddItem(Resource):
+class AddClothing(Resource):
     """
     Add a clothing item.
     """
