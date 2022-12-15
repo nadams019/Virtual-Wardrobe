@@ -8,6 +8,15 @@ TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
 TEST_AES_TYPE = 'Grunge'
 
+SAMPLE_USER_NM = 'SampleUser'
+SAMPLE_USER = {
+    usr.EMAIL: 'x@y.com'
+    usr.FULL_NAME: SAMPLE_USER_NM,
+    usr.USERNAME: 'sample_user',
+    usr.PASSWORD: 'abcde123'
+}
+
+
 def test_hello():
     """
     See if Hello works.
@@ -15,7 +24,7 @@ def test_hello():
     resp_json = TEST_CLIENT.get(ep.HELLO).get_json()
     assert isinstance(resp_json[ep.MESSAGE], str)
 
-'''
+
 def test_add_user():
     """
     Test adding a user.
@@ -23,7 +32,7 @@ def test_add_user():
     resp = TEST_CLIENT.post(ep.USER_ADD, json=SAMPLE_USER)
     assert usr.user_exists(SAMPLE_USER_NM)
     usr.del_user(SAMPLE_USER_NM)
-'''
+
 
 def test_get_user_list():
     """
@@ -73,11 +82,12 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
-
+'''
 def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
+'''
 
 '''
 def test_get_clothing_list():
