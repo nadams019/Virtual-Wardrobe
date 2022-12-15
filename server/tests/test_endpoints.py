@@ -99,9 +99,9 @@ def test_get_clothing_list():
     Return should look like:
         {CLOSETBROWSE_LIST_NM: [list of users types...]}
     """
-    resp = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS)
+    resp = TEST_CLIENT.get(ep.CLOSET_LIST_W_NS)
     resp_json = resp.get_json()
-    assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
+    assert isinstance(resp_json[ep.CLOSET_LIST_NM], list)
 
 '''
 def test_add_clothing_post():
