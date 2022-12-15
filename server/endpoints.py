@@ -302,10 +302,10 @@ class AestheticTypeDetails(Resource):
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, aes_type):
         """
-        This will return details on a character type.
+        This will return details on a aesthetic type.
         """
-        ct = atyp.get_aes_type_details(aes_type)
-        if ct is not None:
+        atype = atyp.get_aes_type_details(aes_type)
+        if atype is not None:
             return {aes_type: atyp.get_aes_type_details(aes_type)}
         else:
             raise wz.NotFound(f'{aes_type} not found.')
