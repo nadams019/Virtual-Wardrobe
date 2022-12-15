@@ -1,7 +1,6 @@
 """
-This module encapsulates details about our closet browsing page for the user.
+This module encapsulates details about our closet browsing page for the user
 """
-import db.db_connect as dbc
 
 TEST_CLOTHING_NAME = 'Test clothing'
 CLOTHING = 'clothing'
@@ -33,29 +32,25 @@ Random: True or False
 
 
 def get_clothing_details(clothing):
-    dbc.connect_db()
-    return dbc.fetch_one(CLOTHING_COLLECT, {CLOTHING_KEY: clothing})
+    return closet.get(clothing, None)
 
 
 def clothing_exists(name):
     """
     Returns a clothing item exists.
     """
-    return get_clothing_details(name) is not None
+    return name in closet
 
 
 def get_clothing_dict():
-    dbc.connect_db()
-    return dbc.fetch_all_as_dict(CLOTHING_KEY, CLOTHING_COLLECT)
+    return closet
 
 
 def get_clothes():
-    dbc.connect_db()
-    return dbc.fetch_all(CLOTHING_COLLECT)
+    return list(closet.keys())
 
 
 def add_clothing(name, details):
-    doc = details
     if not isinstance(name, str):
         raise TypeError(f'Wrong type for name: {type(name)=}')
     if not isinstance(details, dict):
@@ -63,14 +58,11 @@ def add_clothing(name, details):
     for field in REQUIRED_FLDS:
         if field not in details:
             raise ValueError(f'Required {field=} missing from details.')
-    dbc.connect_db()
-    doc[CLOTHING_KEY] = name
-    return dbc.insert_one(CLOTHING_COLLECT, doc)
+    closet[name] = details
 
 
 def del_clothing(name):
-    # del closet[name]
-    return dbc.del_one(CLOTHING_COLLECT, {CLOTHING_KEY: name})
+    del closet[name]
 
 
 def main():

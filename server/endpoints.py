@@ -8,6 +8,7 @@ from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
 import db.closet_browse as brwse
+import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
 
@@ -16,7 +17,8 @@ api = Api(app)
 
 LOGIN_NS = 'login'
 USERS_NS = 'users'
-CLOSETBROWSE_NS = 'closet_browse'
+CLOSET_NS = 'closet'
+BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
 
@@ -25,8 +27,10 @@ login = Namespace(LOGIN_NS, 'Login')
 api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
-closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
-api.add_namespace(closet_browse)
+closet = Namespace(CLOSET_NS, 'Closet')
+api.add_namespace(closet)
+browse = Namespace(BROWSE_NS, 'Browse')
+api.add_namespace(browse)
 contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
 aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
@@ -53,11 +57,22 @@ USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
 
 
-CLOSETBROWSE_DICT = f'/{DICT}'
-CLOSETBROWSE_DICT_W_NS = f'{CLOSETBROWSE_NS}/{DICT}'
-CLOSETBROWSE_DETAILS = f'/{DETAILS}'
-CLOSETBROWSE_DETAILS_W_NS = f'{CLOSETBROWSE_NS}/{DETAILS}'
-CLOSETBROWSE_ADD = f'/{CLOSETBROWSE_NS}/{ADD}'
+BROWSE_DICT = f'/{DICT}'
+BROWSE_DICT_W_NS = f'{BROWSE_NS}/{DICT}'
+BROWSE_DETAILS = f'/{DETAILS}'
+BROWSE_DETAILS_W_NS = f'{BROWSE_NS}/{DETAILS}'
+BROWSE_ADD = f'/{BROWSE_NS}/{ADD}'
+
+
+CLOSET_LIST = f'{LIST}'
+CLOSET_LIST_NM = f'{CLOSET_NS}_list'
+CLOSET_LIST_W_NS = f'{CLOSET_NS}/{LIST}'
+CLOSET_DICT_NM = f'{CLOSET_NS}_dict'
+CLOSET_DICT = f'/{DICT}'
+CLOSET_DICT_W_NS = f'{CLOSET_NS}/{DICT}'
+CLOSET_DETAILS = f'/{DETAILS}'
+CLOSET_DETAILS_W_NS = f'{CLOSET_NS}/{DETAILS}'
+CLOSET_ADD = f'/{CLOSET_NS}/{ADD}'
 
 
 CONTACTS_DICT = f'/{DICT}'
@@ -110,9 +125,9 @@ class MainMenu(Resource):
                           'method': 'post', 'text': 'Login'},
                     '2': {'url': f'/{USER_DICT_W_NS}',
                           'method': 'get', 'text': 'List Users'},
-                    '3': {'url': f' / {CLOSETBROWSE_DICT_W_NS}',
+                    '3': {'url': f' / {CLOSET_DICT_W_NS}',
                           'method': 'get', 'text': 'List Clothes '
-                                                   'Available to Browse'},
+                                                   'in Closet'},
                     '4': {'url': f' / {CONTACTS_DICT_W_NS}',
                           'method': 'get', 'text': 'List Contacts'},
                     '5': {'url': f' / {AES_TYPE_DICT_W_NS}',
@@ -170,7 +185,64 @@ class AddUser(Resource):
         usr.add_user(name, request.json)
 
 
-@closet_browse.route(CLOSETBROWSE_DICT)
+@browse.route(BROWSE_DICT)
+class BrowseList(Resource):
+    """
+    This will get a list of current games.
+    """
+    def get(self):
+        """
+        Returns a list of current clothing items.
+        """
+        return {'Data': br.get_clothing_dict(),
+                'Type': 'Data',
+                'Title': 'Available Clothing'}
+
+
+@browse.route(f'{BROWSE_DETAILS}/<browse>')
+class BrowseDetails(Resource):
+    """
+    This will get details on a clothing.
+    """
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    def get(self, browse):
+        """
+        Returns a list of character types.
+        """
+        ct = br.get_clothing_details(browse)
+        if ct is not None:
+            return {browse: br.get_clothing_details(browse)}
+        else:
+            raise wz.NotFound(f'{browse} not found.')
+
+
+browse_fields = api.model('NewClothing', {
+    br.CLOTHING: fields.String,
+    br.SEASON: fields.String,
+    br.OCCASION: fields.String,
+    br.AESTHETIC: fields.String,
+    br.RANDOM: fields.String,
+})
+
+
+@api.route(BROWSE_ADD)
+class AddClothing(Resource):
+    """
+    Add a clothing item.
+    """
+    @api.expect(browse_fields)
+    def post(self):
+        """
+        Add a clothing item.
+        """
+        print(f'{request.json=}')
+        name = request.json[br.CLOTHING]
+        del request.json[br.CLOTHING]
+        br.add_clothing(name, request.json)
+
+
+@closet.route(CLOSET_DICT)
 class ClosetList(Resource):
     def get(self):
         """
@@ -181,7 +253,7 @@ class ClosetList(Resource):
                 'Title': 'Available Clothes'}
 
 
-@closet_browse.route(f'{CLOSETBROWSE_DETAILS}/<closet>')
+@closet.route(f'{CLOSET_DETAILS}/<closet>')
 class ClosetDetails(Resource):
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
@@ -205,7 +277,7 @@ closet_fields = api.model('NewItem', {
 })
 
 
-@api.route(CLOSETBROWSE_ADD)
+@api.route(CLOSET_ADD)
 class AddItem(Resource):
     @api.expect(closet_fields)
     def post(self):
@@ -296,13 +368,13 @@ class AestheticTypeDict(Resource):
 @aes_types.route(f'{AES_TYPE_DETAILS}/<aes_type>')
 class AestheticTypeDetails(Resource):
     """
-    This will return details on a character type.
+    This will return details on a aesthetic type.
     """
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, aes_type):
         """
-        This will return details on a aesthetic type.
+        This will return details on an aesthetic type.
         """
         atype = atyp.get_aes_type_details(aes_type)
         if atype is not None:

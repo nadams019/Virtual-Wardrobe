@@ -7,9 +7,9 @@ TEST_DEL_NAME = 'Item to be deleted'
 
 @pytest.fixture(scope='function')
 def temp_closet():
-    browse.add_clothing(browse.TEST_CATEGORY_NAME)
+    browse.add_clothing(browse.TEST_CLOTHING_NAME)
     yield
-    browse.del_clothing(browse.TEST_CATEGORY_NAME)
+    browse.del_clothing(browse.TEST_CLOTHING_NAME)
 
 
 def test_get_clothes(temp_closet):
@@ -19,7 +19,7 @@ def test_get_clothes(temp_closet):
 
 
 def test_get_clothing_details():
-    browse_dets = browse.get_clothing_details(browse.TEST_CATEGORY_NAME)
+    browse_dets = browse.get_clothing_details(browse.TEST_CLOTHING_NAME)
     assert isinstance(browse_dets, dict)
 
 
