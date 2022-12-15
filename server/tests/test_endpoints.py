@@ -41,7 +41,7 @@ def test_add_clothing():
     """
     resp = TEST_CLIENT.post(ep.BROWSE_ADD, json=SAMPLE_ITEM)
     assert br.clothing_exists(SAMPLE_ITEM_NM)
-    br.del_clothing(SAMPLE_ITEM)
+    br.del_clothing(SAMPLE_ITEM_NM)
 
 
 def test_get_user_list():
