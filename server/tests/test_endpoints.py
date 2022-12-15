@@ -39,9 +39,9 @@ def test_add_clothing():
     """
     Test adding a clothing item.
     """
-    resp = TEST_CLIENT.post(ep.BROWSE_ADD, json=SAMPLE_ITEM)
-    assert br.clothing_exists(SAMPLE_ITEM_NM)
-    br.del_clothing(SAMPLE_ITEM_NM)
+    resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
+    assert brwse.clothing_exists(SAMPLE_ITEM_NM)
+    brwse.del_clothing(SAMPLE_ITEM_NM)
 
 
 def test_get_user_list():
