@@ -15,6 +15,9 @@ The user can organize their items into categories based on clothing types (pants
 - Aesthetic Quiz: The system will make recommendations based on the user’s pre-specified preferences. The quiz will include questions asking about color palettes, seasonal fabrics, occasion, etc.
 
 
+# MongoDB Link:
+https://cloud.mongodb.com/v2/63990c9ae35d0c1f073474ff#/clusters
+
 
 # Toolsets/ Libraries:
 
@@ -33,6 +36,7 @@ https://www.figma.com/file/Vys3dUUgUDF6Wc9MeaMTHH/Virtual-Wardrobe?node-id=0%3A1
 
 =======
 # demo-repo3:
+https://github.com/gcallah/demo-repo3
 An example flask rest API server, for SE Fall 2022.
 
 To build production, type `make prod`.
