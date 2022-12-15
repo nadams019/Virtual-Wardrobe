@@ -39,7 +39,7 @@ def test_add_clothing():
     """
     Test adding a clothing item.
     """
-    resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
+    resp = TEST_CLIENT.post(ep.CLOSET_ADD, json=SAMPLE_ITEM)
     assert brwse.clothing_exists(SAMPLE_ITEM_NM)
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
@@ -126,4 +126,3 @@ def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
     assert response.status == "Successfully logged in"
 '''
-
