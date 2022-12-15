@@ -32,14 +32,14 @@ def aes_type_exists(type_name):
 
 def get_aes_type_dict():
     """
-    Returns a list of character types.
+    Returns a list of aesthetic types.
     """
     return aes_types
 
 
 def get_aes_types():
     """
-    Returns a list of character types.
+    Returns a list of aesthetic types.
     """
     return list(aes_types.keys())
 
