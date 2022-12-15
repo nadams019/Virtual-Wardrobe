@@ -3,7 +3,8 @@ This module encapsulates details about users.
 """
 
 TEST_USER_NAME = 'Test user'
-USERNAME = 'name'
+NAME = 'name'
+USERNAME = 'username'
 PASSWORD = 'password'
 EMAIL = 'email'
 FULL_NAME = 'full_name'
@@ -38,7 +39,10 @@ def get_user_details(user):
 
 
 def del_user(name):
-    del users[name]
+    if name in users:
+        del users[name]
+    else:
+        print('User not found')
 
 
 def add_user(name, details):
