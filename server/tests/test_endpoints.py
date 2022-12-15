@@ -49,7 +49,7 @@ def test_get_aesthetic_type_list():
     """
     See if we can get an aesthetic type list properly.
     Return should look like:
-        {CHAR_TYPE_LIST_NM: [list of chars types...]}
+        {AES_TYPE_LIST_NM: [list of aesthetics types...]}
     """
     resp_json = TEST_CLIENT.get(ep.AES_TYPE_LIST_W_NS).get_json()
     assert isinstance(resp_json[ep.AES_TYPE_LIST_NM], list)
@@ -82,24 +82,23 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
-'''
+
 def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
-    brwse.del_clothing(SAMPLE_ITEM_NM)
-'''
+    brwse.del_clothing(SAMPLE_ITEM)
 
-'''
+
 def test_get_clothing_list():
     """
     See if we can get a user list properly.
     Return should look like:
-        {CLOSETBROWSE_LIST_NM: [list of users types...]}
+        {CLOSETBROWSE_LIST_NM: [list of clothing types...]}
     """
     resp = TEST_CLIENT.get(ep.CLOSETBROWSE_LIST_W_NS).get_json()
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
-'''
+
 
 '''
 def test_login():
