@@ -8,6 +8,7 @@ from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
 import db.closet_browse as brwse
+import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
 
@@ -17,6 +18,7 @@ api = Api(app)
 LOGIN_NS = 'login'
 USERS_NS = 'users'
 CLOSETBROWSE_NS = 'closet_browse'
+BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
 
@@ -27,6 +29,8 @@ users = Namespace(USERS_NS, 'Users')
 api.add_namespace(users)
 closet_browse = Namespace(CLOSETBROWSE_NS, 'Closet Browse')
 api.add_namespace(closet_browse)
+browse = Namespace(BROWSE_NS, 'Browse')
+api.add_namespace(browse)
 contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
 aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
@@ -51,6 +55,13 @@ USER_LIST_W_NS = f'{USERS_NS}/{LIST}'
 USER_LIST_NM = f'{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
+
+
+BROWSE_DICT = f'/{DICT}'
+BROWSE_DICT_W_NS = f'{BROWSE_NS}/{DICT}'
+BROWSE_DETAILS = f'/{DETAILS}'
+BROWSE_DETAILS_W_NS = f'{BROWSE_NS}/{DETAILS}'
+BROWSE_ADD = f'/{BROWSE_NS}/{ADD}'
 
 
 CLOSETBROWSE_LIST = f'{LIST}'
@@ -172,6 +183,63 @@ class AddUser(Resource):
         name = request.json[usr.USERNAME]
         del request.json[usr.USERNAME]
         usr.add_user(name, request.json)
+
+
+@browse.route(BROWSE_DICT)
+class BrowseList(Resource):
+    """
+    This will get a list of current games.
+    """
+    def get(self):
+        """
+        Returns a list of current clothing items.
+        """
+        return {'Data': br.get_clothing_dict(),
+                'Type': 'Data',
+                'Title': 'Available Clothing'}
+
+
+@browse.route(f'{BROWSE_DETAILS}/<browse>')
+class BrowseDetails(Resource):
+    """
+    This will get details on a clothing.
+    """
+    @api.response(HTTPStatus.OK, 'Success')
+    @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
+    def get(self, browse):
+        """
+        Returns a list of character types.
+        """
+        ct = br.get_clothing_details(browse)
+        if ct is not None:
+            return {browse: br.get_clothing_details(browse)}
+        else:
+            raise wz.NotFound(f'{browse} not found.')
+
+
+browse_fields = api.model('NewClothing', {
+    br.CLOTHING: fields.String,
+    br.SEASON: fields.String,
+    br.OCCASION: fields.String,
+    br.AESTHETIC: fields.String,
+    br.RANDOM: fields.String,
+})
+
+
+@api.route(BROWSE_ADD)
+class AddItem(Resource):
+    """
+    Add a clothing item.
+    """
+    @api.expect(browse_fields)
+    def post(self):
+        """
+        Add a clothing item.
+        """
+        print(f'{request.json=}')
+        name = request.json[br.CLOTHING]
+        del request.json[br.CLOTHING]
+        br.add_clothing(name, request.json)
 
 
 @closet_browse.route(CLOSETBROWSE_DICT)

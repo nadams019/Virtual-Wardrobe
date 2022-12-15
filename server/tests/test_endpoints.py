@@ -102,6 +102,15 @@ def test_get_clothing_list():
     assert isinstance(resp_json[ep.CLOSETBROWSE_LIST_NM], list)
 
 
+def test_get_clothing_details():
+    """
+    See if we can get clothing details
+    """
+    resp_json = TEST_CLIENT.get(f'{ep.CLOSETBROWSE_DETAILS_W_NS}/{TEST_CLOTHING_TYPE}').get_json()
+    assert TEST_CLOTHING_TYPE in resp_json
+    assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
+
+
 '''
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
