@@ -153,7 +153,7 @@ class UserDict(Resource):
 @users.route(USER_LIST)
 class UserList(Resource):
     """
-    This will get a list of currrent users.
+    This will get a list of current users.
     """
     def get(self):
         """
@@ -242,13 +242,13 @@ class AddClothing(Resource):
         br.add_clothing(name, request.json)
 
 
-@closet.route(CLOSET_DICT)
+@closet.route(CLOSET_LIST)
 class ClosetList(Resource):
     def get(self):
         """
         Returns a list of available clothing items in the virtual wardrobe
         """
-        return {'Data': brwse.get_clothing_dict(),
+        return {'Data': brwse.get_clothes(),
                 'Type': 'Data',
                 'Title': 'Available Clothes'}
 
