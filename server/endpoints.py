@@ -188,7 +188,7 @@ class AddUser(Resource):
 @browse.route(BROWSE_DICT)
 class BrowseList(Resource):
     """
-    This will get a list of current games.
+    This will get a list of current clothing items.
     """
     def get(self):
         """
@@ -206,13 +206,13 @@ class BrowseDetails(Resource):
     """
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, browse):
+    def get(self, browse_dets):
         """
-        Returns a list of character types.
+        Returns a list of browse details.
         """
-        ct = br.get_clothing_details(browse)
+        ct = br.get_clothing_details(browse_dets)
         if ct is not None:
-            return {browse: br.get_clothing_details(browse)}
+            return {browse: br.get_clothing_details(browse_dets)}
         else:
             raise wz.NotFound(f'{browse} not found.')
 
@@ -257,15 +257,15 @@ class ClosetList(Resource):
 class ClosetDetails(Resource):
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
-    def get(self, closet):
+    def get(self, closet_nm):
         """
         This will give details on a clothing item.
         """
-        ct = brwse.get_clothing_details(closet)
+        ct = brwse.get_clothing_details(closet_nm)
         if ct is not None:
-            return {closet: brwse.get_clothing_details(closet)}
+            return {closet: brwse.get_clothing_details(closet_nm)}
         else:
-            raise wz.NotFound(f'{closet} not found.')
+            raise wz.NotFound(f'{closet_nm} not found.')
 
 
 closet_fields = api.model('NewItem', {

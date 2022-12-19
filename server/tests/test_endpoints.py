@@ -94,6 +94,7 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
+
 def test_get_clothing_list():
     """
     See if we can get a user list properly.
@@ -102,6 +103,7 @@ def test_get_clothing_list():
     """
     resp_json = TEST_CLIENT.get(ep.CLOSET_LIST_W_NS).get_json()
     assert isinstance(resp_json[ep.CLOSET_LIST_NM], list)
+
 
 '''
 def test_add_clothing_post():
