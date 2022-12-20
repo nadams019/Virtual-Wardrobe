@@ -4,10 +4,10 @@ import db.closet_browse as brwse
 
 app = Flask(__name__)
 USERS_NS = 'users'
-CLOSET_BROWSE_NS = 'closet_browse'
+CLOSET_NS = 'closet'
 
-closet_browse = Namespace(CLOSET_BROWSE_NS, 'Closet Browse')
-app.add_namespace(closet_browse)
+#closet_browse = Namespace(CLOSET_NS, 'Closet Browse')
+#app.add_namespace(closet_browse)
 
 LIST = 'list'
 DETAILS = 'details'
@@ -16,10 +16,10 @@ MAIN_MENU = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
-CLOSET_LIST = f'/{CLOSET_BROWSE_NS}/{LIST}'
-CLOSET_LIST_NM = f'{CLOSET_BROWSE_NS}_list'
-CLOSET_DETAILS = f'/{CLOSET_BROWSE_NS}/{DETAILS}'
-CLOSET_ADD = f'/{CLOSET_BROWSE_NS}/{ADD}'
+CLOSET_LIST = f'/{CLOSET_NS}/{LIST}'
+CLOSET_LIST_NM = f'{CLOSET_NS}_list'
+CLOSET_DETAILS = f'/{CLOSET_NS}/{DETAILS}'
+CLOSET_ADD = f'/{CLOSET_NS}/{ADD}'
 USER_LIST = f'/{USERS_NS}/{LIST}'
 USER_LIST_NM = f'/{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
