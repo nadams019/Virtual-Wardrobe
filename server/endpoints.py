@@ -248,9 +248,12 @@ class ClosetList(Resource):
         """
         Returns a list of available clothing items in the virtual wardrobe
         """
+        '''
         return {'Data': brwse.get_clothes(),
                 'Type': 'Data',
                 'Title': 'Available Clothes'}
+        '''
+        return {CLOSET_LIST_NM: brwse.get_clothes}
 
 
 @closet.route(f'{CLOSET_DETAILS}/<closet>')
