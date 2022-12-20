@@ -94,7 +94,7 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
-
+'''
 def test_get_clothing_list():
     """
     See if we can get a user list properly.
@@ -125,4 +125,3 @@ def test_get_clothing_details():
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
     assert response.status == "Successfully logged in"
-'''
