@@ -1,5 +1,5 @@
 """
-This module encapsulates details about our closet browsing page for the user
+This module encapsulates details about our closet browsing page for the user.
 """
 
 TEST_CLOTHING_NAME = 'Test clothing'
