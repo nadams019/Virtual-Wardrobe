@@ -1,10 +1,10 @@
-#PROGRESS 
-##Front-End 
+# PROGRESS 
+## Front-End 
 - Login page has been designed
 - Home page for website has been fully design and HTML part has been implemented
 - Finished designs on Figma
 
-##Back-End 
+## Back-End 
 - Successfully connected our project to MongoDB
 - 8 test cases that have worked:
 - Test_hello: tested if the app was simply working at all
