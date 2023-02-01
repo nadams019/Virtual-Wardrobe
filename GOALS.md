@@ -17,4 +17,4 @@
     - Implement the python code for getting the user inputs (specifically their username and password)
     - Implement python code to recognize login credentials in database to successfully login user to their homepage
     - Implement signup code to add users credentials when they choose the signup option
-  - Add user login test endpoint and get that to successfully work
+    - Add user login test endpoint and get that to successfully work
