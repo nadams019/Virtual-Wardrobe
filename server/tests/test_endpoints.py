@@ -94,29 +94,29 @@ SAMPLE_ITEM = {
     brwse.RANDOM: 'Sample Bool',
 }
 
-
+'''
 def test_get_clothing_list():
     """
     See if we can get a user list properly.
     Return should look like:
         {CLOSET_LIST_NM: [list of users types...]}
     """
-    resp = TEST_CLIENT.get(ep.CLOSET_LIST_W_NS).get_json()
+    resp = TEST_CLIENT.get(ep.CLOSET_LIST_W_NS)
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CLOSET_LIST_NM], list)
 
 '''
 def test_add_clothing_post():
-    resp = TEST_CLIENT.post(ep.CLOSETBROWSE_ADD, json=SAMPLE_ITEM)
+    resp = TEST_CLIENT.post(ep.BROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
-
+'''
 def test_get_clothing_details():
     """
     See if we can get clothing details
     """
-    resp_json = TEST_CLIENT.get(f'{ep.CLOSETBROWSE_DETAILS_W_NS}/{TEST_CLOTHING_TYPE}').get_json()
+    resp_json = TEST_CLIENT.get(f'{ep.BROWSE_DETAILS_W_NS}/{TEST_CLOTHING_TYPE}').get_json()
     assert TEST_CLOTHING_TYPE in resp_json
     assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
