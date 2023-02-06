@@ -26,3 +26,4 @@ dev_env: FORCE
 
 docs: FORCE
 	cd $(API_DIR); make docs
+	cd $(DB_DIR); make docs

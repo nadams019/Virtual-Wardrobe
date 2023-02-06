@@ -21,7 +21,8 @@ h2 {
     position: absolute;
     width: 615px;
     height: 127px;
-
+    X: -289px;
+    Y: -409px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -57,9 +58,10 @@ h2 {
     text-align: left;
 }
 /* Virtual Wardrobe */
-
-#top_box h1 {
-    position: absolute;
+ h1 {
+    /*position: absolute;*/
+    X: -385px;
+    Y: -534px;
     width: 807.47px;
     height: 80.04px;
     top:0px;
@@ -69,7 +71,9 @@ h2 {
     font-weight: 400;
     font-size: 100px;
     line-height: 121px;
+    line-height: 100%;
     text-align: center;
+    vertical-align: top;
 
     color: #F5F5F5;
 }
