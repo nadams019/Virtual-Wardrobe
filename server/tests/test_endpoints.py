@@ -12,11 +12,11 @@ TEST_AES_TYPE = 'Grunge'
 SAMPLE_USER_NM = 'SampleUser'
 SAMPLE_USER = {
     usr.EMAIL: 'x@y.com',
-    usr.FULL_NAME: SAMPLE_USER_NM,
+    usr.NAME: SAMPLE_USER_NM,
+    usr.FULL_NAME: 'Sample User',
     usr.USERNAME: 'sample_user',
     usr.PASSWORD: 'abcde123'
 }
-
 
 def test_hello():
     """
