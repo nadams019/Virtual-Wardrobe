@@ -162,7 +162,7 @@ h1{
     display:block
 }
 /* Season */
-.dropdownb .SeasonButton {
+.dropdown .SeasonButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -172,7 +172,7 @@ h1{
     position: absolute;
     width: 350px;
     height: 113px;
-    top: 300px;
+    top: 250px;
     left: 30%;
     z-index: 2;
     display: inline-block;
