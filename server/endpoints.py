@@ -253,7 +253,7 @@ class ClosetList(Resource):
                 'Type': 'Data',
                 'Title': 'Available Clothes'}
         '''
-        return {CLOSET_LIST_NM: brwse.get_clothes}
+        return {CLOSET_LIST_NM: brwse.get_clothes()}
 
 
 @closet.route(f'{CLOSET_DETAILS}/<closet>')
