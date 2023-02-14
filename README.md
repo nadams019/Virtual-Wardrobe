@@ -14,10 +14,11 @@ The user can organize their items into categories based on clothing types (pants
 - Matching recommendations: The Virtual Wardrobe is able to give recommendations based on previous selections by the user. The user can select what occasion the outfit will be used for and The Virtual Wardrobe will generate one clothing item from each clothing type.
 - Aesthetic Quiz: The system will make recommendations based on the user’s pre-specified preferences. The quiz will include questions asking about color palettes, seasonal fabrics, occasion, etc.
 
+# Heroku URL:
+https://git.heroku.com/virtualwardrobe.git
 
 # MongoDB Link:
 https://cloud.mongodb.com/v2/63990c9ae35d0c1f073474ff#/clusters
-
 
 # Toolsets/ Libraries:
 
