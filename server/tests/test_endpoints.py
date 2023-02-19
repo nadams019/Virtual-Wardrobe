@@ -75,14 +75,21 @@ def test_get_aesthetic_type_list_not_empty():
     assert len(resp_json[ep.AES_TYPE_LIST_NM]) > 0
 
 
-def test_get_aesthetic_type_details():
-    """
-    """
-    resp_json = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/'
-                                f'{TEST_AES_TYPE}').get_json()
-    assert TEST_AES_TYPE in resp_json
-    assert isinstance(resp_json[TEST_AES_TYPE], dict)
+# def test_get_aesthetic_type_details():
+#     """
+#     """
+#     resp_json = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/'
+#                                 f'{TEST_AES_TYPE}').get_json()
+#     assert TEST_AES_TYPE in resp_json
+#     assert isinstance(resp_json[TEST_AES_TYPE], dict)
 
+def test_get_clothing_details():
+    """
+    See if we can get clothing details
+    """
+    resp_json = TEST_CLIENT.get(f'{ep.CLOSETBROWSE_DETAILS_W_NS}/{TEST_CLOTHING_TYPE}').get_json()
+    assert TEST_CLOTHING_TYPE in resp_json
+    assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
 SAMPLE_ITEM_NM = 'SampleItem'
 SAMPLE_ITEM = {
