@@ -20,8 +20,8 @@ while True:
 
     print(input("Still trying to figure out your personal style? Take the style aesthetics quiz to see what aesthetic is more YOU"))
 
-    question1 = input("How would people describe you?\n(a)Bubbly \n(b)Edgy \n(c)An Old Soul\n(d) Kind \n\n)
-
+    question1 = input("How would people describe you?\n(a)Bubbly \n(b)Edgy \n(c)An Old Soul\n(d) Kind \n\n")
+#
     if(question1 =="a"):
         Softgirl += 1
         questionstobeansweredvariable += 1
@@ -38,7 +38,23 @@ while True:
         Softgirl += 1
         questionstobeansweredvariable += 1
 
+    question2 = input("What song would you add to your playlist?\n(a)Transparent Soul by Willow Smith \n(b)Honeymoon Avenue by Ariana Grande \n(c)Big Poppa by The Notorious B.I.G \n(d)EARFQUAKE by Tyler The Creator\n\n")
 
+    if (question2 == "a"):
+        Softgirl += 1
+    questionstobeansweredvariable += 1
+
+    elif (question2 == "b"):
+    Grunge += 1
+    questionstobeansweredvariable += 1
+
+    elif (question2 == "c"):
+    Academia += 1
+    questionstobeansweredvariable += 1
+
+    elif (question2 == "d"):
+    Softgirl += 1
+    questionstobeansweredvariable += 1
 
     if (questionstobeansweredvariable > 9):
         print("The result is out")
