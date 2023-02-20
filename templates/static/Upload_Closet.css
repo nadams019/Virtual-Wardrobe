@@ -113,8 +113,8 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
-/* clothing item type */
-.dropdown .itemTypeButton {
+/*clothing item type */
+.dropdown1 .itemTypeButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -134,7 +134,7 @@ h1{
     cursor: pointer;
 }
 
-.dropdown .dropdown-content {
+.dropdown1 .dropdown-content1 {
     display:none;
     position: absolute;
     background-color: #f9f9f9;
@@ -147,22 +147,22 @@ h1{
     left: 10.12%;
     z-index: 2;
 }
-.dropdown-content a {
+.dropdown-content1 a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 
 }
-.dropdown-content a:hover {background-color: #f1f1f1}
-.dropdown:hover .dropdown-content {
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+.dropdown1:hover .dropdown-content1 {
     display: block;
 }
-.dropdown:hover .itemTypeButton {
+.dropdown1:hover .itemTypeButton {
     display:block
 }
 /* Season */
-.dropdown .SeasonButton {
+.dropdown2 .SeasonButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -181,7 +181,7 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
-.dropdownb .dropdown-contentb {
+.dropdown2 .dropdown-content2 {
     display:none;
     position: absolute;
     background-color: #f9f9f9;
@@ -194,22 +194,22 @@ h1{
     left: 10.12%;
     z-index: 2;
 }
-.dropdown-contentb b {
+.dropdown-content2 a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 
 }
-.dropdown-contentb b:hover {background-color: #f1f1f1}
-.dropdownb:hover .dropdown-contentb {
+.dropdown-content2 a:hover {background-color: #f1f1f1}
+.dropdown2:hover .dropdown-content2 {
     display: block;
 }
-.dropdownb:hover .SeasonButton {
+.dropdown2:hover .SeasonButton {
     display:block
 }
 /* Occasion */
-.dropdownc .occasionButton {
+.dropdown3 .occasionButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -228,7 +228,7 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
-.dropdownc .dropdown-contentc {
+.dropdown3 .dropdown-content3 {
     display:none;
     position: absolute;
     background-color: #f9f9f9;
@@ -241,22 +241,22 @@ h1{
     left: 10.12%;
     z-index: 2;
 }
-.dropdown-contentc c {
+.dropdown-content3 a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 
 }
-.dropdown-contentc c:hover {background-color: #f1f1f1}
-.dropdownb:hover .dropdown-contentc {
+.dropdown-content3 a:hover {background-color: #f1f1f1}
+.dropdown3:hover .dropdown-content3 {
     display: block;
 }
-.dropdownb:hover .occasionButton {
+.dropdown3:hover .occasionButton {
     display:block
 }
 /* Aesthetic */
-.dropdownd .aestheticButton {
+.dropdown4 .aestheticButton {
     background-color:#4CAF50;
     border: none;
     color: white;
@@ -275,7 +275,7 @@ h1{
     margin: 4px 2px;
     cursor: pointer;
 }
-.dropdownd .dropdown-contentd {
+.dropdown4 .dropdown-content4 {
     display:none;
     position: absolute;
     background-color: #f9f9f9;
@@ -288,20 +288,21 @@ h1{
     left: 10.12%;
     z-index: 2;
 }
-.dropdown-contentd d {
+.dropdown-content4 a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 
 }
-.dropdown-contentd d:hover {background-color: #f1f1f1}
-.dropdownd:hover .dropdown-contentd {
+.dropdown-content4 a:hover {background-color: #f1f1f1}
+.dropdown4:hover .dropdown-content4 {
     display: block;
 }
-.dropdownd:hover .occasionButton {
+.dropdown4:hover .occasionButton {
     display:block
 }
+*/
 
 /*upload button*/
 .uploadButton {
