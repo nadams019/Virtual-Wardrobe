@@ -134,3 +134,8 @@ SAMPLE_ITEM = {
     cnts.LAST_NAME: 'last,
     cnts.REQUEST: 'This is a request.',
 }
+
+def test_get_contact_list():
+    resp = TEST_CLIENT.get(ep.CONTACT_LIST_W_NS)
+    resp_json = resp.get_json()
+    assert isinstance(resp_json[ep.CONTACT_LIST_NM], list)
