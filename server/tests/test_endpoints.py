@@ -137,7 +137,7 @@ SAMPLE_ITEM = {
 }
 
 def test_get_contact_list():
-    resp = TEST_CLIENT.get(ep.CONTACT_LIST_W_NS)
+    resp = TEST_CLIENT.get(ep.CONTACTS_LIST_W_NS)
     resp_json = resp.get_json()
-    assert isinstance(resp_json[ep.CONTACT_LIST_NM], list)
+    assert isinstance(resp_json[ep.CONTACTS_LIST_NM], list)
 '''
