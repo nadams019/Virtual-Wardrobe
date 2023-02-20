@@ -56,6 +56,25 @@ while True:
     Softgirl += 1
     questionstobeansweredvariable += 1
 
+    question3 = input(
+        "When I go to a party I prioritize being ___\n(a)comfortable \n(b)stylish \n(c) the star of the show \n(d) warmth\n\n")
+
+    if (question3 == "a"):
+        Softgirl += 1
+    questionstobeansweredvariable += 1
+
+    elif (question3 == "b"):
+    Grunge += 1
+    questionstobeansweredvariable += 1
+
+    elif (question3 == "c"):
+    Academia += 1
+    questionstobeansweredvariable += 1
+
+    elif (question3 == "d"):
+    Softgirl += 1
+    questionstobeansweredvariable += 1
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
         input("press any key to start again: ")
