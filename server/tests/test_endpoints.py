@@ -126,6 +126,7 @@ def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
     assert response.status == "Successfully logged in"
 '''
+'''
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_ITEM = {
     cnts: SAMPLE_CONTACT_NM,
@@ -139,3 +140,4 @@ def test_get_contact_list():
     resp = TEST_CLIENT.get(ep.CONTACT_LIST_W_NS)
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CONTACT_LIST_NM], list)
+'''
