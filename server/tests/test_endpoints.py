@@ -2,6 +2,7 @@
 import server.endpoints as ep
 import db.users as usr
 import db.closet_browse as brwse
+import db.contacts as cnts
 # import db.browse as br
 # import db.aesthetics_types as aes
 
@@ -125,3 +126,11 @@ def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
     assert response.status == "Successfully logged in"
 '''
+SAMPLE_CONTACT_NM = 'SampleContact'
+SAMPLE_ITEM = {
+    cnts: SAMPLE_CONTACT_NM,
+    cnts.EMAIL: 'x@y.com',
+    cnts.FIRST_NAME: 'first',
+    cnts.LAST_NAME: 'last,
+    cnts.REQUEST: 'This is a request.',
+}
