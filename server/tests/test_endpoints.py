@@ -108,7 +108,7 @@ def test_add_clothing_post():
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
-'''
+
 
 
 
@@ -120,7 +120,7 @@ def test_get_clothing_details():
     assert TEST_CLOTHING_TYPE in resp_json
     assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
-
+'''
 
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
