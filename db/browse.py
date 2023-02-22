@@ -67,10 +67,10 @@ def del_clothing(name):
 
 def main():
     print('Retrieving closet as a list:')
-    closet = get_clothes()
+    clothing = get_clothes()
     print(f'{clothing=}')
     print('Getting closet as a dict:')
-    closet = get_clothing_dict()
+    clothing = get_clothing_dict()
     print(f'{clothing=}')
     print(f'{get_clothing_details(TEST_CLOTHING_NAME)=}')
 
