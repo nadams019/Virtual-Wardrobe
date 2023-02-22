@@ -17,7 +17,7 @@ closet = {TEST_CLOTHING_NAME: {SEASON: 'winter', OCCASION: 'formal',
           'dress': {SEASON: 'fall', OCCASION: 'school',
                     AESTHETIC: 'sporty', RANDOM: 'False'},
           'hat': {SEASON: 'spring', OCCASION: 'formal',
-                  AESTHETIC: 'southern', RANDOM: 'True'}, }
+                  AESTHETIC: 'southern', RANDOM: 'True'}, },
 
 CLOTHING_KEY = 'name'
 CLOTHING_COLLECT = 'closet'
