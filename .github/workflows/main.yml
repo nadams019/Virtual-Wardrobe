@@ -38,7 +38,11 @@ jobs:
 
       - name: Run Python tests.
         run: make all_tests
-        
+
+      - name: Deploy to Heroku
+        uses: nadams019/heroku-deploy@v3.12.13
+
+
       # Deploy to Heroku
       #  - uses: akhileshns/heroku-deploy@v3.12.12
       #    with:
