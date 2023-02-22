@@ -39,13 +39,14 @@ jobs:
       - name: Run Python tests.
         run: make all_tests
 
-      - name: Deploy to Heroku
-        uses: nadams019/heroku-deploy@v3.12.13
+
+#      - name: Deploy to Heroku
+#        uses: nadams019/heroku-deploy@v3.12.13
+
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "virtualwardrobe"
+          heroku_email: "naa498@nyu.edu"
 
 
-      # Deploy to Heroku
-      #  - uses: akhileshns/heroku-deploy@v3.12.12
-      #    with:
-      #        heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #        heroku_app_name: "Food Your Way"
-      #        heroku_email: "ejc369@nyu.edu"
