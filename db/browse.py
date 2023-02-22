@@ -17,7 +17,7 @@ closet = {TEST_CLOTHING_NAME: {SEASON: 'winter', OCCASION: 'formal',
           'dress': {SEASON: 'fall', OCCASION: 'school',
                     AESTHETIC: 'sporty', RANDOM: 'False'},
           'hat': {SEASON: 'spring', OCCASION: 'formal',
-                  AESTHETIC: 'southern', RANDOM: 'True'}, },
+                  AESTHETIC: 'southern', RANDOM: 'True'}, }
 
 CLOTHING_KEY = 'name'
 CLOTHING_COLLECT = 'closet'
@@ -67,10 +67,10 @@ def del_clothing(name):
 
 def main():
     print('Retrieving closet as a list:')
-    clothing = get_clothes()
+    closet = get_clothes()
     print(f'{clothing=}')
     print('Getting closet as a dict:')
-    clothing = get_clothing_dict()
+    closet = get_clothing_dict()
     print(f'{clothing=}')
     print(f'{get_clothing_details(TEST_CLOTHING_NAME)=}')
 
