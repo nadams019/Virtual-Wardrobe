@@ -7,8 +7,7 @@ app = Flask(__name__)
 USERS_NS = 'users'
 CLOSET_BROWSE_NS = 'closet_browse'
 
-closet_browse = Blueprint(CLOSET_BROWSE_NS, 'Closet Browse')
-app.add_namespace(closet_browse)
+closet_browse_bp = Blueprint('closet_browse', __name__, url_prefix='/closet_browse')
 
 LIST = 'list'
 DETAILS = 'details'
