@@ -1,4 +1,5 @@
 from flask import Flask, Blueprint
+from flask_restful import Resource
 import db.users as usr
 import db.closet_browse as brwse
 import argparse
