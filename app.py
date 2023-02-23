@@ -37,7 +37,7 @@ def hello_world():  # put application's code here
         #"""
         #A trivial endpoint to see if the server is working properly.
         #It just answers with hello world.
-        """
+        #"""
         #return {MESSAGE: 'hello world'}
 
 
