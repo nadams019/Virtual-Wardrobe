@@ -7,7 +7,7 @@ app = Flask(__name__)
 USERS_NS = 'users'
 CLOSET_BROWSE_NS = 'closet_browse'
 
-closet_browse = argparse.Namespace(CLOSET_BROWSE_NS, 'Closet Browse')
+closet_browse = argparse.Namespace()
 app.add_namespace(closet_browse)
 
 LIST = 'list'
