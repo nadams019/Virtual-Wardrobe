@@ -31,14 +31,14 @@ def hello_world():  # put application's code here
     return 'Hello World!'
 
 
-@app.route(HELLO)
-class HelloWorld(Resource):
-    def get(self):
+#@app.route(HELLO)
+#class HelloWorld(Resource):
+    #def get(self):
         """
         A trivial endpoint to see if the server is working properly.
         It just answers with hello world.
         """
-        return {MESSAGE: 'hello world'}
+        #return {MESSAGE: 'hello world'}
 
 
 @app.route(MAIN_MENU)
