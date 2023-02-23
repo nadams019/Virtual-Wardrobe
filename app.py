@@ -1,12 +1,13 @@
 from flask import Flask
 import db.users as usr
 import db.closet_browse as brwse
+import argparse
 
 app = Flask(__name__)
 USERS_NS = 'users'
 CLOSET_BROWSE_NS = 'closet_browse'
 
-closet_browse = Namespace(CLOSET_BROWSE_NS, 'Closet Browse')
+closet_browse = argparse.Namespace(CLOSET_BROWSE_NS, 'Closet Browse')
 app.add_namespace(closet_browse)
 
 LIST = 'list'
