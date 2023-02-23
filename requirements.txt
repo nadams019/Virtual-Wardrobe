@@ -1,5 +1,6 @@
 flask==2.1.3
 flask-restx
+flask_restful
 werkzeug==2.1.2
 
 
