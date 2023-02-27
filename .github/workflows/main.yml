@@ -39,24 +39,11 @@ jobs:
       - name: Run Python tests.
         run: make all_tests
 
-      - name: Setup Heroku CLI
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - name: Login to Heroku
-        uses: actions/heroku-login@v1
-        with:
-          email: ${{ secrets.HEROKU_EMAIL }}
-          api-key: ${{ secrets.HEROKU_API_KEY }}
+
       - name: Deploy to Heroku
-        uses: actions/heroku-push@v1
-        with:
-          app-name: virtual-wardrobe.herokuapp.com/
-          remote_branch: main
-          force_push: true
-      - name: Run database migrations
-        run: |
-          heroku run npm run migrate --app virtual-wardrobe.herokuapp.com/
+        run: ./deploy.sh
+        env:
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}} 
        #uses: nadams019/heroku-deploy@v3.12.13
 
 #      - uses: akhileshns/heroku-deploy@v3.12.12
