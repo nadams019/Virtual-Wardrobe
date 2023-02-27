@@ -1,5 +1,5 @@
 LINTER = flake8
-PYTESTFLAGS = -vv --verbose --tbshort --cov=$(PKG) 
+PYTESTFLAGS = -vv --verbose --tbshort --cov=$(PKG) --cov-report term-missing
 
 FORCE:
 
