@@ -45,10 +45,10 @@ jobs:
       - name: Run Python tests.
         run: make all_tests
 
-#      - name: Setup Heroku CLI
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: '14.x'
+      - name: Setup Heroku CLI
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
           
 #      - name: Deploy to Heroku
 #        run: |
