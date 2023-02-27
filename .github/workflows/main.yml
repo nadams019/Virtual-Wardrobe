@@ -23,7 +23,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # environment: heroku-deploy
+    environment: heroku-deploy
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -40,13 +40,16 @@ jobs:
         run: make all_tests
 
 
-#      - name: Deploy to Heroku
-#        uses: nadams019/heroku-deploy@v3.12.13
+      - name: Deploy to Heroku
+        run: ./deploy.sh
+        env:
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_KEY}} 
+       #uses: nadams019/heroku-deploy@v3.12.13
 
-      - uses: akhileshns/heroku-deploy@v3.12.12
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "virtual-wardrobe"
-          heroku_email: "naa498@nyu.edu"
+#      - uses: akhileshns/heroku-deploy@v3.12.12
+#        with:
+#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+#          heroku_app_name: "virtual-wardrobe"
+#          heroku_email: "naa498@nyu.edu"
 
 
