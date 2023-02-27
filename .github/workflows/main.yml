@@ -49,15 +49,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - name: Login to Heroku
-        uses: actions/heroku-login@v1
-        with:
-          email: ${{ secrets.HEROKU_EMAIL }}
-          api-key: ${{ secrets.HEROKU_API_KEY }}
-      - name: Deploy to Heroku
-        run: |
-          heroku git:remote --app <virtual-wardrobe.herokuapp.com>
-          git push heroku <main>
+          
+#      - name: Deploy to Heroku
+#        run: |
+#          heroku git:remote --app <virtual-wardrobe.herokuapp.com>
+#          git push heroku <main>
        #uses: nadams019/heroku-deploy@v3.12.13
 
 #      - uses: akhileshns/heroku-deploy@v3.12.12
