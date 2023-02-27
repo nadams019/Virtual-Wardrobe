@@ -49,14 +49,9 @@ jobs:
           email: ${{ secrets.HEROKU_EMAIL }}
           api-key: ${{ secrets.HEROKU_API_KEY }}
       - name: Deploy to Heroku
-        uses: actions/heroku-push@v1
-        with:
-          app-name: virtual-wardrobe.herokuapp.com/
-          remote_branch: main
-          force_push: true
-      - name: Run database migrations
         run: |
-          heroku run npm run migrate --app virtual-wardrobe.herokuapp.com/
+          heroku git:remote --app <virtual-wardrobe.herokuapp.com>
+          git push heroku <main>
        #uses: nadams019/heroku-deploy@v3.12.13
 
 #      - uses: akhileshns/heroku-deploy@v3.12.12
