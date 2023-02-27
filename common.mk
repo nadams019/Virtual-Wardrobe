@@ -1,5 +1,5 @@
 LINTER = flake8
-PYTESTFLAGS = -vv --verbose --tbshort
+PYTESTFLAGS = -vv --verbose --tbshort --cov=$(PKG) 
 
 FORCE:
 
