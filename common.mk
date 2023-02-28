@@ -7,7 +7,10 @@ FORCE:
 tests: lint unit
 
 unit: FORCE
-        $(LINTER) *.py
+        pytest $(PYTESTFLAGS)      
+        
+lint: FORCE
+         $(LINTER) *.py
 
 # test a python file:
 %.py: FORCE
