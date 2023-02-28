@@ -1,5 +1,5 @@
 LINTER = flake8
-PYTESTFLAGS = -vv --verbose --tbshort --cov=$(PKG) --cov-branch --cov-report term-missing
+PYTESTFLAGS = -vv --verbose --tb=short --cov=$(PKG) --cov-branch --cov-report term-missing
 
 FORCE:
 
@@ -7,15 +7,15 @@ FORCE:
 tests: lint unit
 
 unit: FORCE
-        pytest $(PYTESTFLAGS)      
-        
+	pytest $(PYTESTFLAGS)      
+	
 lint: FORCE
-         $(LINTER) *.py
+	 $(LINTER) *.py
 
 # test a python file:
 %.py: FORCE
-        pytest -s tests/test_$*.py
+	pytest -s tests/test_$*.py
 
 docs: FORCE
-        pydoc3 -w ./*py
-        git add *html
+	pydoc3 -w ./*py
+	git add *html
