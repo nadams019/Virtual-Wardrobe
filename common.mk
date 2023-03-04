@@ -3,14 +3,13 @@ PYTESTFLAGS = -vv --verbose --tb=short --cov=$(PKG) --cov-branch --cov-report te
 
 FORCE:
 
-
 tests: lint unit
 
 unit: FORCE
-	pytest $(PYTESTFLAGS)      
-	
+	pytest $(PYTESTFLAGS)
+
 lint: FORCE
-	 $(LINTER) *.py
+	$(LINTER) *.py
 
 # test a python file:
 %.py: FORCE
