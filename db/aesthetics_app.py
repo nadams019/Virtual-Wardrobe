@@ -154,7 +154,5 @@ while True:
         Softgirl += 1
         questionstobeansweredvariable += 1
 
-
-
     if (questionstobeansweredvariable > 9):
         print("The result is out")
