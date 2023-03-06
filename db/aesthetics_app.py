@@ -133,6 +133,27 @@ while True:
         Softgirl += 1
         questionstobeansweredvariable += 1
 
+    question6 = input("My go-to drink at a cafe is___\n"
+                      "(a) Water \n"
+                      "(b) Black Coffee \n"
+                      "(c)Chai Latte \n(d)Anything sweet! \n\n")
+
+    if (question6 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question6 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question6 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question6 == "d"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
 
 
     if (questionstobeansweredvariable > 9):
