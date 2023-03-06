@@ -113,5 +113,27 @@ while True:
         Softgirl += 1
         questionstobeansweredvariable += 1
 
+    question5 = input("A city I'd love to live in would be ____\n"
+                      "(a) Paris \n"
+                      "(b) NYC \n(c)LA \n(d)Dubai \n\n")
+
+    if (question5 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question5 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question5 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question5 == "d"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
