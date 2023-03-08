@@ -8,6 +8,7 @@ TEST_LAST_NAME = 'Doe'
 FULL_NAME = 'full_name'
 FIRST_NAME = 'first_name'
 LAST_NAME = 'last_name'
+NEW_CONTACT = 'new_contact'
 EMAIL = 'email'
 REQUEST = 'request'
 REQUIRED_FLDS = [FIRST_NAME, LAST_NAME, EMAIL, REQUEST]

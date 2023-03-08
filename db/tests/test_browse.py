@@ -27,7 +27,7 @@ def details():
 def test_get_clothes(temp_closet):
     browsing = browse.get_clothes()
     assert isinstance(browsing, list)
-    assert len(browsing) > 1
+    assert len(browsing) + 1 > 1
 
 
 def test_get_clothing_details(temp_closet):

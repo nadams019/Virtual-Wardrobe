@@ -17,7 +17,7 @@ def test_get_contacts_dict():
     assert len(cnts) > 1
 
 def test_get_contact_details():
-    cnt_dets = cnt.get_contacts_details(cnt.NEW_CONTACT)
+    cnt_dets = cnt.get_contact_details(cnt.NEW_CONTACT)
     assert isinstance(cnt_dets, dict)
 
 

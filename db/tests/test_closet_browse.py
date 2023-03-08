@@ -7,9 +7,9 @@ TEST_DEL_NAME = 'Item to be deleted'
 
 @pytest.fixture(scope='function')
 def temp_closet():
-    browse.add_clothing(browse.TEST_CLOTHING_NAME)
+    browse.add_clothing(browse.TEST_CLOTHING_NAME, list)
     yield
-    browse.del_clothing(browse.TEST_CLOTHING_NAME)
+    browse.del_clothing(browse.TEST_CLOTHING_NAME, list)
 
 
 def test_get_clothes(temp_closet):
@@ -30,12 +30,12 @@ def test_add_wrong_name_type():
 
 def test_add_wrong_details_type():
     with pytest.raises(TypeError):
-        browse.add_clothing('a new clothing item')
+        browse.add_clothing('a new clothing item', 'skirt')
 
 
 def test_add_missing_field():
     with pytest.raises(ValueError):
-        browse.add_clothing('a new clothing item')
+        browse.add_clothing('a new clothing item', 'dress')
 
 
 def test_add_clothing():
