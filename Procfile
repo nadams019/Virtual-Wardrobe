@@ -1,1 +1,1 @@
-web: gunicorn server.app:app
+web: gunicorn server.endpoints:app
