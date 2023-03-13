@@ -47,7 +47,7 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question1 == "d"):
-        Softgirl += 1
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     question2 = input("What song would you add to your playlist?\n"
@@ -68,8 +68,8 @@ while True:
         Academia += 1
         questionstobeansweredvariable += 1
 
-    elif (question2 == "d"):
-        Softgirl += 1
+    elif question2 == "d":
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     question3 = input("When I go to a party I prioritize being ___\n"
@@ -91,7 +91,7 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question3 == "d"):
-        Softgirl += 1
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     question4 = input("I lean more towards ___ outfits\n(a) black \n"
@@ -110,7 +110,7 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question4 == "d"):
-        Softgirl += 1
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     question5 = input("A city I'd love to live in would be ____\n"
@@ -130,7 +130,7 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question5 == "d"):
-        Softgirl += 1
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     question6 = input("My go-to drink at a cafe is___\n"
@@ -151,7 +151,28 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question6 == "d"):
+        Streetwear += 1
+        questionstobeansweredvariable += 1
+
+    question7 = input("I have always been a___\n"
+                      "(a) Girly girl \n"
+                      "(b) Tom boy \n"
+                      "(c)Book worm \n(d)Alte kid \n\n")
+
+    if (question7 == "a"):
         Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question7 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question7 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question7 == "d"):
+        Streetwear += 1
         questionstobeansweredvariable += 1
 
     if (questionstobeansweredvariable > 9):
