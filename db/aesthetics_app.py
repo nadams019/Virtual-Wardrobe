@@ -175,5 +175,26 @@ while True:
         Streetwear += 1
         questionstobeansweredvariable += 1
 
+    question8 = input("One item I can't live without is\n"
+                      "(a) mini skirts \n"
+                      "(b) platform boots \n"
+                      "(c)blazer \n(d)skateboard \n\n")
+
+    if (question8 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question8 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question8 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question8 == "d"):
+        Streetwear += 1
+        questionstobeansweredvariable += 1
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
