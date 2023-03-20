@@ -18,9 +18,6 @@ body {
 /* Information */
 
 h2 {
-    position: absolute;
-    width: 615px;
-    height: 127px;
     X: -289px;
     Y: -409px;
     font-family: 'Irish Grover';
@@ -297,7 +294,7 @@ h2 {
     width: 224px;
     height: 39px;
     left: 1133px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -319,7 +316,7 @@ h2 {
     width: 47px;
     height: 39px;
     left: 1538px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -600,7 +597,7 @@ h2 {
     width: 207px;
     height: 39px;
     left: 357px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -622,7 +619,7 @@ h2 {
     width: 196px;
     height: 39px;
     left: 756px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -644,9 +641,9 @@ h2 {
     width: 78px;
     height: 70px;
     left: 279px;
-    top: 831px;
+    top: 1020px;
 
-    background: url(email_icon.png);
+    background: url(images/email_icon.png);
 }
 
 /* Rectangle 18 */
@@ -656,7 +653,7 @@ h2 {
     width: 79px;
     height: 76px;
     left: 665px;
-    top: 828px;
+    top: 1020px;
 
     background: url(images/phone_icon.png);
 }
@@ -668,7 +665,7 @@ h2 {
     width: 80px;
     height: 86px;
     left: 1053px;
-    top: 829px;
+    top: 1020px;
 
     background: url(images/socials_icon.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -681,7 +678,7 @@ h2 {
     width: 84px;
     height: 74px;
     left: 1442px;
-    top: 829px;
+    top: 1020px;
 
     background: url(images/faq_icon.png);
 }
