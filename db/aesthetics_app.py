@@ -217,7 +217,7 @@ while True:
     elif (question9 == "d"):
         Streetwear += 1
         questionstobeansweredvariable += 1
-'''
+
     question10 = input("My Tik Tok For You Page looks like\n"
                       "(a) makeup tutorials  \n"
                       "(b) thrift hauls \n"
@@ -239,6 +239,6 @@ while True:
     elif (question10 == "d"):
         Streetwear += 1
         questionstobeansweredvariable += 1
-'''
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
