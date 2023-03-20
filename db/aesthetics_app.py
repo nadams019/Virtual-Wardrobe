@@ -217,13 +217,13 @@ while True:
     elif (question9 == "d"):
         Streetwear += 1
         questionstobeansweredvariable += 1
-
+'''
     question10 = input("My Tik Tok For You Page looks like\n"
                       "(a) makeup tutorials  \n"
                       "(b) thrift hauls \n"
                       "(c)study tips \n"
                       "(d)sneaker unboxings\n\n")
-'''
+
     if (question10 == "a"):
         Softgirl += 1
         questionstobeansweredvariable += 1
