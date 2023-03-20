@@ -218,27 +218,5 @@ while True:
         Streetwear += 1
         questionstobeansweredvariable += 1
 
-    question10 = input("My Tik Tok For You Page looks like\n"
-                      "(a) makeup tutorials  \n"
-                      "(b) thrift hauls \n"
-                      "(c)study tips \n"
-                      "(d)sneaker unboxings\n\n")
-
-    if (question10 == "a"):
-        Softgirl += 1
-        questionstobeansweredvariable += 1
-
-    elif (question10 == "b"):
-        Grunge += 1
-        questionstobeansweredvariable += 1
-
-    elif (question10 == "c"):
-        Academia += 1
-        questionstobeansweredvariable += 1
-
-    elif (question10 == "d"):
-        Streetwear += 1
-        questionstobeansweredvariable += 1
-
     if (questionstobeansweredvariable > 9):
         print("The result is out")
