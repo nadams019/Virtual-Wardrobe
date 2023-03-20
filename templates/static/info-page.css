@@ -184,7 +184,7 @@ h2 {
     left: 120px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
 
 /* Ellipse 4 */
@@ -196,7 +196,7 @@ h2 {
     left: 493px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
 
 /* Ellipse 2 */
@@ -208,7 +208,7 @@ h2 {
     left: 866px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
 
 /* Ellipse 3 */
@@ -220,7 +220,7 @@ h2 {
     left: 1238px;
     top: 568px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
 
 /* Ellipse 5 */
@@ -228,14 +228,14 @@ h2 {
 #dorothy_pic {
     position: absolute;
     width: 178px;
-    height: 168px;
-    left: 1609px;
-    top: 556px;
+    height: 174px;
+    left: 118px;
+    top: 568px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
 
-/* Rectangle 5 */
+/* Rectangle 5
 
 #bethany_social {
     position: absolute;
@@ -248,7 +248,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 6 */
+ Rectangle 6
 
 #bismah_social {
     position: absolute;
@@ -261,7 +261,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 8 */
+ Rectangle 8
 
 #aadiba_social {
     position: absolute;
@@ -274,7 +274,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 9 */
+ Rectangle 9
 
 #nakeya_social {
     position: absolute;
@@ -286,6 +286,7 @@ h2 {
     background: url(images/socials_icon.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+*/
 
 /* vw social media */
 
@@ -352,7 +353,12 @@ h2 {
     height: 72px;
     left: 1184px;
     top: 745px;
-
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
     background: #FFD92A;
     border-radius: 25px;
 }
