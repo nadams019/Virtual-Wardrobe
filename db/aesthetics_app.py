@@ -196,5 +196,27 @@ while True:
         Streetwear += 1
         questionstobeansweredvariable += 1
 
+    question9 = input("My walls of my room look like\n"
+                      "(a) lots of pastel  \n"
+                      "(b) torn up posters \n"
+                      "(c)my diploma \n"
+                      "(d)hung up hats & skateboards\n\n")
+
+    if (question9 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question9 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question9 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question9 == "d"):
+        Streetwear += 1
+        questionstobeansweredvariable += 1
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
