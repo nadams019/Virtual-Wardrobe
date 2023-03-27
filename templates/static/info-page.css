@@ -176,7 +176,7 @@ h2 {
 }
 
 /* Ellipse 1 */
-
+/*
 #bethany_pic {
     position: absolute;
     width: 178px;
@@ -186,9 +186,9 @@ h2 {
 
     background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 4 */
-
+/*
 #bismah_pic {
     position: absolute;
     width: 178px;
@@ -198,21 +198,21 @@ h2 {
 
     background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 2 */
-
+/*
 #aadiba_pic {
     position: absolute;
-    width: 178px;
-    height: 168px;
+    width: 80px;
+    height: 86px;
     left: 866px;
     top: 556px;
 
     background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 3 */
-
+/*
 #nakeya_pic {
     position: absolute;
     width: 178px;
@@ -222,9 +222,9 @@ h2 {
 
     background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 5 */
-
+/*
 #dorothy_pic {
     position: absolute;
     width: 178px;
@@ -234,7 +234,7 @@ h2 {
 
     background: url(images/profile_icon.png);
 }
-
+*/
 /* Rectangle 5
 
 #bethany_social {
@@ -350,9 +350,9 @@ h2 {
 #nakeya_title {
     position: absolute;
     width: 278px;
-    height: 72px;
-    left: 1184px;
-    top: 745px;
+    height: 60px;
+    left: 1134px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -368,9 +368,9 @@ h2 {
 #aadiba_title {
     position: absolute;
     width: 287px;
-    height: 72px;
-    left: 811px;
-    top: 745px;
+    height: 60px;
+    left: 761px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -386,9 +386,9 @@ h2 {
 #bismah_title {
     position: absolute;
     width: 284px;
-    height: 72px;
-    left: 439px;
-    top: 745px;
+    height: 60px;
+    left: 389px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -404,9 +404,9 @@ h2 {
 #bethany_title {
     position: absolute;
     width: 282px;
-    height: 72px;
-    left: 66px;
-    top: 745px;
+    height: 60px;
+    left: 16px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -422,9 +422,9 @@ h2 {
 #dorothy_title {
     position: absolute;
     width: 288px;
-    height: 69px;
-    left: 1555px;
-    top: 742px;
+    height: 60px;
+    left: 1500px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -442,7 +442,7 @@ h2 {
     width: 244px;
     height: 61px;
     left: 842px;
-    top: 465px;
+    top: 600px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
