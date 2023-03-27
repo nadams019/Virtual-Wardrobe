@@ -18,9 +18,6 @@ body {
 /* Information */
 
 h2 {
-    position: absolute;
-    width: 615px;
-    height: 127px;
     X: -289px;
     Y: -409px;
     font-family: 'Irish Grover';
@@ -38,7 +35,6 @@ h2 {
 
 
 /* Rectangle 2 */
-
 #top_box {
     position: absolute;
     width: 1908px;
@@ -179,7 +175,7 @@ h2 {
 }
 
 /* Ellipse 1 */
-
+/*
 #bethany_pic {
     position: absolute;
     width: 178px;
@@ -187,11 +183,11 @@ h2 {
     left: 120px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 4 */
-
+/*
 #bismah_pic {
     position: absolute;
     width: 178px;
@@ -199,23 +195,23 @@ h2 {
     left: 493px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 2 */
-
+/*
 #aadiba_pic {
     position: absolute;
-    width: 178px;
-    height: 168px;
+    width: 80px;
+    height: 86px;
     left: 866px;
     top: 556px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 3 */
-
+/*
 #nakeya_pic {
     position: absolute;
     width: 178px;
@@ -223,22 +219,22 @@ h2 {
     left: 1238px;
     top: 568px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
-
+*/
 /* Ellipse 5 */
-
+/*
 #dorothy_pic {
     position: absolute;
     width: 178px;
-    height: 168px;
-    left: 1609px;
-    top: 556px;
+    height: 174px;
+    left: 118px;
+    top: 568px;
 
-    background: #D9D9D9;
+    background: url(images/profile_icon.png);
 }
-
-/* Rectangle 5 */
+*/
+/* Rectangle 5
 
 #bethany_social {
     position: absolute;
@@ -251,7 +247,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 6 */
+ Rectangle 6
 
 #bismah_social {
     position: absolute;
@@ -264,7 +260,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 8 */
+ Rectangle 8
 
 #aadiba_social {
     position: absolute;
@@ -277,7 +273,7 @@ h2 {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Rectangle 9 */
+ Rectangle 9
 
 #nakeya_social {
     position: absolute;
@@ -289,6 +285,7 @@ h2 {
     background: url(images/socials_icon.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+*/
 
 /* vw social media */
 
@@ -297,7 +294,7 @@ h2 {
     width: 224px;
     height: 39px;
     left: 1133px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -319,7 +316,7 @@ h2 {
     width: 47px;
     height: 39px;
     left: 1538px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -352,10 +349,15 @@ h2 {
 #nakeya_title {
     position: absolute;
     width: 278px;
-    height: 72px;
-    left: 1184px;
-    top: 745px;
-
+    height: 60px;
+    left: 1134px;
+    top: 700px;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
     background: #FFD92A;
     border-radius: 25px;
 }
@@ -365,9 +367,9 @@ h2 {
 #aadiba_title {
     position: absolute;
     width: 287px;
-    height: 72px;
-    left: 811px;
-    top: 745px;
+    height: 60px;
+    left: 761px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -383,9 +385,9 @@ h2 {
 #bismah_title {
     position: absolute;
     width: 284px;
-    height: 72px;
-    left: 439px;
-    top: 745px;
+    height: 60px;
+    left: 389px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -401,9 +403,9 @@ h2 {
 #bethany_title {
     position: absolute;
     width: 282px;
-    height: 72px;
-    left: 66px;
-    top: 745px;
+    height: 60px;
+    left: 16px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -419,9 +421,9 @@ h2 {
 #dorothy_title {
     position: absolute;
     width: 288px;
-    height: 69px;
-    left: 1555px;
-    top: 742px;
+    height: 60px;
+    left: 1500px;
+    top: 700px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -439,7 +441,7 @@ h2 {
     width: 244px;
     height: 61px;
     left: 842px;
-    top: 465px;
+    top: 600px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -590,7 +592,20 @@ h2 {
     left: 863px;
     top: 84px;
 
-    background: #D9D9D9;
+    background: #F3CC90;
+    position: absolute;
+    width: 311px;
+    height: 300px;
+    left: 863px;
+    top: 90px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: #000000;
 }
 
 /* vw@bband.org */
@@ -600,7 +615,7 @@ h2 {
     width: 207px;
     height: 39px;
     left: 357px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -622,7 +637,7 @@ h2 {
     width: 196px;
     height: 39px;
     left: 756px;
-    top: 841px;
+    top: 1030px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -644,9 +659,9 @@ h2 {
     width: 78px;
     height: 70px;
     left: 279px;
-    top: 831px;
+    top: 1020px;
 
-    background: url(email_icon.png);
+    background: url(images/email_icon.png);
 }
 
 /* Rectangle 18 */
@@ -656,7 +671,7 @@ h2 {
     width: 79px;
     height: 76px;
     left: 665px;
-    top: 828px;
+    top: 1020px;
 
     background: url(images/phone_icon.png);
 }
@@ -668,7 +683,7 @@ h2 {
     width: 80px;
     height: 86px;
     left: 1053px;
-    top: 829px;
+    top: 1020px;
 
     background: url(images/socials_icon.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -681,7 +696,7 @@ h2 {
     width: 84px;
     height: 74px;
     left: 1442px;
-    top: 829px;
+    top: 1020px;
 
     background: url(images/faq_icon.png);
 }
