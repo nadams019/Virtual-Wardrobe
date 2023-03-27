@@ -1,13 +1,18 @@
-/* New to virtual wardrobe? Sign up here section */
-
-body{
-  background: #F4AE20;
+/* Rectangle 1 */
+body {
+   background: #F4AE20;
 }
 .container {
     position: relative;
     margin: 0 auto;
     width: 80%;
     height: 600px;
+}
+#page {
+    position: absolute;
+    width: 1908px;
+    height: 1135px;
+    background: #F3CC90;
 }
 
 #webpage{
@@ -22,20 +27,38 @@ body{
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Virtual Wardrobe */
-h1{
-  position: absolute;
-  top: -60px;
-  left: 31%;
-  z-index: 3;
-  color: #F5F5F5;
+login_header_position{
+  position: relative;
+  width: 391px;
+  height: 117px;
+}
 
-  font-family: "Irish Grover", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 100px;
-  line-height: 121px;
-  text-align: center;
+h2 {
+    X: -289px;
+    Y: -409px;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
+
+    color: white;
+
+    top:70px;
+    left: inherit;
+}
+
+/* Virtual Wardrobe */
+login_header_box{
+  box-sizing: border-box;
+  position: absolute;
+  width: 307px;
+  height: 100px;
+  left: 813px;
+  top: 851px;
+  background: #C0091E;
+  border: 1px solid #000000;
 }
 
 #vw_font {
@@ -53,7 +76,6 @@ h1{
     color: #F5F5F5;
 }
 
-
 /* virtualw 1 */
 #logo {
   position: absolute;
@@ -65,30 +87,50 @@ h1{
   object-fit: cover;
 }
 
-.login_button{
-  display: inline-block;
-  box-sizing: border-box;
+.login_button_text{
   position: absolute;
-  width: 307px;
-  height: 100px;
-  left: 813px;
-  top: 851px;
+  width: 102px;
+  height: 48px;
+  left: 913px;
+  top: 877px;
 
-  display: inline-block;
-  font-family: Irish Grover, serif;
-  font-size: 38px;
+  font-family: 'Irish Grover';
+  font-style: normal;
   font-weight: 400;
-  line-height: 46px;
-  letter-spacing: 0;
+  font-size: 40px;
+  line-height: 48px;
   text-align: center;
-  color: #000000;
 
-  background: #C0091E;
-  border: 1px solid #000000;
+  color: #000000;
 }
 
 .login_button:hover {
   opacity: 0.8;
+}
+
+sign_up_here_text{
+  position: absolute;
+  width: 800px;
+  height: 84px;
+  left: 554px;
+  top: 235px;
+
+  font-family: 'Irish Grover';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+
+  color: #000000;
+}
+
+sign_up_here_format{
+  position: absolute;
+  width: 800px;
+  height: 84px;
+  left: 554px;
+  top: 235px;
 }
 
 /* Login title heading */
@@ -130,8 +172,8 @@ h1{
 #username_box{
   box-sizing: border-box;
   position: absolute;
-  width: 474px;
-  height: 119px;
+  width: 460px;
+  height: 110px;
   left: 717px;
   top: 421px;
 
@@ -179,7 +221,7 @@ h1{
   box-sizing: border-box;
 
   position: absolute;
-  width: 1080px;
+  width: 900px;
   height: 400px;
   left: 717px;
   top: 630px;

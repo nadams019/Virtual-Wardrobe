@@ -218,5 +218,49 @@ while True:
         Streetwear += 1
         questionstobeansweredvariable += 1
 
+    question10 = input("When it comes to hair__\n"
+                      "(a) Gimme all the bounce & curls \n"
+                      "(b) Jet black wig \n"
+                      "(c) Slick back bun\n"
+                      "(d) helmet hair\n\n")
+
+    if (question10 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question10 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question10 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question10 == "d"):
+        Streetwear += 1
+        questionstobeansweredvariable += 1
+
+    question11 = input("I call my significant other___\n"
+                      "(a) honey  \n"
+                      "(b) boo\n"
+                      "(c) scholar \n"
+                      "(d) pookie\n\n")
+
+    if (question11 == "a"):
+        Softgirl += 1
+        questionstobeansweredvariable += 1
+
+    elif (question11 == "b"):
+        Grunge += 1
+        questionstobeansweredvariable += 1
+
+    elif (question11 == "c"):
+        Academia += 1
+        questionstobeansweredvariable += 1
+
+    elif (question11 == "d"):
+        Streetwear += 1
+        questionstobeansweredvariable += 1
+
     if (questionstobeansweredvariable > 9):
         print("The result is out")
