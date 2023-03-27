@@ -1,13 +1,18 @@
-/* New to virtual wardrobe? Sign up here section */
-
-body{
-  background: #F4AE20;
+/* Rectangle 1 */
+body {
+   background: #F4AE20;
 }
 .container {
     position: relative;
     margin: 0 auto;
     width: 80%;
     height: 600px;
+}
+#page {
+    position: absolute;
+    width: 1908px;
+    height: 1135px;
+    background: #F3CC90;
 }
 
 #webpage{
@@ -28,22 +33,32 @@ login_header_position{
   height: 117px;
 }
 
+h2 {
+    X: -289px;
+    Y: -409px;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 85px;
+    line-height: 103px;
+    text-align: center;
+
+    color: white;
+
+    top:70px;
+    left: inherit;
+}
+
 /* Virtual Wardrobe */
-login_header{
+login_header_box{
+  box-sizing: border-box;
   position: absolute;
-  width: 391px;
-  height: 117px;
-  left: 0px;
-  top: 0px;
-
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 100px;
-  line-height: 121px;
-  text-align: center;
-
-  color: #000000;
+  width: 307px;
+  height: 100px;
+  left: 813px;
+  top: 851px;
+  background: #C0091E;
+  border: 1px solid #000000;
 }
 
 #vw_font {
@@ -72,26 +87,21 @@ login_header{
   object-fit: cover;
 }
 
-.login_button{
-  display: inline-block;
-  box-sizing: border-box;
+.login_button_text{
   position: absolute;
-  width: 307px;
-  height: 100px;
-  left: 813px;
-  top: 851px;
+  width: 102px;
+  height: 48px;
+  left: 913px;
+  top: 877px;
 
-  display: inline-block;
-  font-family: Irish Grover, serif;
-  font-size: 38px;
+  font-family: 'Irish Grover';
+  font-style: normal;
   font-weight: 400;
-  line-height: 46px;
-  letter-spacing: 0;
+  font-size: 40px;
+  line-height: 48px;
   text-align: center;
-  color: #000000;
 
-  background: #C0091E;
-  border: 1px solid #000000;
+  color: #000000;
 }
 
 .login_button:hover {
@@ -108,10 +118,9 @@ sign_up_here_text{
   font-family: 'Irish Grover';
   font-style: normal;
   font-weight: 400;
-  font-size: 80px;
+  font-size: 40px;
   line-height: 48px;
   text-align: center;
-  text-decoration-line: underline;
 
   color: #000000;
 }
