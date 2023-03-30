@@ -196,7 +196,8 @@ while True:
         Streetwear += 1
         questionstobeansweredvariable += 1
 
-    question9 = input("My walls of my room look like\n (a) lots of pastel  \n, "
+    question9 = input("My walls of my room look like\n "
+                      "(a) lots of pastel  \n, "
                       "(b) torn up posters \n,"
                       "(c)my diploma \n,"
                       "(d)hung up hats & skateboards\n\n")
@@ -240,10 +241,10 @@ while True:
         questionstobeansweredvariable += 1
 
     question11 = input("I call my significant other___\n"
-                      "(a) honey  \n"
-                      "(b) boo\n"
-                      "(c) scholar \n"
-                      "(d) pookie\n\n")
+                       "(a) honey  \n"
+                       "(b) boo\n"
+                       "(c) scholar \n"
+                       "d) pookie\n\n")
 
     if (question11 == "a"):
         Softgirl += 1
