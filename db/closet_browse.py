@@ -58,7 +58,7 @@ def add_clothing(name, details):
     doc = details
     if not isinstance(name, str):
         raise TypeError(f'Wrong type for name: {type(name)=}')
-    if not isinstance(details, str):
+    if not isinstance(details, dict):
         raise TypeError(f'Wrong type for details: {type(details)=}')
     for field in REQUIRED_FLDS:
         if field not in details:
