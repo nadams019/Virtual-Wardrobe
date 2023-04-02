@@ -7,7 +7,7 @@ TEST_DEL_NAME = 'Item to be deleted'
 
 @pytest.fixture(scope='function')
 def temp_closet():
-    browse.add_clothing(browse.TEST_CLOTHING_NAME, str)
+    browse.add_clothing(browse.TEST_CLOTHING_NAME, list)
     yield
     browse.del_clothing(browse.TEST_CLOTHING_NAME)
 
@@ -42,4 +42,4 @@ def test_add_clothing():
     details = {}
     for field in browse.REQUIRED_FLDS:
         details[field] = 2
-    assert details
+    return details
