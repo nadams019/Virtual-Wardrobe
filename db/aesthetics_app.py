@@ -32,7 +32,7 @@ while True:
     question1 = input("How would people describe you?\n(a)Bubbly \n"
                       "(b)Edgy \n"
                       "(c)An Old Soul\n"
-                      "(d) Kind \n\n")
+                      "(d)Unique \n\n")
 #
     if (question1 == "a"):
         Softgirl += 1
@@ -53,15 +53,15 @@ while True:
     question2 = input("What song would you add to your playlist?\n"
                       "(a)Transparent Soul by Willow Smith \n"
                       "(b)Honeymoon Avenue by Ariana Grande \n"
-                      "(c)Big Poppa by The Notorious B.I.G \n"
+                      "(c)Graduation by Kanye West \n"
                       "(d)EARFQUAKE by Tyler The Creator\n\n")
 
     if (question2 == "a"):
-        Softgirl += 1
+         Grunge += 1
         questionstobeansweredvariable += 1
 
     elif (question2 == "b"):
-        Grunge += 1
+        Softgirl += 1
         questionstobeansweredvariable += 1
 
     elif (question2 == "c"):
@@ -76,7 +76,7 @@ while True:
                       "(a)comfortable "
                       "\n(b)stylish \n"
                       "(c) the star of the show \n"
-                      "(d) warmth\n\n")
+                      "(d) warm\n\n")
 
     if (question3 == "a"):
         Softgirl += 1
