@@ -17,12 +17,6 @@ char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans', SEASON: 'winter',
               'Tops': {SEASON: 'spring',
                        OCCASION: 'formal', AESTHETIC: 'southern'}, }
 
-"""
-def select_type(type_name, selections):
-    select = Select(type_name)
-    select.select_by_visible_text(selections)
-"""
-
 
 def select_values_from_dropdown(char_types, selections):
     print(len(char_types))
