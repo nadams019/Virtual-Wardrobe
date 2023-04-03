@@ -57,7 +57,7 @@ while True:
                       "(d)EARFQUAKE by Tyler The Creator\n\n")
 
     if (question2 == "a"):
-         Grunge += 1
+        Grunge += 1
         questionstobeansweredvariable += 1
 
     elif (question2 == "b"):
