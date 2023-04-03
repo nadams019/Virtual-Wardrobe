@@ -15,6 +15,34 @@ body {
     background: #F3CC90;
 }
 
+/* Rectangle 2 */
+#top_box {
+    position: absolute;
+    width: 1908px;
+    height: 113px;
+
+    background: #000000;
+}
+
+/* Virtual Wardrobe */
+ h1 {
+    position: absolute;
+
+    width: 2000px;
+    height: 100.04px;
+    top:-60px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: top;
+
+    color: #F5F5F5;
+}
 /* Information */
 
 h2 {
@@ -34,14 +62,7 @@ h2 {
 }
 
 
-/* Rectangle 2 */
-#top_box {
-    position: absolute;
-    width: 1908px;
-    height: 113px;
 
-    background: #000000;
-}
 
 .user_txt {
     text-align: left;
@@ -53,26 +74,7 @@ h2 {
     overflow: hidden;
     text-align: left;
 }
-/* Virtual Wardrobe */
- h1 {
-    /*position: absolute;*/
-    X: -385px;
-    Y: -534px;
-    width: 807.47px;
-    height: 80.04px;
-    top:0px;
 
-    font-family: 'Irish Grover';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 100px;
-    line-height: 121px;
-    line-height: 100%;
-    text-align: center;
-    vertical-align: top;
-
-    color: #F5F5F5;
-}
 
 
 /* virtualw 1 */
