@@ -98,11 +98,11 @@ while True:
                       "(b) vibrant \n(c)earth tone \n(d)neutral \n\n")
 
     if (question4 == "a"):
-        Softgirl += 1
+        Grunge += 1
         questionstobeansweredvariable += 1
 
     elif (question4 == "b"):
-        Grunge += 1
+        Softgirl += 1
         questionstobeansweredvariable += 1
 
     elif (question4 == "c"):
@@ -115,10 +115,10 @@ while True:
 
     question5 = input("A city I'd love to live in would be ____\n"
                       "(a) Paris \n"
-                      "(b) NYC \n(c)LA \n(d)Dubai \n\n")
+                      "(b) Seattle \n(c)LA \n(d)NYC \n\n")
 
     if (question5 == "a"):
-        Softgirl += 1
+        Academia += 1
         questionstobeansweredvariable += 1
 
     elif (question5 == "b"):
@@ -126,7 +126,7 @@ while True:
         questionstobeansweredvariable += 1
 
     elif (question5 == "c"):
-        Academia += 1
+        Softgirl += 1
         questionstobeansweredvariable += 1
 
     elif (question5 == "d"):
