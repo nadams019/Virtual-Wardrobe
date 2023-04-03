@@ -17,16 +17,6 @@ char_types = {TEST_OPTIONS: {ITEM_TYPE: 'jeans', SEASON: 'winter',
               'Tops': {SEASON: 'spring',
                        OCCASION: 'formal', AESTHETIC: 'southern'}, }
 
-
-"""
-def select_values_from_dropdown(char_types, selections):
-    print(len(char_types))
-    for ele in char_types:
-        print(ele.text)
-        if ele.text == selections:
-            ele.click()
-            break
-"""
 def select_option(request, User=None):
     if request.method == 'GET':
         selection = request.GET.get('id',None)
