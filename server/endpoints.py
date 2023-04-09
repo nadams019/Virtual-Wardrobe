@@ -21,6 +21,11 @@ CLOSET_NS = 'closet'
 BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
+OPTIONS = 'options'
+CLOTHING_ITEM_TYPE_NS = 'clothing_item_type'
+SEASON_NS = 'season'
+OCCASION_NS = 'occasion'
+AESTHETIC_NS = 'aesthetic'
 
 
 login = Namespace(LOGIN_NS, 'Login')
@@ -93,6 +98,8 @@ AES_TYPE_LIST_NM = f'{AES_TYPES_NS}_list'
 AES_TYPE_DETAILS = f'/{DETAILS}'
 AES_TYPE_DETAILS_W_NS = f'{AES_TYPES_NS}/{DETAILS}'
 
+CLOTHING
+
 
 @api.route(HELLO)
 class HelloWorld(Resource):
@@ -133,7 +140,25 @@ class MainMenu(Resource):
                           'method': 'get', 'text': 'List Aesthetic Types'},
                     'X': {'text': 'Exit'},
                 }}
-
+@api.route(OPTIONS)
+class OptionsMenuforCloset(Resource):
+    """
+    This will deliver the option menu for seeing details in the closet
+    """
+    def get(self):
+        return {'Title': OPTIONS,
+                'Default': 2,
+                'Choices': {
+                    '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
+                          'method': 'post', 'text': 'Type of clothing'},
+                    '2': {'url': f'/{SEASON_NS}',
+                          'method': 'get', 'text': 'List the season'},
+                    '3': {'url': f' / {OCCASION_NS}',
+                          'method': 'get', 'text': 'List the occasion'},
+                    '4': {'url': f' / {AESTHETIC_NS}',
+                          'method': 'get', 'text': 'List the aesthetic'},
+                    'X': {'text': 'Exit'},
+                }}
 
 @users.route(USER_DICT)
 class UserDict(Resource):
