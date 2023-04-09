@@ -23,9 +23,9 @@ CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
 OPTIONS = '/options'
 CLOTHING_ITEM_TYPE_NS = 'clothing_item_type'
-# SEASON_NS = 'season'
-# OCCASION_NS = 'occasion'
-# AESTHETIC_NS = 'aesthetic'
+SEASON_NS = 'season'
+OCCASION_NS = 'occasion'
+AESTHETIC_NS = 'aesthetic'
 
 
 login = Namespace(LOGIN_NS, 'Login')
@@ -50,7 +50,7 @@ MAIN_MENU = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
-# OPTIONS_NM = "option"
+OPTIONS_NM = "option"
 
 
 USER_DICT = f'/{DICT}'
@@ -138,25 +138,27 @@ class MainMenu(Resource):
                           'method': 'get', 'text': 'List Aesthetic Types'},
                     'X': {'text': 'Exit'},
                 }}
-# @api.route(OPTIONS)
-# class OptionsMenu(Resource):
-#     """
-#     This will deliver the option menu for seeing details in the closet
-#     """
-#     def get(self):
-#         return {'Title': OPTIONS_NM,
-#                 'Default': 2,
-#                 'Choices': {
-#                     '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
-#                           'method': 'post', 'text': 'Item in closet'},
-#                     '2': {'url': f'/{SEASON_NS}',
-#                           'method': 'get', 'text': 'List the season'},
-#                     '3': {'url': f' / {OCCASION_NS}',
-#                           'method': 'get', 'text': 'List the occasion'},
-#                     '4': {'url': f' / {AESTHETIC_NS}',
-#                           'method': 'get', 'text': 'List the aesthetic'},
-#                     'X': {'text': 'Exit'},
-#                 }}
+
+
+@api.route(OPTIONS)
+class OptionsMenu(Resource):
+    """
+    This will deliver the option menu for seeing details in the closet
+    """
+    def get(self):
+        return {'Title': OPTIONS_NM,
+                'Default': 2,
+                'Choices': {
+                    '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
+                          'method': 'post', 'text': 'Item in closet'},
+                    '2': {'url': f'/{SEASON_NS}',
+                          'method': 'get', 'text': 'List the season'},
+                    '3': {'url': f' / {OCCASION_NS}',
+                          'method': 'get', 'text': 'List the occasion'},
+                    '4': {'url': f' / {AESTHETIC_NS}',
+                          'method': 'get', 'text': 'List the aesthetic'},
+                    'X': {'text': 'Exit'},
+                }}
 
 
 @users.route(USER_DICT)
