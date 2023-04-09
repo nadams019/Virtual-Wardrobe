@@ -21,7 +21,7 @@ CLOSET_NS = 'closet'
 BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
-OPTIONS = 'options'
+OPTIONS = '/options'
 CLOTHING_ITEM_TYPE_NS = 'clothing_item_type'
 SEASON_NS = 'season'
 OCCASION_NS = 'occasion'
@@ -50,6 +50,7 @@ MAIN_MENU = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
+OPTIONS_NM = "option"
 
 
 USER_DICT = f'/{DICT}'
@@ -137,12 +138,12 @@ class MainMenu(Resource):
                     'X': {'text': 'Exit'},
                 }}
 @api.route(OPTIONS)
-class OptionsMenuforCloset(Resource):
+class OptionsMenu(Resource):
     """
     This will deliver the option menu for seeing details in the closet
     """
     def get(self):
-        return {'Title': OPTIONS,
+        return {'Title': OPTIONS_NM,
                 'Default': 2,
                 'Choices': {
                     '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
