@@ -98,9 +98,6 @@ AES_TYPE_LIST_NM = f'{AES_TYPES_NS}_list'
 AES_TYPE_DETAILS = f'/{DETAILS}'
 AES_TYPE_DETAILS_W_NS = f'{AES_TYPES_NS}/{DETAILS}'
 
-CLOTHING
-
-
 @api.route(HELLO)
 class HelloWorld(Resource):
     """
