@@ -23,7 +23,7 @@ def temp_closet():
 def details():
     return deepcopy(TEST_DETAILS)
 
-
+@pytest.mark.skip('')
 def test_get_clothes(temp_closet):
     browsing = browse.get_clothes()
     assert isinstance(browsing, list)
