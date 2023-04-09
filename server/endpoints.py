@@ -137,25 +137,25 @@ class MainMenu(Resource):
                           'method': 'get', 'text': 'List Aesthetic Types'},
                     'X': {'text': 'Exit'},
                 }}
-@api.route(OPTIONS)
-class OptionsMenu(Resource):
-    """
-    This will deliver the option menu for seeing details in the closet
-    """
-    def get(self):
-        return {'Title': OPTIONS_NM,
-                'Default': 2,
-                'Choices': {
-                    '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
-                          'method': 'post', 'text': 'Type of clothing'},
-                    '2': {'url': f'/{SEASON_NS}',
-                          'method': 'get', 'text': 'List the season'},
-                    '3': {'url': f' / {OCCASION_NS}',
-                          'method': 'get', 'text': 'List the occasion'},
-                    '4': {'url': f' / {AESTHETIC_NS}',
-                          'method': 'get', 'text': 'List the aesthetic'},
-                    'X': {'text': 'Exit'},
-                }}
+# @api.route(OPTIONS)
+# class OptionsMenu(Resource):
+#     """
+#     This will deliver the option menu for seeing details in the closet
+#     """
+#     def get(self):
+#         return {'Title': OPTIONS_NM,
+#                 'Default': 2,
+#                 'Choices': {
+#                     '1': {'url': f'/{CLOTHING_ITEM_TYPE_NS}',
+#                           'method': 'post', 'text': 'Item in closet'},
+#                     '2': {'url': f'/{SEASON_NS}',
+#                           'method': 'get', 'text': 'List the season'},
+#                     '3': {'url': f' / {OCCASION_NS}',
+#                           'method': 'get', 'text': 'List the occasion'},
+#                     '4': {'url': f' / {AESTHETIC_NS}',
+#                           'method': 'get', 'text': 'List the aesthetic'},
+#                     'X': {'text': 'Exit'},
+#                 }}
 
 @users.route(USER_DICT)
 class UserDict(Resource):
