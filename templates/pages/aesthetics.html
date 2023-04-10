@@ -2,9 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Query for View Closet stylesheet -->
+    <link rel="stylesheet" href="../static/home_page.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
+    <!-- Media query for small browser width -->
+    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="../static/small.css" />
+    <!-- Media query for medium browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="../static/medium.css" />
+    <!-- Media query for large browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
 </head>
+
+
 <body>
+    <div class="container">
+        <div id="foreground">
+            <div id="title">
+                <h1 style="font-size:450%;">Virtual Wardrobe</h1>
+                <div id="logo">
+                    <img src="../static/images/virtualw.png" alt="logo" width=281 height="158">
+                </div>
+            </div>
+            <div class="login_button">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/login_page.html?_ijt=q8gff7acqb4imad8ulq5cmgj2c&_ij_reload=RELOAD_ON_SAVE">
+                    Login
+                </a>
+            </div>
+            <div class="info_button">
+                <a hred="http://localhost:63342/endpoints.py/templates/pages/info-page.html?_ijt=q8gff7acqb4imad8ulq5cmgj2c&_ij_reload=RELOAD_ON_SAVE">
+                    Info
+                </a>
+            </div>
+            <div class="upload_button">
+            <a href = "http://localhost:63342/endpoints.py/templates/pages/UploadCloset.html?_ijt=vlaotrlk10j7hce9dcr723phd0&_ij_reload=RELOAD_ON_SAVE">
+               Upload
+            </a>
+            </div>
+            <div class="view_button">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/view_closet.html?_ijt=17uoctj8cjp2cn29gle49l214&_ij_reload=RELOAD_ON_SAVE">
+                    View
+                </a>
+            </div>
+            <div class="aq_button">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/aesthetics.html?_ijt=e1pcsk9ch8sjnan2j23tn34vhm&_ij_reload=RELOAD_ON_SAVE">
+                </a>
+                Aesthetics Quiz
+            </div>
+        </div>
+    </div>
 
 </body>
+
+<style>
+body {
+  background-image: url('6435357.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 </html>
