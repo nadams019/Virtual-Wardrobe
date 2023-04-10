@@ -126,6 +126,7 @@ h1{
   margin: 0 700px 0 0;
   height: 20px;
   position: relative;
+    left: 1000px;
 }
 
 #demo .parent {
