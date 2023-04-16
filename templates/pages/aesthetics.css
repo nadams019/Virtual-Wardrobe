@@ -7,10 +7,24 @@
     background-color: blue;
     width: 100%;
     padding: 10px;
+   font-family: 'Inconsolata', serif;
 }
 .aesthetics-quiz-container {
     background-image: url(6435357.png);
+    display: flex;
+    place-content: center;
+    color:black;
+    height:100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 .aesthetics-quiz-content {
+    width:70%;
+    display:flex;
+    flex-direction: column;
+    background-color:bisque;
+}
+.aesthetics-quiz-content button {
+
 }
