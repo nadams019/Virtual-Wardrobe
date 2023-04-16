@@ -127,7 +127,7 @@ SAMPLE_ITEM = {
     cnts: SAMPLE_CONTACT_NM,
     cnts.EMAIL: 'x@y.com',
     cnts.FIRST_NAME: 'first',
-    cnts.LAST_NAME: 'last,
+    cnts.LAST_NAME: 'last',
     cnts.REQUEST: 'This is a request.',
 }
 
