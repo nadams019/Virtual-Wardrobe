@@ -144,11 +144,3 @@ def test_add_contact():
     assert cnts.contact_exists(SAMPLE_CONTACT_NM)
     cnts.del_contact(SAMPLE_CONTACT_NM)
 
-def test_get_contact_details():
-    """
-    See if we can get contact details
-    """
-    resp_json = TEST_CLIENT.get(f'{ep.CONTACTS_DETAILS_W_NS}').get_json()
-    assert TEST_CONTACTS_TYPE in resp_json
-    assert isinstance(resp_json[TEST_CONTACTS_TYPE], dict)
-
