@@ -123,7 +123,7 @@ def test_login():
 '''
 
 SAMPLE_CONTACT_NM = 'SampleContact'
-SAMPLE_ITEM = {
+SAMPLE_CONTACT = {
     cnts: SAMPLE_CONTACT_NM,
     cnts.EMAIL: 'x@y.com',
     cnts.FIRST_NAME: 'first',
