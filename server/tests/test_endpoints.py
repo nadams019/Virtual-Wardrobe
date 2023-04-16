@@ -136,21 +136,13 @@ def test_get_contact_list():
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CONTACTS_LIST_NM], list)
 
-#def test_add_contact():
-#    """
-#    Test adding a contact request.
-#    """
-#    resp = TEST_CLIENT.post(ep.CONTACTS_ADD, json=SAMPLE_USER)
-#    assert cnts.user_exists(SAMPLE_USER_NM)
-#    usr.del_user(SAMPLE_USER_NM)
-# def test_get_contact_list():
-#     """
-#     See if we can get a contact list properly.
-#     Return should look like:
-#         {CONTACTS_LIST_NM: [list of users types...]}
-#     """
-#     resp_json = TEST_CLIENT.get(ep.CONTACTS_LIST_NM).get_json()
-#     assert isinstance(resp_json[ep.CONTACTS_LIST_W_NS], list)
+def test_add_contact():
+    """
+    Test adding a contact request.
+    """
+    resp = TEST_CLIENT.post(ep.CONTACTS_ADD, json=SAMPLE_USER)
+    assert cnts.user_exists(SAMPLE_USER_NM)
+    usr.del_user(SAMPLE_USER_NM)
 
 # def test_get_contact_details():
 #     """
