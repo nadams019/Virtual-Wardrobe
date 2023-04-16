@@ -124,7 +124,7 @@ def test_login():
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
-    cnts.NAME: SAMPLE_CONTACT_NM,
+    cnts.FULL_NAME: SAMPLE_CONTACT_NM,
     cnts.EMAIL: 'x@y.com',
     cnts.FIRST_NAME: 'Sample',
     cnts.LAST_NAME: 'Contact',
