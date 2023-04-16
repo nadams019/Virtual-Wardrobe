@@ -148,7 +148,7 @@ def test_get_contact_details():
     """
     See if we can get contact details
     """
-    resp_json = TEST_CLIENT.get(f'{ep.CONTACTS_DETAILS_W_NS}/{TEST_CONTACTS_TYPE}').get_json()
+    resp_json = TEST_CLIENT.get(f'{ep.CONTACTS_DETAILS_W_NS}').get_json()
     assert TEST_CONTACTS_TYPE in resp_json
     assert isinstance(resp_json[TEST_CONTACTS_TYPE], dict)
 
