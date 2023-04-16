@@ -29,12 +29,12 @@ def add_contact(name, details):
         if field not in details:
             raise ValueError(f'Required {field=} missing from details.')
     contacts[name] = details
-    
-    
+
+
 def contact_exists(name):
     return name
 
-  
+
 def get_contacts():
     return list(contacts.keys())
 
