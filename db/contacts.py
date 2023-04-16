@@ -30,8 +30,8 @@ def add_contact(name, details):
             raise ValueError(f'Required {field=} missing from details.')
     contacts[name] = details
 
-def contact_exists(email):
-  return email
+def contact_exists(name):
+  return name
 
 def get_contacts():
     return list(contacts.keys())
