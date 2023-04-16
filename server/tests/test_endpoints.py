@@ -124,10 +124,10 @@ def test_login():
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
-    cnts: SAMPLE_CONTACT_NM,
+    cnts.NAME: SAMPLE_CONTACT_NM,
     cnts.EMAIL: 'x@y.com',
-    cnts.FIRST_NAME: 'first',
-    cnts.LAST_NAME: 'last',
+    cnts.FIRST_NAME: 'Sample',
+    cnts.LAST_NAME: 'Contact',
     cnts.REQUEST: 'This is a request.',
 }
 
@@ -140,9 +140,9 @@ def test_add_contact():
     """
     Test adding a contact request.
     """
-    resp = TEST_CLIENT.post(ep.CONTACTS_ADD, json=SAMPLE_USER)
-    assert cnts.user_exists(SAMPLE_USER_NM)
-    usr.del_user(SAMPLE_USER_NM)
+    resp = TEST_CLIENT.post(ep.CONTACTS_ADD, json=SAMPLE_CONTACT)
+    assert cnts.contact_exists(SAMPLE_CONTACT_NM)
+    cnts.del_contact(SAMPLE_CONTACT_NM)
 
 # def test_get_contact_details():
 #     """
