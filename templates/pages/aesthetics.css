@@ -1,0 +1,16 @@
+.nav-bar {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    font-size: 30px;
+    background-color: blue;
+    width: 100%;
+    padding: 10px;
+}
+.aesthetics-quiz-container {
+    background-image: url(6435357.png);
+
+}
+.aesthetics-quiz-content {
+}
