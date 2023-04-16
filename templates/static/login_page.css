@@ -2,6 +2,12 @@
 body {
    background: #F4AE20;
 }
+frame2 {
+    position: relative;
+    width: 1908px;
+    height: 1056px;
+}
+
 .container {
     position: relative;
     margin: 0 auto;
@@ -16,15 +22,22 @@ body {
 }
 
 #webpage{
-  position: absolute;
-    width: 100%;
-    height: 703px;
-    top: 230px;
-    left: 0;
-    z-index: 2;
+    position: absolute;
+    width: 1405px;
+    height: 676px;
+    left: 261px;
+    top: 328px;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://img.freepik.com/premium-vector/retro-wavy-burst-blue-winter-vintage-background_92086-102.jpg?w=2000);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/blue_wavy_background.jpg);
+    opacity: 0.1;
+}
+
+login_rectangle_frame {
+    position: absolute;
+    width: 391px;
+    height: 117px;
+    left: 0px;
+    top: 0px;
 }
 
 login_header_position{
@@ -78,13 +91,13 @@ login_header_box{
 
 /* virtualw 1 */
 #logo {
-  position: absolute;
-  top:-23px;
-  left: -4.5%;
-  z-index: 3;
-  width: 1280px;
-  height: 720px;
-  object-fit: cover;
+    position: absolute;
+    top:-23px;
+    left: -4.5%;
+    z-index: 3;
+    width: 1280px;
+    height: 720px;
+    object-fit: cover;
 }
 
 .login_button_text{
@@ -109,20 +122,20 @@ login_header_box{
 }
 
 sign_up_here_text{
-  position: absolute;
-  width: 800px;
-  height: 84px;
-  left: 554px;
-  top: 235px;
+    position: absolute;
+    width: 800px;
+    height: 84px;
+    left: 554px;
+    top: 235px;
 
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
 
-  color: #000000;
+    color: #000000;
 }
 
 sign_up_here_format{
@@ -136,98 +149,79 @@ sign_up_here_format{
 /* Login title heading */
 #login_title_font {
   position: absolute;
-  width: 615px;
-  height: 127px;
-  top: 140px;
-  left: 34%;
+    width: 391px;
+    height: 117px;
+    left: 0px;
+    top: 0px;
 
-  font-family: 'Irish Grover', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 85px;
-  line-height: 103px;
-  text-align: center;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    text-align: center;
 
-  color: #000000;
-}
-
-#login_sub_heading{
-  position: absolute;
-  width: 800px;
-  height: 84px;
-  left: 554px;
-  top: 235px;
-
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
-
-  color: #000000;
+    color: #000000;
 }
 
 /* Username */
 #username_box{
-  box-sizing: border-box;
-  position: absolute;
-  width: 460px;
-  height: 110px;
-  left: 717px;
-  top: 421px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 474px;
+    height: 119px;
+    left: 717px;
+    top: 421px;
 
-  background: #F5F5F5;
-  border: 1px solid #000000;
-
+    background: #F5F5F5;
+    border: 1px solid #000000;
 }
 
 #username_font{
-  position: absolute;
-  width: 216px;
-  height: 48px;
-  left: 726px;
-  top: 456px;
+    position: absolute;
+    width: 216px;
+    height: 48px;
+    left: 726px;
+    top: 456px;
 
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
 
-  color: #000000;
+    color: #000000;
 }
 
 /*Password*/
 #password_font{
-  position: absolute;
-  width: 1080px;
-  height: 400px;
-  left: 726px;
-  top: 666px;
+    position: absolute;
+    width: 216px;
+    height: 48px;
+    left: 726px;
+    top: 666px;
 
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
 
-  color: #000000;
+    color: #000000;
+
 }
 
 #password_box{
-  box-sizing: border-box;
-
-  position: absolute;
-  width: 900px;
-  height: 400px;
-  left: 717px;
-  top: 630px;
-
-  background: #F5F5F5;
-  border: 1px solid #000000;
+    box-sizing: border-box;
+    position: absolute;
+    width: 474px;
+    height: 119px;
+    left: 717px;
+    top: 630px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
 }
 
 
