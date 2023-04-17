@@ -2,11 +2,6 @@
 body {
    background: #F4AE20;
 }
-frame2 {
-    position: relative;
-    width: 1908px;
-    height: 1056px;
-}
 
 .container {
     position: relative;
@@ -23,10 +18,11 @@ frame2 {
 
 #webpage{
     position: absolute;
-    width: 1405px;
-    height: 676px;
-    left: 261px;
-    top: 328px;
+    width: 100%;
+    height: 649px;
+    top: 230px;
+    left: 0;
+    z-index: 2;
 
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(images/blue_wavy_background.jpg);
     opacity: 0.1;
@@ -46,20 +42,21 @@ login_header_position{
   height: 117px;
 }
 
-h2 {
-    X: -289px;
-    Y: -409px;
+login_heading_font{
+    position: absolute;
+    width: 391px;
+    height: 117px;
+    left: 0px;
+    top: 0px;
+
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
-    font-size: 85px;
-    line-height: 103px;
+    font-size: 100px;
+    line-height: 121px;
     text-align: center;
 
-    color: white;
-
-    top:70px;
-    left: inherit;
+    color: #000000;
 }
 
 /* Virtual Wardrobe */
@@ -74,7 +71,7 @@ login_header_box{
   border: 1px solid #000000;
 }
 
-#vw_font {
+#vw_font{
     position: absolute;
     width: 807px;
     height: 80px;
@@ -90,7 +87,7 @@ login_header_box{
 }
 
 /* virtualw 1 */
-#logo {
+#logo{
     position: absolute;
     top:-23px;
     left: -4.5%;
@@ -100,7 +97,7 @@ login_header_box{
     object-fit: cover;
 }
 
-.login_button_text{
+.login_button{
   position: absolute;
   width: 102px;
   height: 48px;
@@ -117,7 +114,7 @@ login_header_box{
   color: #000000;
 }
 
-.login_button:hover {
+#login_button:hover {
   opacity: 0.8;
 }
 
@@ -148,7 +145,7 @@ sign_up_here_format{
 
 /* Login title heading */
 #login_title_font {
-  position: absolute;
+    position: absolute;
     width: 391px;
     height: 117px;
     left: 0px;
@@ -164,18 +161,18 @@ sign_up_here_format{
     color: #000000;
 }
 
-/* Username */
-#username_box{
-    box-sizing: border-box;
-    position: absolute;
-    width: 474px;
-    height: 119px;
-    left: 717px;
-    top: 421px;
+/*!* Username *!*/
+/*#username_box{*/
+/*    box-sizing: border-box;*/
+/*    position: absolute;*/
+/*    width: 474px;*/
+/*    height: 119px;*/
+/*    left: 717px;*/
+/*    top: 421px;*/
 
-    background: #F5F5F5;
-    border: 1px solid #000000;
-}
+/*    background: #F5F5F5;*/
+/*    border: 1px solid #000000;*/
+/*}*/
 
 #username_font{
     position: absolute;
@@ -193,9 +190,17 @@ sign_up_here_format{
 
     color: #000000;
 }
+input[type=user], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
 /*Password*/
-#password_font{
+.password_font{
     position: absolute;
     width: 216px;
     height: 48px;
@@ -213,16 +218,16 @@ sign_up_here_format{
 
 }
 
-#password_box{
-    box-sizing: border-box;
-    position: absolute;
-    width: 474px;
-    height: 119px;
-    left: 717px;
-    top: 630px;
-    background: #F5F5F5;
-    border: 1px solid #000000;
-}
+/*#password_box{*/
+/*    box-sizing: border-box;*/
+/*    position: absolute;*/
+/*    width: 474px;*/
+/*    height: 119px;*/
+/*    left: 717px;*/
+/*    top: 630px;*/
+/*    background: #F5F5F5;*/
+/*    border: 1px solid #000000;*/
+/*}*/
 
 
 
