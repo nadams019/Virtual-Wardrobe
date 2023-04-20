@@ -2,9 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Quiz</title>
+    <!-- Query for View Closet stylesheet -->
+    <link rel="stylesheet" href="../static/home_page.css">
+    <link rel="stylesheet" href="../pages/aesthetics.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
+    <!-- Media query for small browser width -->
+    <link rel="stylesheet" media="only screen and (max-width: 480px)" href="../static/small.css" />
+    <!-- Media query for medium browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="../static/medium.css" />
+    <!-- Media query for large browser width -->
+    <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
 </head>
+
+
 <body>
+    <div class="container">
+        <!-- foreground the top of every page aka the navigation bar -->
+        <div id="foreground">
+        <div id="title">
+            <div id="logo">
+                <img src="../static/images/virtualw.png" alt="logo" width=281 height="158">
+            </div>
+            <h1 >Virtual Wardrobe</h1>
+        </div>
+        <nav class="nav-bar">
+            <div class=" nav-option">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/login_page.html?_ijt=q8gff7acqb4imad8ulq5cmgj2c&_ij_reload=RELOAD_ON_SAVE">
+                    Login
+                </a>
+            </div>
+            <div class=" nav-option">
+                <a hred="http://localhost:63342/endpoints.py/templates/pages/info-page.html?_ijt=q8gff7acqb4imad8ulq5cmgj2c&_ij_reload=RELOAD_ON_SAVE">
+                    Info
+                </a>
+            </div>
+            <div class=" nav-option">
+            <a href = "http://localhost:63342/endpoints.py/templates/pages/UploadCloset.html?_ijt=vlaotrlk10j7hce9dcr723phd0&_ij_reload=RELOAD_ON_SAVE">
+               Upload
+            </a>
+            </div>
+            <div class=" nav-option">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/view_closet.html?_ijt=17uoctj8cjp2cn29gle49l214&_ij_reload=RELOAD_ON_SAVE">
+                    View
+                </a>
+            </div>
+            <div class="nav-option">
+                <a href="http://localhost:63342/endpoints.py/templates/pages/aesthetics.html?_ijt=e1pcsk9ch8sjnan2j23tn34vhm&_ij_reload=RELOAD_ON_SAVE">
+                </a>
+                Aesthetics Quiz
+            </div>
+        </nav>
+        </div>
+        <!-- the page contents, changes depending on which information is written. kp the sam enabving comnventions, [page-name]-container-->
+        <div class="aesthetics-quiz-container">
+            <div class="aesthetics-quiz-content">
+                <h2>Your Aestheitc is</h2>
+                <h1>ACADEMIA</h1>
+                <p>The academia aesthetic is a visual style that has since spun off into various subgenres, </p>
+                <p> the most popular being dark academia and light academia.</p>
+                <p> Dark academia embraces formal clothing, dimly lit rooms, gothic architecture, and marble statues.</p>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
+
 </html>
