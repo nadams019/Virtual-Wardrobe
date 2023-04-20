@@ -71,6 +71,26 @@ login_header_box{
   border: 1px solid #000000;
 }
 
+h1 {
+    position: absolute;
+
+    width: 2000px;
+    height: 100.04px;
+    top:-60px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100px;
+    line-height: 121px;
+    line-height: 100%;
+     text-align: center;
+     vertical-align: top;
+
+
+    color: #F5F5F5;
+}
+
 #vw_font{
     position: absolute;
     width: 807px;
@@ -87,33 +107,31 @@ login_header_box{
 }
 
 /* virtualw 1 */
-#logo{
+#logo {
     position: absolute;
-    top:-23px;
-    left: -4.5%;
-    z-index: 3;
-    width: 1280px;
-    height: 720px;
-    object-fit: cover;
+    width: 281px;
+    height: 158px;
+    top: -20px;
+    left: -80px;
+    background: url(images/virtualw.png);
 }
 
 .login_button{
-  position: absolute;
-  width: 102px;
-  height: 48px;
-  left: 913px;
-  top: 877px;
-
-  font-family: 'Irish Grover';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 48px;
-  text-align: center;
-
-  color: #000000;
+    padding:20px;
+    align-self:center;
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+    margin-top:30px;
 }
-
+label{
+    font-size: 40px;
+    color:white;
+}
 #login_button:hover {
   opacity: 0.8;
 }
@@ -144,35 +162,35 @@ sign_up_here_format{
 }
 
 /* Login title heading */
-#login_title_font {
+h2 {
     position: absolute;
-    width: 391px;
-    height: 117px;
-    left: 0px;
-    top: 0px;
-
+    width: 2000px;
+    height:100.04px;
+    top:25px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
-    font-size: 100px;
-    line-height: 121px;
+    font-size: 85px;
+    line-height: 103px;
     text-align: center;
+    vertical-align: top;
 
-    color: #000000;
+    color: white;
+    left: inherit;
 }
 
-/*!* Username *!*/
-/*#username_box{*/
-/*    box-sizing: border-box;*/
-/*    position: absolute;*/
-/*    width: 474px;*/
-/*    height: 119px;*/
-/*    left: 717px;*/
-/*    top: 421px;*/
+/* Username */
+#username_box{
+    box-sizing: border-box;
+    position: absolute;
+    width: 474px;
+    height: 119px;
+    left: 717px;
+    top: 421px;
 
-/*    background: #F5F5F5;*/
-/*    border: 1px solid #000000;*/
-/*}*/
+    background: #F5F5F5;
+    border: 1px solid #000000;
+}
 
 #username_font{
     position: absolute;
@@ -190,7 +208,7 @@ sign_up_here_format{
 
     color: #000000;
 }
-input[type=user], input[type=password] {
+input[type=text], input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -218,18 +236,30 @@ input[type=user], input[type=password] {
 
 }
 
-/*#password_box{*/
-/*    box-sizing: border-box;*/
-/*    position: absolute;*/
-/*    width: 474px;*/
-/*    height: 119px;*/
-/*    left: 717px;*/
-/*    top: 630px;*/
-/*    background: #F5F5F5;*/
-/*    border: 1px solid #000000;*/
-/*}*/
+#password_box{
+    box-sizing: border-box;
+    position: absolute;
+    width: 474px;
+    height: 119px;
+    left: 717px;
+    top: 630px;
+    background: #F5F5F5;
+    border: 1px solid #000000;
+}
+.login-page-contents {
+    display:flex;
+    flex-direction:column;
+}
+.login-box {
+    display:flex;
+    flex-direction:row;
+    padding:30px;
+}
 
+.login-box input {
+    height: 30px;
 
+}
 
 
 
