@@ -5,6 +5,7 @@
     <title>Login</title>
     <!-- Query for View Closet stylesheet -->
     <link rel="stylesheet" href="../static/home_page.css">
+
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Irish+Grover" />
     <!-- Media query for small browser width -->
     <link rel="stylesheet" media="only screen and (max-width: 480px)" href="../static/small.css" />
@@ -13,6 +14,7 @@
     <!-- Media query for large browser width -->
     <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
 </head>
+
 <body>
   <div class="container">
     <div id="page">
@@ -21,19 +23,24 @@
         <div id="logo">
           <img src = "../static/images/virtualw.png" alt="logo" width=281 height="158">
         </div>
+          <h2>Login</h2>
         <div id="webpage">
-          <div id="login_heading_font">Login</div>
-          <div id="sign_up_here_text">New to virtual wardrobe? Sign up here!</div>
-          <div id="box"></div>
-            <label for="username_box"><b>Username</b></label>
-            <input type="text" placeholder="Enter username" name="username" required>
-            <label for="password_box"><b>Password</b></label>
-            <input type="password" placeholder="Enter password" name="password" required>
+            <div class="login-page-contents">
+                <div id="box" class="login-box">
+                    <h1 id="sign_up_here_text">New to virtual wardrobe? Sign up here!</h1>
+                    <label for="username_box"><b>Username</b></label>
+                    <input type="text" placeholder="Enter username" name="username" required>
+                    <label for="password_box"><b>Password</b></label>
+                    <input type="text" placeholder="Enter password" name="password" required id = password_box>
+                    <buttotn class="login_button">Login</buttotn>
+                </div>
+            </div>
 
-          <div class="login_button">Login</div>
         </div>
       </div>
     </div>
   </div>
+</body>
+</body>
 </body>
 </html>
