@@ -1,30 +1,90 @@
+p {text-align: center;
+   font-size: 30px;}
+h1{
+    text-align: center;
+
+
+}
+
+
+button{
+    background: #804711;
+    border: 1px solid #FCAD38;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Irish Grover';
+    font-size: 20px;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover';
+  font-size: 30px;
+  text-align: center;
+
+}
+
+.virtualwardrobeTrademark{
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    color: #F5F5F5;
+}
+
 .nav-bar {
     flex-direction: row;
     display: flex;
     justify-content: space-between;
     height: 30px;
     font-size: 30px;
-    background-color: white;
+    background-color: #DD6FAB;
     width: 100%;
     padding: 10px;
-   font-family: 'Inconsolata', serif;
+    font-family: 'Inconsolata', serif;
 }
+
 .aesthetics-quiz-container {
     background-image: url(6435357.png);
     display: flex;
     place-content: center;
     color:black;
     height:100vh;
+    width: 102%;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .aesthetics-quiz-content {
-    width:70%;
+    line-height: 30px;
+    width:60%;
     display:flex;
     flex-direction: column;
-    background-color:bisque;
+    background-color:#E2C894;
+    border: 5px solid #B56000;
+    place-content: center;
+    position: absolute;
+    color: #9D5108;
 }
 .aesthetics-quiz-content button {
+
+}
+
+.p{
+    position: absolute;
+    width: 711px;
+    height: 369px;
+
+    font-family: 'Irish Grover';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+
+    color: #492706;
 
 }

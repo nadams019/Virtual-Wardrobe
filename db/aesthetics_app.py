@@ -33,7 +33,7 @@ while True:
                       "(b)Edgy \n"
                       "(c)An Old Soul\n"
                       "(d)Unique \n\n")
-#
+    #
     if (question1 == "a"):
         Softgirl += 1
         questionstobeansweredvariable += 1
@@ -263,4 +263,11 @@ while True:
         questionstobeansweredvariable += 1
 
     if (questionstobeansweredvariable > 9):
-        print("The result is out")
+        if max(Academia, Grunge, Softgirl, Streetwear) == Academia:
+            print("Academia")
+        elif max(Academia, Grunge, Softgirl, Streetwear) == Grunge:
+            print("Grunge")
+        elif max(Academia, Grunge, Softgirl, Streetwear) == Softgirl:
+            print("Softgirl")
+        else:
+            print("Streetwear")
