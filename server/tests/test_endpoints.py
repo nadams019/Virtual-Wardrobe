@@ -130,7 +130,7 @@ SAMPLE_CONTACT = {
     cnts.LAST_NAME: 'Contact',
     cnts.REQUEST: 'This is a request.',
 }
-
+#developer endpoint
 def test_get_contact_list():
     resp = TEST_CLIENT.get(ep.CONTACTS_LIST_W_NS)
     resp_json = resp.get_json()
