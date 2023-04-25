@@ -11,7 +11,7 @@ body {
 #page {
     position: absolute;
     width: 1908px;
-    height: 1135px;
+    height: 1185px;
     background: #F3CC90;
 }
 
@@ -50,7 +50,7 @@ h2 {
     position: absolute;
     width: 2000px;
     height:100.04px;
-    top:25px;
+    top:95px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -96,7 +96,7 @@ h2 {
     position: absolute;
     width: 10px;
     height: 5px;
-    top: 115px;
+    top: 165px;
     left: 1765px;
 
     background: url(images/profile_icon.png);
@@ -112,7 +112,7 @@ h2 {
     width: 1806px;
     height: 819px;
     left: 49px;
-    top: 200px;
+    top: 250px;
 
     background: url(images/info_background.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -126,7 +126,7 @@ h2 {
     width: 286px;
     height: 62px;
     left: 875px;
-    top: 4px;
+    top: 54px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -144,7 +144,7 @@ h2 {
     width: 452px;
     height: 175px;
     left: 1300px;
-    top: 356px;
+    top: 406px;
 
 
     background: #D9D9D9;
@@ -155,7 +155,7 @@ h2 {
     width: 157px;
     height: 45px;
     left: 1600px;
-    top: 562px;
+    top: 610px;
 
     background: #FFD92A;
     border-radius: 22.5px;
@@ -175,7 +175,7 @@ h2 {
     width: 218px;
     height: 64px;
     left: 1225px;
-    top: 193px;
+    top: 243px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -195,7 +195,7 @@ h2 {
     width: 452px;
     height: 70px;
     left: 1300px;
-    top: 235px;
+    top: 285px;
 
     background: #D9D9D9;
 }
@@ -320,7 +320,7 @@ h2 {
     width: 224px;
     height: 39px;
     left: 1133px;
-    top: 1030px;
+    top: 1080px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -342,7 +342,7 @@ h2 {
     width: 47px;
     height: 39px;
     left: 1538px;
-    top: 1030px;
+    top: 1080px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -357,19 +357,6 @@ h2 {
 }
 
 
-/* Rectangle 7 */
-
-#dorothy_social {
-    position: absolute;
-    width: 80px;
-    height: 86px;
-    left: 1709px;
-    top: 678px;
-
-    background: url(images/socials_icon.png);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 /* Frame 4 */
 
 #nakeya_title {
@@ -377,7 +364,7 @@ h2 {
     width: 278px;
     height: 60px;
     left: 1134px;
-    top: 700px;
+    top: 750px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -395,7 +382,7 @@ h2 {
     width: 287px;
     height: 60px;
     left: 761px;
-    top: 700px;
+    top: 750px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -413,7 +400,7 @@ h2 {
     width: 284px;
     height: 60px;
     left: 389px;
-    top: 700px;
+    top: 750px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -431,7 +418,7 @@ h2 {
     width: 282px;
     height: 60px;
     left: 16px;
-    top: 700px;
+    top: 750px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -449,7 +436,7 @@ h2 {
     width: 288px;
     height: 60px;
     left: 1500px;
-    top: 700px;
+    top: 750px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -467,7 +454,7 @@ h2 {
     width: 244px;
     height: 61px;
     left: 842px;
-    top: 600px;
+    top: 650px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -485,7 +472,7 @@ h2 {
     width: 286px;
     height: 62px;
     left: 1383px;
-    top: 4px;
+    top: 54px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -503,7 +490,7 @@ h2 {
     width: 219px;
     height: 70px;
     left: 1300px;
-    top: 108px;
+    top: 158px;
 
     background: #D9D9D9;
 }
@@ -515,7 +502,7 @@ h2 {
     width: 220px;
     height: 70px;
     left: 1532px;
-    top: 108px;
+    top: 158px;
 
     background: #D9D9D9;
 }
@@ -527,7 +514,7 @@ h2 {
     width: 218px;
     height: 64px;
     left: 1271px;
-    top: 69px;
+    top: 119px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -547,7 +534,7 @@ h2 {
     width: 218px;
     height: 64px;
     left: 1495px;
-    top: 65px;
+    top: 115px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -567,7 +554,7 @@ h2 {
     width: 528px;
     height: 64px;
     left: 1238px;
-    top: 318px;
+    top: 368px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -586,7 +573,7 @@ h2 {
     width: 604px;
     height: 394px;
     left: 131px;
-    top: 73px;
+    top: 123px;
 
     background: #D9D9D9;
 }
@@ -598,7 +585,7 @@ h2 {
     width: 286px;
     height: 62px;
     left: 290px;
-    top: 4px;
+    top: 54px;
     font-family: 'Irish Grover';
     font-style: normal;
     font-weight: 400;
@@ -623,7 +610,7 @@ h2 {
     width: 311px;
     height: 300px;
     left: 863px;
-    top: 90px;
+    top: 140px;
 
     font-family: 'Inter';
     font-style: normal;
@@ -641,7 +628,7 @@ h2 {
     width: 207px;
     height: 39px;
     left: 357px;
-    top: 1030px;
+    top: 1080px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -663,7 +650,7 @@ h2 {
     width: 196px;
     height: 39px;
     left: 756px;
-    top: 1030px;
+    top: 1080px;
 
     font-family: 'Irish Grover';
     font-style: normal;
@@ -685,7 +672,7 @@ h2 {
     width: 78px;
     height: 70px;
     left: 279px;
-    top: 1020px;
+    top: 1070px;
 
     background: url(images/email_icon.png);
 }
@@ -697,7 +684,7 @@ h2 {
     width: 79px;
     height: 76px;
     left: 665px;
-    top: 1020px;
+    top: 1070px;
 
     background: url(images/phone_icon.png);
 }
@@ -709,7 +696,7 @@ h2 {
     width: 80px;
     height: 86px;
     left: 1053px;
-    top: 1020px;
+    top: 1070px;
 
     background: url(images/socials_icon.png);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -722,7 +709,31 @@ h2 {
     width: 84px;
     height: 74px;
     left: 1442px;
-    top: 1020px;
+    top: 1070px;
 
     background: url(images/faq_icon.png);
+}
+.nav-bar {
+    position: absolute;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    background-color: #DD6FAB;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Inconsolata', serif;
+    top: 115px;
+    width: 1888px;
+    height:50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover';
+  font-size: 30px;
+  text-align: center;
+
 }
