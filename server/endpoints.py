@@ -25,7 +25,7 @@ authorizations = {
         SWAG_AUTH_LOC_FIELD: SWAG_AUTH_LOC,
         SWAG_AUTH_NM_FIELD: AUTH_KEY
     }
-}
+
 app = Flask(__name__)
 CORS(app)
 api = Api(app, authorizations=authorizations)
