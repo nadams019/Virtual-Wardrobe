@@ -4,6 +4,7 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 from flask import Flask, request
+from flask_cors import CORS
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -12,8 +13,22 @@ import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
 
+AUTH_KEY = 'Auth-Key'
+SWAG_AUTH_TYPE_FIELD = 'type'
+SWAG_AUTH_TYPE = 'apiKey'
+SWAG_AUTH_LOC_FIELD = 'in'
+SWAG_AUTH_LOC = 'in'
+SWAG_AUTH_NM_FIELD = 'name'
+authorizations = {
+    AUTH_KEY: {
+        SWAG_AUTH_TYPE_FIELD: SWAG_AUTH_TYPE,
+        SWAG_AUTH_LOC_FIELD: SWAG_AUTH_LOC,
+        SWAG_AUTH_NM_FIELD: AUTH_KEY
+    }
+}
 app = Flask(__name__)
-api = Api(app)
+CORS(app)
+api = Api(app, authorizations=authorizations)
 
 LOGIN_NS = 'login'
 USERS_NS = 'users'
@@ -111,7 +126,7 @@ class HelloWorld(Resource):
         A trivial endpoint to see if the server is running.
         It just answers with "hello world."
         """
-        return {MESSAGE: 'hello world'}
+        return {MESSAGE: 'Hello world'}
 
 
 @api.route(MAIN_MENU)
