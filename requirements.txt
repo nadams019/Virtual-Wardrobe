@@ -3,7 +3,6 @@ flask-restx
 flask_restful==0.3.9
 werkzeug==2.1.2
 gunicorn
-
 requests~=2.28.1
 pymongo~=4.3.3
 flask_cors
