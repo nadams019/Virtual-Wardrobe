@@ -1,3 +1,5 @@
+// App.js file to connect the front end to the backend file
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
