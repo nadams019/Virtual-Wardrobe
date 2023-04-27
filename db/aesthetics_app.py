@@ -1,22 +1,5 @@
 '''
-question_prompts = [
-    "How would people describe you?\n(a)Bubbly \n(b)Edgy \n
-    (c)An Old Soul\n(d) Kind \n\n",
-    "What song would you add to your playlist?\n
-    (a)Transparent Soul by Willow Smith \n(b)Honeymoon Avenue by Ariana Grande
-    \n(
-    c)Big Poppa by The Notorious B.I.G \n
-    (d)EARFQUAKE by Tyler The Creator\n\n",
-    "When I go to a party I prioritize being ___\n
-    (a)comfortable \n(b)stylish \n
-    (c) the star of the show \n(d) warmth\n\n",
-    "I lean more towards ___ outfits\n(a) black \n
-    (b) vibrant \n(c)earth tone \n
-    (d)neutral \n\n"
-]
-questions = [
-    Question()
-]
+Generic questionnaire code.
 '''
 
 QUESTION = 'question'
@@ -40,33 +23,29 @@ SCORES = {
 QUESTIONNAIRE = [
     {
         QUESTION: 'How would people describe you?',
-        ANSWERS: [
-            {
-                CHOICE: 'a',
+        ANSWERS: {
+            'a': {
                 ANSWER: 'Bubbly',
                 CATEGORY: SOFTGIRL,
             },
-            {
-                CHOICE: 'b',
+            'b': {
                 ANSWER: 'Edgy',
                 CATEGORY: GRUNGE,
             },
-        ],
+        },
     },
     {
         QUESTION: 'What song would you add to your playlist?',
-        ANSWERS: [
-            {
-                CHOICE: 'a',
+        ANSWERS: {
+            'a': {
                 ANSWER: 'Transparent Soul by Willow Smith',
                 CATEGORY: GRUNGE,
             },
-            {
-                CHOICE: 'b',
+            'b': {
                 ANSWER: 'Honeymoon Avenue by Ariana Grande',
                 CATEGORY: SOFTGIRL,
             },
-        ],
+        },
     },
 ]
 
@@ -89,18 +68,12 @@ def eval_scores():
     print(f'Your style is {max_cat}')
 
 
-def is_valid_choice(question, choice):
-    for answer in question[ANSWERS]:
-        if answer[CHOICE] == choice.lower():
-            return True
-    return False
+def is_valid_choice(answers, choice):
+    return choice in answers
 
 
-def get_category(question, choice):
-    for answer in question[ANSWERS]:
-        if answer[CHOICE] == choice.lower():
-            return answer[CATEGORY]
-    return None
+def get_category(answers, choice):
+    return answers[choice][CATEGORY]
 
 
 def run_questionnaire():
@@ -111,11 +84,12 @@ def run_questionnaire():
         print(question[QUESTION])
         choice = None
         while True:
-            for answer in question[ANSWERS]:
-                print(f'{answer[CHOICE]}: {answer[ANSWER]}')
+            answers = question[ANSWERS]
+            for opt in answers:
+                print(f'{opt}: {answers[opt][ANSWER]}')
             choice = input('Type the letter for your choice: ')
-            if is_valid_choice(question, choice):
-                cat = get_category(question, choice)
+            if is_valid_choice(answers, choice):
+                cat = get_category(answers, choice)
                 add_to_score(cat)
                 break
             else:
