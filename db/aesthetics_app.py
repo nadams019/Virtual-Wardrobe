@@ -24,6 +24,7 @@ QUESTIONNAIRE = [
     {
         QUESTION: 'How would people describe you?',
         ANSWERS: {
+
             'a': {
                 ANSWER: 'Bubbly',
                 CATEGORY: SOFTGIRL,
@@ -32,6 +33,15 @@ QUESTIONNAIRE = [
                 ANSWER: 'Edgy',
                 CATEGORY: GRUNGE,
             },
+            'c': {
+                ANSWER: 'An Old Soul',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Unique',
+                CATEGORY: STREETWEAR,
+            },
+
         },
     },
     {
@@ -47,6 +57,7 @@ QUESTIONNAIRE = [
             },
         },
     },
+
 ]
 
 
