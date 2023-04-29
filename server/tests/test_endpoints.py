@@ -1,6 +1,7 @@
 from unittest.mock import patch
 import db.aesthetics_types as aes
 from http import HTTPStatus
+import db.closet_browse as brwse
 # import db.browse as br
 
 import db.users as usr
