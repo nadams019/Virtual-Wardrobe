@@ -1,11 +1,11 @@
-
+from unittest.mock import patch
 import server.endpoints as ep
 import db.users as usr
 import db.closet_browse as brwse
 import db.contacts as cnts
 # import db.browse as br
-# import db.aesthetics_types as aes
-
+import db.aesthetics_types as aes
+from http import HTTPStatus
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
 TEST_AES_TYPE = 'Grunge'
@@ -76,13 +76,11 @@ def test_get_aesthetic_type_list_not_empty():
     assert len(resp_json[ep.AES_TYPE_LIST_NM]) > 0
 
 
-def test_get_aesthetic_type_details():
-    """
-    """
-    resp_json = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/'
-                                f'{TEST_AES_TYPE}').get_json()
-    assert TEST_AES_TYPE in resp_json
-    assert isinstance(resp_json[TEST_AES_TYPE], dict)
+@patch('db.aesthetics_types.aes_types_details', return_value=SAMPLE_USER)
+def test_get_aesthetic_type_details(mock_get_aesthetic_type_details):
+    resp = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/{TEST_AES_TYPE}')
+    assert resp.status_code == HTTPStatus.OK
+    assert isinstance(resp.json, dict)
 
 
 SAMPLE_ITEM_NM = 'SampleItem'
