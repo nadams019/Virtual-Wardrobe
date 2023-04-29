@@ -80,7 +80,7 @@ def test_get_aesthetic_type_list_not_empty():
     assert len(resp_json[ep.AES_TYPE_LIST_NM]) > 0
 
 
-@patch('db.aesthetics_types.aes_types_details', return_value=SAMPLE_USER)
+@patch('db.aesthetics_types.aes_type_details', return_value=SAMPLE_USER)
 def test_get_aesthetic_type_details(mock_get_aesthetic_type_details):
     resp = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/{TEST_AES_TYPE}')
     assert resp.status_code == HTTPStatus.OK
