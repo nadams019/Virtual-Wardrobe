@@ -64,7 +64,7 @@ LIST = 'list'
 DICT = 'dict'
 DETAILS = 'details'
 ADD = 'add'
-MAIN_MENU = '/main_menu'
+HOME_PAGE = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
@@ -430,8 +430,8 @@ class AestheticTypeDetails(Resource):
             raise wz.NotFound(f'{aes_type} not found.')
 
 
-@app.route('/main_menu')
-def main_menu():
+@app.route('/home_page')
+def home_page():
     '''
     This is for the home page in our app
     :return:
