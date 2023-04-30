@@ -149,6 +149,90 @@ QUESTIONNAIRE = [
             },
         },
     },
+    { #7
+        QUESTION: 'I have always been a ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Girly girl',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Tom boy',
+                CATEGORY: STREETWEAR,
+            },
+            'c': {
+                ANSWER: 'Book worm',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Alte kid',
+                CATEGORY: GRUNGE,
+            },
+        },
+    },
+    {
+        QUESTION: 'One item I cannot live without is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Mini skirts',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Platform boots',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'Blazer',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Skateboard',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'The walls of my room look like ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'lots of pastels',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'my diploma',
+                CATEGORY: ACADEMIA,
+            },
+            'c': {
+                ANSWER: 'torn up posters',
+                CATEGORY: GRUNGE,
+            },
+            'd': {
+                ANSWER: 'hung up hats & skateboards',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'When it comes to my hair __',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Gimme all the bounce & curls!',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Slick back bun',
+                CATEGORY: ACADEMIA,
+            },
+            'c': {
+                ANSWER: 'Buzz cut',
+                CATEGORY: STREETWEAR,
+            },
+            'd': {
+                ANSWER: 'Jet black wig',
+                CATEGORY: GRUNGE,
+            },
+        },
+    },
 
 ]
 
