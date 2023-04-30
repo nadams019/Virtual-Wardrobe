@@ -430,6 +430,14 @@ class AestheticTypeDetails(Resource):
             raise wz.NotFound(f'{aes_type} not found.')
 
 
+@app.route('/main_menu')
+def main_menu():
+    '''
+    This is for the home page in our app
+    :return:
+    '''
+
+    return render_template('home_page.html')
 @app.route(LOGIN, methods=['POST'])
 def login():
     """
