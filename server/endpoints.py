@@ -12,6 +12,8 @@ import db.closet_browse as brwse
 import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
+import secrets
+
 
 AUTH_KEY = 'Auth-Key'
 SWAG_AUTH_TYPE_FIELD = 'type'
@@ -29,6 +31,7 @@ authorizations = {
 app = Flask(__name__)
 CORS(app)
 api = Api(app, authorizations=authorizations)
+app.secret_key = secrets.token_hex(16)
 
 LOGIN_NS = 'login'
 USERS_NS = 'users'
