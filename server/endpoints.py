@@ -64,7 +64,7 @@ LIST = 'list'
 DICT = 'dict'
 DETAILS = 'details'
 ADD = 'add'
-HOME_PAGE = '/main_menu'
+MAIN_MENU = '/main_menu'
 MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
@@ -431,13 +431,13 @@ class AestheticTypeDetails(Resource):
 
 
 @app.route('/home_page')
-def home_page():
+def main_menu_function():
     '''
     This is for the home page in our app
     :return:
     '''
 
-    return render_template('home_page.html')
+    return render_template('pages/home_page.html')
 
 
 @app.route(LOGIN, methods=['POST'])
