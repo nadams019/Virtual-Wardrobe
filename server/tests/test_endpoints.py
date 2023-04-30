@@ -10,6 +10,7 @@ import db.aesthetics_types as aes
 import server.endpoints as ep
 
 
+
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
 TEST_AES_TYPE = 'Grunge'
