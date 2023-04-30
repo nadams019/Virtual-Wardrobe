@@ -438,6 +438,8 @@ def main_menu():
     '''
 
     return render_template('home_page.html')
+
+
 @app.route(LOGIN, methods=['POST'])
 def login():
     """
