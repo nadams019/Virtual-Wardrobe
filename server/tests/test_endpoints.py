@@ -120,16 +120,12 @@ def test_add_clothing_post():
 def test_login():
     with TEST_CLIENT as client:
         # Simulate a POST request with correct credentials
-        response = client.post('/login', data={
-            'username': SAMPLE_USER['username'],
-            'password': SAMPLE_USER['password']})
+        response = client.post('/login', data=SAMPLE_USER)
 
         # Expect a redirect status code and check that it goes to the correct page
-        assert response.status_code == 302  # expect redirect status code
-
-
-
-
+        assert response.status_code == 302, \
+            f"Expected redirect status code, but got {response.status_code}. " \
+            f"Response content: {response.data}"
 
 
 SAMPLE_CONTACT_NM = 'SampleContact'
