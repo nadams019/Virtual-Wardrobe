@@ -3,7 +3,8 @@ This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
-from flask import Flask, request
+from flask_cors import CORS
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -11,9 +12,26 @@ import db.closet_browse as brwse
 import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
+import secrets
 
+
+AUTH_KEY = 'Auth-Key'
+SWAG_AUTH_TYPE_FIELD = 'type'
+SWAG_AUTH_TYPE = 'apiKey'
+SWAG_AUTH_LOC_FIELD = 'in'
+SWAG_AUTH_LOC = 'in'
+SWAG_AUTH_NM_FIELD = 'name'
+authorizations = {
+    AUTH_KEY: {
+        SWAG_AUTH_TYPE_FIELD: SWAG_AUTH_TYPE,
+        SWAG_AUTH_LOC_FIELD: SWAG_AUTH_LOC,
+        SWAG_AUTH_NM_FIELD: AUTH_KEY
+    }
+}
 app = Flask(__name__)
-api = Api(app)
+CORS(app)
+api = Api(app, authorizations=authorizations)
+app.secret_key = secrets.token_hex(16)
 
 LOGIN_NS = 'login'
 USERS_NS = 'users'
@@ -111,7 +129,7 @@ class HelloWorld(Resource):
         A trivial endpoint to see if the server is running.
         It just answers with "hello world."
         """
-        return {MESSAGE: 'hello world'}
+        return {MESSAGE: 'Hello world'}
 
 
 @api.route(MAIN_MENU)
@@ -412,32 +430,35 @@ class AestheticTypeDetails(Resource):
             raise wz.NotFound(f'{aes_type} not found.')
 
 
-# @login.route(LOGIN, methods=['GET', 'POST'])
-# def login():
-#     """
-#     The login page for the closet.
-#     """
-#     error = None
-#     if request.method == "POST":
-#         email = request.form['email']
-#         full_name = request.form['full name']
-#         username = request.form['username']
-#         password = request.form['password']
-#
-#         try:
-#             user_found = usr.user_exists(email, full_name,
-#             username, password)
-#         except Exception as error:
-#             print(f"Error logging in: {error}")
-#
-#         if user_found is True:
-#             session['email'] = email
-#             session['full_name'] = full_name
-#             return redirect(url_for(MAIN_MENU))
-#
-#         else:
-#             error = "Login failed"
-#             return render_template('login.html', error=error)
+@app.route('/home_page')
+def main_menu_function():
+    '''
+    This is for the home page in our app
+    :return:
+    '''
+
+    return render_template('pages/home_page.html')
+
+
+@app.route(LOGIN, methods=['POST'])
+def login():
+    """
+    Code for the login page.
+    """
+    error = None
+    if request.method == "POST":
+        username = request.form['username']
+        password = request.form['password']
+
+        if username == 'sample_user' and password == 'abcde123':
+            session['logged_in'] = True
+            session['username'] = username
+            return redirect(url_for('main_menu'))
+
+        else:
+            error = "Login failed"
+
+        return render_template('login.html', error=error)
 
 
 @api.route('/endpoints')

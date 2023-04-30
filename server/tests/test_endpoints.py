@@ -1,11 +1,16 @@
 from unittest.mock import patch
-import server.endpoints as ep
-import db.users as usr
-import db.closet_browse as brwse
-import db.contacts as cnts
-# import db.browse as br
 import db.aesthetics_types as aes
 from http import HTTPStatus
+import db.closet_browse as brwse
+# import db.browse as br
+import db.contacts as cnts
+
+import db.users as usr
+import db.aesthetics_types as aes
+import server.endpoints as ep
+
+
+
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
 TEST_AES_TYPE = 'Grunge'
@@ -76,12 +81,11 @@ def test_get_aesthetic_type_list_not_empty():
     assert len(resp_json[ep.AES_TYPE_LIST_NM]) > 0
 
 
-@patch('db.aesthetics_types.aes_types_details', return_value=SAMPLE_USER)
+@patch('db.aesthetics_types.get_aes_type_details', return_value=SAMPLE_USER)
 def test_get_aesthetic_type_details(mock_get_aesthetic_type_details):
     resp = TEST_CLIENT.get(f'{ep.AES_TYPE_DETAILS_W_NS}/{TEST_AES_TYPE}')
     assert resp.status_code == HTTPStatus.OK
     assert isinstance(resp.json, dict)
-
 
 SAMPLE_ITEM_NM = 'SampleItem'
 SAMPLE_ITEM = {
@@ -113,12 +117,16 @@ def test_add_clothing_post():
 #     assert TEST_CLOTHING_TYPE in resp_json
 #     assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
-'''
-
 def test_login():
-    response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
-    assert response.status == "Successfully logged in"
-'''
+    with TEST_CLIENT as client:
+        # Simulate a POST request with correct credentials
+        response = client.post('/login', data=SAMPLE_USER)
+
+        # Expect a redirect status code and check that it goes to the correct page
+        assert response.status_code == 302, \
+            f"Expected redirect status code, but got {response.status_code}. " \
+            f"Response content: {response.data}"
+
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
