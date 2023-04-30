@@ -149,7 +149,7 @@ QUESTIONNAIRE = [
             },
         },
     },
-    { #7
+    {
         QUESTION: 'I have always been a ___',
         ANSWERS: {
             'a': {
