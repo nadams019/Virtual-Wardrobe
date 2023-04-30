@@ -117,8 +117,16 @@ def test_add_clothing_post():
 #     assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
 def test_login():
-    response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
-    assert response.status == "Successfully logged in"
+    with TEST_CLIENT as client:
+        # Send a POST request to the login endpoint with the user's credentials
+        response = client.post('/login', data=SAMPLE_USER, follow_redirects=True)
+
+        # Check if the response is a redirect to the user's account page
+        assert response.status_code == 200  # replace with the appropriate status code
+        assert 'User Account' in response.data.decode(
+            'utf-8')  # replace with the appropriate text on the account page
+
+
 
 
 SAMPLE_CONTACT_NM = 'SampleContact'
