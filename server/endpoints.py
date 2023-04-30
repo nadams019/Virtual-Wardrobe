@@ -453,7 +453,7 @@ def login():
         if username == 'sample_user' and password == 'abcde123':
             session['logged_in'] = True
             session['username'] = username
-            return redirect(url_for(MAIN_MENU))
+            return redirect(url_for('main_menu'))
 
         else:
             error = "Login failed"
