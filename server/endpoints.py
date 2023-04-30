@@ -437,7 +437,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        if username == 'sample_user' and password == 'abcde123' is True:
+        if username == 'sample_user' and password == 'abcde123':
             session['logged_in'] = True
             session['username'] = username
             return redirect(url_for(MAIN_MENU))
