@@ -55,11 +55,11 @@ QUESTIONNAIRE = [
                 ANSWER: 'Honeymoon Avenue by Ariana Grande',
                 CATEGORY: SOFTGIRL,
             },
-            'c':{
+            'c': {
                 ANSWER: 'Graduation by Kanye West',
                 CATEGORY: ACADEMIA,
             },
-            'd':{
+            'd': {
                 ANSWER: 'EARFQUAKE by Tyler The Creator',
                 CATEGORY: STREETWEAR,
             },
