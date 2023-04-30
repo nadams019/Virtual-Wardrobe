@@ -116,12 +116,10 @@ def test_add_clothing_post():
 #     assert TEST_CLOTHING_TYPE in resp_json
 #     assert isinstance(resp_json[TEST_CLOTHING_TYPE], dict)
 
-'''
-
 def test_login():
     response = TEST_CLIENT.get(f'{ep.LOGIN_NS}').get_json()
     assert response.status == "Successfully logged in"
-'''
+
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
