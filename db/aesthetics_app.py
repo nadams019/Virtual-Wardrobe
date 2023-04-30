@@ -65,6 +65,90 @@ QUESTIONNAIRE = [
             },
         },
     },
+    {
+        QUESTION: 'When I go to a party I prioritize being ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Comfortable',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Stylish',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'The star of the show',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Warm',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'I lean more towards ___ outfits',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Vibrant',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Earth tone',
+                CATEGORY: STREETWEAR,
+            },
+            'c': {
+                ANSWER: 'Neutral',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Black',
+                CATEGORY: GRUNGE,
+            },
+        },
+    },
+    {
+        QUESTION: 'A city I would love to live in is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Paris',
+                CATEGORY: ACADEMIA,
+            },
+            'b': {
+                ANSWER: 'Seattle',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'LA',
+                CATEGORY: SOFTGIRL,
+            },
+            'd': {
+                ANSWER: 'NYC',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'My go-to drink at a cafe is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Water',
+                CATEGORY: STREETWEAR,
+            },
+            'b': {
+                ANSWER: 'Black Coffee',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'Chai Latte',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Anything sweet!',
+                CATEGORY: SOFTGIRL,
+            },
+        },
+    },
 
 ]
 
