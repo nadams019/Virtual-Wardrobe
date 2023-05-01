@@ -1,3 +1,4 @@
+import os
 import tempfile
 from unittest.mock import patch
 import db.aesthetics_types as aes
@@ -9,8 +10,7 @@ import db.contacts as cnts
 import db.users as usr
 import db.aesthetics_types as aes
 import server.endpoints as ep
-
-
+from werkzeug.utils import secure_filename
 
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
@@ -136,14 +136,15 @@ def test_closet_upload():
             response = client.post(
                 f'/upload/closet/1/upload',
                 data={
-                    'file':(f.name,open(f.name, 'rb'), 'image/png')
+                    'file': (f.name, open(f.name, 'rb'), 'image/png')
                 }
             )
             # Verify that the response status code is 201 (Created)
             assert response.status_code == 201
             # Verify that the response message is what we expect
             assert response.json == {'message': 'File uploaded successfully'}
-
+            # Verify that the file was actually saved to the upload folder
+            assert os.path.isfile(os.path.join(UPLOAD_FOLDER, secure_filename(f.name)))
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
