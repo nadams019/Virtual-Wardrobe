@@ -129,7 +129,7 @@ def test_login():
             f"Response content: {response.data}"
 
 def test_closet_upload():
-    # Create a temporary file for testing
+    # Create a temporary file for testing this
     with TEST_CLIENT as client:
         with tempfile.NamedTemporaryFile(suffix='.png') as f:
             # Send a POST request to the endpoint with the temporary file
