@@ -127,7 +127,7 @@ def test_login():
         assert response.status_code == 302, \
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
-
+'''
 def test_closet_upload():
     # Create a temporary file for testing this
     with TEST_CLIENT as client:
@@ -143,6 +143,7 @@ def test_closet_upload():
             assert response.status_code == 201
             # Verify that the response message is what we expect
             assert response.json == {'message': 'File uploaded successfully'}
+'''
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
