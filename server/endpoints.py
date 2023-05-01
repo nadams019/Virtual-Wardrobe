@@ -14,7 +14,6 @@ import db.contacts as cnts
 import db.aesthetics_types as atyp
 import secrets
 
-
 AUTH_KEY = 'Auth-Key'
 SWAG_AUTH_TYPE_FIELD = 'type'
 SWAG_AUTH_TYPE = 'apiKey'
@@ -46,7 +45,6 @@ SEASON_NS = 'season'
 OCCASION_NS = 'occasion'
 AESTHETIC_NS = 'aesthetic'
 
-
 login = Namespace(LOGIN_NS, 'Login')
 api.add_namespace(login)
 users = Namespace(USERS_NS, 'Users')
@@ -62,7 +60,6 @@ api.add_namespace(aes_types)
 upload = Namespace(UPLOAD_NS, 'Upload')
 api.add_namespace(upload)
 
-
 LOGIN = '/login'
 LIST = 'list'
 DICT = 'dict'
@@ -74,7 +71,6 @@ HELLO = '/hello'
 MESSAGE = 'message'
 OPTIONS_NM = "option"
 
-
 USER_DICT = f'/{DICT}'
 USER_DICT_W_NS = f'{USERS_NS}/{DICT}'
 USER_DICT_NM = f'{USERS_NS}_dict'
@@ -84,13 +80,11 @@ USER_LIST_NM = f'{USERS_NS}_list'
 USER_DETAILS = f'/{USERS_NS}/{DETAILS}'
 USER_ADD = f'/{USERS_NS}/{ADD}'
 
-
 BROWSE_DICT = f'/{DICT}'
 BROWSE_DICT_W_NS = f'{BROWSE_NS}/{DICT}'
 BROWSE_DETAILS = f'/{DETAILS}'
 BROWSE_DETAILS_W_NS = f'{BROWSE_NS}/{DETAILS}'
 BROWSE_ADD = f'/{BROWSE_NS}/{ADD}'
-
 
 CLOSET_LIST = f'{LIST}'
 CLOSET_LIST_NM = f'{CLOSET_NS}_list'
@@ -128,6 +122,7 @@ class HelloWorld(Resource):
     The purpose of the HelloWorld class is to have a simple test to see if the
     app is working at all.
     """
+
     def get(self):
         """
         A trivial endpoint to see if the server is running.
@@ -141,6 +136,7 @@ class MainMenu(Resource):
     """
     This will deliver our main menu.
     """
+
     def get(self):
         """
         Gets the main game menu.
@@ -168,6 +164,7 @@ class OptionsMenu(Resource):
     """
     This will deliver the option menu for seeing details in the closet
     """
+
     def get(self):
         return {'Title': OPTIONS_NM,
                 'Default': 2,
@@ -189,6 +186,7 @@ class UserDict(Resource):
     """
     This will get a list of currrent users.
     """
+
     def get(self):
         """
         Returns a list of current users.
@@ -203,6 +201,7 @@ class UserList(Resource):
     """
     This will get a list of current users.
     """
+
     def get(self):
         """
         Returns a list of current users.
@@ -222,6 +221,7 @@ class AddUser(Resource):
     """
     Add a user.
     """
+
     @api.expect(user_fields)
     def post(self):
         """
@@ -238,6 +238,7 @@ class BrowseList(Resource):
     """
     This will get a list of current clothing items.
     """
+
     def get(self):
         """
         Returns a list of current clothing items.
@@ -252,6 +253,7 @@ class BrowseDetails(Resource):
     """
     This will get details on a clothing.
     """
+
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, browse_dets):
@@ -279,6 +281,7 @@ class AddClothing(Resource):
     """
     Add a clothing item.
     """
+
     @api.expect(browse_fields)
     def post(self):
         """
@@ -346,6 +349,7 @@ class ContactDict(Resource):
     """
     This will get a list of currrent contact.
     """
+
     def get(self):
         """
         Returns a list of current contacts.
@@ -360,6 +364,7 @@ class ContactList(Resource):
     """
     This will get a list of currrent users.
     """
+
     def get(self):
         """
         Returns a list of current users.
@@ -379,6 +384,7 @@ class AddContacts(Resource):
     """
     Add a user.
     """
+
     @api.expect(user_fields)
     def post(self):
         """
@@ -395,6 +401,7 @@ class AestheticTypeList(Resource):
     """
     This will get a list of aesthetic types.
     """
+
     def get(self):
         """
         Returns a list of aesthetic types.
@@ -407,6 +414,7 @@ class AestheticTypeDict(Resource):
     """
     This will get a list of aesthetic types.
     """
+
     def get(self):
         """
         Returns a list of aesthetic types.
@@ -421,6 +429,7 @@ class AestheticTypeDetails(Resource):
     """
     This will return details on a aesthetic type.
     """
+
     @api.response(HTTPStatus.OK, 'Success')
     @api.response(HTTPStatus.NOT_FOUND, 'Not Found')
     def get(self, aes_type):
@@ -464,29 +473,34 @@ def login():
 
         return render_template('login.html', error=error)
 
+
 UPLOAD_FOLDER = '/path/to/upload/folder'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
+
 def allowed_file(filename):
-   return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
 class ClosetUpload(Resource):
-   """
+    """
    This endpoint allows users to upload images for their closet items.
    """
-   def post(self, closet_id):
-       if 'file' not in request.files:
-           return {'message': 'No file part'}, 400
-       file = request.files['file']
-       if file.filename == '':
-           return {'message': 'No selected file'}, 400
-       if not allowed_file(file.filename):
-           return {'message': 'Invalid file type'}, 400
-       filename = secure_filename(file.filename)
-       file.save(os.path.join(UPLOAD_FOLDER, filename))
-       # add filename to database for closet item with closet_id
-       return {'message': 'File uploaded successfully'}, 201
+
+    def post(self, closet_id):
+        if 'file' not in request.files:
+            return {'message': 'No file part'}, 400
+        file = request.files['file']
+        if file.filename == '':
+            return {'message': 'No selected file'}, 400
+        if not allowed_file(file.filename):
+            return {'message': 'Invalid file type'}, 400
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+        # add filename to database for closet item with closet_id
+        return {'message': 'File uploaded successfully'}, 201
+
 
 @api.route('/endpoints')
 class Endpoints(Resource):
@@ -494,6 +508,7 @@ class Endpoints(Resource):
     This class will serve as live, fetchable documentation of what endpoints
     are available in the system.
     """
+
     def get(self):
         """
         The `get()` method will return a list of available endpoints.
