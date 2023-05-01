@@ -1,3 +1,4 @@
+import tempfile
 from unittest.mock import patch
 import db.aesthetics_types as aes
 from http import HTTPStatus
@@ -126,6 +127,22 @@ def test_login():
         assert response.status_code == 302, \
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
+
+def test_closet_upload():
+    # Create a temporary file for testing
+    with TEST_CLIENT as client:
+        with tempfile.NamedTemporaryFile(suffix='.png') as f:
+            # Send a POST request to the endpoint with the temporary file
+            response = client.post(
+                f'/upload/closet/1/upload',
+                data={
+                    'file':(f.name,open(f.name, 'rb'), 'image/png')
+                }
+            )
+            # Verify that the response status code is 201 (Created)
+            assert response.status_code == 201
+            # Verify that the response message is what we expect
+            assert response.json == {'message': 'File uploaded successfully'}
 
 
 SAMPLE_CONTACT_NM = 'SampleContact'
