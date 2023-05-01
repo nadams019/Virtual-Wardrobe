@@ -4,6 +4,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+
+
 function StartButton({ setText }) {
   const onClick = () => { axios.get("http://127.0.0.1:8000/browse/dict")
 .then((response) => {
