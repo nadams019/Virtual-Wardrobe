@@ -114,6 +114,9 @@ h1 {
 
 /* virtualw 1 */
 #logo {
+    position: absolute;
+    left: 0px;
+    top: -30px;
     height: inherit;
     width: 200px;
 }

@@ -55,6 +55,182 @@ QUESTIONNAIRE = [
                 ANSWER: 'Honeymoon Avenue by Ariana Grande',
                 CATEGORY: SOFTGIRL,
             },
+            'c': {
+                ANSWER: 'Graduation by Kanye West',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'EARFQUAKE by Tyler The Creator',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'When I go to a party I prioritize being ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Comfortable',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Stylish',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'The star of the show',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Warm',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'I lean more towards ___ outfits',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Vibrant',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Earth tone',
+                CATEGORY: STREETWEAR,
+            },
+            'c': {
+                ANSWER: 'Neutral',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Black',
+                CATEGORY: GRUNGE,
+            },
+        },
+    },
+    {
+        QUESTION: 'A city I would love to live in is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Paris',
+                CATEGORY: ACADEMIA,
+            },
+            'b': {
+                ANSWER: 'Seattle',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'LA',
+                CATEGORY: SOFTGIRL,
+            },
+            'd': {
+                ANSWER: 'NYC',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'My go-to drink at a cafe is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Water',
+                CATEGORY: STREETWEAR,
+            },
+            'b': {
+                ANSWER: 'Black Coffee',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'Chai Latte',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Anything sweet!',
+                CATEGORY: SOFTGIRL,
+            },
+        },
+    },
+    {
+        QUESTION: 'I have always been a ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Girly girl',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Tom boy',
+                CATEGORY: STREETWEAR,
+            },
+            'c': {
+                ANSWER: 'Book worm',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Alte kid',
+                CATEGORY: GRUNGE,
+            },
+        },
+    },
+    {
+        QUESTION: 'One item I cannot live without is ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Mini skirts',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Platform boots',
+                CATEGORY: GRUNGE,
+            },
+            'c': {
+                ANSWER: 'Blazer',
+                CATEGORY: ACADEMIA,
+            },
+            'd': {
+                ANSWER: 'Skateboard',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'The walls of my room look like ___',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'lots of pastels',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'my diploma',
+                CATEGORY: ACADEMIA,
+            },
+            'c': {
+                ANSWER: 'torn up posters',
+                CATEGORY: GRUNGE,
+            },
+            'd': {
+                ANSWER: 'hung up hats & skateboards',
+                CATEGORY: STREETWEAR,
+            },
+        },
+    },
+    {
+        QUESTION: 'When it comes to my hair __',
+        ANSWERS: {
+            'a': {
+                ANSWER: 'Gimme all the bounce & curls!',
+                CATEGORY: SOFTGIRL,
+            },
+            'b': {
+                ANSWER: 'Slick back bun',
+                CATEGORY: ACADEMIA,
+            },
+            'c': {
+                ANSWER: 'Buzz cut',
+                CATEGORY: STREETWEAR,
+            },
+            'd': {
+                ANSWER: 'Jet black wig',
+                CATEGORY: GRUNGE,
+            },
         },
     },
 
@@ -105,241 +281,8 @@ def run_questionnaire():
                 break
             else:
                 print(f'Invalid choice: {choice}')
-    print(SCORES)
+    # print(SCORES)
     eval_scores()
-
-    # question1 = input("How would people describe you?\n(a)Bubbly \n"
-    #                   "(b)Edgy \n"
-    #                   "(c)An Old Soul\n"
-    #                   "(d)Unique \n\n")
-    # #
-    # if (question1 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question1 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question1 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question1 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question2 = input("What song would you add to your playlist?\n"
-    #                   "(a)Transparent Soul by Willow Smith \n"
-    #                   "(b)Honeymoon Avenue by Ariana Grande \n"
-    #                   "(c)Graduation by Kanye West \n"
-    #                   "(d)EARFQUAKE by Tyler The Creator\n\n")
-
-    # if (question2 == "a"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question2 == "b"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question2 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif question2 == "d":
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question3 = input("When I go to a party I prioritize being ___\n"
-    #                   "(a)comfortable "
-    #                   "\n(b)stylish \n"
-    #                   "(c) the star of the show \n"
-    #                   "(d) warm\n\n")
-
-    # if (question3 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question3 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question3 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question3 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question4 = input("I lean more towards ___ outfits\n(a) black \n"
-    #                   "(b) vibrant \n(c)earth tone \n(d)neutral \n\n")
-
-    # if (question4 == "a"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question4 == "b"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question4 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question4 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question5 = input("A city I'd love to live in would be ____\n"
-    #                   "(a) Paris \n"
-    #                   "(b) Seattle \n(c)LA \n(d)NYC \n\n")
-
-    # if (question5 == "a"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question5 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question5 == "c"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question5 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question6 = input("My go-to drink at a cafe is___\n"
-    #                   "(a) Water \n"
-    #                   "(b) Black Coffee \n"
-    #                   "(c)Chai Latte \n(d)Anything sweet! \n\n")
-
-    # if (question6 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question6 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question6 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question6 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question7 = input("I have always been a___\n"
-    #                   "(a) Girly girl \n"
-    #                   "(b) Tom boy \n"
-    #                   "(c)Book worm \n(d)Alte kid \n\n")
-
-    # if (question7 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question7 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question7 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question7 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question8 = input("One item I can't live without is\n"
-    #                   "(a) mini skirts \n"
-    #                   "(b) platform boots \n"
-    #                   "(c)blazer \n(d)skateboard \n\n")
-
-    # if (question8 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question8 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question8 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question8 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question9 = input("My walls of my room look like\n "
-    #                   "(a) lots of pastel  \n, "
-    #                   "(b) torn up posters \n,"
-    #                   "(c)my diploma \n,"
-    #                   "(d)hung up hats & skateboards\n\n")
-
-    # if (question9 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question9 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question9 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question9 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question10 = input("When it comes to hair__\n"
-    #                    "(a) Gimme all the bounce & curls \n"
-    #                    "(b) Jet black wig \n"
-    #                    "(c) Slick back bun\n"
-    #                    "(d) helmet hair\n\n")
-
-    # if (question10 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question10 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question10 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question10 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
-
-    # question11 = input("I call my significant other___\n"
-    #                    "(a) honey  \n"
-    #                    "(b) boo\n"
-    #                    "(c) scholar \n"
-    #                    "d) pookie\n\n")
-
-    # if (question11 == "a"):
-    #     softgirl += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question11 == "b"):
-    #     grunge += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question11 == "c"):
-    #     academia += 1
-    #     questionstobeansweredvariable += 1
-
-    # elif (question11 == "d"):
-    #     streetwear += 1
-    #     questionstobeansweredvariable += 1
 
 
 def main():
