@@ -477,7 +477,7 @@ def login():
         return render_template('login.html', error=error)
 
 
-UPLOAD_FOLDER = '/home/user/myproject/uploads'
+UPLOAD_FOLDER = '/path/to/upload/folder'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
