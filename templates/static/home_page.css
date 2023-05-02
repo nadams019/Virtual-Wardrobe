@@ -77,8 +77,6 @@ tabs{
     width: 100%;
     left: 50px;
     top: 50px;
-
-
 }
 
 /* Black Rectangle */
@@ -125,14 +123,29 @@ h1 {
 }
 
 .login_button {
-    /* Login Rectangle */
     position: absolute;
     width: 180px;
     height: 100px;
-    top: 115px;
+    top: 100px;
+    left: 1px;
+    font-family: Irish Grover, serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 46px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #000000;
+    cursor: pointer;
+    background: #DB3EDE;
+}
+
+.login_button2 {
+    position: absolute;
+    width: 180px;
+    height: 100px;
+    top: 400px;
     left: 1%;
     z-index: 2;
-
     display: inline-block;
     font-family: Irish Grover, serif;
     font-size: 38px;
@@ -141,11 +154,10 @@ h1 {
     letter-spacing: 0;
     text-align: center;
     color: #000000;
-
     cursor: pointer;
-
-    background: #DB3EDE;;
+    background: #DB3EDE;
 }
+
 label{
     font-size: 40px;
     color:white;
@@ -286,5 +298,17 @@ label{
 }
 .sign_now_button:hover {
     opacity: 0.8;
+}
+
+.navigation {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    font-size: 30px;
+    background-color: #DD6FAB;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Inconsolata', serif;
 }
 
