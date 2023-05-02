@@ -18,17 +18,17 @@ setText(stringItems);
   return ( <button onClick={onClick}>Browse!</button>);
 }
 
-function aestheticButton({ setText }) {
-  const onClick = () => { axios.get("http://127.0.0.1:8000/browse/dict")
-.then((response) => {
-const items = response.data.Data[0];
-const stringItems = JSON.stringify(items);
-setText(stringItems);
-} )
-.catch();
-};
-  return ( <button onClick={onClick}>Click for aesthetic quiz!</button>);
-}
+//function AestheticButton({ setText }) {
+//  const onClick = () => { axios.get("http://127.0.0.1:8000/aesthetics_types/dict")
+//.then((response) => {
+//const items = response.data.Data[0];
+// const stringItems = JSON.stringify(items);
+// setText(stringItems);
+// } )
+// .catch();
+// };
+//   return ( <button onClick={onClick}>Click for aesthetic quiz!</button>);
+//}
 
 
 function App() {
@@ -37,7 +37,6 @@ const [text, setText] = useState('');
     <div className="App">
       <header className="App-header">
       <StartButton setText={setText} />
-          <aestheticButton setText={setText} />
       {text}
       </header>
     </div>
@@ -46,3 +45,4 @@ const [text, setText] = useState('');
 
 export default App;
 
+//<AestheticButton setText={setText} /
