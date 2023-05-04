@@ -1,3 +1,4 @@
+import io
 import os
 import tempfile
 from unittest.mock import patch
@@ -10,6 +11,8 @@ import db.contacts as cnts
 import db.users as usr
 import db.aesthetics_types as aes
 import server.endpoints as ep
+from werkzeug.datastructures import FileStorage
+from db.upload import ClosetUpload, allowed_file
 from werkzeug.utils import secure_filename
 
 TEST_CLIENT = ep.app.test_client()
@@ -131,7 +134,7 @@ def test_login():
 def test_closet_upload():
     # Create a temporary file for testing this
     with TEST_CLIENT as client:
-        with tempfile.NamedTemporaryFile(suffix='.png', dir='/path/to/upload/folder') as f:
+        with tempfile.NamedTemporaryFile(suffix='.png', dir=UPLOAD_FOLDER) as f:
             # Send a POST request to the endpoint with the temporary file
             response = client.post(
                 f'/upload/closet/1/upload',
@@ -144,6 +147,33 @@ def test_closet_upload():
             # Verify that the response message is what we expect
             assert response.json == {'message': 'File uploaded successfully'}
 '''
+def app():
+    app.config['UPLOAD_FOLDER'] = os.path.abspath('path/to/test/upload/folder')
+    return app
+def test_upload_file(app):
+    client = app.test_client()
+    closet_id = 123
+    file = FileStorage(
+        stream=io.BytesIO(b"dummy content"),
+        filename="test.jpg",
+        content_type="image/jpeg"
+    )
+    response = client.post(
+        f"/closet/{closet_id}/upload",
+        data={'file': file},
+        content_type='multipart/form-data'
+    )
+    assert response.status_code == 201
+    assert os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], 'test.jpg'))
+
+
+def test_allowed_file():
+    assert allowed_file('test.jpg') == True
+    assert allowed_file('test.png') == True
+    assert allowed_file('test.gif') == True
+    assert allowed_file('test.pdf') == False
+    assert allowed_file('test.txt') == False
+    assert allowed_file('test.jpeg') == True
 
 SAMPLE_CONTACT_NM = 'SampleContact'
 SAMPLE_CONTACT = {
