@@ -7,7 +7,7 @@ import './App.css';
 
 
 function StartButton({ setText }) {
-  const onClick = () => { axios.get("http://127.0.0.1:8000/browse/dict")
+  const onClick = () => { axios.get("https://virtual-wardrobe.herokuapp.com/browse/dict")
 .then((response) => {
 const items = response.data.Data[0];
 const stringItems = JSON.stringify(items);
