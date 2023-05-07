@@ -495,6 +495,7 @@ def upload_closet():
 
     # return render_template('UploadCloset.html', error=error)
 
+
 '''
 UPLOAD_FOLDER = '/path/to/upload/folder'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
