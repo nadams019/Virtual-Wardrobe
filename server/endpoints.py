@@ -471,7 +471,7 @@ def login():
     return render_template('login_page.html', error=error)
 
 
-@app.route('/upload closet')
+@app.route('/upload_closet')
 def upload_closet_nav():
     return render_template('pages/uploadCloset.html')
 
@@ -491,11 +491,9 @@ def upload_closet():
             return jsonify({'success': False,
                             'message': 'All fields are required!'})
     else:
-        return "Form submitted successfully"
+        return upload_closet_nav
 
     # return render_template('UploadCloset.html', error=error)
-    return upload_closet_nav()
-
 
 '''
 UPLOAD_FOLDER = '/path/to/upload/folder'

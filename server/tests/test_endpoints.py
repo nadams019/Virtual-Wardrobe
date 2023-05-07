@@ -133,6 +133,7 @@ def test_login():
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
 
+
 def test_upload_closet():
     with TEST_CLIENT as client:
         data = {
@@ -143,7 +144,10 @@ def test_upload_closet():
         }
         response = client.post('/upload', data=data)
         assert response.status_code == 200
-        assert response.data == b'Form submitted successfully!'
+        assert response.data == b'{"success":true,"message":"Clothing item ' \
+                                b'uploaded successfully!"}\n'
+
+
 '''
 def test_upload_file():
     # Set the URL of the file upload endpoint
