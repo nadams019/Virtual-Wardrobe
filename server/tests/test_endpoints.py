@@ -137,7 +137,7 @@ def test_login():
 def test_upload_closet():
     with TEST_CLIENT as client:
         data = {
-            'item_type': 'dresses',
+            'item_type': 'pants',
             'aesthetic': 'grunge',
             'occasion': 'casual',
             'season': 'summer'
