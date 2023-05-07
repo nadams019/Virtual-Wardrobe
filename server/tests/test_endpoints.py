@@ -105,7 +105,7 @@ def test_add_clothing_post():
 def test_upload_file():
     # Set the URL of the file upload endpoint
     url = 'http://localhost:5000/upload'
-    file_path = 'pythonProject/Virtual-Wardrobe/server/templates/static/images/dress.jpeg'
+    file_path = "../templates/static/images/dress.jpeg"
 
     # Open the file in binary mode and read its contents
     with open(file_path, 'rb') as f:
