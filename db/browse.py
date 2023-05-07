@@ -51,6 +51,7 @@ def get_clothes():
 
 
 def add_clothing(name, details):
+    print("in add clothing")
     if not isinstance(name, str):
         raise TypeError(f'Wrong type for name: {type(name)=}')
     if not isinstance(details, dict):

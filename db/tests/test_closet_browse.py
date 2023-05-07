@@ -3,7 +3,7 @@ import pytest
 import db.closet_browse as browse
 RUNNING_ON_CICD_SERVER = os.environ.get('CI', False)
 TEST_DEL_NAME = 'Item to be deleted'
-
+TEST_CLOTHING_NAME = 'dress'
 
 @pytest.fixture(scope='function')
 def temp_closet():
@@ -19,7 +19,7 @@ def test_get_clothes(temp_closet):
 
 
 def test_get_clothing_details():
-    browse_dets = browse.get_clothing_details(browse.TEST_CLOTHING_NAME)
+    browse_dets = browse.get_clothing_details(TEST_CLOTHING_NAME)
     assert isinstance(browse_dets, dict)
 
 

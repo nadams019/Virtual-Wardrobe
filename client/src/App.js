@@ -2,9 +2,13 @@
 //
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
-import { Link } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Link,
+  Route,
+  Routes,
+} from 'react-router-dom';
 
 const API_BASE_URL = 'https://virtual-wardrobe.herokuapp.com';
 const API_BROWSE_DICT_URL = `${API_BASE_URL}/browse/dict`;
@@ -21,10 +25,13 @@ const API_BROWSE_DICT_URL = `${API_BASE_URL}/browse/dict`;
 // }
 async function fetchItems() {
   try {
-    const onClick = () => { axios.get(API_BROWSE_DICT_URL).then((response) => {
-      const items = response.data.Data[0];
-      return items;
-  } ).catch (error) {
+    const onClick = () => {
+      axios.get(API_BROWSE_DICT_URL).then((response) => {
+        const items = response.data.Data[0];
+        return items;
+      });
+    };
+  } catch (error) {
     console.error(error);
     return null;
   }
@@ -43,7 +50,18 @@ async function fetchItems() {
 //     </div>
 //   );
 //}
-
+function Homepage() {
+return (
+  <nav>
+    <Link to="/browse">Browse</Link>
+  </nav>
+);
+}
+function Browse(){
+  return(
+      <h2> Browse</h2>
+  );
+}
 function App() {
   const [items, setItems] = useState([]);
 
@@ -61,13 +79,18 @@ function App() {
   return (
       <div className="App">
         <header className="App-header">
-          <Link to="/browse">
-            <button>Browse Items</button>
-          </Link>
+          <BrowserRouter>
+          <Routes>
+            <Route path="/browse" element={<Browse />} />
+            <Route path="/" element={<Homepage />} />
+          </Routes>
+          </BrowserRouter>
         </header>
     </div>
   );
 }
+
+
 
 export default App;
 //<BrowsePage items={items} />
