@@ -102,34 +102,6 @@ def test_add_clothing_post():
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
 
-def test_upload_file():
-    # Set the URL of the file upload endpoint
-    url = 'http://localhost:8000/upload'
-
-    # Get the absolute path to the root directory of the repo
-    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-
-    # Construct the path to the image file
-    image_path = os.path.join(root_dir, "server", "templates", "static", "images", "dress.jpeg")
-
-    # Open the file in binary mode and read its contents
-    with open(image_path, 'rb') as f:
-        file_data = f.read()
-
-    # Set the headers for the HTTP request
-    headers = {'Content-Type': 'multipart/form-data'}
-
-    # Set the payload for the HTTP request
-    payload = {'file': ('file.txt', file_data)}
-
-    # Make a POST request to the file upload endpoint
-    response = requests.post(url, headers=headers, files=payload)
-
-    # Assert that the response status code is 200
-    assert response.status_code, 200
-
-    # Assert that the response text contains 'File uploaded successfully'
-    assert 'File uploaded successfully' in response.text
 
 # def test_get_clothing_list():
 #     """
@@ -157,6 +129,28 @@ def test_login():
         assert response.status_code == 302, \
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
+
+# def test_upload_file():
+#     # Set the URL of the file upload endpoint
+#     url = 'http://localhost:8000/upload'
+#     # Get the absolute path to the root directory of the repo
+#     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+#     # Construct the path to the image file
+#     image_path = os.path.join(root_dir, "server", "templates", "static", "images", "dress.jpeg")
+#     # Open the file in binary mode and read its contents
+#     with open(image_path, 'rb') as f:
+#         file_data = f.read()
+#     # Set the headers for the HTTP request
+#     headers = {'Content-Type': 'multipart/form-data'}
+#     # Set the payload for the HTTP request
+#     payload = {'file': ('file.txt', file_data)}
+#     # Make a POST request to the file upload endpoint
+#     response = requests.post(url, headers=headers, files=payload)
+#     # Assert that the response status code is 200
+#     assert response.status_code, 200
+#     # Assert that the response text contains 'File uploaded successfully'
+#     assert 'File uploaded successfully' in response.text
+
 '''
 def test_closet_upload():
     # Create a temporary file for testing this

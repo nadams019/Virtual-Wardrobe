@@ -39,7 +39,7 @@ CLOSET_NS = 'closet'
 BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
-UPLOAD_NS = 'upload'
+#UPLOAD_NS = 'upload'
 OPTIONS = '/options'
 CLOTHING_ITEM_TYPE_NS = 'clothing_item_type'
 SEASON_NS = 'season'
@@ -58,8 +58,8 @@ contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
 aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
 api.add_namespace(aes_types)
-upload = Namespace(UPLOAD_NS, 'Upload')
-api.add_namespace(upload)
+#upload = Namespace(UPLOAD_NS, 'Upload')
+#api.add_namespace(upload)
 
 LOGIN = '/login'
 LIST = 'list'
@@ -471,31 +471,31 @@ def login():
 
 
 # UPLOAD_FOLDER = '/path/to/upload/folder'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+# ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
-def allowed_file(filename):
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+# def allowed_file(filename):
+#     return '.' in filename and \
+#         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/upload', methods=['POST'])
-def upload_file():
-    # Check if the post request has the file part
-    if 'file' not in request.files:
-        return 'No file part'
-
-    file = request.files['file']
-
-    # If the user does not select a file, browser also
-    # submits an empty part without filename
-    if file.filename == '':
-        return 'No selected file'
-
-    # Process the uploaded file
-    # You can save it to the server or do any other operations
-
-    return 'File uploaded successfully'
+# @app.route('/upload', methods=['POST'])
+# def upload_file():
+#     # Check if the post request has the file part
+#     if 'file' not in request.files:
+#         return 'No file part'
+#
+#     file = request.files['file']
+#
+#     # If the user does not select a file, browser also
+#     # submits an empty part without filename
+#     if file.filename == '':
+#         return 'No selected file'
+#
+#     # Process the uploaded file
+#     # You can save it to the server or do any other operations
+#
+#     return 'File uploaded successfully'
 
 
 # @upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
