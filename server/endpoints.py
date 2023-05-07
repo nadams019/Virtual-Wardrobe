@@ -484,8 +484,8 @@ def upload_closet():
         occasion = request.form['occasion']
         season = request.form['season']
         if item_type and aesthetic and occasion and season:
-            return jsonify({'success': True,
-                            'message': 'Clothing item uploaded successfully!'})
+            return jsonify({'message': 'Clothing item uploaded successfully!',
+                            'success': True})
         else:
             # Return an error message
             return jsonify({'success': False,

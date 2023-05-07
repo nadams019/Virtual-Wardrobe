@@ -128,26 +128,24 @@ def test_login():
         # Simulate a POST request with correct credentials
         response = client.post('/login', data=SAMPLE_USER)
 
-        # Expect a redirect status code and check that it goes to the correct page
+        # Expect a redirect status code and check that it goes to the
+        # correct page
         assert response.status_code == 302, \
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
 
-
 def test_upload_closet():
     with TEST_CLIENT as client:
         data = {
-            'item_type': 'pants',
+            'item_type': 'dresses',
             'aesthetic': 'grunge',
             'occasion': 'casual',
             'season': 'summer'
         }
         response = client.post('/upload', data=data)
         assert response.status_code == 200
-        assert response.data == b'{"success":true,"message":"Clothing item ' \
-                                b'uploaded successfully!"}\n'
-
-
+        assert response.data == b'{"success": true, "message": "Clothing ' \
+                                b'item uploaded successfully!"}\n'
 '''
 def test_upload_file():
     # Set the URL of the file upload endpoint
