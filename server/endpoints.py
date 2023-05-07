@@ -4,7 +4,8 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 from flask_cors import CORS
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, \
+    jsonify
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -13,7 +14,6 @@ import db.browse as br
 import db.contacts as cnts
 import db.aesthetics_types as atyp
 import secrets
-
 
 AUTH_KEY = 'Auth-Key'
 SWAG_AUTH_TYPE_FIELD = 'type'
@@ -471,9 +471,9 @@ def login():
     return render_template('login_page.html', error=error)
 
 
-@app.route('/view closet')
-def home_page():
-    return render_template('pages/view_closet.html')
+@app.route('/upload closet')
+def upload_closet():
+    return render_template('pages/uploadCloset.html')
 
 
 @app.route(UPLOAD, methods=['POST'])
@@ -485,10 +485,12 @@ def upload_closet():
         occasion = request.form['occasion']
         season = request.form['season']
         if item_type and aesthetic and occasion and season:
-            return jsonify({'success': True, 'message': 'Clothing item uploaded successfully!'})
+            return jsonify({'success': True, 'message':
+                'Clothing item uploaded successfully!'})
         else:
             # Return an error message
-            return jsonify({'success': False, 'message': 'All fields are required!'})
+            return jsonify({'success': False,
+                            'message': 'All fields are required!'})
     else:
 
         return "Form submitted succesfully"
@@ -499,7 +501,6 @@ def upload_closet():
 '''
 UPLOAD_FOLDER = '/path/to/upload/folder'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-
 
 def allowed_file(filename):
     return '.' in filename and \
