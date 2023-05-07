@@ -2,7 +2,6 @@
 This is the file containing all of the endpoints for our flask app.
 The endpoint called `endpoints` will return all available endpoints.
 """
-import os
 from http import HTTPStatus
 from flask_cors import CORS
 from flask import Flask, render_template, request, redirect, url_for, session
@@ -15,7 +14,6 @@ import db.contacts as cnts
 import db.aesthetics_types as atyp
 import secrets
 
-from werkzeug.utils import secure_filename
 
 AUTH_KEY = 'Auth-Key'
 SWAG_AUTH_TYPE_FIELD = 'type'
