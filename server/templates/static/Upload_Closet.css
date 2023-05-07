@@ -35,7 +35,7 @@ body {
 h1{
     position: absolute;
     top: -60px;
-    left: 31%;
+    left: 40%;
     z-index: 3;
     color: #F5F5F5;
     font-family: "Irish Grover", serif;
@@ -89,8 +89,8 @@ h1{
     position: absolute;
     width: 615px;
     height: 127px;
-    top: 140px;
-    left: 34%;
+    top: 185px;
+    left: 40%;
 
     font-family: 'Irish Grover', serif;
     font-style: normal;
@@ -106,7 +106,7 @@ h1{
     position: absolute;
     width: 100%;
     height: 649px;
-    top: 230px;
+    top: 300px;
     left: 0;
     z-index: 2;
 
@@ -223,23 +223,46 @@ h1{
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-
+/* upload button */
 .button {
     background-color: #F58AF8;
     border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 40px;
-    padding: 15px 32px;
+    padding: 60px 100px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 50px;
+    font-size: 70px;
     margin: 4px 2px;
     cursor: pointer;
-    left: 100px;
-    right: 600px;
-    radius: 40px;
-    font-family:Irish Grover, serif;
+    position: absolute;
+    right: 2400px;
+    top: 850px;
+    font-family: "Irish Grover", serif;
+    z-index: 999;
+}
+.nav-bar {
+    position: absolute;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    background-color: #DD6FAB;
+    width: 100%;
+    padding: 10px;
+    font-family: 'Inconsolata', serif;
+    top: 115px;
+    height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Irish Grover';
+  font-size: 30px;
+  text-align: center;
 }
 /*clothing item type */
 /*
