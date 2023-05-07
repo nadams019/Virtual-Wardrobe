@@ -481,7 +481,7 @@ def upload_closet():
         occasion = request.form['occasion']
         season = request.form['season']
 
-        return "Form submitted succesfully!"
+        return "Form submitted succesfully"
 
     return render_template('UploadCloset.html', error=error)
 '''
