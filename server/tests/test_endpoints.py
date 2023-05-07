@@ -1,5 +1,4 @@
 import io
-import os
 import tempfile
 from unittest.mock import patch
 import db.aesthetics_types as aes
@@ -7,12 +6,9 @@ from http import HTTPStatus
 import db.closet_browse as brwse
 # import db.browse as br
 import db.contacts as cnts
-
 import db.users as usr
 import db.aesthetics_types as aes
 import server.endpoints as ep
-from werkzeug.datastructures import FileStorage
-from werkzeug.utils import secure_filename
 
 TEST_CLIENT = ep.app.test_client()
 TEST_CLOTHING_TYPE = 'Clothing'
