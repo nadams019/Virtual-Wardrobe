@@ -8,6 +8,7 @@ import db.closet_browse as brwse
 import db.contacts as cnts
 import db.users as usr
 import db.aesthetics_types as aes
+import requests
 import server.endpoints as ep
 
 TEST_CLIENT = ep.app.test_client()
@@ -98,6 +99,32 @@ def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.BROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
+
+def test_upload_file(self):
+    # Set the URL of the file upload endpoint
+    url = 'http://localhost:5000/upload'
+
+    # Set the path to the file you want to upload
+    file_path = '/path/to/your/file.txt'
+
+    # Open the file in binary mode and read its contents
+    with open(file_path, 'rb') as f:
+        file_data = f.read()
+
+    # Set the headers for the HTTP request
+    headers = {'Content-Type': 'multipart/form-data'}
+
+    # Set the payload for the HTTP request
+    payload = {'file': ('file.txt', file_data)}
+
+    # Make a POST request to the file upload endpoint
+    response = requests.post(url, headers=headers, files=payload)
+
+    # Assert that the response status code is 200
+    self.assertEqual(response.status_code, 200)
+
+    # Assert that the response text contains 'File uploaded successfully'
+    self.assertIn('File uploaded successfully', response.text)
 
 # def test_get_clothing_list():
 #     """
