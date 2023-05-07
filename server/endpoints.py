@@ -450,6 +450,7 @@ class AestheticTypeDetails(Resource):
 def home_page():
     return render_template('pages/home_page.html')
 
+
 @app.route(LOGIN, methods=['POST'])
 def login():
     """
@@ -469,7 +470,6 @@ def login():
             error = "Login failed"
 
     return render_template('login_page.html', error=error)
-
 
 
 UPLOAD_FOLDER = '/path/to/upload/folder'
