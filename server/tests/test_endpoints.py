@@ -104,7 +104,7 @@ def test_add_clothing_post():
 
 def test_upload_file():
     # Set the URL of the file upload endpoint
-    url = 'http://localhost:5000/upload'
+    url = 'http://localhost:8000/upload'
 
     # Get the absolute path to the root directory of the repo
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
