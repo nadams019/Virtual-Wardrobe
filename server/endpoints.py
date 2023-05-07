@@ -472,7 +472,7 @@ def login():
     return render_template('login_page.html', error=error)
 
 
-UPLOAD_FOLDER = '/path/to/upload/folder'
+# UPLOAD_FOLDER = '/path/to/upload/folder'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
@@ -481,24 +481,43 @@ def allowed_file(filename):
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
-class ClosetUpload(Resource):
-    """
-   This endpoint allows users to upload images for their closet items.
-   """
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    # Check if the post request has the file part
+    if 'file' not in request.files:
+        return 'No file part'
 
-    def post(self, closet_id):
-        if 'file' not in request.files:
-            return {'message': 'No file part'}, 400
-        file = request.files['file']
-        if file.filename == '':
-            return {'message': 'No selected file'}, 400
-        if not allowed_file(file.filename):
-            return {'message': 'Invalid file type'}, 400
-        filename = secure_filename(file.filename)
-        file.save(os.path.join(UPLOAD_FOLDER, filename))
-        # add filename to database for closet item with closet_id
-        return {'message': 'File uploaded successfully'}, 201
+    file = request.files['file']
+
+    # If the user does not select a file, browser also
+    # submits an empty part without filename
+    if file.filename == '':
+        return 'No selected file'
+
+    # Process the uploaded file
+    # You can save it to the server or do any other operations
+
+    return 'File uploaded successfully'
+
+
+# @upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
+# class ClosetUpload(Resource):
+#     """
+#    This endpoint allows users to upload images for their closet items.
+#    """
+#
+#     def post(self, closet_id):
+#         if 'file' not in request.files:
+#             return {'message': 'No file part'}, 400
+#         file = request.files['file']
+#         if file.filename == '':
+#             return {'message': 'No selected file'}, 400
+#         if not allowed_file(file.filename):
+#             return {'message': 'Invalid file type'}, 400
+#         filename = secure_filename(file.filename)
+#         file.save(os.path.join(UPLOAD_FOLDER, filename))
+#         # add filename to database for closet item with closet_id
+#         return {'message': 'File uploaded successfully'}, 201
 
 
 @api.route('/endpoints')
