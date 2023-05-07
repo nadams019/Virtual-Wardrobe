@@ -471,32 +471,29 @@ def login():
     return render_template('login_page.html', error=error)
 
 
-@app.route('/upload closet')
+@app.route('/upload_closet')
 def upload_closet_nav():
     return render_template('pages/uploadCloset.html')
 
 
 @app.route(UPLOAD, methods=['POST'])
 def upload_closet():
-    error = None
     if request.method == "POST":
         item_type = request.form['item_type']
         aesthetic = request.form['aesthetic']
         occasion = request.form['occasion']
         season = request.form['season']
         if item_type and aesthetic and occasion and season:
-            return jsonify({'success': True, 'message':
-                'Clothing item uploaded successfully!'})
+            return jsonify({'message': 'Clothing item uploaded successfully!',
+                            'success': True})
         else:
             # Return an error message
             return jsonify({'success': False,
                             'message': 'All fields are required!'})
     else:
-
-        return "Form submitted succesfully"
+        return upload_closet_nav
 
     # return render_template('UploadCloset.html', error=error)
-    return upload_closet_nav()
 
 
 '''
