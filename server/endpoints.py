@@ -474,6 +474,8 @@ def login():
 @app.route('/view closet')
 def home_page():
     return render_template('pages/view_closet.html')
+
+
 @app.route(UPLOAD, methods=['POST'])
 def upload_closet():
     error = None
@@ -536,6 +538,8 @@ class ClosetUpload(Resource):
         # add filename to database for closet item with closet_id
         return {'message': 'File uploaded successfully'}, 201
 '''
+
+
 
 @api.route('/endpoints')
 class Endpoints(Resource):
