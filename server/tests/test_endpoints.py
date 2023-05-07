@@ -100,7 +100,8 @@ def test_add_clothing_post():
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
 
-def test_upload_file(self):
+
+def test_upload_file():
     # Set the URL of the file upload endpoint
     url = 'http://localhost:5000/upload'
 
@@ -121,10 +122,10 @@ def test_upload_file(self):
     response = requests.post(url, headers=headers, files=payload)
 
     # Assert that the response status code is 200
-    self.assertEqual(response.status_code, 200)
+    assert response.status_code, 200
 
     # Assert that the response text contains 'File uploaded successfully'
-    self.assertIn('File uploaded successfully', response.text)
+    assert 'File uploaded successfully' in response.text
 
 # def test_get_clothing_list():
 #     """
