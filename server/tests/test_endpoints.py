@@ -105,10 +105,15 @@ def test_add_clothing_post():
 def test_upload_file():
     # Set the URL of the file upload endpoint
     url = 'http://localhost:5000/upload'
-    file_path = "../templates/static/images/dress.jpeg"
+
+    # Get the absolute path to the root directory of the repo
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+
+    # Construct the path to the image file
+    image_path = os.path.join(root_dir, "server", "templates", "static", "images", "dress.jpeg")
 
     # Open the file in binary mode and read its contents
-    with open(file_path, 'rb') as f:
+    with open(image_path, 'rb') as f:
         file_data = f.read()
 
     # Set the headers for the HTTP request
