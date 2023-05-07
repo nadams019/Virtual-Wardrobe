@@ -25,6 +25,7 @@ SAMPLE_USER = {
     usr.PASSWORD: 'abcde123'
 }
 
+
 def test_hello():
     """
     See if Hello works.
@@ -88,6 +89,7 @@ def test_get_aesthetic_type_details(mock_get_aesthetic_type_details):
     assert resp.status_code == HTTPStatus.OK
     assert isinstance(resp.json, dict)
 
+
 SAMPLE_ITEM_NM = 'SampleItem'
 SAMPLE_ITEM = {
     brwse.CLOTHING: SAMPLE_ITEM_NM,
@@ -96,11 +98,12 @@ SAMPLE_ITEM = {
     brwse.AESTHETIC: 'Sample Aesthetic',
     brwse.RANDOM: 'Sample Bool',
 }
+
+
 def test_add_clothing_post():
     resp = TEST_CLIENT.post(ep.BROWSE_ADD, json=SAMPLE_ITEM)
     assert resp.get_json()
     brwse.del_clothing(SAMPLE_ITEM_NM)
-
 
 
 # def test_get_clothing_list():
@@ -130,28 +133,40 @@ def test_login():
             f"Expected redirect status code, but got {response.status_code}. " \
             f"Response content: {response.data}"
 
-# def test_upload_file():
-#     # Set the URL of the file upload endpoint
-#     url = 'http://localhost:8000/upload'
-#     # Get the absolute path to the root directory of the repo
-#     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-#     # Construct the path to the image file
-#     image_path = os.path.join(root_dir, "server", "templates", "static", "images", "dress.jpeg")
-#     # Open the file in binary mode and read its contents
-#     with open(image_path, 'rb') as f:
-#         file_data = f.read()
-#     # Set the headers for the HTTP request
-#     headers = {'Content-Type': 'multipart/form-data'}
-#     # Set the payload for the HTTP request
-#     payload = {'file': ('file.txt', file_data)}
-#     # Make a POST request to the file upload endpoint
-#     response = requests.post(url, headers=headers, files=payload)
-#     # Assert that the response status code is 200
-#     assert response.status_code, 200
-#     # Assert that the response text contains 'File uploaded successfully'
-#     assert 'File uploaded successfully' in response.text
-
+def test_upload_closet():
+    with TEST_CLIENT as client:
+        data = {
+            'item_type': 'shirt',
+            'aesthetic': 'vintage',
+            'occasion': 'casual',
+            'season': 'summer'
+        }
+        response = client.post('/upload', data=data)
+        assert response.status_code == 200
+        assert response.data == b'Form submitted succesfully!'
 '''
+def test_upload_file():
+    # Set the URL of the file upload endpoint
+    url = 'http://localhost:8000/upload'
+    # Get the absolute path to the root directory of the repo
+    root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    # Construct the path to the image file
+    image_path = os.path.join(root_dir, "server", "templates", "static", "images", "dress.jpeg")
+    # Open the file in binary mode and read its contents
+    with open(image_path, 'rb') as f:
+        file_data = f.read()
+    # Set the headers for the HTTP request
+    headers = {'Content-Type': 'multipart/form-data'}
+    # Set the payload for the HTTP request
+    payload = {'file': ('file.txt', file_data)}
+    # Make a POST request to the file upload endpoint
+    response = requests.post(url, headers=headers, files=payload)
+    # Assert that the response status code is 200
+    assert response.status_code, 200
+    # Assert that the response text contains 'File uploaded successfully'
+    assert 'File uploaded successfully' in response.text
+
+
 def test_closet_upload():
     # Create a temporary file for testing this
     with TEST_CLIENT as client:
@@ -177,11 +192,14 @@ SAMPLE_CONTACT = {
     cnts.LAST_NAME: 'Contact',
     cnts.REQUEST: 'This is a request.',
 }
-#developer endpoint
+
+
+# developer endpoint
 def test_get_contact_list():
     resp = TEST_CLIENT.get(ep.CONTACTS_LIST_W_NS)
     resp_json = resp.get_json()
     assert isinstance(resp_json[ep.CONTACTS_LIST_NM], list)
+
 
 def test_add_contact():
     """
@@ -190,4 +208,3 @@ def test_add_contact():
     resp = TEST_CLIENT.post(ep.CONTACTS_ADD, json=SAMPLE_CONTACT)
     assert cnts.contact_exists(SAMPLE_CONTACT_NM)
     cnts.del_contact(SAMPLE_CONTACT_NM)
-

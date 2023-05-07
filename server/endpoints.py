@@ -4,7 +4,7 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 from flask_cors import CORS
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -39,7 +39,7 @@ CLOSET_NS = 'closet'
 BROWSE_NS = 'browse'
 CONTACTS_NS = 'contacts'
 AES_TYPES_NS = 'aesthetics_types'
-#UPLOAD_NS = 'upload'
+UPLOAD_NS = 'upload'
 OPTIONS = '/options'
 CLOTHING_ITEM_TYPE_NS = 'clothing_item_type'
 SEASON_NS = 'season'
@@ -58,8 +58,8 @@ contacts = Namespace(CONTACTS_NS, 'Contacts')
 api.add_namespace(contacts)
 aes_types = Namespace(AES_TYPES_NS, 'Aesthetics Types')
 api.add_namespace(aes_types)
-#upload = Namespace(UPLOAD_NS, 'Upload')
-#api.add_namespace(upload)
+upload = Namespace(UPLOAD_NS, 'Upload')
+api.add_namespace(upload)
 
 LOGIN = '/login'
 LIST = 'list'
@@ -71,6 +71,7 @@ MAIN_MENU_NM = 'Main Menu'
 HELLO = '/hello'
 MESSAGE = 'message'
 OPTIONS_NM = "option"
+UPLOAD = '/upload'
 
 USER_DICT = f'/{DICT}'
 USER_DICT_W_NS = f'{USERS_NS}/{DICT}'
@@ -468,55 +469,69 @@ def login():
             error = "Login failed"
 
     return render_template('login_page.html', error=error)
+@app.route('/view closet')
+def home_page():
+    return render_template('pages/view_closet.html')
+@app.route(UPLOAD, methods=['POST'])
+def upload_closet():
+    error = None
+    if request.method == "POST":
+        item_type = request.form['item_type']
+        aesthetic = request.form['aesthetic']
+        occasion = request.form['occasion']
+        season = request.form['season']
+
+        return "Form submitted succesfully!"
+
+    return render_template('UploadCloset.html', error=error)
+'''
+UPLOAD_FOLDER = '/path/to/upload/folder'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
-# UPLOAD_FOLDER = '/path/to/upload/folder'
-# ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-# def allowed_file(filename):
-#     return '.' in filename and \
-#         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    # Check if the post request has the file part
+    if 'file' not in request.files:
+        return 'No file part'
+
+    file = request.files['file']
+
+    # If the user does not select a file, browser also
+    # submits an empty part without filename
+    if file.filename == '':
+        return 'No selected file'
+
+    # Process the uploaded file
+    # You can save it to the server or do any other operations
+
+    return 'File uploaded successfully'
 
 
-# @app.route('/upload', methods=['POST'])
-# def upload_file():
-#     # Check if the post request has the file part
-#     if 'file' not in request.files:
-#         return 'No file part'
-#
-#     file = request.files['file']
-#
-#     # If the user does not select a file, browser also
-#     # submits an empty part without filename
-#     if file.filename == '':
-#         return 'No selected file'
-#
-#     # Process the uploaded file
-#     # You can save it to the server or do any other operations
-#
-#     return 'File uploaded successfully'
+@upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
+class ClosetUpload(Resource):
+    """
+   This endpoint allows users to upload images for their closet items.
+   """
 
-
-# @upload.route('/closet/<int:closet_id>/upload', methods=['POST'])
-# class ClosetUpload(Resource):
-#     """
-#    This endpoint allows users to upload images for their closet items.
-#    """
-#
-#     def post(self, closet_id):
-#         if 'file' not in request.files:
-#             return {'message': 'No file part'}, 400
-#         file = request.files['file']
-#         if file.filename == '':
-#             return {'message': 'No selected file'}, 400
-#         if not allowed_file(file.filename):
-#             return {'message': 'Invalid file type'}, 400
-#         filename = secure_filename(file.filename)
-#         file.save(os.path.join(UPLOAD_FOLDER, filename))
-#         # add filename to database for closet item with closet_id
-#         return {'message': 'File uploaded successfully'}, 201
-
+    def post(self, closet_id):
+        if 'file' not in request.files:
+            return {'message': 'No file part'}, 400
+        file = request.files['file']
+        if file.filename == '':
+            return {'message': 'No selected file'}, 400
+        if not allowed_file(file.filename):
+            return {'message': 'Invalid file type'}, 400
+        filename = secure_filename(file.filename)
+        file.save(os.path.join(UPLOAD_FOLDER, filename))
+        # add filename to database for closet item with closet_id
+        return {'message': 'File uploaded successfully'}, 201
+'''
 
 @api.route('/endpoints')
 class Endpoints(Resource):
