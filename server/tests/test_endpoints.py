@@ -1,5 +1,6 @@
 import io
 import tempfile
+import os
 from unittest.mock import patch
 import db.aesthetics_types as aes
 from http import HTTPStatus
@@ -105,8 +106,13 @@ def test_upload_file():
     # Set the URL of the file upload endpoint
     url = 'http://localhost:5000/upload'
 
-    # Set the path to the file you want to upload
-    file_path = '/path/to/your/file.txt'
+    home_dir = os.path.expanduser('~')
+
+    # Define a relative path to the file
+    relative_path = 'Documents/my_file.txt'
+
+    # Combine the home directory and the relative path to create the full file path
+    file_path = os.path.join(home_dir, relative_path)
 
     # Open the file in binary mode and read its contents
     with open(file_path, 'rb') as f:
