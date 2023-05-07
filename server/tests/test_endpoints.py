@@ -105,15 +105,7 @@ def test_add_clothing_post():
 def test_upload_file():
     # Set the URL of the file upload endpoint
     url = 'http://localhost:5000/upload'
-
-    # home_dir = os.path.expanduser('~')
-    base_dir = '/path/to/base/directory'
-    sample_user = 'sample_user'
-    # Define a relative path to the file
-    relative_path = 'my_file.txt'
-    user_dir = os.path.join(base_dir, sample_user)
-    # Combine the home directory and the relative path to create the full file path
-    file_path = os.path.join(user_dir, relative_path)
+    file_path = 'server/templates/static/images/dress.jpeg'
 
     # Open the file in binary mode and read its contents
     with open(file_path, 'rb') as f:
