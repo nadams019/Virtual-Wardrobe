@@ -4,8 +4,8 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 from flask_cors import CORS
-from flask import Flask, render_template, request, redirect, url_for, session, \
-    jsonify
+from flask import Flask, render_template, request, redirect, url_for, \
+    session, jsonify
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -472,7 +472,7 @@ def login():
 
 
 @app.route('/upload closet')
-def upload_closet():
+def upload_closet_nav():
     return render_template('pages/uploadCloset.html')
 
 
@@ -495,7 +495,8 @@ def upload_closet():
 
         return "Form submitted succesfully"
 
-    return render_template('UploadCloset.html', error=error)
+    # return render_template('UploadCloset.html', error=error)
+    return upload_closet_nav()
 
 
 '''
