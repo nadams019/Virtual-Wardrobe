@@ -12,17 +12,17 @@ import {
 
 const API_BASE_URL = 'https://virtual-wardrobe.herokuapp.com';
 const API_BROWSE_DICT_URL = `${API_BASE_URL}/browse/dict`;
-// function StartButton({ setText }) {
-//   const onClick = () => { axios.get("https://virtual-wardrobe.herokuapp.com/browse/dict")
-// .then((response) => {
-// const items = response.data.Data[0];
-// const stringItems = JSON.stringify(items);
-// setText(stringItems);
-// } )
-// .catch();
-// };
-//   return ( <button onClick={onClick}>Browse!</button>);
-// }
+function StartButton({ setText }) {
+  const onClick = () => { axios.get("https://virtual-wardrobe.herokuapp.com/browse/dict")
+.then((response) => {
+const items = response.data.Data[0];
+const stringItems = JSON.stringify(items);
+setText(stringItems);
+} )
+.catch();
+};
+  return ( <button onClick={onClick}>Browse!</button>);
+}
 async function fetchItems() {
   try {
     const onClick = () => {
@@ -57,11 +57,11 @@ return (
   </nav>
 );
 }
-function Browse(){
-  return(
-      <h2> Browse</h2>
-  );
-}
+//function Browse(){
+ // return(
+ //     <h2> Browse</h2>
+ // );
+//}
 function App() {
   const [items, setItems] = useState([]);
 
@@ -81,7 +81,7 @@ function App() {
         <header className="App-header">
           <BrowserRouter>
           <Routes>
-            <Route path="/browse" element={<Browse />} />
+            <Route path="/browse" element={<StartButton />} />
             <Route path="/" element={<Homepage />} />
           </Routes>
           </BrowserRouter>
