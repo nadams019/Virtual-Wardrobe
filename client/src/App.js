@@ -135,8 +135,11 @@ import { useState } from 'react';
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+
+const API_BASE_URL = 'https://virtual-wardrobe.herokuapp.com';
+const API_BROWSE_DICT_URL = `${API_BASE_URL}/browse/dict`;
 function StartButton({ setText }) {
-  const onClick = () => { axios.get("https://virtual-wardrobe.herokuapp.com")
+  const onClick = () => { axios.get(API_BROWSE_DICT_URL)
 .then((response) => {
 const items = response.data.Data[0];
 const stringItems = JSON.stringify(items);
