@@ -447,7 +447,7 @@ class AestheticTypeDetails(Resource):
 
 @app.route('/home_page')
 def home_page():
-    return render_template('pages/home_page.html')
+    return render_template('home_page.html')
 
 
 @app.route(LOGIN, methods=['POST'])

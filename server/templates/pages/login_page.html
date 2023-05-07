@@ -13,11 +13,11 @@
     <!-- Media query for large browser width -->
     <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.login_button2').addEventListener('click', login);
-    });
+        });
 
-    function login() {
+        function login() {
         // Get the values entered by the user
         var username = document.getElementsByName("username")[0].value;
         var password = document.getElementsByName("password")[0].value;
@@ -27,14 +27,15 @@
         // For demonstration purposes, check if the username and password are correct
         // Replace this with your own authentication logic
         if (username === "sample_user" && password === "abcde123") {
-            // Redirect to the dashboard page on successful login
-            window.location.href = "pages/home_page.html";
+        // Redirect to the home_page.html after successful login
+        window.location.href = "../pages/home_page.html";
         } else {
-            // Show an error message if the credentials are incorrect
-            alert("Invalid username or password.");
+        // Show an error message if the credentials are incorrect
+        alert("Invalid username or password.");
         }
     }
-</script>
+    </script>
+
 
 </head>
 
