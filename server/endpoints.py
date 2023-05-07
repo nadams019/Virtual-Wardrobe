@@ -447,14 +447,8 @@ class AestheticTypeDetails(Resource):
 
 
 @app.route('/home_page')
-def main_menu_function():
-    '''
-    This is for the home page in our app
-    :return:
-    '''
-
+def home_page():
     return render_template('pages/home_page.html')
-
 
 @app.route(LOGIN, methods=['POST'])
 def login():
@@ -469,12 +463,13 @@ def login():
         if username == 'sample_user' and password == 'abcde123':
             session['logged_in'] = True
             session['username'] = username
-            return redirect(url_for('main_menu'))
+            return redirect(url_for('home_page'))
 
         else:
             error = "Login failed"
 
-        return render_template('login.html', error=error)
+    return render_template('login_page.html', error=error)
+
 
 
 UPLOAD_FOLDER = '/path/to/upload/folder'
@@ -520,3 +515,7 @@ class Endpoints(Resource):
         endpoints = ''
         # sorted(rule.rule for rule in api.app.url_map.iter_rules())
         return {"Available endpoints": endpoints}
+
+
+if __name__ == '__main__':
+    app.run()
