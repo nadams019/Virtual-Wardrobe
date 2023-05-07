@@ -143,7 +143,7 @@ def test_upload_closet():
         }
         response = client.post('/upload', data=data)
         assert response.status_code == 200
-        assert response.data == b'Form submitted succesfully!'
+        assert response.data == b'Form submitted successfully!'
 '''
 def test_upload_file():
     # Set the URL of the file upload endpoint

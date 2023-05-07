@@ -491,7 +491,7 @@ def upload_closet():
             return jsonify({'success': False,
                             'message': 'All fields are required!'})
     else:
-        return "Form submitted succesfully"
+        return "Form submitted successfully"
 
     # return render_template('UploadCloset.html', error=error)
     return upload_closet_nav()
