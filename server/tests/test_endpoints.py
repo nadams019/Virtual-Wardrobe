@@ -144,8 +144,8 @@ def test_upload_closet():
         }
         response = client.post('/upload', data=data)
         assert response.status_code == 200
-        assert response.data == b'{"success": true, "message": "Clothing ' \
-                                b'item uploaded successfully!"}\n'
+        assert response.data == b'{"message":"Clothing item uploaded ' \
+                                b'successfully!","success":true}\n'
 '''
 def test_upload_file():
     # Set the URL of the file upload endpoint
