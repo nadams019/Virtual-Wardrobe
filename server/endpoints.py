@@ -4,7 +4,7 @@ The endpoint called `endpoints` will return all available endpoints.
 """
 from http import HTTPStatus
 from flask_cors import CORS
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_restx import Resource, Api, fields, Namespace
 import werkzeug.exceptions as wz
 import db.users as usr
@@ -484,6 +484,12 @@ def upload_closet():
         aesthetic = request.form['aesthetic']
         occasion = request.form['occasion']
         season = request.form['season']
+        if item_type and aesthetic and occasion and season:
+            return jsonify({'success': True, 'message': 'Clothing item uploaded successfully!'})
+        else:
+            # Return an error message
+            return jsonify({'success': False, 'message': 'All fields are required!'})
+    else:
 
         return "Form submitted succesfully"
 
@@ -538,7 +544,6 @@ class ClosetUpload(Resource):
         # add filename to database for closet item with closet_id
         return {'message': 'File uploaded successfully'}, 201
 '''
-
 
 
 @api.route('/endpoints')
