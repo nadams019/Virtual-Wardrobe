@@ -85,7 +85,32 @@
                 <div id="email_title">Email</div>
                 <input type="text" id="email_box" class="user_txt">
                 <div id="help_question_title">What can we help you with?</div>
-                <div id="submit_button">Submit</div>
+                <button type="submit" id="submit_button">Submit</button>
+                <style>
+                  #request_submitted {
+                    position: absolute;
+                    top: 880px;
+                    left: 1650px;
+                    transform: translate(-50%, -50%);
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px;
+                  }
+                </style>
+                <script>
+                  const submitButton = document.getElementById('submit_button');
+
+                  submitButton.addEventListener('click', function() {
+                    // Create a new element to display the "request submitted" message
+                    const message = document.createElement('p');
+                    message.id = 'request_submitted';
+                    message.textContent = 'Request submitted';
+
+                    // Append the new element to the page
+                    const body = document.body;
+                    body.appendChild(message);
+                  });
+                </script>
                 <input type="text" id="help_question_box" class="user_txt">
                 <div id="team_bband_title">Team BBAND</div>
                 <div id="bethany_title">Bethany Saunders</div>
