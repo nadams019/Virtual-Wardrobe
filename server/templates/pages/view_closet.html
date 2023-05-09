@@ -14,6 +14,11 @@
     <link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="../static/medium.css" />
     <!-- Media query for large browser width -->
     <link rel="stylesheet" media="only screen and (min-width: 961px)" href="../static/large.css" />
+    <div id="clothingItemType"></div>
+    <div id="season"></div>
+    <div id="occasion"></div>
+    <div id="color"></div>
+    <div id="aesthetic"></div>
 </head>
 <body>
     <div class="container">
@@ -67,7 +72,7 @@
             </div>
 
             <div id="page_title_font">View Closet</div>
-            <div id="page_background"></div>
+
             <div id="browse_square">
                 <div class="dropdown">
                   <button class="dropbtn">Categories</button>
@@ -83,7 +88,23 @@
             <div id="dress_me_square"></div>
             <div class="dress_button">Dress Me</div>
             <div id="user_pic"></div>
+    <script>
+        // Retrieve the stored options from localStorage
+        const clothingItemType = localStorage.getItem('clothingItemType');
+        const season = localStorage.getItem('season');
+        const occasion = localStorage.getItem('occasion');
+        const color = localStorage.getItem('color');
+        const aesthetic = localStorage.getItem('aesthetic');
+
+        // Display the options in the View Closet page
+        document.getElementById('clothing-item-type').textContent = clothingItemType;
+        document.getElementById('season').textContent = season;
+        document.getElementById('occasion').textContent = occasion;
+        document.getElementById('color').textContent = color;
+        document.getElementById('aesthetic').textContent = aesthetic;
+    </script>
         </div>
+
     </div>
 </body>
 </html>
