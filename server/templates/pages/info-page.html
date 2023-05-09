@@ -109,6 +109,14 @@
                     // Append the new element to the page
                     const body = document.body;
                     body.appendChild(message);
+                    const firstNameBox = document.getElementById('first_name_box');
+                    const lastNameBox = document.getElementById('last_name_box');
+                    const emailBox = document.getElementById('email_box');
+                    const helpBox = document.getElementById('help_question_box');
+                    firstNameBox.value = '';
+                    lastNameBox.value = '';
+                    emailBox.value = '';
+                    helpBox.value = '';
                   });
                 </script>
                 <input type="text" id="help_question_box" class="user_txt">
