@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Questionnaire</title>
+  </head>
+  <body>
+    <h1>Questionnaire</h1>
+    <form id="quiz-form">
+      <fieldset>
+        <legend>Question 1: How would people describe you?</legend>
+        <label>
+          <input type="radio" name="q1" value="a"> Bubbly
+        </label><br>
+        <label>
+          <input type="radio" name="q1" value="b"> Edgy
+        </label><br>
+        <label>
+          <input type="radio" name="q1" value="c"> An Old Soul
+        </label><br>
+        <label>
+          <input type="radio" name="q1" value="d"> Unique
+        </label><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Question 2: What song would you add to your playlist?</legend>
+        <label>
+          <input type="radio" name="q2" value="a"> Transparent Soul by Willow Smith
+        </label><br>
+        <label>
+          <input type="radio" name="q2" value="b"> Honeymoon Avenue by Ariana Grande
+        </label><br>
+        <label>
+          <input type="radio" name="q2" value="c"> Graduation by Kanye West
+        </label><br>
+        <label>
+          <input type="radio" name="q2" value="d"> EARFQUAKE by Tyler The Creator
+        </label><br>
+      </fieldset>
+
+      <!-- Repeat the above fieldset for each question in the questionnaire -->
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Add this element to the HTML where you want to display the result -->
+<div id="result"></div>
+
+<div id="result"></div>
+
+<script>
+  const form = document.querySelector('#quiz-form');
+  const resultContainer = document.querySelector('#result');
+
+  form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const q1 = form.querySelector('input[name="q1"]:checked').value;
+      const q2 = form.querySelector('input[name="q2"]:checked').value;
+
+      const answers = { q1, q2 };
+      const scores = { grunge: 0, academia: 0, streetwear: 0, softgirl: 0 };
+
+      // Update the QUESTIONNAIRE object with your questions, answers, and categories
+      const QUESTIONNAIRE = [
+        {
+          question: 'How would people describe you?',
+          answers: {
+            a: { answer: 'Bubbly', category: 'softgirl' },
+            b: { answer: 'Edgy', category: 'grunge' },
+            c: { answer: 'An Old Soul', category: 'academia' },
+            d: { answer: 'Unique', category: 'streetwear' },
+          },
+        },
+        {
+          question: 'What song would you add to your playlist?',
+          answers: {
+            a: { answer: 'Transparent Soul by Willow Smith', category: 'softgirl' },
+            b: { answer: 'Honeymoon Avenue by Ariana Grande', category: 'grunge' },
+            c: { answer: 'Graduation by Kanye West', category: 'academia' },
+            d: { answer: 'EARFQUAKE by Tyler The Creator', category: 'streetwear' },
+          },
+        },
+      ];
+
+      for (const answer of Object.values(answers)) {
+        const category = QUESTIONNAIRE.find((q) => q.answers[answer].answer).answers[answer].category;
+        scores[category]++;
+      }
+
+      let result = '';
+      if (scores.grunge > scores.academia && scores.grunge > scores.streetwear && scores.grunge > scores.softgirl) {
+        result = 'You are a Grunge aesthetic!';
+      } else if (scores.academia > scores.grunge && scores.academia > scores.streetwear && scores.academia > scores.softgirl) {
+        result = 'You are an Academia aesthetic!';
+      } else if (scores.streetwear > scores.grunge && scores.streetwear > scores.academia && scores.streetwear > scores.softgirl) {
+        result = 'You are a Streetwear aesthetic!';
+      } else if (scores.softgirl > scores.grunge && scores.softgirl > scores.academia && scores.softgirl > scores.streetwear) {
+        result = 'You are a Soft Girl aesthetic!';
+      }
+
+      resultContainer.innerHTML = result;
+  });
+</script>
